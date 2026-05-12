@@ -1,0 +1,422 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "ConnectionManager.cs",
+      "file_type": "code",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L1",
+      "id": "connectionmanager_cs",
+      "community": 4,
+      "norm_label": "connectionmanager.cs"
+    },
+    {
+      "label": "ConnectionModule",
+      "file_type": "code",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L21",
+      "id": "connectionmodule_connectionmanager_connectionmodule",
+      "community": 4,
+      "norm_label": "connectionmodule"
+    },
+    {
+      "label": "ConnectionManager",
+      "file_type": "code",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L29",
+      "id": "connectionmodule_connectionmanager_connectionmanager",
+      "community": 0,
+      "norm_label": "connectionmanager"
+    },
+    {
+      "label": "IConnectionManager",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "iconnectionmanager",
+      "community": 0,
+      "norm_label": "iconnectionmanager"
+    },
+    {
+      "label": ".Open()",
+      "file_type": "code",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L52",
+      "id": "connectionmodule_connectionmanager_connectionmanager_open",
+      "community": 0,
+      "norm_label": ".open()"
+    },
+    {
+      "label": ".Close()",
+      "file_type": "code",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L63",
+      "id": "connectionmodule_connectionmanager_connectionmanager_close",
+      "community": 0,
+      "norm_label": ".close()"
+    },
+    {
+      "label": ".SendMessage()",
+      "file_type": "code",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L71",
+      "id": "connectionmodule_connectionmanager_connectionmanager_sendmessage",
+      "community": 0,
+      "norm_label": ".sendmessage()"
+    },
+    {
+      "label": "IWebViewWrapper",
+      "file_type": "code",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L96",
+      "id": "iwebviewwrapper",
+      "community": 0,
+      "norm_label": "iwebviewwrapper"
+    },
+    {
+      "label": "ILogger",
+      "file_type": "code",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L97",
+      "id": "ilogger",
+      "community": 0,
+      "norm_label": "ilogger"
+    },
+    {
+      "label": "bool",
+      "file_type": "code",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L98",
+      "id": "bool",
+      "community": 0,
+      "norm_label": "bool"
+    },
+    {
+      "label": ".OnMessageReceived()",
+      "file_type": "code",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L100",
+      "id": "connectionmodule_connectionmanager_connectionmanager_onmessagereceived",
+      "community": 0,
+      "norm_label": ".onmessagereceived()"
+    },
+    {
+      "label": ".HandleCallContext()",
+      "file_type": "code",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L131",
+      "id": "connectionmodule_connectionmanager_connectionmanager_handlecallcontext",
+      "community": 0,
+      "norm_label": ".handlecallcontext()"
+    },
+    {
+      "label": "IConnectionManager.cs",
+      "file_type": "code",
+      "source_file": "IConnectionManager.cs",
+      "source_location": "L1",
+      "id": "iconnectionmanager_cs",
+      "community": 1,
+      "norm_label": "iconnectionmanager.cs"
+    },
+    {
+      "label": "ConnectionModule",
+      "file_type": "code",
+      "source_file": "IConnectionManager.cs",
+      "source_location": "L19",
+      "id": "connectionmodule_iconnectionmanager_connectionmodule",
+      "community": 1,
+      "norm_label": "connectionmodule"
+    },
+    {
+      "label": "IConnectionManager",
+      "file_type": "code",
+      "source_file": "IConnectionManager.cs",
+      "source_location": "L27",
+      "id": "connectionmodule_iconnectionmanager_iconnectionmanager",
+      "community": 1,
+      "norm_label": "iconnectionmanager"
+    },
+    {
+      "label": "ILifeCycle",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "ilifecycle",
+      "community": 1,
+      "norm_label": "ilifecycle"
+    },
+    {
+      "label": ".SendMessage()",
+      "file_type": "code",
+      "source_file": "IConnectionManager.cs",
+      "source_location": "L35",
+      "id": "connectionmodule_iconnectionmanager_iconnectionmanager_sendmessage",
+      "community": 1,
+      "norm_label": ".sendmessage()"
+    },
+    {
+      "label": "CallContext.cs",
+      "file_type": "code",
+      "source_file": "JsonMessage/CallContext.cs",
+      "source_location": "L1",
+      "id": "jsonmessage_callcontext_cs",
+      "community": 2,
+      "norm_label": "callcontext.cs"
+    },
+    {
+      "label": "ConnectionModule.JsonMessage",
+      "file_type": "code",
+      "source_file": "JsonMessage/CallContext.cs",
+      "source_location": "L18",
+      "id": "jsonmessage_callcontext_connectionmodule_jsonmessage",
+      "community": 2,
+      "norm_label": "connectionmodule.jsonmessage"
+    },
+    {
+      "label": "CallContext",
+      "file_type": "code",
+      "source_file": "JsonMessage/CallContext.cs",
+      "source_location": "L23",
+      "id": "jsonmessage_callcontext_callcontext",
+      "community": 2,
+      "norm_label": "callcontext"
+    },
+    {
+      "label": "RawMessage.cs",
+      "file_type": "code",
+      "source_file": "JsonMessage/RawMessage.cs",
+      "source_location": "L1",
+      "id": "jsonmessage_rawmessage_cs",
+      "community": 3,
+      "norm_label": "rawmessage.cs"
+    },
+    {
+      "label": "ConnectionModule.JsonMessage",
+      "file_type": "code",
+      "source_file": "JsonMessage/RawMessage.cs",
+      "source_location": "L19",
+      "id": "jsonmessage_rawmessage_connectionmodule_jsonmessage",
+      "community": 3,
+      "norm_label": "connectionmodule.jsonmessage"
+    },
+    {
+      "label": "RawMessage",
+      "file_type": "code",
+      "source_file": "JsonMessage/RawMessage.cs",
+      "source_location": "L24",
+      "id": "jsonmessage_rawmessage_rawmessage",
+      "community": 3,
+      "norm_label": "rawmessage"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "connectionmanager_cs",
+      "target": "connectionmodule_connectionmanager_connectionmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "connectionmanager_cs",
+      "target": "connectionmodule_connectionmanager_connectionmanager"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "connectionmodule_connectionmanager_connectionmanager",
+      "target": "iconnectionmanager"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L52",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "connectionmodule_connectionmanager_connectionmanager",
+      "target": "connectionmodule_connectionmanager_connectionmanager_open"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "connectionmodule_connectionmanager_connectionmanager",
+      "target": "connectionmodule_connectionmanager_connectionmanager_close"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L71",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "connectionmodule_connectionmanager_connectionmanager",
+      "target": "connectionmodule_connectionmanager_connectionmanager_sendmessage"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L96",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "connectionmodule_connectionmanager_connectionmanager",
+      "target": "iwebviewwrapper"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L97",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "connectionmodule_connectionmanager_connectionmanager",
+      "target": "ilogger"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L98",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "connectionmodule_connectionmanager_connectionmanager",
+      "target": "bool"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L100",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "connectionmodule_connectionmanager_connectionmanager",
+      "target": "connectionmodule_connectionmanager_connectionmanager_onmessagereceived"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L131",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "connectionmodule_connectionmanager_connectionmanager",
+      "target": "connectionmodule_connectionmanager_connectionmanager_handlecallcontext"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ConnectionManager.cs",
+      "source_location": "L114",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "connectionmodule_connectionmanager_connectionmanager_onmessagereceived",
+      "target": "connectionmodule_connectionmanager_connectionmanager_handlecallcontext"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IConnectionManager.cs",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "iconnectionmanager_cs",
+      "target": "connectionmodule_iconnectionmanager_connectionmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IConnectionManager.cs",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "iconnectionmanager_cs",
+      "target": "connectionmodule_iconnectionmanager_iconnectionmanager"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "IConnectionManager.cs",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "connectionmodule_iconnectionmanager_iconnectionmanager",
+      "target": "ilifecycle"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "IConnectionManager.cs",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "connectionmodule_iconnectionmanager_iconnectionmanager",
+      "target": "connectionmodule_iconnectionmanager_iconnectionmanager_sendmessage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "JsonMessage/CallContext.cs",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "jsonmessage_callcontext_cs",
+      "target": "jsonmessage_callcontext_connectionmodule_jsonmessage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "JsonMessage/CallContext.cs",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "jsonmessage_callcontext_cs",
+      "target": "jsonmessage_callcontext_callcontext"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "JsonMessage/RawMessage.cs",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "jsonmessage_rawmessage_cs",
+      "target": "jsonmessage_rawmessage_connectionmodule_jsonmessage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "JsonMessage/RawMessage.cs",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "jsonmessage_rawmessage_cs",
+      "target": "jsonmessage_rawmessage_rawmessage"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "9d5b08a54acd5ef99a5b1e419e072620f294ecae"
+}

@@ -67,30 +67,30 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Constructor guards ────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given ConfigurationProvider NullFilePath When Constructed Then ThrowsArgumentNullException
+    /// Given ConfigurationProvider When NullFilePathConstructed Then ThrowsArgumentNullException
         /// </summary>
         [TestMethod]
-        public void Given_ConfigurationProvider_NullFilePath_When_Constructed_Then_ThrowsArgumentNullException()
+        public void Given_ConfigurationProvider_When_NullFilePathConstructed_Then_ThrowsArgumentNullException()
         {
             Assert.ThrowsException<ArgumentNullException>(
                 () => new GuidanceConfigurationProvider(null!, m_mockLogger.Object));
         }
 
         /// <summary>
-    /// Given ConfigurationProvider WhitespaceFilePath When Constructed Then ThrowsArgumentNullException
+    /// Given ConfigurationProvider When WhitespaceFilePathConstructed Then ThrowsArgumentNullException
         /// </summary>
         [TestMethod]
-        public void Given_ConfigurationProvider_WhitespaceFilePath_When_Constructed_Then_ThrowsArgumentNullException()
+        public void Given_ConfigurationProvider_When_WhitespaceFilePathConstructed_Then_ThrowsArgumentNullException()
         {
             Assert.ThrowsException<ArgumentNullException>(
                 () => new GuidanceConfigurationProvider("   ", m_mockLogger.Object));
         }
 
         /// <summary>
-    /// Given ConfigurationProvider NullLogger When Constructed Then ThrowsArgumentNullException
+    /// Given ConfigurationProvider When NullLoggerConstructed Then ThrowsArgumentNullException
         /// </summary>
         [TestMethod]
-        public void Given_ConfigurationProvider_NullLogger_When_Constructed_Then_ThrowsArgumentNullException()
+        public void Given_ConfigurationProvider_When_NullLoggerConstructed_Then_ThrowsArgumentNullException()
         {
             Assert.ThrowsException<ArgumentNullException>(
                 () => new GuidanceConfigurationProvider(m_configFile, null!));
@@ -99,10 +99,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Open: file errors ─────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given ConfigurationProvider NonExistentFile When OpenCalled Then ThrowsFileNotFoundException
+    /// Given ConfigurationProvider When NonExistentFileOpenCalled Then ThrowsFileNotFoundException
         /// </summary>
         [TestMethod]
-        public void Given_ConfigurationProvider_NonExistentFile_When_OpenCalled_Then_ThrowsFileNotFoundException()
+        public void Given_ConfigurationProvider_When_NonExistentFileOpenCalled_Then_ThrowsFileNotFoundException()
         {
             var provider = new GuidanceConfigurationProvider(
                 Path.Combine(m_tempFolder, "does_not_exist.json"), m_mockLogger.Object);
@@ -115,7 +115,7 @@ namespace Pms_GuidanceGUI.Tests.Unit
         /// </summary>
         [TestMethod]
         [ExpectedException(typeof(JsonException), AllowDerivedTypes = true)]
-        public void Given_ConfigurationProvider_InvalidJson_When_OpenCalled_Then_ThrowsJsonException()
+        public void Given_ConfigurationProvider_When_InvalidJsonOpenCalled_Then_ThrowsJsonException()
         {
             File.WriteAllText(m_configFile, "THIS IS NOT JSON");
             var provider = new GuidanceConfigurationProvider(m_configFile, m_mockLogger.Object);
@@ -126,10 +126,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Open: parsing ─────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given ConfigurationProvider ValidJsonWithTopLevelKey When OpenCalled Then TopLevelKeyValueIsStored
+    /// Given ConfigurationProvider When ValidJsonWithTopLevelKeyOpenCalled Then TopLevelKeyValueIsStored
         /// </summary>
         [TestMethod]
-        public void Given_ConfigurationProvider_ValidJsonWithTopLevelKey_When_OpenCalled_Then_TopLevelKeyValueIsStored()
+        public void Given_ConfigurationProvider_When_ValidJsonWithTopLevelKeyOpenCalled_Then_TopLevelKeyValueIsStored()
         {
             WriteJson("{\"InstallationPath\":\"C:\\\\PmsGuidance\"}");
             var provider = new GuidanceConfigurationProvider(m_configFile, m_mockLogger.Object);
@@ -140,10 +140,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConfigurationProvider ValidJsonWithNestedObject When OpenCalled Then ColonSeparatedKeyIsStored
+    /// Given ConfigurationProvider When ValidJsonWithNestedObjectOpenCalled Then ColonSeparatedKeyIsStored
         /// </summary>
         [TestMethod]
-        public void Given_ConfigurationProvider_ValidJsonWithNestedObject_When_OpenCalled_Then_ColonSeparatedKeyIsStored()
+        public void Given_ConfigurationProvider_When_ValidJsonWithNestedObjectOpenCalled_Then_ColonSeparatedKeyIsStored()
         {
             WriteJson("{\"SystemInterfaces\":{\"SystemCheck\":\"C:\\\\SystemCheck.exe\"}}");
             var provider = new GuidanceConfigurationProvider(m_configFile, m_mockLogger.Object);
@@ -155,10 +155,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConfigurationProvider ValidJsonWithTwoTopLevelKeys When OpenCalled Then BothKeysAreStored
+    /// Given ConfigurationProvider When ValidJsonWithTwoTopLevelKeysOpenCalled Then BothKeysAreStored
         /// </summary>
         [TestMethod]
-        public void Given_ConfigurationProvider_ValidJsonWithTwoTopLevelKeys_When_OpenCalled_Then_BothKeysAreStored()
+        public void Given_ConfigurationProvider_When_ValidJsonWithTwoTopLevelKeysOpenCalled_Then_BothKeysAreStored()
         {
             WriteJson("{\"KeyA\":\"ValueA\",\"KeyB\":\"ValueB\"}");
             var provider = new GuidanceConfigurationProvider(m_configFile, m_mockLogger.Object);
@@ -170,10 +170,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConfigurationProvider JsonWithNullValue When OpenCalled Then NullKeyIsNotAddedToEntries
+    /// Given ConfigurationProvider When JsonWithNullValueOpenCalled Then NullKeyIsNotAddedToEntries
         /// </summary>
         [TestMethod]
-        public void Given_ConfigurationProvider_JsonWithNullValue_When_OpenCalled_Then_NullKeyIsNotAddedToEntries()
+        public void Given_ConfigurationProvider_When_JsonWithNullValueOpenCalled_Then_NullKeyIsNotAddedToEntries()
         {
             WriteJson("{\"PresentKey\":\"value\",\"NullKey\":null}");
             var provider = new GuidanceConfigurationProvider(m_configFile, m_mockLogger.Object);
@@ -184,10 +184,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConfigurationProvider ValidJsonFile When OpenCalled Then LogInfoIsCalledWithEntryCount
+    /// Given ConfigurationProvider When ValidJsonFileOpenCalled Then LogInfoIsCalledWithEntryCount
         /// </summary>
         [TestMethod]
-        public void Given_ConfigurationProvider_ValidJsonFile_When_OpenCalled_Then_LogInfoIsCalledWithEntryCount()
+        public void Given_ConfigurationProvider_When_ValidJsonFileOpenCalled_Then_LogInfoIsCalledWithEntryCount()
         {
             WriteJson("{\"KeyA\":\"A\",\"KeyB\":\"B\"}");
             var provider = new GuidanceConfigurationProvider(m_configFile, m_mockLogger.Object);
@@ -202,10 +202,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── GetValue ──────────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given ConfigurationProvider LoadedConfig When GetValueCalledWithKnownKey Then CorrectValueReturned
+    /// Given ConfigurationProvider When LoadedConfigGetValueCalledWithKnownKey Then CorrectValueReturned
         /// </summary>
         [TestMethod]
-        public void Given_ConfigurationProvider_LoadedConfig_When_GetValueCalledWithKnownKey_Then_CorrectValueReturned()
+        public void Given_ConfigurationProvider_When_LoadedConfigGetValueCalledWithKnownKey_Then_CorrectValueReturned()
         {
             WriteJson("{\"MyKey\":\"MyValue\"}");
             var provider = new GuidanceConfigurationProvider(m_configFile, m_mockLogger.Object);
@@ -215,10 +215,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConfigurationProvider LoadedConfig When GetValueCalledWithUnknownKey Then NullReturned
+    /// Given ConfigurationProvider When LoadedConfigGetValueCalledWithUnknownKey Then NullReturned
         /// </summary>
         [TestMethod]
-        public void Given_ConfigurationProvider_LoadedConfig_When_GetValueCalledWithUnknownKey_Then_NullReturned()
+        public void Given_ConfigurationProvider_When_LoadedConfigGetValueCalledWithUnknownKey_Then_NullReturned()
         {
             WriteJson("{\"MyKey\":\"MyValue\"}");
             var provider = new GuidanceConfigurationProvider(m_configFile, m_mockLogger.Object);
@@ -227,13 +227,39 @@ namespace Pms_GuidanceGUI.Tests.Unit
             Assert.IsNull(provider.GetValue("DoesNotExist"));
         }
 
+        /// <summary>
+    /// Given ConfigurationProvider When VerifyCommandConfiguredGetVerificationCommandCalled Then VerifyCommandReturned
+        /// </summary>
+        [TestMethod]
+        public void Given_ConfigurationProvider_When_VerifyCommandConfiguredGetVerificationCommandCalled_Then_VerifyCommandReturned()
+        {
+            WriteJson("{\"InstallationPrerequisitesVerify\":\"verify-command\"}");
+            var provider = new GuidanceConfigurationProvider(m_configFile, m_mockLogger.Object);
+            provider.Open();
+
+            Assert.AreEqual("verify-command", provider.GetVerificationCommand());
+        }
+
+        /// <summary>
+    /// Given ConfigurationProvider When InstallCommandConfiguredGetInstallationCommandCalled Then InstallCommandReturned
+        /// </summary>
+        [TestMethod]
+        public void Given_ConfigurationProvider_When_InstallCommandConfiguredGetInstallationCommandCalled_Then_InstallCommandReturned()
+        {
+            WriteJson("{\"Installationtrigger\":\"install-command\"}");
+            var provider = new GuidanceConfigurationProvider(m_configFile, m_mockLogger.Object);
+            provider.Open();
+
+            Assert.AreEqual("install-command", provider.GetInstallationCommand());
+        }
+
         // ── GetAll ────────────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given ConfigurationProvider LoadedConfig When GetAllCalled Then AllPairsReturned
+    /// Given ConfigurationProvider When LoadedConfigGetAllCalled Then AllPairsReturned
         /// </summary>
         [TestMethod]
-        public void Given_ConfigurationProvider_LoadedConfig_When_GetAllCalled_Then_AllPairsReturned()
+        public void Given_ConfigurationProvider_When_LoadedConfigGetAllCalled_Then_AllPairsReturned()
         {
             WriteJson("{\"A\":\"1\",\"B\":\"2\",\"C\":\"3\"}");
             var provider = new GuidanceConfigurationProvider(m_configFile, m_mockLogger.Object);
@@ -250,10 +276,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Close ─────────────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given ConfigurationProvider LoadedConfig When CloseCalled Then GetValueReturnsNull
+    /// Given ConfigurationProvider When LoadedConfigCloseCalled Then GetValueReturnsNull
         /// </summary>
         [TestMethod]
-        public void Given_ConfigurationProvider_LoadedConfig_When_CloseCalled_Then_GetValueReturnsNull()
+        public void Given_ConfigurationProvider_When_LoadedConfigCloseCalled_Then_GetValueReturnsNull()
         {
             WriteJson("{\"MyKey\":\"MyValue\"}");
             var provider = new GuidanceConfigurationProvider(m_configFile, m_mockLogger.Object);
@@ -265,10 +291,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConfigurationProvider LoadedConfig When CloseCalled Then LogInfoIsCalledForClear
+    /// Given ConfigurationProvider When LoadedConfigCloseCalled Then LogInfoIsCalledForClear
         /// </summary>
         [TestMethod]
-        public void Given_ConfigurationProvider_LoadedConfig_When_CloseCalled_Then_LogInfoIsCalledForClear()
+        public void Given_ConfigurationProvider_When_LoadedConfigCloseCalled_Then_LogInfoIsCalledForClear()
         {
             WriteJson("{\"MyKey\":\"MyValue\"}");
             var provider = new GuidanceConfigurationProvider(m_configFile, m_mockLogger.Object);
@@ -287,3 +313,4 @@ namespace Pms_GuidanceGUI.Tests.Unit
             => File.WriteAllText(m_configFile, json);
     }
 }
+

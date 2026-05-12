@@ -113,10 +113,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         // ─────────────────────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given LogMessagePath LogMessage When IncomingMessageReceived Then LoggerLogIsCalled
+    /// Given LogMessagePath when LogMessageIncomingMessageReceived Then LoggerLogIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_LogMessagePath_LogMessage_When_IncomingMessageReceived_Then_LoggerLogIsCalled()
+        public void Given_LogMessagePath_when_LogMessageIncomingMessageReceived_Then_LoggerLogIsCalled()
         {
             SimulateIncoming("LogMessage", BuildLogPayload("logger check", DateTime.UtcNow));
 
@@ -124,10 +124,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
 
         /// <summary>
-    /// Given LogMessagePath LogMessageWithSpecificText When IncomingMessageReceived Then LoggerReceivesMessageText
+    /// Given LogMessagePath when LogMessageWithSpecificTextIncomingMessageReceived Then LoggerReceivesMessageText
         /// </summary>
         [TestMethod]
-        public void Given_LogMessagePath_LogMessageWithSpecificText_When_IncomingMessageReceived_Then_LoggerReceivesMessageText()
+        public void Given_LogMessagePath_when_LogMessageWithSpecificTextIncomingMessageReceived_Then_LoggerReceivesMessageText()
         {
             const string expectedText = "specific log text 99";
             SimulateIncoming("LogMessage", BuildLogPayload(expectedText, DateTime.UtcNow));
@@ -142,10 +142,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         // ─────────────────────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given VerifyPrerequisitePath VerifyPrerequisiteMessage When IncomingMessageReceived Then ReplyIsSent
+    /// Given VerifyPrerequisitePath when VerifyPrerequisiteMessageIncomingMessageReceived Then ReplyIsSent
         /// </summary>
         [TestMethod]
-        public void Given_VerifyPrerequisitePath_VerifyPrerequisiteMessage_When_IncomingMessageReceived_Then_ReplyIsSent()
+        public void Given_VerifyPrerequisitePath_when_VerifyPrerequisiteMessageIncomingMessageReceived_Then_ReplyIsSent()
         {
             SimulateIncoming("VerifyInstallationPrerequisite", "{}");
 
@@ -153,10 +153,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
 
         /// <summary>
-        /// Given VerifyPrerequisitePath VerifyPrerequisiteMessage When IncomingMessageReceived Then ReplyActionIsShowInstallationPrerequisite
+        /// Given VerifyPrerequisitePath when VerifyPrerequisiteMessageIncomingMessageReceived Then ReplyActionIsShowInstallationPrerequisite
         /// </summary>
         [TestMethod]
-        public void Given_VerifyPrerequisitePath_VerifyPrerequisiteMessage_When_IncomingMessageReceived_Then_ReplyActionIsShowInstallationPrerequisite()
+        public void Given_VerifyPrerequisitePath_when_VerifyPrerequisiteMessageIncomingMessageReceived_Then_ReplyActionIsShowInstallationPrerequisite()
         {
             SimulateIncoming("VerifyInstallationPrerequisite", "{}");
 
@@ -164,10 +164,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
 
         /// <summary>
-    /// Given VerifyPrerequisitePath VerifyPrerequisiteMessage When IncomingMessageReceived Then StatusIsOk
+    /// Given VerifyPrerequisitePath when VerifyPrerequisiteMessageIncomingMessageReceived Then StatusIsOk
         /// </summary>
         [TestMethod]
-        public void Given_VerifyPrerequisitePath_VerifyPrerequisiteMessage_When_IncomingMessageReceived_Then_StatusIsOk()
+        public void Given_VerifyPrerequisitePath_when_VerifyPrerequisiteMessageIncomingMessageReceived_Then_StatusIsOk()
         {
             SimulateIncoming("VerifyInstallationPrerequisite", "{}");
 
@@ -175,10 +175,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
 
         /// <summary>
-    /// Given VerifyPrerequisitePath VerificationCommandFailing When IncomingMessageReceived Then StatusIsNotOk
+    /// Given VerifyPrerequisitePath when VerificationCommandFailingIncomingMessageReceived Then StatusIsNotOk
         /// </summary>
         [TestMethod]
-    public void Given_VerifyPrerequisitePath_VerificationCommandFailing_When_IncomingMessageReceived_Then_StatusIsNotOk()
+    public void Given_VerifyPrerequisitePath_when_VerificationCommandFailingIncomingMessageReceived_Then_StatusIsNotOk()
         {
             m_converter.Close();
             m_connectionManager.Close();
@@ -204,10 +204,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
 
         /// <summary>
-    /// Given VerifyPrerequisitePath VerifyPrerequisiteMessage When IncomingMessageReceived Then OnCommandHandledFiredOnce
+    /// Given VerifyPrerequisitePath when VerifyPrerequisiteMessageIncomingMessageReceived Then OnCommandHandledFiredOnce
         /// </summary>
         [TestMethod]
-        public void Given_VerifyPrerequisitePath_VerifyPrerequisiteMessage_When_IncomingMessageReceived_Then_OnCommandHandledFiredOnce()
+        public void Given_VerifyPrerequisitePath_when_VerifyPrerequisiteMessageIncomingMessageReceived_Then_OnCommandHandledFiredOnce()
         {
             int eventCount = 0;
             m_blm.ActionReplyEvent.OnCommandHandled += (s, e) => eventCount++;
@@ -218,10 +218,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
 
         /// <summary>
-    /// Given VerifyPrerequisitePath VerifyPrerequisiteMessage When IncomingMessageReceived Then EventArgsIsCorrectType
+    /// Given VerifyPrerequisitePath when VerifyPrerequisiteMessageIncomingMessageReceived Then EventArgsIsCorrectType
         /// </summary>
         [TestMethod]
-        public void Given_VerifyPrerequisitePath_VerifyPrerequisiteMessage_When_IncomingMessageReceived_Then_EventArgsIsCorrectType()
+        public void Given_VerifyPrerequisitePath_when_VerifyPrerequisiteMessageIncomingMessageReceived_Then_EventArgsIsCorrectType()
         {
             System.EventArgs? capturedArgs = null;
             m_blm.ActionReplyEvent.OnCommandHandled += (s, e) => capturedArgs = e;
@@ -232,10 +232,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
 
         /// <summary>
-    /// Given VerifyPrerequisitePath VerifyPrerequisiteMessage When IncomingMessageReceived Then LogInfoCalledAtLeastOnce
+    /// Given VerifyPrerequisitePath when VerifyPrerequisiteMessageIncomingMessageReceived Then LogInfoCalledAtLeastOnce
         /// </summary>
         [TestMethod]
-        public void Given_VerifyPrerequisitePath_VerifyPrerequisiteMessage_When_IncomingMessageReceived_Then_LogInfoCalledAtLeastOnce()
+        public void Given_VerifyPrerequisitePath_when_VerifyPrerequisiteMessageIncomingMessageReceived_Then_LogInfoCalledAtLeastOnce()
         {
             SimulateIncoming("VerifyInstallationPrerequisite", "{}");
 
@@ -247,10 +247,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         // ─────────────────────────────────────────────────────────────────────────
 
         /// <summary>
-        /// Given InstallSoftwarePath InstallSoftwareMessage When IncomingMessageReceived Then NoReplyIsSent
+        /// Given InstallSoftwarePath when InstallSoftwareMessageIncomingMessageReceived Then NoReplyIsSent
         /// </summary>
         [TestMethod]
-        public void Given_InstallSoftwarePath_InstallSoftwareMessage_When_IncomingMessageReceived_Then_NoReplyIsSent()
+        public void Given_InstallSoftwarePath_when_InstallSoftwareMessageIncomingMessageReceived_Then_NoReplyIsSent()
         {
             SimulateIncoming("InstallSoftware", "{}");
 
@@ -258,10 +258,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
 
         /// <summary>
-    /// Given InstallSoftwarePath InstallSoftwareMessage When IncomingMessageReceived Then NoInstallReplyActionIsSent
+    /// Given InstallSoftwarePath when InstallSoftwareMessageIncomingMessageReceived Then NoInstallReplyActionIsSent
         /// </summary>
         [TestMethod]
-        public void Given_InstallSoftwarePath_InstallSoftwareMessage_When_IncomingMessageReceived_Then_NoInstallReplyActionIsSent()
+        public void Given_InstallSoftwarePath_when_InstallSoftwareMessageIncomingMessageReceived_Then_NoInstallReplyActionIsSent()
         {
             SimulateIncoming("InstallSoftware", "{}");
 
@@ -269,10 +269,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
 
         /// <summary>
-    /// Given InstallSoftwarePath InstallSoftwareMessage When IncomingMessageReceived Then NoInstallPayloadIsSent
+    /// Given InstallSoftwarePath when InstallSoftwareMessageIncomingMessageReceived Then NoInstallPayloadIsSent
         /// </summary>
         [TestMethod]
-        public void Given_InstallSoftwarePath_InstallSoftwareMessage_When_IncomingMessageReceived_Then_NoInstallPayloadIsSent()
+        public void Given_InstallSoftwarePath_when_InstallSoftwareMessageIncomingMessageReceived_Then_NoInstallPayloadIsSent()
         {
             SimulateIncoming("InstallSoftware", "{}");
 
@@ -280,10 +280,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
 
         /// <summary>
-    /// Given InstallSoftwarePath InstallationCommandFailing When IncomingMessageReceived Then NoInstallPayloadIsSent
+    /// Given InstallSoftwarePath when InstallationCommandFailingIncomingMessageReceived Then NoInstallPayloadIsSent
         /// </summary>
         [TestMethod]
-    public void Given_InstallSoftwarePath_InstallationCommandFailing_When_IncomingMessageReceived_Then_NoInstallPayloadIsSent()
+    public void Given_InstallSoftwarePath_when_InstallationCommandFailingIncomingMessageReceived_Then_NoInstallPayloadIsSent()
         {
             m_converter.Close();
             m_connectionManager.Close();
@@ -308,10 +308,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
 
         /// <summary>
-    /// Given InstallSoftwarePath InstallSoftwareMessage When IncomingMessageReceived Then OnCommandHandledFiredOnce
+    /// Given InstallSoftwarePath when InstallSoftwareMessageIncomingMessageReceived Then OnCommandHandledFiredOnce
         /// </summary>
         [TestMethod]
-        public void Given_InstallSoftwarePath_InstallSoftwareMessage_When_IncomingMessageReceived_Then_OnCommandHandledFiredOnce()
+        public void Given_InstallSoftwarePath_when_InstallSoftwareMessageIncomingMessageReceived_Then_OnCommandHandledFiredOnce()
         {
             int eventCount = 0;
             m_blm.ActionReplyEvent.OnCommandHandled += (s, e) => eventCount++;
@@ -322,10 +322,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
 
         /// <summary>
-    /// Given InstallSoftwarePath InstallSoftwareMessage When IncomingMessageReceived Then EventArgsIsCorrectType
+    /// Given InstallSoftwarePath when InstallSoftwareMessageIncomingMessageReceived Then EventArgsIsCorrectType
         /// </summary>
         [TestMethod]
-        public void Given_InstallSoftwarePath_InstallSoftwareMessage_When_IncomingMessageReceived_Then_EventArgsIsCorrectType()
+        public void Given_InstallSoftwarePath_when_InstallSoftwareMessageIncomingMessageReceived_Then_EventArgsIsCorrectType()
         {
             System.EventArgs? capturedArgs = null;
             m_blm.ActionReplyEvent.OnCommandHandled += (s, e) => capturedArgs = e;
@@ -336,10 +336,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
 
         /// <summary>
-    /// Given InstallSoftwarePath InstallSoftwareMessage When IncomingMessageReceived Then LogInfoCalledAtLeastOnce
+    /// Given InstallSoftwarePath when InstallSoftwareMessageIncomingMessageReceived Then LogInfoCalledAtLeastOnce
         /// </summary>
         [TestMethod]
-        public void Given_InstallSoftwarePath_InstallSoftwareMessage_When_IncomingMessageReceived_Then_LogInfoCalledAtLeastOnce()
+        public void Given_InstallSoftwarePath_when_InstallSoftwareMessageIncomingMessageReceived_Then_LogInfoCalledAtLeastOnce()
         {
             SimulateIncoming("InstallSoftware", "{}");
 
@@ -351,10 +351,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         // ─────────────────────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given CloseAppPath CloseAppMessage When IncomingMessageReceived Then OnCommandHandledFiredOnce
+    /// Given CloseAppPath when CloseAppMessageIncomingMessageReceived Then OnCommandHandledFiredOnce
         /// </summary>
         [TestMethod]
-        public void Given_CloseAppPath_CloseAppMessage_When_IncomingMessageReceived_Then_OnCommandHandledFiredOnce()
+        public void Given_CloseAppPath_when_CloseAppMessageIncomingMessageReceived_Then_OnCommandHandledFiredOnce()
         {
             int eventCount = 0;
             m_blm.ActionReplyEvent.OnCommandHandled += (s, e) => eventCount++;
@@ -365,10 +365,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
 
         /// <summary>
-    /// Given CloseAppPath CloseAppMessage When IncomingMessageReceived Then EventArgsIsCorrectType
+    /// Given CloseAppPath when CloseAppMessageIncomingMessageReceived Then EventArgsIsCorrectType
         /// </summary>
         [TestMethod]
-        public void Given_CloseAppPath_CloseAppMessage_When_IncomingMessageReceived_Then_EventArgsIsCorrectType()
+        public void Given_CloseAppPath_when_CloseAppMessageIncomingMessageReceived_Then_EventArgsIsCorrectType()
         {
             System.EventArgs? capturedArgs = null;
             m_blm.ActionReplyEvent.OnCommandHandled += (s, e) => capturedArgs = e;
@@ -379,10 +379,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
 
         /// <summary>
-    /// Given CloseAppPath CloseAppMessage When IncomingMessageReceived Then LogInfoCalledAtLeastOnce
+    /// Given CloseAppPath when CloseAppMessageIncomingMessageReceived Then LogInfoCalledAtLeastOnce
         /// </summary>
         [TestMethod]
-        public void Given_CloseAppPath_CloseAppMessage_When_IncomingMessageReceived_Then_LogInfoCalledAtLeastOnce()
+        public void Given_CloseAppPath_when_CloseAppMessageIncomingMessageReceived_Then_LogInfoCalledAtLeastOnce()
         {
             SimulateIncoming("CloseApp", "{}");
 
@@ -524,10 +524,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         // ─────────────────────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given ErrorHandlingPath MalformedRawJson When IncomingMessageReceived Then NoReplyAndNoExceptionThrown
+    /// Given ErrorHandlingPath when MalformedRawJsonIncomingMessageReceived Then NoReplyAndNoExceptionThrown
         /// </summary>
         [TestMethod]
-        public void Given_ErrorHandlingPath_MalformedRawJson_When_IncomingMessageReceived_Then_NoReplyAndNoExceptionThrown()
+        public void Given_ErrorHandlingPath_when_MalformedRawJsonIncomingMessageReceived_Then_NoReplyAndNoExceptionThrown()
         {
             bool threw = false;
             try { SimulateRaw("THIS IS NOT JSON"); } catch { threw = true; }
@@ -537,10 +537,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
 
         /// <summary>
-    /// Given ErrorHandlingPath MalformedRawJson When IncomingMessageReceived Then LogErrorIsCalled
+    /// Given ErrorHandlingPath when MalformedRawJsonIncomingMessageReceived Then LogErrorIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_ErrorHandlingPath_MalformedRawJson_When_IncomingMessageReceived_Then_LogErrorIsCalled()
+        public void Given_ErrorHandlingPath_when_MalformedRawJsonIncomingMessageReceived_Then_LogErrorIsCalled()
         {
             SimulateRaw("NOT JSON");
 
@@ -548,10 +548,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
 
         /// <summary>
-    /// Given ErrorHandlingPath UnknownAction When IncomingMessageReceived Then NoReplySent
+    /// Given ErrorHandlingPath when UnknownActionIncomingMessageReceived Then NoReplySent
         /// </summary>
         [TestMethod]
-        public void Given_ErrorHandlingPath_UnknownAction_When_IncomingMessageReceived_Then_NoReplySent()
+        public void Given_ErrorHandlingPath_when_UnknownActionIncomingMessageReceived_Then_NoReplySent()
         {
             SimulateIncoming("SomeUnknownAction", "{}");
 
@@ -559,10 +559,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
 
         /// <summary>
-    /// Given ErrorHandlingPath UnknownAction When IncomingMessageReceived Then LogWarnIsCalledAtLeastOnce
+    /// Given ErrorHandlingPath when UnknownActionIncomingMessageReceived Then LogWarnIsCalledAtLeastOnce
         /// </summary>
         [TestMethod]
-        public void Given_ErrorHandlingPath_UnknownAction_When_IncomingMessageReceived_Then_LogWarnIsCalledAtLeastOnce()
+        public void Given_ErrorHandlingPath_when_UnknownActionIncomingMessageReceived_Then_LogWarnIsCalledAtLeastOnce()
         {
             SimulateIncoming("SomeUnknownAction", "{}");
 
@@ -570,10 +570,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
 
         /// <summary>
-    /// Given ErrorHandlingPath EmptyActionName When IncomingMessageReceived Then NoReplySent
+    /// Given ErrorHandlingPath when EmptyActionNameIncomingMessageReceived Then NoReplySent
         /// </summary>
         [TestMethod]
-        public void Given_ErrorHandlingPath_EmptyActionName_When_IncomingMessageReceived_Then_NoReplySent()
+        public void Given_ErrorHandlingPath_when_EmptyActionNameIncomingMessageReceived_Then_NoReplySent()
         {
             SimulateIncoming(string.Empty, "{}");
 
@@ -581,10 +581,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
 
         /// <summary>
-    /// Given ErrorHandlingPath MalformedLogMessagePayload When IncomingMessageReceived Then NoReplySent
+    /// Given ErrorHandlingPath when MalformedLogMessagePayloadIncomingMessageReceived Then NoReplySent
         /// </summary>
         [TestMethod]
-        public void Given_ErrorHandlingPath_MalformedLogMessagePayload_When_IncomingMessageReceived_Then_NoReplySent()
+        public void Given_ErrorHandlingPath_when_MalformedLogMessagePayloadIncomingMessageReceived_Then_NoReplySent()
         {
             // JSON is valid at the wire level but LogMessage payload is invalid JSON
             SimulateIncoming("LogMessage", "\"not_an_object\"");
@@ -593,10 +593,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
 
         /// <summary>
-    /// Given ErrorHandlingPath JsonMissingCallContext When IncomingMessageReceived Then NoReplyAndNoException
+    /// Given ErrorHandlingPath when JsonMissingCallContextIncomingMessageReceived Then NoReplyAndNoException
         /// </summary>
         [TestMethod]
-        public void Given_ErrorHandlingPath_JsonMissingCallContext_When_IncomingMessageReceived_Then_NoReplyAndNoException()
+        public void Given_ErrorHandlingPath_when_JsonMissingCallContextIncomingMessageReceived_Then_NoReplyAndNoException()
         {
             bool threw = false;
             try { SimulateRaw("{\"Payload\":{}}"); } catch { threw = true; }
@@ -668,10 +668,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         // ─────────────────────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given DataIntegrityPath ValidLogMessage When IncomingMessageReceived Then MessageTextPreservedInLogFile
+    /// Given DataIntegrityPath when ValidLogMessageIncomingMessageReceived Then MessageTextPreservedInLogFile
         /// </summary>
         [TestMethod]
-        public void Given_DataIntegrityPath_ValidLogMessage_When_IncomingMessageReceived_Then_MessageTextPreservedInLogFile()
+        public void Given_DataIntegrityPath_when_ValidLogMessageIncomingMessageReceived_Then_MessageTextPreservedInLogFile()
         {
             string tempFolder = System.IO.Path.Combine(
                 System.IO.Path.GetTempPath(), "PmsLogTest_" + Guid.NewGuid().ToString("N"));
@@ -706,10 +706,10 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
 
         /// <summary>
-    /// Given DataIntegrityPath ValidLogMessage When IncomingMessageReceived Then TimestampPreservedInLogFile
+    /// Given DataIntegrityPath when ValidLogMessageIncomingMessageReceived Then TimestampPreservedInLogFile
         /// </summary>
         [TestMethod]
-        public void Given_DataIntegrityPath_ValidLogMessage_When_IncomingMessageReceived_Then_TimestampPreservedInLogFile()
+        public void Given_DataIntegrityPath_when_ValidLogMessageIncomingMessageReceived_Then_TimestampPreservedInLogFile()
         {
             string tempFolder = System.IO.Path.Combine(
                 System.IO.Path.GetTempPath(), "PmsLogTest_" + Guid.NewGuid().ToString("N"));
@@ -783,5 +783,6 @@ namespace Pms_GuidanceGUI.Tests.Component
         }
     }
 }
+
 
 

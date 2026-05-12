@@ -1,0 +1,31 @@
+---
+description: graphify knowledge graph context
+alwaysApply: true
+---
+
+This project has a graphify knowledge graph at graphify-out/.
+
+- Before answering architecture or codebase questions, read graphify-out/GRAPH_REPORT.md for god nodes and community structure
+- If graphify-out/wiki/index.md exists, navigate it instead of reading raw files
+- After modifying code files in this session, run `graphify update .` to keep the graph current (AST-only, no API cost)
+
+## Per-package graphs
+
+This repo uses package-level graphs. Per-package GRAPH_REPORT.md files are at:
+graphify-out/<package>/GRAPH_REPORT.md
+
+Packages: BusinessLogicModule, ConfigurationModule, ConnectionModule,
+ConverterModule, Infrastructure, LoggingModule, Pms_GuidanceGUI.exe,
+Pms_GuidanceGUI.Tests, Upgrade
+
+Prefer the package-specific report when working inside a single module.
+Use `python -m graphify query "<q>" --graph graphify-out/<pkg>/graph.json` for deep queries.
+For cross-module questions, use the merged graph: `graphify-out/merged.json`
+Rebuild: `bash scripts/graphify.sh PKG=<name>` or `.\scripts\Invoke-Graphify.ps1 -Package <name>`
+Merge only: `bash scripts/graphify.sh --merge-only` or `.\scripts\Invoke-Graphify.ps1 -MergeOnly`
+
+## MCP server
+
+An MCP server is configured in `.mcp.json` (server: `graphify`).
+Tools available: `query_graph`, `get_node`, `get_neighbors`, `shortest_path`
+Start: `python -m graphify.serve graphify-out/merged.json` or `make graphify-mcp`

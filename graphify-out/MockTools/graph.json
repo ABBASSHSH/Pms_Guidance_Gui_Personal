@@ -1,0 +1,19 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "Program.cs",
+      "file_type": "code",
+      "source_file": "Program.cs",
+      "source_location": "L1",
+      "id": "program_cs",
+      "community": 0,
+      "norm_label": "program.cs"
+    }
+  ],
+  "links": [],
+  "hyperedges": [],
+  "built_at_commit": "9d5b08a54acd5ef99a5b1e419e072620f294ecae"
+}

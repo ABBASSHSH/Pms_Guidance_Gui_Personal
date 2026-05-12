@@ -1,0 +1,487 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "AppLoggersetup.cs",
+      "file_type": "code",
+      "source_file": "AppLoggersetup.cs",
+      "source_location": "L1",
+      "id": "apploggersetup_cs",
+      "community": 2,
+      "norm_label": "apploggersetup.cs"
+    },
+    {
+      "label": "LoggingModule",
+      "file_type": "code",
+      "source_file": "AppLoggersetup.cs",
+      "source_location": "L21",
+      "id": "loggingmodule_apploggersetup_loggingmodule",
+      "community": 2,
+      "norm_label": "loggingmodule"
+    },
+    {
+      "label": "AppLoggerSetup",
+      "file_type": "code",
+      "source_file": "AppLoggersetup.cs",
+      "source_location": "L34",
+      "id": "loggingmodule_apploggersetup_apploggersetup",
+      "community": 2,
+      "norm_label": "apploggersetup"
+    },
+    {
+      "label": ".Create()",
+      "file_type": "code",
+      "source_file": "AppLoggersetup.cs",
+      "source_location": "L48",
+      "id": "loggingmodule_apploggersetup_apploggersetup_create",
+      "community": 2,
+      "norm_label": ".create()"
+    },
+    {
+      "label": "FileLogWriter.cs",
+      "file_type": "code",
+      "source_file": "FileLogWriter.cs",
+      "source_location": "L1",
+      "id": "filelogwriter_cs",
+      "community": 1,
+      "norm_label": "filelogwriter.cs"
+    },
+    {
+      "label": "LoggingModule",
+      "file_type": "code",
+      "source_file": "FileLogWriter.cs",
+      "source_location": "L24",
+      "id": "loggingmodule_filelogwriter_loggingmodule",
+      "community": 1,
+      "norm_label": "loggingmodule"
+    },
+    {
+      "label": "FileLogWriter",
+      "file_type": "code",
+      "source_file": "FileLogWriter.cs",
+      "source_location": "L32",
+      "id": "loggingmodule_filelogwriter_filelogwriter",
+      "community": 1,
+      "norm_label": "filelogwriter"
+    },
+    {
+      "label": "ILogWriter",
+      "file_type": "code",
+      "source_file": "SourceLogger.cs",
+      "source_location": "L74",
+      "id": "ilogwriter",
+      "community": 1,
+      "norm_label": "ilogwriter"
+    },
+    {
+      "label": ".Write()",
+      "file_type": "code",
+      "source_file": "FileLogWriter.cs",
+      "source_location": "L68",
+      "id": "loggingmodule_filelogwriter_filelogwriter_write",
+      "community": 1,
+      "norm_label": ".write()"
+    },
+    {
+      "label": "string",
+      "file_type": "code",
+      "source_file": "FileLogWriter.cs",
+      "source_location": "L80",
+      "id": "string",
+      "community": 1,
+      "norm_label": "string"
+    },
+    {
+      "label": "object",
+      "file_type": "code",
+      "source_file": "FileLogWriter.cs",
+      "source_location": "L81",
+      "id": "object",
+      "community": 1,
+      "norm_label": "object"
+    },
+    {
+      "label": "ILogWriter.cs",
+      "file_type": "code",
+      "source_file": "ILogWriter.cs",
+      "source_location": "L1",
+      "id": "ilogwriter_cs",
+      "community": 3,
+      "norm_label": "ilogwriter.cs"
+    },
+    {
+      "label": "LoggingModule",
+      "file_type": "code",
+      "source_file": "ILogWriter.cs",
+      "source_location": "L20",
+      "id": "loggingmodule_ilogwriter_loggingmodule",
+      "community": 3,
+      "norm_label": "loggingmodule"
+    },
+    {
+      "label": "ILogWriter",
+      "file_type": "code",
+      "source_file": "ILogWriter.cs",
+      "source_location": "L32",
+      "id": "loggingmodule_ilogwriter_ilogwriter",
+      "community": 3,
+      "norm_label": "ilogwriter"
+    },
+    {
+      "label": ".Write()",
+      "file_type": "code",
+      "source_file": "ILogWriter.cs",
+      "source_location": "L38",
+      "id": "loggingmodule_ilogwriter_ilogwriter_write",
+      "community": 3,
+      "norm_label": ".write()"
+    },
+    {
+      "label": "LogEntryFormatter.cs",
+      "file_type": "code",
+      "source_file": "LogEntryFormatter.cs",
+      "source_location": "L1",
+      "id": "logentryformatter_cs",
+      "community": 4,
+      "norm_label": "logentryformatter.cs"
+    },
+    {
+      "label": "LoggingModule",
+      "file_type": "code",
+      "source_file": "LogEntryFormatter.cs",
+      "source_location": "L22",
+      "id": "loggingmodule_logentryformatter_loggingmodule",
+      "community": 4,
+      "norm_label": "loggingmodule"
+    },
+    {
+      "label": "LogEntryFormatter",
+      "file_type": "code",
+      "source_file": "LogEntryFormatter.cs",
+      "source_location": "L40",
+      "id": "loggingmodule_logentryformatter_logentryformatter",
+      "community": 4,
+      "norm_label": "logentryformatter"
+    },
+    {
+      "label": ".FormatLogMessage()",
+      "file_type": "code",
+      "source_file": "LogEntryFormatter.cs",
+      "source_location": "L48",
+      "id": "loggingmodule_logentryformatter_logentryformatter_formatlogmessage",
+      "community": 4,
+      "norm_label": ".formatlogmessage()"
+    },
+    {
+      "label": "SourceLogger.cs",
+      "file_type": "code",
+      "source_file": "SourceLogger.cs",
+      "source_location": "L1",
+      "id": "sourcelogger_cs",
+      "community": 0,
+      "norm_label": "sourcelogger.cs"
+    },
+    {
+      "label": "LoggingModule",
+      "file_type": "code",
+      "source_file": "SourceLogger.cs",
+      "source_location": "L24",
+      "id": "loggingmodule_sourcelogger_loggingmodule",
+      "community": 0,
+      "norm_label": "loggingmodule"
+    },
+    {
+      "label": "SourceLogger",
+      "file_type": "code",
+      "source_file": "SourceLogger.cs",
+      "source_location": "L37",
+      "id": "loggingmodule_sourcelogger_sourcelogger",
+      "community": 0,
+      "norm_label": "sourcelogger"
+    },
+    {
+      "label": "ILogger",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "ilogger",
+      "community": 0,
+      "norm_label": "ilogger"
+    },
+    {
+      "label": ".LogInfo()",
+      "file_type": "code",
+      "source_file": "SourceLogger.cs",
+      "source_location": "L55",
+      "id": "loggingmodule_sourcelogger_sourcelogger_loginfo",
+      "community": 0,
+      "norm_label": ".loginfo()"
+    },
+    {
+      "label": ".LogDebug()",
+      "file_type": "code",
+      "source_file": "SourceLogger.cs",
+      "source_location": "L59",
+      "id": "loggingmodule_sourcelogger_sourcelogger_logdebug",
+      "community": 0,
+      "norm_label": ".logdebug()"
+    },
+    {
+      "label": ".LogWarn()",
+      "file_type": "code",
+      "source_file": "SourceLogger.cs",
+      "source_location": "L63",
+      "id": "loggingmodule_sourcelogger_sourcelogger_logwarn",
+      "community": 0,
+      "norm_label": ".logwarn()"
+    },
+    {
+      "label": ".LogError()",
+      "file_type": "code",
+      "source_file": "SourceLogger.cs",
+      "source_location": "L67",
+      "id": "loggingmodule_sourcelogger_sourcelogger_logerror",
+      "community": 0,
+      "norm_label": ".logerror()"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AppLoggersetup.cs",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "apploggersetup_cs",
+      "target": "loggingmodule_apploggersetup_loggingmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AppLoggersetup.cs",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "apploggersetup_cs",
+      "target": "loggingmodule_apploggersetup_apploggersetup"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "AppLoggersetup.cs",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "loggingmodule_apploggersetup_apploggersetup",
+      "target": "loggingmodule_apploggersetup_apploggersetup_create"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "FileLogWriter.cs",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "filelogwriter_cs",
+      "target": "loggingmodule_filelogwriter_loggingmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "FileLogWriter.cs",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "filelogwriter_cs",
+      "target": "loggingmodule_filelogwriter_filelogwriter"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "FileLogWriter.cs",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "loggingmodule_filelogwriter_filelogwriter",
+      "target": "ilogwriter"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "FileLogWriter.cs",
+      "source_location": "L68",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "loggingmodule_filelogwriter_filelogwriter",
+      "target": "loggingmodule_filelogwriter_filelogwriter_write"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "FileLogWriter.cs",
+      "source_location": "L80",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "loggingmodule_filelogwriter_filelogwriter",
+      "target": "string"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "FileLogWriter.cs",
+      "source_location": "L81",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "loggingmodule_filelogwriter_filelogwriter",
+      "target": "object"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "SourceLogger.cs",
+      "source_location": "L74",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "loggingmodule_sourcelogger_sourcelogger",
+      "target": "ilogwriter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ILogWriter.cs",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ilogwriter_cs",
+      "target": "loggingmodule_ilogwriter_loggingmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ILogWriter.cs",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ilogwriter_cs",
+      "target": "loggingmodule_ilogwriter_ilogwriter"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ILogWriter.cs",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "loggingmodule_ilogwriter_ilogwriter",
+      "target": "loggingmodule_ilogwriter_ilogwriter_write"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "LogEntryFormatter.cs",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "logentryformatter_cs",
+      "target": "loggingmodule_logentryformatter_loggingmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "LogEntryFormatter.cs",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "logentryformatter_cs",
+      "target": "loggingmodule_logentryformatter_logentryformatter"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "LogEntryFormatter.cs",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "loggingmodule_logentryformatter_logentryformatter",
+      "target": "loggingmodule_logentryformatter_logentryformatter_formatlogmessage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SourceLogger.cs",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sourcelogger_cs",
+      "target": "loggingmodule_sourcelogger_loggingmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SourceLogger.cs",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sourcelogger_cs",
+      "target": "loggingmodule_sourcelogger_sourcelogger"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "SourceLogger.cs",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "loggingmodule_sourcelogger_sourcelogger",
+      "target": "ilogger"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "SourceLogger.cs",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "loggingmodule_sourcelogger_sourcelogger",
+      "target": "loggingmodule_sourcelogger_sourcelogger_loginfo"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "SourceLogger.cs",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "loggingmodule_sourcelogger_sourcelogger",
+      "target": "loggingmodule_sourcelogger_sourcelogger_logdebug"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "SourceLogger.cs",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "loggingmodule_sourcelogger_sourcelogger",
+      "target": "loggingmodule_sourcelogger_sourcelogger_logwarn"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "SourceLogger.cs",
+      "source_location": "L67",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "loggingmodule_sourcelogger_sourcelogger",
+      "target": "loggingmodule_sourcelogger_sourcelogger_logerror"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "9d5b08a54acd5ef99a5b1e419e072620f294ecae"
+}

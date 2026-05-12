@@ -1,0 +1,447 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "GuidanceConfigurationProvider.cs",
+      "file_type": "code",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L1",
+      "id": "guidanceconfigurationprovider_cs",
+      "community": 2,
+      "norm_label": "guidanceconfigurationprovider.cs"
+    },
+    {
+      "label": "ConfigurationModule",
+      "file_type": "code",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L26",
+      "id": "configurationmodule_guidanceconfigurationprovider_configurationmodule",
+      "community": 2,
+      "norm_label": "configurationmodule"
+    },
+    {
+      "label": "GuidanceConfigurationProvider",
+      "file_type": "code",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L42",
+      "id": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider",
+      "community": 0,
+      "norm_label": "guidanceconfigurationprovider"
+    },
+    {
+      "label": "IConfigurationProvider",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "iconfigurationprovider",
+      "community": 0,
+      "norm_label": "iconfigurationprovider"
+    },
+    {
+      "label": "ILifeCycle",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "ilifecycle",
+      "community": 1,
+      "norm_label": "ilifecycle"
+    },
+    {
+      "label": ".GetVerificationCommand()",
+      "file_type": "code",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L47",
+      "id": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider_getverificationcommand",
+      "community": 0,
+      "norm_label": ".getverificationcommand()"
+    },
+    {
+      "label": ".GetInstallationCommand()",
+      "file_type": "code",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L53",
+      "id": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider_getinstallationcommand",
+      "community": 0,
+      "norm_label": ".getinstallationcommand()"
+    },
+    {
+      "label": ".Open()",
+      "file_type": "code",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L90",
+      "id": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider_open",
+      "community": 0,
+      "norm_label": ".open()"
+    },
+    {
+      "label": ".Close()",
+      "file_type": "code",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L116",
+      "id": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider_close",
+      "community": 0,
+      "norm_label": ".close()"
+    },
+    {
+      "label": ".GetValue()",
+      "file_type": "code",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L123",
+      "id": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider_getvalue",
+      "community": 0,
+      "norm_label": ".getvalue()"
+    },
+    {
+      "label": ".GetAll()",
+      "file_type": "code",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L130",
+      "id": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider_getall",
+      "community": 0,
+      "norm_label": ".getall()"
+    },
+    {
+      "label": "string",
+      "file_type": "code",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L139",
+      "id": "string",
+      "community": 0,
+      "norm_label": "string"
+    },
+    {
+      "label": "ILogger",
+      "file_type": "code",
+      "source_file": "SystemLanguageProvider.cs",
+      "source_location": "L78",
+      "id": "ilogger",
+      "community": 1,
+      "norm_label": "ilogger"
+    },
+    {
+      "label": "Dictionary",
+      "file_type": "code",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L144",
+      "id": "dictionary",
+      "community": 0,
+      "norm_label": "dictionary"
+    },
+    {
+      "label": "SystemLanguageProvider.cs",
+      "file_type": "code",
+      "source_file": "SystemLanguageProvider.cs",
+      "source_location": "L1",
+      "id": "systemlanguageprovider_cs",
+      "community": 3,
+      "norm_label": "systemlanguageprovider.cs"
+    },
+    {
+      "label": "ConfigurationModule",
+      "file_type": "code",
+      "source_file": "SystemLanguageProvider.cs",
+      "source_location": "L22",
+      "id": "configurationmodule_systemlanguageprovider_configurationmodule",
+      "community": 3,
+      "norm_label": "configurationmodule"
+    },
+    {
+      "label": "SystemLanguageProvider",
+      "file_type": "code",
+      "source_file": "SystemLanguageProvider.cs",
+      "source_location": "L31",
+      "id": "configurationmodule_systemlanguageprovider_systemlanguageprovider",
+      "community": 1,
+      "norm_label": "systemlanguageprovider"
+    },
+    {
+      "label": "ISystemLanguageProvider",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "isystemlanguageprovider",
+      "community": 1,
+      "norm_label": "isystemlanguageprovider"
+    },
+    {
+      "label": ".FetchSystemLanguage()",
+      "file_type": "code",
+      "source_file": "SystemLanguageProvider.cs",
+      "source_location": "L52",
+      "id": "configurationmodule_systemlanguageprovider_systemlanguageprovider_fetchsystemlanguage",
+      "community": 1,
+      "norm_label": ".fetchsystemlanguage()"
+    },
+    {
+      "label": ".Open()",
+      "file_type": "code",
+      "source_file": "SystemLanguageProvider.cs",
+      "source_location": "L60",
+      "id": "configurationmodule_systemlanguageprovider_systemlanguageprovider_open",
+      "community": 1,
+      "norm_label": ".open()"
+    },
+    {
+      "label": ".Close()",
+      "file_type": "code",
+      "source_file": "SystemLanguageProvider.cs",
+      "source_location": "L69",
+      "id": "configurationmodule_systemlanguageprovider_systemlanguageprovider_close",
+      "community": 1,
+      "norm_label": ".close()"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "guidanceconfigurationprovider_cs",
+      "target": "configurationmodule_guidanceconfigurationprovider_configurationmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L42",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "guidanceconfigurationprovider_cs",
+      "target": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L42",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider",
+      "target": "iconfigurationprovider"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L42",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider",
+      "target": "ilifecycle"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider",
+      "target": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider_getverificationcommand"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L53",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider",
+      "target": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider_getinstallationcommand"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L90",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider",
+      "target": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider_open"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L116",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider",
+      "target": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider_close"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L123",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider",
+      "target": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider_getvalue"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L130",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider",
+      "target": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider_getall"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L142",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider",
+      "target": "string"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L143",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider",
+      "target": "ilogger"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L144",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider",
+      "target": "dictionary"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "SystemLanguageProvider.cs",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "configurationmodule_systemlanguageprovider_systemlanguageprovider",
+      "target": "ilifecycle"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider_getverificationcommand",
+      "target": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider_getvalue"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "GuidanceConfigurationProvider.cs",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider_getinstallationcommand",
+      "target": "configurationmodule_guidanceconfigurationprovider_guidanceconfigurationprovider_getvalue"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "SystemLanguageProvider.cs",
+      "source_location": "L78",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "configurationmodule_systemlanguageprovider_systemlanguageprovider",
+      "target": "ilogger"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SystemLanguageProvider.cs",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "systemlanguageprovider_cs",
+      "target": "configurationmodule_systemlanguageprovider_configurationmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SystemLanguageProvider.cs",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "systemlanguageprovider_cs",
+      "target": "configurationmodule_systemlanguageprovider_systemlanguageprovider"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "SystemLanguageProvider.cs",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "configurationmodule_systemlanguageprovider_systemlanguageprovider",
+      "target": "isystemlanguageprovider"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "SystemLanguageProvider.cs",
+      "source_location": "L52",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "configurationmodule_systemlanguageprovider_systemlanguageprovider",
+      "target": "configurationmodule_systemlanguageprovider_systemlanguageprovider_fetchsystemlanguage"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "SystemLanguageProvider.cs",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "configurationmodule_systemlanguageprovider_systemlanguageprovider",
+      "target": "configurationmodule_systemlanguageprovider_systemlanguageprovider_open"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "SystemLanguageProvider.cs",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "configurationmodule_systemlanguageprovider_systemlanguageprovider",
+      "target": "configurationmodule_systemlanguageprovider_systemlanguageprovider_close"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "SystemLanguageProvider.cs",
+      "source_location": "L62",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "configurationmodule_systemlanguageprovider_systemlanguageprovider_open",
+      "target": "configurationmodule_systemlanguageprovider_systemlanguageprovider_fetchsystemlanguage"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "9d5b08a54acd5ef99a5b1e419e072620f294ecae"
+}

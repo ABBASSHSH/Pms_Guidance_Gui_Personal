@@ -33,10 +33,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Constructor guards ────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given SystemLanguageProvider NullLogger When Constructed Then ThrowsArgumentNullException
+    /// Given SystemLanguageProvider When NullLoggerConstructed Then ThrowsArgumentNullException
         /// </summary>
         [TestMethod]
-        public void Given_SystemLanguageProvider_NullLogger_When_Constructed_Then_ThrowsArgumentNullException()
+        public void Given_SystemLanguageProvider_When_NullLoggerConstructed_Then_ThrowsArgumentNullException()
         {
             Assert.ThrowsException<ArgumentNullException>(
                 () => new SystemLanguageProvider(null!));
@@ -45,10 +45,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Open ─────────────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given SystemLanguageProvider ValidLogger When OpenCalled Then LogInfoIsCalledWithLanguageName
+    /// Given SystemLanguageProvider When ValidLoggerOpenCalled Then LogInfoIsCalledWithLanguageName
         /// </summary>
         [TestMethod]
-        public void Given_SystemLanguageProvider_ValidLogger_When_OpenCalled_Then_LogInfoIsCalledWithLanguageName()
+        public void Given_SystemLanguageProvider_When_ValidLoggerOpenCalled_Then_LogInfoIsCalledWithLanguageName()
         {
             var mockLogger = new Mock<ILogger>();
             var provider   = new SystemLanguageProvider(mockLogger.Object);
@@ -61,10 +61,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given SystemLanguageProvider ValidLogger When OpenCalled Then LoggedMessageContainsDetectedLanguage
+    /// Given SystemLanguageProvider When ValidLoggerOpenCalled Then LoggedMessageContainsDetectedLanguage
         /// </summary>
         [TestMethod]
-        public void Given_SystemLanguageProvider_ValidLogger_When_OpenCalled_Then_LoggedMessageContainsDetectedLanguage()
+        public void Given_SystemLanguageProvider_When_ValidLoggerOpenCalled_Then_LoggedMessageContainsDetectedLanguage()
         {
             string? loggedMessage = null;
             var mockLogger = new Mock<ILogger>();
@@ -80,10 +80,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Close ────────────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given SystemLanguageProvider ValidProvider When CloseCalled Then NoExceptionThrown
+    /// Given SystemLanguageProvider When ValidProviderCloseCalled Then NoExceptionThrown
         /// </summary>
         [TestMethod]
-        public void Given_SystemLanguageProvider_ValidProvider_When_CloseCalled_Then_NoExceptionThrown()
+        public void Given_SystemLanguageProvider_When_ValidProviderCloseCalled_Then_NoExceptionThrown()
         {
             var provider = new SystemLanguageProvider(new Mock<ILogger>().Object);
             provider.Open();
@@ -95,3 +95,4 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
     }
 }
+

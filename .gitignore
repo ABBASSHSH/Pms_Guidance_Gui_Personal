@@ -72,3 +72,15 @@ desktop.ini
 *.env.local
 appsettings.Development.json
 appsettings.Secrets.json
+
+## Graphify — per-module working directories (cache, kept locally, not committed)
+## The committed graphs live in graphify-out/<package>/ at the repo root.
+*/graphify-out/
+
+## Graphify centralised output: large or local-only files
+## graph.json and GRAPH_REPORT.md ARE committed (see graphify-out/).
+graphify-out/**/graph.html
+graphify-out/**/cache/
+graphify-out/**/manifest.json
+graphify-out/**/cost.json
+graphify-out/**/transcripts/

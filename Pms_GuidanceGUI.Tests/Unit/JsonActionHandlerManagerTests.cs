@@ -50,10 +50,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── AddJsonActionHandler: null guard ──────────────────────────────────────
 
         /// <summary>
-    /// Given JsonActionHandlerManager NullHandler When AddJsonActionHandlerCalled Then LogWarnIsCalled
+    /// Given JsonActionHandlerManager When NullHandlerAddJsonActionHandlerCalled Then LogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_JsonActionHandlerManager_NullHandler_When_AddJsonActionHandlerCalled_Then_LogWarnIsCalled()
+        public void Given_JsonActionHandlerManager_When_NullHandlerAddJsonActionHandlerCalled_Then_LogWarnIsCalled()
         {
             m_manager.AddJsonActionHandler(null!);
 
@@ -61,10 +61,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given JsonActionHandlerManager NullHandler When AddJsonActionHandlerCalled Then HandlerIsNotAdded
+    /// Given JsonActionHandlerManager When NullHandlerAddJsonActionHandlerCalled Then HandlerIsNotAdded
         /// </summary>
         [TestMethod]
-        public void Given_JsonActionHandlerManager_NullHandler_When_AddJsonActionHandlerCalled_Then_HandlerIsNotAdded()
+        public void Given_JsonActionHandlerManager_When_NullHandlerAddJsonActionHandlerCalled_Then_HandlerIsNotAdded()
         {
             m_manager.AddJsonActionHandler(null!);
 
@@ -76,10 +76,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── AddJsonActionHandler: duplicate guard ─────────────────────────────────
 
         /// <summary>
-    /// Given JsonActionHandlerManager AlreadyRegisteredHandler When AddJsonActionHandlerCalledAgain Then LogWarnIsCalled
+    /// Given JsonActionHandlerManager When AlreadyRegisteredHandlerAddJsonActionHandlerCalledAgain Then LogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_JsonActionHandlerManager_AlreadyRegisteredHandler_When_AddJsonActionHandlerCalledAgain_Then_LogWarnIsCalled()
+        public void Given_JsonActionHandlerManager_When_AlreadyRegisteredHandlerAddJsonActionHandlerCalledAgain_Then_LogWarnIsCalled()
         {
             var mockHandler = CreateHandler("TestAction");
 
@@ -90,10 +90,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given JsonActionHandlerManager AlreadyRegisteredHandler When AddJsonActionHandlerCalledAgain Then HandlerIsNotDuplicated
+    /// Given JsonActionHandlerManager When AlreadyRegisteredHandlerAddJsonActionHandlerCalledAgain Then HandlerIsNotDuplicated
         /// </summary>
         [TestMethod]
-        public void Given_JsonActionHandlerManager_AlreadyRegisteredHandler_When_AddJsonActionHandlerCalledAgain_Then_HandlerIsNotDuplicated()
+        public void Given_JsonActionHandlerManager_When_AlreadyRegisteredHandlerAddJsonActionHandlerCalledAgain_Then_HandlerIsNotDuplicated()
         {
             var mockHandler = CreateHandler("DupAction");
             mockHandler.Setup(h => h.HandleAction(It.IsAny<string>())).Returns((ICommand?)null);
@@ -110,10 +110,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── AddJsonActionHandler: happy path ──────────────────────────────────────
 
         /// <summary>
-    /// Given JsonActionHandlerManager ValidNewHandler When AddJsonActionHandlerCalled Then NoLogWarnIsCalled
+    /// Given JsonActionHandlerManager When ValidNewHandlerAddJsonActionHandlerCalled Then NoLogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_JsonActionHandlerManager_ValidNewHandler_When_AddJsonActionHandlerCalled_Then_NoLogWarnIsCalled()
+        public void Given_JsonActionHandlerManager_When_ValidNewHandlerAddJsonActionHandlerCalled_Then_NoLogWarnIsCalled()
         {
             var mockHandler = CreateHandler("SomeAction");
 
@@ -123,10 +123,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given JsonActionHandlerManager ValidNewHandler When AddJsonActionHandlerCalled Then HandlerIsDispatched
+    /// Given JsonActionHandlerManager When ValidNewHandlerAddJsonActionHandlerCalled Then HandlerIsDispatched
         /// </summary>
         [TestMethod]
-        public void Given_JsonActionHandlerManager_ValidNewHandler_When_AddJsonActionHandlerCalled_Then_HandlerIsDispatched()
+        public void Given_JsonActionHandlerManager_When_ValidNewHandlerAddJsonActionHandlerCalled_Then_HandlerIsDispatched()
         {
             var mockHandler = CreateHandler("SomeAction");
             mockHandler.Setup(h => h.HandleAction(It.IsAny<string>())).Returns((ICommand?)null);
@@ -140,10 +140,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── RemoveJsonActionHandler: null guard ───────────────────────────────────
 
         /// <summary>
-    /// Given JsonActionHandlerManager NullHandler When RemoveJsonActionHandlerCalled Then LogWarnIsCalled
+    /// Given JsonActionHandlerManager When NullHandlerRemoveJsonActionHandlerCalled Then LogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_JsonActionHandlerManager_NullHandler_When_RemoveJsonActionHandlerCalled_Then_LogWarnIsCalled()
+        public void Given_JsonActionHandlerManager_When_NullHandlerRemoveJsonActionHandlerCalled_Then_LogWarnIsCalled()
         {
             m_manager.RemoveJsonActionHandler(null!);
 
@@ -153,10 +153,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── RemoveJsonActionHandler: not-registered guard ─────────────────────────
 
         /// <summary>
-    /// Given JsonActionHandlerManager UnregisteredHandler When RemoveJsonActionHandlerCalled Then LogWarnIsCalled
+    /// Given JsonActionHandlerManager When UnregisteredHandlerRemoveJsonActionHandlerCalled Then LogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_JsonActionHandlerManager_UnregisteredHandler_When_RemoveJsonActionHandlerCalled_Then_LogWarnIsCalled()
+        public void Given_JsonActionHandlerManager_When_UnregisteredHandlerRemoveJsonActionHandlerCalled_Then_LogWarnIsCalled()
         {
             var mockHandler = CreateHandler("GhostAction");
 
@@ -168,10 +168,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── RemoveJsonActionHandler: happy path ───────────────────────────────────
 
         /// <summary>
-    /// Given JsonActionHandlerManager RegisteredHandler When RemoveJsonActionHandlerCalled Then NoLogWarnIsCalled
+    /// Given JsonActionHandlerManager When RegisteredHandlerRemoveJsonActionHandlerCalled Then NoLogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_JsonActionHandlerManager_RegisteredHandler_When_RemoveJsonActionHandlerCalled_Then_NoLogWarnIsCalled()
+        public void Given_JsonActionHandlerManager_When_RegisteredHandlerRemoveJsonActionHandlerCalled_Then_NoLogWarnIsCalled()
         {
             var mockHandler = CreateHandler("RemoveMe");
 
@@ -182,10 +182,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given JsonActionHandlerManager RegisteredHandler When RemovedAndActionReceived Then HandlerIsNotDispatched
+    /// Given JsonActionHandlerManager When RegisteredHandlerRemovedAndActionReceived Then HandlerIsNotDispatched
         /// </summary>
         [TestMethod]
-        public void Given_JsonActionHandlerManager_RegisteredHandler_When_RemovedAndActionReceived_Then_HandlerIsNotDispatched()
+        public void Given_JsonActionHandlerManager_When_RegisteredHandlerRemovedAndActionReceived_Then_HandlerIsNotDispatched()
         {
             var mockHandler = CreateHandler("RemoveMe");
             mockHandler.Setup(h => h.HandleAction(It.IsAny<string>())).Returns((ICommand?)null);
@@ -233,10 +233,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConcreteJsonActionHandler UIAppStartedHandler When HandleActionCalledWithValidJson Then ReturnsUIAppStartedCommand
+    /// Given ConcreteJsonActionHandler When UIAppStartedHandlerHandleActionCalledWithValidJson Then ReturnsUIAppStartedCommand
         /// </summary>
         [TestMethod]
-        public void Given_ConcreteJsonActionHandler_UIAppStartedHandler_When_HandleActionCalledWithValidJson_Then_ReturnsUIAppStartedCommand()
+        public void Given_ConcreteJsonActionHandler_When_UIAppStartedHandlerHandleActionCalledWithValidJson_Then_ReturnsUIAppStartedCommand()
         {
             var handler = new UIAppStartedJsonActionHandler(m_mockLogger.Object);
             var result  = handler.HandleAction("{}");
@@ -244,10 +244,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConcreteJsonActionHandler UIAppStartedHandler When HandleActionCalledWithMalformedJson Then ReturnsNull
+    /// Given ConcreteJsonActionHandler When UIAppStartedHandlerHandleActionCalledWithMalformedJson Then ReturnsNull
         /// </summary>
         [TestMethod]
-        public void Given_ConcreteJsonActionHandler_UIAppStartedHandler_When_HandleActionCalledWithMalformedJson_Then_ReturnsNull()
+        public void Given_ConcreteJsonActionHandler_When_UIAppStartedHandlerHandleActionCalledWithMalformedJson_Then_ReturnsNull()
         {
             var handler = new UIAppStartedJsonActionHandler(m_mockLogger.Object);
             var result  = handler.HandleAction("NOT_JSON");
@@ -255,10 +255,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConcreteJsonActionHandler UIAppStartedHandler When HandleActionCalledWithMalformedJson Then LogErrorIsCalled
+    /// Given ConcreteJsonActionHandler When UIAppStartedHandlerHandleActionCalledWithMalformedJson Then LogErrorIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_ConcreteJsonActionHandler_UIAppStartedHandler_When_HandleActionCalledWithMalformedJson_Then_LogErrorIsCalled()
+        public void Given_ConcreteJsonActionHandler_When_UIAppStartedHandlerHandleActionCalledWithMalformedJson_Then_LogErrorIsCalled()
         {
             var handler = new UIAppStartedJsonActionHandler(m_mockLogger.Object);
             handler.HandleAction("NOT_JSON");
@@ -268,10 +268,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConcreteJsonActionHandler UIAppStartedHandler When ActionNameAccessed Then ReturnsUIAppStarted
+    /// Given ConcreteJsonActionHandler When UIAppStartedHandlerActionNameAccessed Then ReturnsUIAppStarted
         /// </summary>
         [TestMethod]
-        public void Given_ConcreteJsonActionHandler_UIAppStartedHandler_When_ActionNameAccessed_Then_ReturnsUIAppStarted()
+        public void Given_ConcreteJsonActionHandler_When_UIAppStartedHandlerActionNameAccessed_Then_ReturnsUIAppStarted()
         {
             var handler = new UIAppStartedJsonActionHandler(m_mockLogger.Object);
             Assert.AreEqual("UIAppStarted", handler.ActionName);
@@ -283,10 +283,11 @@ namespace Pms_GuidanceGUI.Tests.Unit
         /// deserializing the JSON literal "null" returns null, which the guard rejects.
         /// </summary>
         [TestMethod]
-        public void Given_ConcreteJsonActionHandler_UIAppStartedHandler_When_HandleActionCalledWithNullJson_Then_ThrowsInvalidOperationException()
+        public void Given_ConcreteJsonActionHandler_When_UIAppStartedHandlerHandleActionCalledWithNullJson_Then_ThrowsInvalidOperationException()
         {
             var handler = new UIAppStartedJsonActionHandler(m_mockLogger.Object);
             Assert.ThrowsException<InvalidOperationException>(() => handler.HandleAction("null"));
         }
     }
 }
+

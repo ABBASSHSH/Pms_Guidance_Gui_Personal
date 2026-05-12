@@ -71,10 +71,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ─────────────────────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given BusinessLogicModule NullBackendLogger When TwoParamConstructorCalled Then ThrowsArgumentNullException
+    /// Given BusinessLogicModule When NullBackendLoggerTwoParamConstructorCalled Then ThrowsArgumentNullException
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_NullBackendLogger_When_TwoParamConstructorCalled_Then_ThrowsArgumentNullException()
+        public void Given_BusinessLogicModule_When_NullBackendLoggerTwoParamConstructorCalled_Then_ThrowsArgumentNullException()
         {
             Assert.ThrowsException<ArgumentNullException>(
                 () => new BusinessLogicModuleSetup(
@@ -84,19 +84,45 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given BusinessLogicModule ValidLoggers When TwoParamConstructorCalled Then ActionReplyEventIsNotNull
+    /// Given BusinessLogicModule When NullSystemLanguageProviderConstructorCalled Then ThrowsArgumentNullException
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_ValidLoggers_When_TwoParamConstructorCalled_Then_ActionReplyEventIsNotNull()
+        public void Given_BusinessLogicModule_When_NullSystemLanguageProviderConstructorCalled_Then_ThrowsArgumentNullException()
+        {
+            Assert.ThrowsException<ArgumentNullException>(
+                () => new BusinessLogicModuleSetup(
+                    m_mockLogger.Object,
+                    null!,
+                    m_mockConfigurationProvider.Object));
+        }
+
+        /// <summary>
+    /// Given BusinessLogicModule When NullConfigurationProviderConstructorCalled Then ThrowsArgumentNullException
+        /// </summary>
+        [TestMethod]
+        public void Given_BusinessLogicModule_When_NullConfigurationProviderConstructorCalled_Then_ThrowsArgumentNullException()
+        {
+            Assert.ThrowsException<ArgumentNullException>(
+                () => new BusinessLogicModuleSetup(
+                    m_mockLogger.Object,
+                    m_mockSystemLanguageProvider.Object,
+                    null!));
+        }
+
+        /// <summary>
+    /// Given BusinessLogicModule When ValidLoggersTwoParamConstructorCalled Then ActionReplyEventIsNotNull
+        /// </summary>
+        [TestMethod]
+        public void Given_BusinessLogicModule_When_ValidLoggersTwoParamConstructorCalled_Then_ActionReplyEventIsNotNull()
         {
             Assert.IsNotNull(m_sut.ActionReplyEvent);
         }
 
         /// <summary>
-    /// Given BusinessLogicModule ValidLoggers When TwoParamConstructorCalled Then ActionReplyEventImplementsIActionReply
+    /// Given BusinessLogicModule When ValidLoggersTwoParamConstructorCalled Then ActionReplyEventImplementsIActionReply
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_ValidLoggers_When_TwoParamConstructorCalled_Then_ActionReplyEventImplementsIActionReply()
+        public void Given_BusinessLogicModule_When_ValidLoggersTwoParamConstructorCalled_Then_ActionReplyEventImplementsIActionReply()
         {
             Assert.IsInstanceOfType(m_sut.ActionReplyEvent, typeof(IActionReply));
         }
@@ -106,12 +132,34 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ─────────────────────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given BusinessLogicModule NullCommand When HandleCommandCalled Then ThrowsArgumentNullException
+    /// Given BusinessLogicModule When NullCommandHandleCommandCalled Then ThrowsArgumentNullException
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_NullCommand_When_HandleCommandCalled_Then_ThrowsArgumentNullException()
+        public void Given_BusinessLogicModule_When_NullCommandHandleCommandCalled_Then_ThrowsArgumentNullException()
         {
             Assert.ThrowsException<ArgumentNullException>(() => m_sut.HandleCommand(null!));
+        }
+
+        /// <summary>
+    /// Given BusinessLogicModule When OpenCalledTwice Then NoExceptionThrown
+        /// </summary>
+        [TestMethod]
+        public void Given_BusinessLogicModule_When_OpenCalledTwice_Then_NoExceptionThrown()
+        {
+            m_sut.Open();
+            m_sut.Open();
+        }
+
+        /// <summary>
+    /// Given BusinessLogicModule When CloseCalledBeforeOpenThenAfterOpenThenAgain Then NoExceptionThrown
+        /// </summary>
+        [TestMethod]
+        public void Given_BusinessLogicModule_When_CloseCalledBeforeOpenThenAfterOpenThenAgain_Then_NoExceptionThrown()
+        {
+            m_sut.Close();
+            m_sut.Open();
+            m_sut.Close();
+            m_sut.Close();
         }
 
         // ─────────────────────────────────────────────────────────────────────────
@@ -119,20 +167,20 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ─────────────────────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given BusinessLogicModule UnregisteredCommand When HandleCommandCalled Then NoExceptionIsThrown
+    /// Given BusinessLogicModule When UnregisteredCommandHandleCommandCalled Then NoExceptionIsThrown
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_UnregisteredCommand_When_HandleCommandCalled_Then_NoExceptionIsThrown()
+        public void Given_BusinessLogicModule_When_UnregisteredCommandHandleCommandCalled_Then_NoExceptionIsThrown()
         {
             // Should not throw; unrecognised commands are silently logged.
             m_sut.HandleCommand(new UnregisteredCommand());
         }
 
         /// <summary>
-    /// Given BusinessLogicModule UnregisteredCommand When HandleCommandCalled Then BackendLoggerLogWarnIsCalled
+    /// Given BusinessLogicModule When UnregisteredCommandHandleCommandCalled Then BackendLoggerLogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_UnregisteredCommand_When_HandleCommandCalled_Then_BackendLoggerLogWarnIsCalled()
+        public void Given_BusinessLogicModule_When_UnregisteredCommandHandleCommandCalled_Then_BackendLoggerLogWarnIsCalled()
         {
             m_sut.HandleCommand(new UnregisteredCommand());
 
@@ -142,10 +190,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given BusinessLogicModule UnregisteredCommand When HandleCommandCalled Then OnCommandHandledIsNotRaised
+    /// Given BusinessLogicModule When UnregisteredCommandHandleCommandCalled Then OnCommandHandledIsNotRaised
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_UnregisteredCommand_When_HandleCommandCalled_Then_OnCommandHandledIsNotRaised()
+        public void Given_BusinessLogicModule_When_UnregisteredCommandHandleCommandCalled_Then_OnCommandHandledIsNotRaised()
         {
             bool eventFired = false;
             m_sut.ActionReplyEvent.OnCommandHandled += (_, _) => eventFired = true;
@@ -160,10 +208,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ─────────────────────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given BusinessLogicModule InfoPrefixedLogCommand When HandleCommandCalled Then LogInfoIsCalled
+    /// Given BusinessLogicModule When InfoPrefixedLogCommandHandleCommandCalled Then LogInfoIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_InfoPrefixedLogCommand_When_HandleCommandCalled_Then_LogInfoIsCalled()
+        public void Given_BusinessLogicModule_When_InfoPrefixedLogCommandHandleCommandCalled_Then_LogInfoIsCalled()
         {
             m_sut.HandleCommand(new LogCommand("[INFO] [App] app started", DateTime.UtcNow));
 
@@ -171,10 +219,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given BusinessLogicModule DebugPrefixedLogCommand When HandleCommandCalled Then LogDebugIsCalled
+    /// Given BusinessLogicModule When DebugPrefixedLogCommandHandleCommandCalled Then LogDebugIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_DebugPrefixedLogCommand_When_HandleCommandCalled_Then_LogDebugIsCalled()
+        public void Given_BusinessLogicModule_When_DebugPrefixedLogCommandHandleCommandCalled_Then_LogDebugIsCalled()
         {
             m_sut.HandleCommand(new LogCommand("[DEBUG] [App] detail", DateTime.UtcNow));
 
@@ -182,10 +230,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given BusinessLogicModule WarnPrefixedLogCommand When HandleCommandCalled Then LogWarnIsCalled
+    /// Given BusinessLogicModule When WarnPrefixedLogCommandHandleCommandCalled Then LogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_WarnPrefixedLogCommand_When_HandleCommandCalled_Then_LogWarnIsCalled()
+        public void Given_BusinessLogicModule_When_WarnPrefixedLogCommandHandleCommandCalled_Then_LogWarnIsCalled()
         {
             m_sut.HandleCommand(new LogCommand("[WARN] [App] something unusual", DateTime.UtcNow));
 
@@ -193,10 +241,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given BusinessLogicModule ErrorPrefixedLogCommand When HandleCommandCalled Then LogErrorIsCalled
+    /// Given BusinessLogicModule When ErrorPrefixedLogCommandHandleCommandCalled Then LogErrorIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_ErrorPrefixedLogCommand_When_HandleCommandCalled_Then_LogErrorIsCalled()
+        public void Given_BusinessLogicModule_When_ErrorPrefixedLogCommandHandleCommandCalled_Then_LogErrorIsCalled()
         {
             m_sut.HandleCommand(new LogCommand("[ERROR] [App] failure occurred", DateTime.UtcNow));
 
@@ -204,10 +252,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given BusinessLogicModule UnprefixedLogCommand When HandleCommandCalled Then LogInfoIsCalled
+    /// Given BusinessLogicModule When UnprefixedLogCommandHandleCommandCalled Then LogInfoIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_UnprefixedLogCommand_When_HandleCommandCalled_Then_LogInfoIsCalled()
+        public void Given_BusinessLogicModule_When_UnprefixedLogCommandHandleCommandCalled_Then_LogInfoIsCalled()
         {
             m_sut.HandleCommand(new LogCommand("no level prefix here", DateTime.UtcNow));
 
@@ -215,10 +263,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given BusinessLogicModule LogCommand When HandleCommandCalled Then LoggedMessageContainsCommandMessage
+    /// Given BusinessLogicModule When LogCommandHandleCommandCalled Then LoggedMessageContainsCommandMessage
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_LogCommand_When_HandleCommandCalled_Then_LoggedMessageContainsCommandMessage()
+        public void Given_BusinessLogicModule_When_LogCommandHandleCommandCalled_Then_LoggedMessageContainsCommandMessage()
         {
             const string expectedMessage = "[INFO] [App] unique-log-content";
 
@@ -230,10 +278,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given BusinessLogicModule EmptyLogCommand When HandleCommandCalled Then LogWarnIsCalled
+    /// Given BusinessLogicModule When EmptyLogCommandHandleCommandCalled Then LogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_EmptyLogCommand_When_HandleCommandCalled_Then_LogWarnIsCalled()
+        public void Given_BusinessLogicModule_When_EmptyLogCommandHandleCommandCalled_Then_LogWarnIsCalled()
         {
             m_sut.HandleCommand(new LogCommand(string.Empty, DateTime.UtcNow));
 
@@ -245,10 +293,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ─────────────────────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given BusinessLogicModule ValidVerifyPrerequisitesCommand When HandleCommandCalled Then BackendLoggerLogInfoIsCalled
+    /// Given BusinessLogicModule When ValidVerifyPrerequisitesCommandHandleCommandCalled Then BackendLoggerLogInfoIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_ValidVerifyPrerequisitesCommand_When_HandleCommandCalled_Then_BackendLoggerLogInfoIsCalled()
+        public void Given_BusinessLogicModule_When_ValidVerifyPrerequisitesCommandHandleCommandCalled_Then_BackendLoggerLogInfoIsCalled()
         {
             m_sut.HandleCommand(new VerifyInstallationPrerequisitesCommand());
 
@@ -256,10 +304,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given BusinessLogicModule ValidVerifyPrerequisitesCommand When HandleCommandCalled Then OnCommandHandledIsRaised
+    /// Given BusinessLogicModule When ValidVerifyPrerequisitesCommandHandleCommandCalled Then OnCommandHandledIsRaised
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_ValidVerifyPrerequisitesCommand_When_HandleCommandCalled_Then_OnCommandHandledIsRaised()
+        public void Given_BusinessLogicModule_When_ValidVerifyPrerequisitesCommandHandleCommandCalled_Then_OnCommandHandledIsRaised()
         {
             bool eventFired = false;
             m_sut.ActionReplyEvent.OnCommandHandled += (_, _) => eventFired = true;
@@ -270,10 +318,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given BusinessLogicModule ValidVerifyPrerequisitesCommand When HandleCommandCalled Then EventArgsIsVerifyPrerequisitesStatusEventArgs
+    /// Given BusinessLogicModule When ValidVerifyPrerequisitesCommandHandleCommandCalled Then EventArgsIsVerifyPrerequisitesStatusEventArgs
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_ValidVerifyPrerequisitesCommand_When_HandleCommandCalled_Then_EventArgsIsVerifyPrerequisitesStatusEventArgs()
+        public void Given_BusinessLogicModule_When_ValidVerifyPrerequisitesCommandHandleCommandCalled_Then_EventArgsIsVerifyPrerequisitesStatusEventArgs()
         {
             System.EventArgs? capturedArgs = null;
             m_sut.ActionReplyEvent.OnCommandHandled += (_, e) => capturedArgs = e;
@@ -284,10 +332,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given BusinessLogicModule ValidVerifyPrerequisitesCommand When HandleCommandCalled Then PrerequisitesMetIsTrue
+    /// Given BusinessLogicModule When ValidVerifyPrerequisitesCommandHandleCommandCalled Then PrerequisitesMetIsTrue
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_ValidVerifyPrerequisitesCommand_When_HandleCommandCalled_Then_PrerequisitesMetIsTrue()
+        public void Given_BusinessLogicModule_When_ValidVerifyPrerequisitesCommandHandleCommandCalled_Then_PrerequisitesMetIsTrue()
         {
             VerifyInstallationPrerequisitesStatusEventArgs? capturedArgs = null;
             m_sut.ActionReplyEvent.OnCommandHandled += (_, e) =>
@@ -304,10 +352,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ─────────────────────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given BusinessLogicModule ValidInstallSoftwareCommand When HandleCommandCalled Then BackendLoggerLogInfoIsCalled
+    /// Given BusinessLogicModule When ValidInstallSoftwareCommandHandleCommandCalled Then BackendLoggerLogInfoIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_ValidInstallSoftwareCommand_When_HandleCommandCalled_Then_BackendLoggerLogInfoIsCalled()
+        public void Given_BusinessLogicModule_When_ValidInstallSoftwareCommandHandleCommandCalled_Then_BackendLoggerLogInfoIsCalled()
         {
             m_sut.HandleCommand(new InstallSoftwareCommand());
 
@@ -315,10 +363,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given BusinessLogicModule ValidInstallSoftwareCommand When HandleCommandCalled Then OnCommandHandledIsRaised
+    /// Given BusinessLogicModule When ValidInstallSoftwareCommandHandleCommandCalled Then OnCommandHandledIsRaised
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_ValidInstallSoftwareCommand_When_HandleCommandCalled_Then_OnCommandHandledIsRaised()
+        public void Given_BusinessLogicModule_When_ValidInstallSoftwareCommandHandleCommandCalled_Then_OnCommandHandledIsRaised()
         {
             bool eventFired = false;
             m_sut.ActionReplyEvent.OnCommandHandled += (_, _) => eventFired = true;
@@ -329,10 +377,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given BusinessLogicModule ValidInstallSoftwareCommand When HandleCommandCalled Then EventArgsIsInstallSoftwareStatusEventArgs
+    /// Given BusinessLogicModule When ValidInstallSoftwareCommandHandleCommandCalled Then EventArgsIsInstallSoftwareStatusEventArgs
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_ValidInstallSoftwareCommand_When_HandleCommandCalled_Then_EventArgsIsInstallSoftwareStatusEventArgs()
+        public void Given_BusinessLogicModule_When_ValidInstallSoftwareCommandHandleCommandCalled_Then_EventArgsIsInstallSoftwareStatusEventArgs()
         {
             System.EventArgs? capturedArgs = null;
             m_sut.ActionReplyEvent.OnCommandHandled += (_, e) => capturedArgs = e;
@@ -343,10 +391,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given BusinessLogicModule ValidInstallSoftwareCommand When HandleCommandCalled Then IsInstalledIsTrue
+    /// Given BusinessLogicModule When ValidInstallSoftwareCommandHandleCommandCalled Then IsInstalledIsTrue
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_ValidInstallSoftwareCommand_When_HandleCommandCalled_Then_IsInstalledIsTrue()
+        public void Given_BusinessLogicModule_When_ValidInstallSoftwareCommandHandleCommandCalled_Then_IsInstalledIsTrue()
         {
             InstallSoftwareStatusEventArgs? capturedArgs = null;
             m_sut.ActionReplyEvent.OnCommandHandled += (_, e) =>
@@ -363,10 +411,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ─────────────────────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given BusinessLogicModule ValidCloseAppCommand When HandleCommandCalled Then BackendLoggerLogInfoIsCalled
+    /// Given BusinessLogicModule When ValidCloseAppCommandHandleCommandCalled Then BackendLoggerLogInfoIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_ValidCloseAppCommand_When_HandleCommandCalled_Then_BackendLoggerLogInfoIsCalled()
+        public void Given_BusinessLogicModule_When_ValidCloseAppCommandHandleCommandCalled_Then_BackendLoggerLogInfoIsCalled()
         {
             m_sut.HandleCommand(new CloseAppCommand());
 
@@ -374,10 +422,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given BusinessLogicModule ValidCloseAppCommand When HandleCommandCalled Then OnCommandHandledIsRaised
+    /// Given BusinessLogicModule When ValidCloseAppCommandHandleCommandCalled Then OnCommandHandledIsRaised
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_ValidCloseAppCommand_When_HandleCommandCalled_Then_OnCommandHandledIsRaised()
+        public void Given_BusinessLogicModule_When_ValidCloseAppCommandHandleCommandCalled_Then_OnCommandHandledIsRaised()
         {
             bool eventFired = false;
             m_sut.ActionReplyEvent.OnCommandHandled += (_, _) => eventFired = true;
@@ -388,10 +436,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given BusinessLogicModule ValidCloseAppCommand When HandleCommandCalled Then EventArgsIsCloseAppStatusEventArgs
+    /// Given BusinessLogicModule When ValidCloseAppCommandHandleCommandCalled Then EventArgsIsCloseAppStatusEventArgs
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_ValidCloseAppCommand_When_HandleCommandCalled_Then_EventArgsIsCloseAppStatusEventArgs()
+        public void Given_BusinessLogicModule_When_ValidCloseAppCommandHandleCommandCalled_Then_EventArgsIsCloseAppStatusEventArgs()
         {
             System.EventArgs? capturedArgs = null;
             m_sut.ActionReplyEvent.OnCommandHandled += (_, e) => capturedArgs = e;
@@ -402,10 +450,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given BusinessLogicModule ValidCloseAppCommand When HandleCommandCalled Then IsClosingIsTrue
+    /// Given BusinessLogicModule When ValidCloseAppCommandHandleCommandCalled Then IsClosingIsTrue
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_ValidCloseAppCommand_When_HandleCommandCalled_Then_IsClosingIsTrue()
+        public void Given_BusinessLogicModule_When_ValidCloseAppCommandHandleCommandCalled_Then_IsClosingIsTrue()
         {
             CloseAppStatusEventArgs? capturedArgs = null;
             m_sut.ActionReplyEvent.OnCommandHandled += (_, e) =>
@@ -417,25 +465,39 @@ namespace Pms_GuidanceGUI.Tests.Unit
             Assert.IsTrue(capturedArgs.IsClosing);
         }
 
+        /// <summary>
+    /// Given BusinessLogicModule When ValidCloseAppCommandHandleCommandCalled Then CloseApplicationRequestedIsRaised
+        /// </summary>
+        [TestMethod]
+        public void Given_BusinessLogicModule_When_ValidCloseAppCommandHandleCommandCalled_Then_CloseApplicationRequestedIsRaised()
+        {
+            bool closeRequested = false;
+            m_sut.CloseApplicationRequested += (_, _) => closeRequested = true;
+
+            m_sut.HandleCommand(new CloseAppCommand());
+
+            Assert.IsTrue(closeRequested);
+        }
+
         // ─────────────────────────────────────────────────────────────────────────
         // ActionReplyHandler — event propagation
         // ─────────────────────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given BusinessLogicModule NoSubscribers When CommandIsHandled Then NoExceptionIsThrown
+    /// Given BusinessLogicModule When NoSubscribersCommandIsHandled Then NoExceptionIsThrown
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_NoSubscribers_When_CommandIsHandled_Then_NoExceptionIsThrown()
+        public void Given_BusinessLogicModule_When_NoSubscribersCommandIsHandled_Then_NoExceptionIsThrown()
         {
             // ActionReplyEvent has no subscribers — must not throw.
             m_sut.HandleCommand(new LogCommand("no subscriber", DateTime.UtcNow));
         }
 
         /// <summary>
-    /// Given BusinessLogicModule Subscriber When CommandIsHandled Then SenderIsNotNull
+    /// Given BusinessLogicModule When SubscriberCommandIsHandled Then SenderIsNotNull
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_Subscriber_When_CommandIsHandled_Then_SenderIsNotNull()
+        public void Given_BusinessLogicModule_When_SubscriberCommandIsHandled_Then_SenderIsNotNull()
         {
             object? capturedSender = null;
             m_sut.ActionReplyEvent.OnCommandHandled += (sender, _) => capturedSender = sender;
@@ -446,10 +508,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given BusinessLogicModule MultipleCommandsHandled When EachCommandIsDispatched Then CorrectEventArgsTypeRaisedPerCommand
+    /// Given BusinessLogicModule When MultipleCommandsHandledEachCommandIsDispatched Then CorrectEventArgsTypeRaisedPerCommand
         /// </summary>
         [TestMethod]
-        public void Given_BusinessLogicModule_MultipleCommandsHandled_When_EachCommandIsDispatched_Then_CorrectEventArgsTypeRaisedPerCommand()
+        public void Given_BusinessLogicModule_When_MultipleCommandsHandledEachCommandIsDispatched_Then_CorrectEventArgsTypeRaisedPerCommand()
         {
             Type? closeType = null;
 
@@ -465,373 +527,6 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         // ─────────────────────────────────────────────────────────────────────────
-        // InstallSoftwareCommandHandler — exception path via IInstallationService
-        // (tested directly using internal types visible via InternalsVisibleTo)
-        // ─────────────────────────────────────────────────────────────────────────
-
-        /// <summary>
-    /// Given BusinessLogicModule InstallationServiceThrows When HandleCommandCalled Then IsInstalledIsFalse
-        /// </summary>
-        [TestMethod]
-        public void Given_BusinessLogicModule_InstallationServiceThrows_When_HandleCommandCalled_Then_IsInstalledIsFalse()
-        {
-            var mockConfigurationProvider = new Mock<IConfigurationProvider>();
-            mockConfigurationProvider
-                .Setup(x => x.GetInstallationCommand())
-                .Throws(new InvalidOperationException("install failure"));
-
-            var replyHandler = new ActionReplyHandler();
-            var handler      = new InstallSoftwareCommandHandler(
-                (IActionReplyPrivate)replyHandler,
-                m_mockLogger.Object,
-                mockConfigurationProvider.Object);
-
-            InstallSoftwareStatusEventArgs? args = null;
-            replyHandler.OnCommandHandled += (_, e) => args = e as InstallSoftwareStatusEventArgs;
-
-            handler.HandleCommand(new InstallSoftwareCommand());
-
-            Assert.IsNotNull(args);
-            Assert.IsFalse(args.IsInstalled);
-        }
-
-        /// <summary>
-    /// Given BusinessLogicModule InstallationServiceThrows When HandleCommandCalled Then LogErrorIsCalledWithException
-        /// </summary>
-        [TestMethod]
-        public void Given_BusinessLogicModule_InstallationServiceThrows_When_HandleCommandCalled_Then_LogErrorIsCalledWithException()
-        {
-            var mockConfigurationProvider = new Mock<IConfigurationProvider>();
-            mockConfigurationProvider
-                .Setup(x => x.GetInstallationCommand())
-                .Throws(new InvalidOperationException("install failure"));
-
-            var replyHandler = new ActionReplyHandler();
-            var handler      = new InstallSoftwareCommandHandler(
-                (IActionReplyPrivate)replyHandler,
-                m_mockLogger.Object,
-                mockConfigurationProvider.Object);
-
-            handler.HandleCommand(new InstallSoftwareCommand());
-
-            m_mockLogger.Verify(
-                x => x.LogError(It.IsAny<string>(), It.IsAny<Exception>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<int>()),
-                Times.Once());
-        }
-
-        /// <summary>
-    /// Given BusinessLogicModule InstallationServiceThrows When HandleCommandCalled Then OnCommandHandledIsStillRaised
-        /// </summary>
-        [TestMethod]
-        public void Given_BusinessLogicModule_InstallationServiceThrows_When_HandleCommandCalled_Then_OnCommandHandledIsStillRaised()
-        {
-            var mockConfigurationProvider = new Mock<IConfigurationProvider>();
-            mockConfigurationProvider
-                .Setup(x => x.GetInstallationCommand())
-                .Throws(new InvalidOperationException("install failure"));
-
-            var replyHandler = new ActionReplyHandler();
-            var handler      = new InstallSoftwareCommandHandler(
-                (IActionReplyPrivate)replyHandler,
-                m_mockLogger.Object,
-                mockConfigurationProvider.Object);
-
-            bool fired = false;
-            replyHandler.OnCommandHandled += (_, _) => fired = true;
-
-            handler.HandleCommand(new InstallSoftwareCommand());
-
-            Assert.IsTrue(fired);
-        }
-
-        // ─────────────────────────────────────────────────────────────────────────
-        // VerifyInstallationPrerequisitesCommandHandler — exception path via IPrerequisiteChecker
-        // (tested directly using internal types visible via InternalsVisibleTo)
-        // ─────────────────────────────────────────────────────────────────────────
-
-        /// <summary>
-    /// Given BusinessLogicModule PrerequisiteCheckerThrows When HandleCommandCalled Then PrerequisitesMetIsFalse
-        /// </summary>
-        [TestMethod]
-        public void Given_BusinessLogicModule_PrerequisiteCheckerThrows_When_HandleCommandCalled_Then_PrerequisitesMetIsFalse()
-        {
-            var mockConfigurationProvider = new Mock<IConfigurationProvider>();
-            mockConfigurationProvider
-                .Setup(x => x.GetVerificationCommand())
-                .Throws(new InvalidOperationException("check failure"));
-
-            var replyHandler = new ActionReplyHandler();
-            var handler      = new VerifyInstallationPrerequisitesCommandHandler(
-                (IActionReplyPrivate)replyHandler,
-                m_mockLogger.Object,
-                mockConfigurationProvider.Object);
-
-            VerifyInstallationPrerequisitesStatusEventArgs? args = null;
-            replyHandler.OnCommandHandled += (_, e) =>
-                args = e as VerifyInstallationPrerequisitesStatusEventArgs;
-
-            handler.HandleCommand(new VerifyInstallationPrerequisitesCommand());
-
-            Assert.IsNotNull(args);
-            Assert.IsFalse(args.PrerequisitesMet);
-        }
-
-        /// <summary>
-    /// Given BusinessLogicModule PrerequisiteCheckerThrows When HandleCommandCalled Then LogErrorIsCalledWithException
-        /// </summary>
-        [TestMethod]
-        public void Given_BusinessLogicModule_PrerequisiteCheckerThrows_When_HandleCommandCalled_Then_LogErrorIsCalledWithException()
-        {
-            var mockConfigurationProvider = new Mock<IConfigurationProvider>();
-            mockConfigurationProvider
-                .Setup(x => x.GetVerificationCommand())
-                .Throws(new InvalidOperationException("check failure"));
-
-            var replyHandler = new ActionReplyHandler();
-            var handler      = new VerifyInstallationPrerequisitesCommandHandler(
-                (IActionReplyPrivate)replyHandler,
-                m_mockLogger.Object,
-                mockConfigurationProvider.Object);
-
-            handler.HandleCommand(new VerifyInstallationPrerequisitesCommand());
-
-            m_mockLogger.Verify(
-                x => x.LogError(It.IsAny<string>(), It.IsAny<Exception>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<int>()),
-                Times.Once());
-        }
-
-        /// <summary>
-    /// Given BusinessLogicModule PrerequisiteCheckerThrows When HandleCommandCalled Then OnCommandHandledIsStillRaised
-        /// </summary>
-        [TestMethod]
-        public void Given_BusinessLogicModule_PrerequisiteCheckerThrows_When_HandleCommandCalled_Then_OnCommandHandledIsStillRaised()
-        {
-            var mockConfigurationProvider = new Mock<IConfigurationProvider>();
-            mockConfigurationProvider
-                .Setup(x => x.GetVerificationCommand())
-                .Throws(new InvalidOperationException("check failure"));
-
-            var replyHandler = new ActionReplyHandler();
-            var handler      = new VerifyInstallationPrerequisitesCommandHandler(
-                (IActionReplyPrivate)replyHandler,
-                m_mockLogger.Object,
-                mockConfigurationProvider.Object);
-
-            bool fired = false;
-            replyHandler.OnCommandHandled += (_, _) => fired = true;
-
-            handler.HandleCommand(new VerifyInstallationPrerequisitesCommand());
-
-            Assert.IsTrue(fired);
-        }
-
-        // ─────────────────────────────────────────────────────────────────────────
-        // UIAppStartedCommandHandler — via UIAppStartedCommand
-        // ─────────────────────────────────────────────────────────────────────────
-
-        /// <summary>
-    /// Given BusinessLogicModule ValidUIAppStartedCommand When HandleCommandCalled Then OnCommandHandledIsRaised
-        /// </summary>
-        [TestMethod]
-        public void Given_BusinessLogicModule_ValidUIAppStartedCommand_When_HandleCommandCalled_Then_OnCommandHandledIsRaised()
-        {
-            m_mockSystemLanguageProvider.Setup(p => p.FetchSystemLanguage()).Returns("en-US");
-            bool eventFired = false;
-            m_sut.ActionReplyEvent.OnCommandHandled += (_, _) => eventFired = true;
-
-            m_sut.HandleCommand(new UIAppStartedCommand());
-
-            Assert.IsTrue(eventFired);
-        }
-
-        /// <summary>
-    /// Given BusinessLogicModule ValidUIAppStartedCommand When HandleCommandCalled Then EventArgsIsShowSystemLanguageEventArgs
-        /// </summary>
-        [TestMethod]
-        public void Given_BusinessLogicModule_ValidUIAppStartedCommand_When_HandleCommandCalled_Then_EventArgsIsShowSystemLanguageEventArgs()
-        {
-            m_mockSystemLanguageProvider.Setup(p => p.FetchSystemLanguage()).Returns("en-US");
-            System.EventArgs? capturedArgs = null;
-            m_sut.ActionReplyEvent.OnCommandHandled += (_, e) => capturedArgs = e;
-
-            m_sut.HandleCommand(new UIAppStartedCommand());
-
-            Assert.IsInstanceOfType(capturedArgs, typeof(ShowSystemLanguageEventArgs));
-        }
-
-        /// <summary>
-    /// Given BusinessLogicModule ValidUIAppStartedCommand When HandleCommandCalled Then EventArgsLanguageMatchesProviderResult
-        /// </summary>
-        [TestMethod]
-        public void Given_BusinessLogicModule_ValidUIAppStartedCommand_When_HandleCommandCalled_Then_EventArgsLanguageMatchesProviderResult()
-        {
-            const string expectedLanguage = "de-DE";
-            m_mockSystemLanguageProvider.Setup(p => p.FetchSystemLanguage()).Returns(expectedLanguage);
-            ShowSystemLanguageEventArgs? capturedArgs = null;
-            m_sut.ActionReplyEvent.OnCommandHandled += (_, e) =>
-                capturedArgs = e as ShowSystemLanguageEventArgs;
-
-            m_sut.HandleCommand(new UIAppStartedCommand());
-
-            Assert.IsNotNull(capturedArgs);
-            Assert.AreEqual(expectedLanguage, capturedArgs.Language);
-        }
-
-        /// <summary>
-    /// Given BusinessLogicModule ValidUIAppStartedCommand When HandleCommandCalled Then BackendLoggerLogInfoIsCalled
-        /// </summary>
-        [TestMethod]
-        public void Given_BusinessLogicModule_ValidUIAppStartedCommand_When_HandleCommandCalled_Then_BackendLoggerLogInfoIsCalled()
-        {
-            m_mockSystemLanguageProvider.Setup(p => p.FetchSystemLanguage()).Returns("en-US");
-
-            m_sut.HandleCommand(new UIAppStartedCommand());
-
-            m_mockLogger.Verify(
-                x => x.LogInfo(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<int>()),
-                Times.AtLeastOnce());
-        }
-
-
-        // ─────────────────────────────────────────────────────────────────────────
-        // ShowSystemLanguageEventArgs
-        // ─────────────────────────────────────────────────────────────────────────
-
-        /// <summary>
-    /// Given BusinessLogicModule ValidLanguage When ShowSystemLanguageEventArgsConstructed Then LanguagePropertyIsSet
-        /// </summary>
-        [TestMethod]
-        public void Given_BusinessLogicModule_ValidLanguage_When_ShowSystemLanguageEventArgsConstructed_Then_LanguagePropertyIsSet()
-        {
-            var args = new ShowSystemLanguageEventArgs("fr-FR");
-
-            Assert.AreEqual("fr-FR", args.Language);
-        }
-
-        /// <summary>
-    /// Given BusinessLogicModule NullLanguage When ShowSystemLanguageEventArgsConstructed Then ThrowsArgumentNullException
-        /// </summary>
-        [TestMethod]
-        public void Given_BusinessLogicModule_NullLanguage_When_ShowSystemLanguageEventArgsConstructed_Then_ThrowsArgumentNullException()
-        {
-            Assert.ThrowsException<ArgumentNullException>(
-                () => new ShowSystemLanguageEventArgs(null!));
-        }
-
-        // ─────────────────────────────────────────────────────────────────────────
-        // UIAppStartedCommandHandler — constructor guards (via InternalsVisibleTo)
-        // ─────────────────────────────────────────────────────────────────────────
-
-        /// <summary>
-    /// Given BusinessLogicModule NullSystemLanguageProvider When UIAppStartedCommandHandlerConstructed Then ThrowsArgumentNullException
-        /// </summary>
-        [TestMethod]
-        public void Given_BusinessLogicModule_NullSystemLanguageProvider_When_UIAppStartedCommandHandlerConstructed_Then_ThrowsArgumentNullException()
-        {
-            var replyHandler = new ActionReplyHandler();
-            Assert.ThrowsException<ArgumentNullException>(
-                () => new UIAppStartedCommandHandler(
-                    (IActionReplyPrivate)replyHandler,
-                    m_mockLogger.Object,
-                    null!));
-        }
-
-        // ─────────────────────────────────────────────────────────────────────────
-        // AbstractCommandHandler — null guard in HandleCommand (direct handler call)
-        // ─────────────────────────────────────────────────────────────────────────
-
-        /// <summary>
-    /// Given BusinessLogicModule NullCommand When HandleCommandCalledOnConcreteHandler Then ThrowsArgumentNullException
-        /// </summary>
-        [TestMethod]
-        public void Given_BusinessLogicModule_NullCommand_When_HandleCommandCalledOnConcreteHandler_Then_ThrowsArgumentNullException()
-        {
-            var replyHandler = new ActionReplyHandler();
-            var handler      = new CloseAppCommandHandler(
-                (IActionReplyPrivate)replyHandler,
-                m_mockLogger.Object,
-                () => { });
-
-            Assert.ThrowsException<ArgumentNullException>(() => handler.HandleCommand(null!));
-        }
-
-        // ─────────────────────────────────────────────────────────────────────────
-        // CommandType properties on each concrete handler
-        // ─────────────────────────────────────────────────────────────────────────
-
-        /// <summary>
-    /// Given BusinessLogicModule CloseAppCommandHandler When CommandTypeAccessed Then ReturnsCloseAppCommandType
-        /// </summary>
-        [TestMethod]
-        public void Given_BusinessLogicModule_CloseAppCommandHandler_When_CommandTypeAccessed_Then_ReturnsCloseAppCommandType()
-        {
-            var replyHandler = new ActionReplyHandler();
-            var handler = new CloseAppCommandHandler(
-                (IActionReplyPrivate)replyHandler, m_mockLogger.Object, () => { });
-
-            Assert.AreEqual(typeof(CloseAppCommand), handler.CommandType);
-        }
-
-        /// <summary>
-    /// Given BusinessLogicModule InstallSoftwareCommandHandler When CommandTypeAccessed Then ReturnsInstallSoftwareCommandType
-        /// </summary>
-        [TestMethod]
-        public void Given_BusinessLogicModule_InstallSoftwareCommandHandler_When_CommandTypeAccessed_Then_ReturnsInstallSoftwareCommandType()
-        {
-            var replyHandler = new ActionReplyHandler();
-            var handler = new InstallSoftwareCommandHandler(
-                (IActionReplyPrivate)replyHandler,
-                m_mockLogger.Object,
-                new Mock<IConfigurationProvider>().Object);
-
-            Assert.AreEqual(typeof(InstallSoftwareCommand), handler.CommandType);
-        }
-
-        /// <summary>
-    /// Given BusinessLogicModule LogActionCommandHandler When CommandTypeAccessed Then ReturnsLogCommandType
-        /// </summary>
-        [TestMethod]
-        public void Given_BusinessLogicModule_LogActionCommandHandler_When_CommandTypeAccessed_Then_ReturnsLogCommandType()
-        {
-            var replyHandler = new ActionReplyHandler();
-            var handler = new LogActionCommandHandler(
-                (IActionReplyPrivate)replyHandler,
-                m_mockLogger.Object);
-
-            Assert.AreEqual(typeof(LogCommand), handler.CommandType);
-        }
-
-        /// <summary>
-    /// Given BusinessLogicModule VerifyInstallationPrerequisitesCommandHandler When CommandTypeAccessed Then ReturnsVerifyCommandType
-        /// </summary>
-        [TestMethod]
-        public void Given_BusinessLogicModule_VerifyInstallationPrerequisitesCommandHandler_When_CommandTypeAccessed_Then_ReturnsVerifyCommandType()
-        {
-            var replyHandler = new ActionReplyHandler();
-            var handler = new VerifyInstallationPrerequisitesCommandHandler(
-                (IActionReplyPrivate)replyHandler,
-                m_mockLogger.Object,
-                new Mock<IConfigurationProvider>().Object);
-
-            Assert.AreEqual(typeof(VerifyInstallationPrerequisitesCommand), handler.CommandType);
-        }
-
-        /// <summary>
-    /// Given BusinessLogicModule UIAppStartedCommandHandler When CommandTypeAccessed Then ReturnsUIAppStartedCommandType
-        /// </summary>
-        [TestMethod]
-        public void Given_BusinessLogicModule_UIAppStartedCommandHandler_When_CommandTypeAccessed_Then_ReturnsUIAppStartedCommandType()
-        {
-            var replyHandler = new ActionReplyHandler();
-            var handler = new UIAppStartedCommandHandler(
-                (IActionReplyPrivate)replyHandler,
-                m_mockLogger.Object,
-                m_mockSystemLanguageProvider.Object);
-
-            Assert.AreEqual(typeof(UIAppStartedCommand), handler.CommandType);
-        }
-
-        // ─────────────────────────────────────────────────────────────────────────
         // Private helpers
         // ─────────────────────────────────────────────────────────────────────────
 
@@ -839,3 +534,4 @@ namespace Pms_GuidanceGUI.Tests.Unit
         private sealed class UnregisteredCommand : ICommand { }
     }
 }
+

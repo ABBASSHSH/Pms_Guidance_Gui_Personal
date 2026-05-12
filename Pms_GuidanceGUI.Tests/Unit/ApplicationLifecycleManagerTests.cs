@@ -38,10 +38,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Register: guard clauses ───────────────────────────────────────────────
 
         /// <summary>
-    /// Given ApplicationLifecycleManager NullComponent When RegisterCalled Then ThrowsArgumentNullException
+    /// Given ApplicationLifecycleManager When NullComponentRegisterCalled Then ThrowsArgumentNullException
         /// </summary>
         [TestMethod]
-        public void Given_ApplicationLifecycleManager_NullComponent_When_RegisterCalled_Then_ThrowsArgumentNullException()
+        public void Given_ApplicationLifecycleManager_When_NullComponentRegisterCalled_Then_ThrowsArgumentNullException()
         {
             var manager = new ApplicationLifecycleManager();
 
@@ -50,10 +50,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ApplicationLifecycleManager OpenAlreadyCalled When RegisterCalled Then ThrowsInvalidOperationException
+    /// Given ApplicationLifecycleManager When OpenAlreadyCalledRegisterCalled Then ThrowsInvalidOperationException
         /// </summary>
         [TestMethod]
-        public void Given_ApplicationLifecycleManager_OpenAlreadyCalled_When_RegisterCalled_Then_ThrowsInvalidOperationException()
+        public void Given_ApplicationLifecycleManager_When_OpenAlreadyCalledRegisterCalled_Then_ThrowsInvalidOperationException()
         {
             var manager   = new ApplicationLifecycleManager();
             var component = new Mock<ILifeCycle>();
@@ -65,10 +65,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ApplicationLifecycleManager SameComponentRegisteredTwice When RegisterCalled Then ThrowsInvalidOperationException
+    /// Given ApplicationLifecycleManager When SameComponentRegisteredTwiceRegisterCalled Then ThrowsInvalidOperationException
         /// </summary>
         [TestMethod]
-        public void Given_ApplicationLifecycleManager_SameComponentRegisteredTwice_When_RegisterCalled_Then_ThrowsInvalidOperationException()
+        public void Given_ApplicationLifecycleManager_When_SameComponentRegisteredTwiceRegisterCalled_Then_ThrowsInvalidOperationException()
         {
             var manager   = new ApplicationLifecycleManager();
             var component = new Mock<ILifeCycle>();
@@ -78,13 +78,120 @@ namespace Pms_GuidanceGUI.Tests.Unit
                 () => manager.Register(component.Object));
         }
 
+        // ── Close-request subscription: guard clauses and behavior ─────────────
+
+        /// <summary>
+    /// Given ApplicationLifecycleManager When NullRequestSourceSubscribeCalled Then ThrowsArgumentNullException
+        /// </summary>
+        [TestMethod]
+        public void Given_ApplicationLifecycleManager_When_NullRequestSourceSubscribeCalled_Then_ThrowsArgumentNullException()
+        {
+            var manager = new ApplicationLifecycleManager();
+
+            Assert.ThrowsException<ArgumentNullException>(
+                () => manager.SubscribeToCloseApplicationRequests(null!, () => { }));
+        }
+
+        /// <summary>
+    /// Given ApplicationLifecycleManager When NullShutdownCallbackSubscribeCalled Then ThrowsArgumentNullException
+        /// </summary>
+        [TestMethod]
+        public void Given_ApplicationLifecycleManager_When_NullShutdownCallbackSubscribeCalled_Then_ThrowsArgumentNullException()
+        {
+            var manager = new ApplicationLifecycleManager();
+            var source  = new TestCloseApplicationRequestSource();
+
+            Assert.ThrowsException<ArgumentNullException>(
+                () => manager.SubscribeToCloseApplicationRequests(source, null!));
+        }
+
+        /// <summary>
+    /// Given ApplicationLifecycleManager When AlreadySubscribedSubscribeCalledAgain Then ThrowsInvalidOperationException
+        /// </summary>
+        [TestMethod]
+        public void Given_ApplicationLifecycleManager_When_AlreadySubscribedSubscribeCalledAgain_Then_ThrowsInvalidOperationException()
+        {
+            var manager = new ApplicationLifecycleManager();
+            var source1 = new TestCloseApplicationRequestSource();
+            var source2 = new TestCloseApplicationRequestSource();
+
+            manager.SubscribeToCloseApplicationRequests(source1, () => { });
+
+            Assert.ThrowsException<InvalidOperationException>(
+                () => manager.SubscribeToCloseApplicationRequests(source2, () => { }));
+        }
+
+        /// <summary>
+    /// Given ApplicationLifecycleManager When CloseRequestRaised Then ComponentsAreClosedAndShutdownCallbackInvoked
+        /// </summary>
+        [TestMethod]
+        public void Given_ApplicationLifecycleManager_When_CloseRequestRaised_Then_ComponentsAreClosedAndShutdownCallbackInvoked()
+        {
+            var manager   = new ApplicationLifecycleManager();
+            var component = new Mock<ILifeCycle>();
+            var source    = new TestCloseApplicationRequestSource();
+            int callbackCount = 0;
+
+            manager.Register(component.Object);
+            manager.Open();
+            manager.SubscribeToCloseApplicationRequests(source, () => callbackCount++);
+
+            source.RaiseCloseApplicationRequested();
+
+            component.Verify(c => c.Close(), Times.Once());
+            Assert.AreEqual(1, callbackCount);
+        }
+
+        /// <summary>
+    /// Given ApplicationLifecycleManager When CloseThrowsDuringCloseRequest Then ShutdownCallbackIsStillInvoked
+        /// </summary>
+        [TestMethod]
+        public void Given_ApplicationLifecycleManager_When_CloseThrowsDuringCloseRequest_Then_ShutdownCallbackIsStillInvoked()
+        {
+            var manager          = new ApplicationLifecycleManager();
+            var failingComponent = new Mock<ILifeCycle>();
+            var source           = new TestCloseApplicationRequestSource();
+            bool callbackInvoked = false;
+
+            failingComponent.Setup(c => c.Close()).Throws(new InvalidOperationException("close failed"));
+
+            manager.Register(failingComponent.Object);
+            manager.Open();
+            manager.SubscribeToCloseApplicationRequests(source, () => callbackInvoked = true);
+
+            Assert.ThrowsException<AggregateException>(() => source.RaiseCloseApplicationRequested());
+            Assert.IsTrue(callbackInvoked);
+        }
+
+        /// <summary>
+    /// Given ApplicationLifecycleManager When ExplicitCloseCalled Then RequestSourceIsUnsubscribed
+        /// </summary>
+        [TestMethod]
+        public void Given_ApplicationLifecycleManager_When_ExplicitCloseCalled_Then_RequestSourceIsUnsubscribed()
+        {
+            var manager   = new ApplicationLifecycleManager();
+            var component = new Mock<ILifeCycle>();
+            var source    = new TestCloseApplicationRequestSource();
+            int callbackCount = 0;
+
+            manager.Register(component.Object);
+            manager.Open();
+            manager.SubscribeToCloseApplicationRequests(source, () => callbackCount++);
+
+            manager.Close();
+            source.RaiseCloseApplicationRequested();
+
+            component.Verify(c => c.Close(), Times.Once());
+            Assert.AreEqual(0, callbackCount);
+        }
+
         // ── Open: ordering ────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given ApplicationLifecycleManager ThreeComponents When OpenCalled Then ComponentsAreOpenedInRegistrationOrder
+    /// Given ApplicationLifecycleManager When ThreeComponentsOpenCalled Then ComponentsAreOpenedInRegistrationOrder
         /// </summary>
         [TestMethod]
-        public void Given_ApplicationLifecycleManager_ThreeComponents_When_OpenCalled_Then_ComponentsAreOpenedInRegistrationOrder()
+        public void Given_ApplicationLifecycleManager_When_ThreeComponentsOpenCalled_Then_ComponentsAreOpenedInRegistrationOrder()
         {
             var manager         = new ApplicationLifecycleManager();
             var callOrder       = new List<int>();
@@ -102,10 +209,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ApplicationLifecycleManager EmptyManager When OpenCalled Then NoExceptionThrown
+    /// Given ApplicationLifecycleManager When EmptyManagerOpenCalled Then NoExceptionThrown
         /// </summary>
         [TestMethod]
-        public void Given_ApplicationLifecycleManager_EmptyManager_When_OpenCalled_Then_NoExceptionThrown()
+        public void Given_ApplicationLifecycleManager_When_EmptyManagerOpenCalled_Then_NoExceptionThrown()
         {
             var manager = new ApplicationLifecycleManager();
 
@@ -116,10 +223,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Open: idempotency ────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given ApplicationLifecycleManager AlreadyOpenedManager When OpenCalledAgain Then ComponentsAreNotOpenedTwice
+    /// Given ApplicationLifecycleManager When AlreadyOpenedManagerOpenCalledAgain Then ComponentsAreNotOpenedTwice
         /// </summary>
         [TestMethod]
-        public void Given_ApplicationLifecycleManager_AlreadyOpenedManager_When_OpenCalledAgain_Then_ComponentsAreNotOpenedTwice()
+        public void Given_ApplicationLifecycleManager_When_AlreadyOpenedManagerOpenCalledAgain_Then_ComponentsAreNotOpenedTwice()
         {
             var manager   = new ApplicationLifecycleManager();
             var component = new Mock<ILifeCycle>();
@@ -134,10 +241,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Close: reverse ordering ───────────────────────────────────────────────
 
         /// <summary>
-    /// Given ApplicationLifecycleManager ThreeOpenedComponents When CloseCalled Then ComponentsAreClosedInReverseRegistrationOrder
+    /// Given ApplicationLifecycleManager When ThreeOpenedComponentsCloseCalled Then ComponentsAreClosedInReverseRegistrationOrder
         /// </summary>
         [TestMethod]
-        public void Given_ApplicationLifecycleManager_ThreeOpenedComponents_When_CloseCalled_Then_ComponentsAreClosedInReverseRegistrationOrder()
+        public void Given_ApplicationLifecycleManager_When_ThreeOpenedComponentsCloseCalled_Then_ComponentsAreClosedInReverseRegistrationOrder()
         {
             var manager         = new ApplicationLifecycleManager();
             var callOrder       = new List<int>();
@@ -156,10 +263,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ApplicationLifecycleManager EmptyOpenedManager When CloseCalled Then NoExceptionThrown
+    /// Given ApplicationLifecycleManager When EmptyOpenedManagerCloseCalled Then NoExceptionThrown
         /// </summary>
         [TestMethod]
-        public void Given_ApplicationLifecycleManager_EmptyOpenedManager_When_CloseCalled_Then_NoExceptionThrown()
+        public void Given_ApplicationLifecycleManager_When_EmptyOpenedManagerCloseCalled_Then_NoExceptionThrown()
         {
             var manager = new ApplicationLifecycleManager();
             manager.Open();
@@ -171,10 +278,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Close: idempotency ────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given ApplicationLifecycleManager AlreadyClosedManager When CloseCalledAgain Then ComponentsAreNotClosedTwice
+    /// Given ApplicationLifecycleManager When AlreadyClosedManagerCloseCalledAgain Then ComponentsAreNotClosedTwice
         /// </summary>
         [TestMethod]
-        public void Given_ApplicationLifecycleManager_AlreadyClosedManager_When_CloseCalledAgain_Then_ComponentsAreNotClosedTwice()
+        public void Given_ApplicationLifecycleManager_When_AlreadyClosedManagerCloseCalledAgain_Then_ComponentsAreNotClosedTwice()
         {
             var manager   = new ApplicationLifecycleManager();
             var component = new Mock<ILifeCycle>();
@@ -188,10 +295,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ApplicationLifecycleManager NeverOpenedManager When CloseCalled Then ComponentsAreNeverClosed
+    /// Given ApplicationLifecycleManager When NeverOpenedManagerCloseCalled Then ComponentsAreNeverClosed
         /// </summary>
         [TestMethod]
-        public void Given_ApplicationLifecycleManager_NeverOpenedManager_When_CloseCalled_Then_ComponentsAreNeverClosed()
+        public void Given_ApplicationLifecycleManager_When_NeverOpenedManagerCloseCalled_Then_ComponentsAreNeverClosed()
         {
             var manager   = new ApplicationLifecycleManager();
             var component = new Mock<ILifeCycle>();
@@ -205,10 +312,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Full lifecycle: open then close ───────────────────────────────────────
 
         /// <summary>
-    /// Given ApplicationLifecycleManager TwoComponents When OpenThenCloseCalled Then EachComponentOpenedOnceAndClosedOnce
+    /// Given ApplicationLifecycleManager When TwoComponentsOpenThenCloseCalled Then EachComponentOpenedOnceAndClosedOnce
         /// </summary>
         [TestMethod]
-        public void Given_ApplicationLifecycleManager_TwoComponents_When_OpenThenCloseCalled_Then_EachComponentOpenedOnceAndClosedOnce()
+        public void Given_ApplicationLifecycleManager_When_TwoComponentsOpenThenCloseCalled_Then_EachComponentOpenedOnceAndClosedOnce()
         {
             var manager          = new ApplicationLifecycleManager();
             var firstComponent   = new Mock<ILifeCycle>();
@@ -227,10 +334,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ApplicationLifecycleManager ClosedManager When OpenCalledAgain Then ComponentsCanBeReopenedAndClosed
+    /// Given ApplicationLifecycleManager When ClosedManagerOpenCalledAgain Then ComponentsCanBeReopenedAndClosed
         /// </summary>
         [TestMethod]
-        public void Given_ApplicationLifecycleManager_ClosedManager_When_OpenCalledAgain_Then_ComponentsCanBeReopenedAndClosed()
+        public void Given_ApplicationLifecycleManager_When_ClosedManagerOpenCalledAgain_Then_ComponentsCanBeReopenedAndClosed()
         {
             var manager   = new ApplicationLifecycleManager();
             var component = new Mock<ILifeCycle>();
@@ -248,10 +355,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Open: failure rollback ────────────────────────────────────────────────
 
         /// <summary>
-    /// Given ApplicationLifecycleManager SecondComponentFailsOpen When OpenCalled Then FirstComponentIsRolledBackByClose
+    /// Given ApplicationLifecycleManager When SecondComponentFailsOpenOpenCalled Then FirstComponentIsRolledBackByClose
         /// </summary>
         [TestMethod]
-        public void Given_ApplicationLifecycleManager_SecondComponentFailsOpen_When_OpenCalled_Then_FirstComponentIsRolledBackByClose()
+        public void Given_ApplicationLifecycleManager_When_SecondComponentFailsOpenOpenCalled_Then_FirstComponentIsRolledBackByClose()
         {
             var manager          = new ApplicationLifecycleManager();
             var firstComponent   = new Mock<ILifeCycle>();
@@ -267,10 +374,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ApplicationLifecycleManager ComponentFailsOpen When OpenCalled Then OriginalExceptionIsPropagated
+    /// Given ApplicationLifecycleManager When ComponentFailsOpenOpenCalled Then OriginalExceptionIsPropagated
         /// </summary>
         [TestMethod]
-        public void Given_ApplicationLifecycleManager_ComponentFailsOpen_When_OpenCalled_Then_OriginalExceptionIsPropagated()
+        public void Given_ApplicationLifecycleManager_When_ComponentFailsOpenOpenCalled_Then_OriginalExceptionIsPropagated()
         {
             var manager          = new ApplicationLifecycleManager();
             var expected         = new InvalidOperationException("open failed");
@@ -284,10 +391,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ApplicationLifecycleManager ComponentFailsOpen When OpenCalled Then ManagerIsNotMarkedOpen
+    /// Given ApplicationLifecycleManager When ComponentFailsOpenOpenCalled Then ManagerIsNotMarkedOpen
         /// </summary>
         [TestMethod]
-        public void Given_ApplicationLifecycleManager_ComponentFailsOpen_When_OpenCalled_Then_ManagerIsNotMarkedOpen()
+        public void Given_ApplicationLifecycleManager_When_ComponentFailsOpenOpenCalled_Then_ManagerIsNotMarkedOpen()
         {
             var manager          = new ApplicationLifecycleManager();
             var successComponent = new Mock<ILifeCycle>();
@@ -304,10 +411,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ApplicationLifecycleManager StartupAndRollbackBothFail When OpenCalled Then AggregateExceptionContainsBothFailures
+    /// Given ApplicationLifecycleManager When StartupAndRollbackBothFailOpenCalled Then AggregateExceptionContainsBothFailures
         /// </summary>
         [TestMethod]
-        public void Given_ApplicationLifecycleManager_StartupAndRollbackBothFail_When_OpenCalled_Then_AggregateExceptionContainsBothFailures()
+        public void Given_ApplicationLifecycleManager_When_StartupAndRollbackBothFailOpenCalled_Then_AggregateExceptionContainsBothFailures()
         {
             var manager          = new ApplicationLifecycleManager();
             var firstComponent   = new Mock<ILifeCycle>();
@@ -328,10 +435,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Close: fault isolation ─────────────────────────────────────────────────
 
         /// <summary>
-    /// Given ApplicationLifecycleManager SecondComponentFailsClose When CloseCalled Then FirstComponentIsStillClosed
+    /// Given ApplicationLifecycleManager When SecondComponentFailsCloseCloseCalled Then FirstComponentIsStillClosed
         /// </summary>
         [TestMethod]
-        public void Given_ApplicationLifecycleManager_SecondComponentFailsClose_When_CloseCalled_Then_FirstComponentIsStillClosed()
+        public void Given_ApplicationLifecycleManager_When_SecondComponentFailsCloseCloseCalled_Then_FirstComponentIsStillClosed()
         {
             // Registered first → closed second (reverse order).
             // Registered second → closed first (reverse order, throws).
@@ -350,10 +457,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ApplicationLifecycleManager ComponentFailsClose When CloseCalled Then AggregateExceptionIsThrown
+    /// Given ApplicationLifecycleManager When ComponentFailsCloseCloseCalled Then AggregateExceptionIsThrown
         /// </summary>
         [TestMethod]
-        public void Given_ApplicationLifecycleManager_ComponentFailsClose_When_CloseCalled_Then_AggregateExceptionIsThrown()
+        public void Given_ApplicationLifecycleManager_When_ComponentFailsCloseCloseCalled_Then_AggregateExceptionIsThrown()
         {
             var manager          = new ApplicationLifecycleManager();
             var failingComponent = new Mock<ILifeCycle>();
@@ -366,10 +473,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ApplicationLifecycleManager TwoComponentsFailClose When CloseCalled Then AggregateExceptionContainsBothErrors
+    /// Given ApplicationLifecycleManager When TwoComponentsFailCloseCloseCalled Then AggregateExceptionContainsBothErrors
         /// </summary>
         [TestMethod]
-        public void Given_ApplicationLifecycleManager_TwoComponentsFailClose_When_CloseCalled_Then_AggregateExceptionContainsBothErrors()
+        public void Given_ApplicationLifecycleManager_When_TwoComponentsFailCloseCloseCalled_Then_AggregateExceptionContainsBothErrors()
         {
             var manager               = new ApplicationLifecycleManager();
             var firstFailingComponent = new Mock<ILifeCycle>();
@@ -386,10 +493,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ApplicationLifecycleManager ComponentFailsClose When CloseCalledAgain Then SecondCallIsNoOp
+    /// Given ApplicationLifecycleManager When ComponentFailsCloseCloseCalledAgain Then SecondCallIsNoOp
         /// </summary>
         [TestMethod]
-        public void Given_ApplicationLifecycleManager_ComponentFailsClose_When_CloseCalledAgain_Then_SecondCallIsNoOp()
+        public void Given_ApplicationLifecycleManager_When_ComponentFailsCloseCloseCalledAgain_Then_SecondCallIsNoOp()
         {
             var manager          = new ApplicationLifecycleManager();
             var failingComponent = new Mock<ILifeCycle>();
@@ -420,5 +527,16 @@ namespace Pms_GuidanceGUI.Tests.Unit
             mock.Setup(c => c.Close()).Callback(() => callOrder.Add(id));
             return mock;
         }
+
+        private sealed class TestCloseApplicationRequestSource : ICloseApplicationRequestSource
+        {
+            public event EventHandler<EventArgs>? CloseApplicationRequested;
+
+            public void RaiseCloseApplicationRequested()
+            {
+                CloseApplicationRequested?.Invoke(this, EventArgs.Empty);
+            }
+        }
     }
 }
+

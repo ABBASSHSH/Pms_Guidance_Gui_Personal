@@ -1,0 +1,57 @@
+# =============================================================================
+# .graphifyignore — patterns excluded from graphify knowledge graph extraction
+# Same syntax as .gitignore. Works for root and per-subfolder runs.
+# =============================================================================
+
+# Build artifacts
+bin/
+obj/
+dist/
+build/
+Angular_Output/
+
+# Test artifacts and coverage
+TestResults/
+TestResults2/
+pw-out/
+playwright-report/
+test-results/
+coverage/
+
+# Dependencies
+node_modules/
+vendor/
+
+# Visual Studio / editor artifacts
+.vs/
+.vscode/
+.angular/
+
+# Archives and binary packages (inside bin/obj only — patterns below are intentionally
+# NOT top-level *.exe/*.dll to avoid matching Pms_GuidanceGUI.exe/ directory)
+*.zip
+*.nupkg
+bin/**/*.dll
+bin/**/*.exe
+obj/**/*.dll
+obj/**/*.exe
+
+# Graphify self-referential (don't extract graphify's own instructions as knowledge)
+graphify-out/
+CLAUDE.md
+GEMINI.md
+AGENTS.md
+.cursor/
+.github/
+.gemini/
+.claude/
+.codex/
+scripts/graphify.sh
+scripts/Invoke-Graphify.ps1
+
+# Generated logs
+*.log
+
+# Playwright test outputs
+pw-out/
+playwright-report/

@@ -84,10 +84,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Constructor guards ────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given Converter NullBlm When OpenCalled Then ThrowsNullReferenceException
+    /// Given Converter When NullBlmOpenCalled Then ThrowsNullReferenceException
         /// </summary>
         [TestMethod]
-        public void Given_Converter_NullBlm_When_OpenCalled_Then_ThrowsNullReferenceException()
+        public void Given_Converter_When_NullBlmOpenCalled_Then_ThrowsNullReferenceException()
         {
             // The constructor no longer accesses ActionReplyEvent; Open() dereferences it, which throws NRE.
             var converter = new Converter(null!, m_mockConnectionManager.Object, m_mockLogger.Object);
@@ -96,10 +96,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given Converter NullConnectionManager When OpenCalled Then ThrowsNullReferenceException
+    /// Given Converter When NullConnectionManagerOpenCalled Then ThrowsNullReferenceException
         /// </summary>
         [TestMethod]
-        public void Given_Converter_NullConnectionManager_When_OpenCalled_Then_ThrowsNullReferenceException()
+        public void Given_Converter_When_NullConnectionManagerOpenCalled_Then_ThrowsNullReferenceException()
         {
             // The constructor succeeds (no dereference of ConnectionManager there),
             // but Open() dereferences it to subscribe to MessageReceived.
@@ -109,10 +109,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given Converter NullLogger When Constructed Then ThrowsArgumentNullException
+    /// Given Converter When NullLoggerConstructed Then ThrowsArgumentNullException
         /// </summary>
         [TestMethod]
-        public void Given_Converter_NullLogger_When_Constructed_Then_ThrowsArgumentNullException()
+        public void Given_Converter_When_NullLoggerConstructed_Then_ThrowsArgumentNullException()
         {
             Assert.ThrowsException<ArgumentNullException>(
                 () => new Converter(m_mockBlm.Object, m_mockConnectionManager.Object, null!));
@@ -121,10 +121,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Inbound: LogMessage ───────────────────────────────────────────────────
 
         /// <summary>
-    /// Given Converter ValidLogMessagePayload When MessageReceived Then LogCommandForwardedToBlm
+    /// Given Converter When ValidLogMessagePayloadMessageReceived Then LogCommandForwardedToBlm
         /// </summary>
         [TestMethod]
-        public void Given_Converter_ValidLogMessagePayload_When_MessageReceived_Then_LogCommandForwardedToBlm()
+        public void Given_Converter_When_ValidLogMessagePayloadMessageReceived_Then_LogCommandForwardedToBlm()
         {
             SimulateIncoming("LogMessage", BuildLogPayload("Hello", DateTime.UtcNow));
 
@@ -133,10 +133,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given Converter ValidLogMessagePayload When MessageReceived Then CommandHasCorrectMessage
+    /// Given Converter When ValidLogMessagePayloadMessageReceived Then CommandHasCorrectMessage
         /// </summary>
         [TestMethod]
-        public void Given_Converter_ValidLogMessagePayload_When_MessageReceived_Then_CommandHasCorrectMessage()
+        public void Given_Converter_When_ValidLogMessagePayloadMessageReceived_Then_CommandHasCorrectMessage()
         {
             SimulateIncoming("LogMessage", BuildLogPayload("Expected text", DateTime.UtcNow));
 
@@ -144,10 +144,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given Converter ValidLogMessagePayload When MessageReceived Then CommandHasCorrectTimestamp
+    /// Given Converter When ValidLogMessagePayloadMessageReceived Then CommandHasCorrectTimestamp
         /// </summary>
         [TestMethod]
-        public void Given_Converter_ValidLogMessagePayload_When_MessageReceived_Then_CommandHasCorrectTimestamp()
+        public void Given_Converter_When_ValidLogMessagePayloadMessageReceived_Then_CommandHasCorrectTimestamp()
         {
             var expected = new DateTime(2026, 4, 1, 12, 0, 0, DateTimeKind.Utc);
             SimulateIncoming("LogMessage", BuildLogPayload("msg", expected));
@@ -156,10 +156,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given Converter LogMessageWithNullMessageField When MessageReceived Then CommandUsesEmptyString
+    /// Given Converter When LogMessageWithNullMessageFieldMessageReceived Then CommandUsesEmptyString
         /// </summary>
         [TestMethod]
-        public void Given_Converter_LogMessageWithNullMessageField_When_MessageReceived_Then_CommandUsesEmptyString()
+        public void Given_Converter_When_LogMessageWithNullMessageFieldMessageReceived_Then_CommandUsesEmptyString()
         {
             // LogJsonActionHandler falls back to string.Empty when the Message field is null.
             SimulateIncoming("LogMessage", "{\"Message\":null,\"Timestamp\":\"2026-01-01T00:00:00Z\"}");
@@ -171,10 +171,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Inbound: other actions ────────────────────────────────────────────────
 
         /// <summary>
-    /// Given Converter VerifyPrerequisiteAction When MessageReceived Then VerifyCommandForwardedToBlm
+    /// Given Converter When VerifyPrerequisiteActionMessageReceived Then VerifyCommandForwardedToBlm
         /// </summary>
         [TestMethod]
-        public void Given_Converter_VerifyPrerequisiteAction_When_MessageReceived_Then_VerifyCommandForwardedToBlm()
+        public void Given_Converter_When_VerifyPrerequisiteActionMessageReceived_Then_VerifyCommandForwardedToBlm()
         {
             SimulateIncoming("VerifyInstallationPrerequisite", "{}");
 
@@ -183,10 +183,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given Converter InstallSoftwareAction When MessageReceived Then InstallCommandForwardedToBlm
+    /// Given Converter When InstallSoftwareActionMessageReceived Then InstallCommandForwardedToBlm
         /// </summary>
         [TestMethod]
-        public void Given_Converter_InstallSoftwareAction_When_MessageReceived_Then_InstallCommandForwardedToBlm()
+        public void Given_Converter_When_InstallSoftwareActionMessageReceived_Then_InstallCommandForwardedToBlm()
         {
             SimulateIncoming("InstallSoftware", "{}");
 
@@ -195,10 +195,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given Converter CloseAppAction When MessageReceived Then CloseCommandForwardedToBlm
+    /// Given Converter When CloseAppActionMessageReceived Then CloseCommandForwardedToBlm
         /// </summary>
         [TestMethod]
-        public void Given_Converter_CloseAppAction_When_MessageReceived_Then_CloseCommandForwardedToBlm()
+        public void Given_Converter_When_CloseAppActionMessageReceived_Then_CloseCommandForwardedToBlm()
         {
             SimulateIncoming("CloseApp", "{}");
 
@@ -209,10 +209,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Inbound: routing quality ──────────────────────────────────────────────
 
         /// <summary>
-    /// Given Converter ValidAction When MessageReceived Then LogDebugIsCalled
+    /// Given Converter When ValidActionMessageReceived Then LogDebugIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_Converter_ValidAction_When_MessageReceived_Then_LogDebugIsCalled()
+        public void Given_Converter_When_ValidActionMessageReceived_Then_LogDebugIsCalled()
         {
             SimulateIncoming("CloseApp", "{}");
 
@@ -220,10 +220,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given Converter TwoSuccessiveMessages When MessageReceived Then BothCommandsForwardedToBlm
+    /// Given Converter When TwoSuccessiveMessagesMessageReceived Then BothCommandsForwardedToBlm
         /// </summary>
         [TestMethod]
-        public void Given_Converter_TwoSuccessiveMessages_When_MessageReceived_Then_BothCommandsForwardedToBlm()
+        public void Given_Converter_When_TwoSuccessiveMessagesMessageReceived_Then_BothCommandsForwardedToBlm()
         {
             SimulateIncoming("CloseApp", "{}");
             SimulateIncoming("InstallSoftware", "{}");
@@ -234,10 +234,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Inbound: edge cases ───────────────────────────────────────────────────
 
         /// <summary>
-    /// Given Converter UnknownAction When MessageReceived Then NoCommandForwardedAndLogWarnIsCalled
+    /// Given Converter When UnknownActionMessageReceived Then NoCommandForwardedAndLogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_Converter_UnknownAction_When_MessageReceived_Then_NoCommandForwardedAndLogWarnIsCalled()
+        public void Given_Converter_When_UnknownActionMessageReceived_Then_NoCommandForwardedAndLogWarnIsCalled()
         {
             SimulateIncoming("UnknownAction", "{}");
 
@@ -246,10 +246,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given Converter EmptyActionName When MessageReceived Then NoCommandForwardedAndLogWarnIsCalled
+    /// Given Converter When EmptyActionNameMessageReceived Then NoCommandForwardedAndLogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_Converter_EmptyActionName_When_MessageReceived_Then_NoCommandForwardedAndLogWarnIsCalled()
+        public void Given_Converter_When_EmptyActionNameMessageReceived_Then_NoCommandForwardedAndLogWarnIsCalled()
         {
             SimulateIncoming(string.Empty, "{}");
 
@@ -258,10 +258,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given Converter MalformedJsonPayload When MessageReceived Then NoCommandForwardedAndNoExceptionThrown
+    /// Given Converter When MalformedJsonPayloadMessageReceived Then NoCommandForwardedAndNoExceptionThrown
         /// </summary>
         [TestMethod]
-        public void Given_Converter_MalformedJsonPayload_When_MessageReceived_Then_NoCommandForwardedAndNoExceptionThrown()
+        public void Given_Converter_When_MalformedJsonPayloadMessageReceived_Then_NoCommandForwardedAndNoExceptionThrown()
         {
             bool threw = false;
             try
@@ -338,10 +338,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given Converter NullEventArgs When MessageReceived Then NoExceptionThrown
+    /// Given Converter When NullEventArgsMessageReceived Then NoExceptionThrown
         /// </summary>
         [TestMethod]
-        public void Given_Converter_NullEventArgs_When_MessageReceived_Then_NoExceptionThrown()
+        public void Given_Converter_When_NullEventArgsMessageReceived_Then_NoExceptionThrown()
         {
             bool threw = false;
             try
@@ -360,10 +360,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Outbound: SendMessage is called ──────────────────────────────────────
 
         /// <summary>
-    /// Given Converter VerifyPrerequisitesStatusEventArgs When ActionReplyFired Then SendMessageIsCalledOnce
+    /// Given Converter When VerifyPrerequisitesStatusEventArgsActionReplyFired Then SendMessageIsCalledOnce
         /// </summary>
         [TestMethod]
-        public void Given_Converter_VerifyPrerequisitesStatusEventArgs_When_ActionReplyFired_Then_SendMessageIsCalledOnce()
+        public void Given_Converter_When_VerifyPrerequisitesStatusEventArgsActionReplyFired_Then_SendMessageIsCalledOnce()
         {
             m_mockActionReply.Raise(
                 x => x.OnCommandHandled += null, this,
@@ -373,10 +373,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-        /// Given Converter InstallSoftwareStatusEventArgs When ActionReplyFired Then SendMessageIsNotCalled
+        /// Given Converter When InstallSoftwareStatusEventArgsActionReplyFired Then SendMessageIsNotCalled
         /// </summary>
         [TestMethod]
-        public void Given_Converter_InstallSoftwareStatusEventArgs_When_ActionReplyFired_Then_SendMessageIsNotCalled()
+        public void Given_Converter_When_InstallSoftwareStatusEventArgsActionReplyFired_Then_SendMessageIsNotCalled()
         {
             m_mockActionReply.Raise(
                 x => x.OnCommandHandled += null, this,
@@ -392,7 +392,7 @@ namespace Pms_GuidanceGUI.Tests.Unit
         /// </summary>
         [TestMethod]
 
-        public void Given_Converter_VerifyPrerequisitesStatusEventArgs_When_ActionReplyFired_Then_ReplyActionIsShowInstallationPrerequisite()
+        public void Given_Converter_When_VerifyPrerequisitesStatusEventArgsActionReplyFired_Then_ReplyActionIsShowInstallationPrerequisite()
         {
             m_mockActionReply.Raise(
                 x => x.OnCommandHandled += null, this,
@@ -402,10 +402,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-        /// Given Converter InstallSoftwareStatusEventArgs When ActionReplyFired Then NoInstallReplyActionIsSent
+        /// Given Converter When InstallSoftwareStatusEventArgsActionReplyFired Then NoInstallReplyActionIsSent
         /// </summary>
         [TestMethod]
-        public void Given_Converter_InstallSoftwareStatusEventArgs_When_ActionReplyFired_Then_NoInstallReplyActionIsSent()
+        public void Given_Converter_When_InstallSoftwareStatusEventArgsActionReplyFired_Then_NoInstallReplyActionIsSent()
         {
             m_mockActionReply.Raise(
                 x => x.OnCommandHandled += null, this,
@@ -417,10 +417,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Outbound: reply payload content ──────────────────────────────────────
 
         /// <summary>
-    /// Given Converter VerifyPrerequisitesMetEventArgs When ActionReplyFired Then ReplyStatusIsOk
+    /// Given Converter When VerifyPrerequisitesMetEventArgsActionReplyFired Then ReplyStatusIsOk
         /// </summary>
         [TestMethod]
-        public void Given_Converter_VerifyPrerequisitesMetEventArgs_When_ActionReplyFired_Then_ReplyStatusIsOk()
+        public void Given_Converter_When_VerifyPrerequisitesMetEventArgsActionReplyFired_Then_ReplyStatusIsOk()
         {
             m_mockActionReply.Raise(
                 x => x.OnCommandHandled += null, this,
@@ -430,10 +430,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given Converter VerifyPrerequisitesNotMetEventArgs When ActionReplyFired Then ReplyStatusIsNotOk
+    /// Given Converter When VerifyPrerequisitesNotMetEventArgsActionReplyFired Then ReplyStatusIsNotOk
         /// </summary>
         [TestMethod]
-        public void Given_Converter_VerifyPrerequisitesNotMetEventArgs_When_ActionReplyFired_Then_ReplyStatusIsNotOk()
+        public void Given_Converter_When_VerifyPrerequisitesNotMetEventArgsActionReplyFired_Then_ReplyStatusIsNotOk()
         {
             m_mockActionReply.Raise(
                 x => x.OnCommandHandled += null, this,
@@ -443,10 +443,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given Converter InstallSoftwareSuccessEventArgs When ActionReplyFired Then NoInstallPayloadIsSent
+    /// Given Converter When InstallSoftwareSuccessEventArgsActionReplyFired Then NoInstallPayloadIsSent
         /// </summary>
         [TestMethod]
-        public void Given_Converter_InstallSoftwareSuccessEventArgs_When_ActionReplyFired_Then_NoInstallPayloadIsSent()
+        public void Given_Converter_When_InstallSoftwareSuccessEventArgsActionReplyFired_Then_NoInstallPayloadIsSent()
         {
             m_mockActionReply.Raise(
                 x => x.OnCommandHandled += null, this,
@@ -456,10 +456,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given Converter InstallSoftwareFailureEventArgs When ActionReplyFired Then NoInstallPayloadIsSent
+    /// Given Converter When InstallSoftwareFailureEventArgsActionReplyFired Then NoInstallPayloadIsSent
         /// </summary>
         [TestMethod]
-        public void Given_Converter_InstallSoftwareFailureEventArgs_When_ActionReplyFired_Then_NoInstallPayloadIsSent()
+        public void Given_Converter_When_InstallSoftwareFailureEventArgsActionReplyFired_Then_NoInstallPayloadIsSent()
         {
             m_mockActionReply.Raise(
                 x => x.OnCommandHandled += null, this,
@@ -471,10 +471,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Outbound: unregistered event type ────────────────────────────────────
 
         /// <summary>
-    /// Given Converter UnregisteredEventType When ActionReplyFired Then LogWarnIsCalled
+    /// Given Converter When UnregisteredEventTypeActionReplyFired Then LogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_Converter_UnregisteredEventType_When_ActionReplyFired_Then_LogWarnIsCalled()
+        public void Given_Converter_When_UnregisteredEventTypeActionReplyFired_Then_LogWarnIsCalled()
         {
             // EventArgs.Empty has no matching writer registered in Converter.
             m_mockActionReply.Raise(
@@ -484,10 +484,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given Converter UnregisteredEventType When ActionReplyFired Then SendMessageIsNotCalled
+    /// Given Converter When UnregisteredEventTypeActionReplyFired Then SendMessageIsNotCalled
         /// </summary>
         [TestMethod]
-        public void Given_Converter_UnregisteredEventType_When_ActionReplyFired_Then_SendMessageIsNotCalled()
+        public void Given_Converter_When_UnregisteredEventTypeActionReplyFired_Then_SendMessageIsNotCalled()
         {
             m_mockActionReply.Raise(
                 x => x.OnCommandHandled += null, this, EventArgs.Empty);
@@ -498,10 +498,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Lifecycle ─────────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given Converter ClosedConverter When MessageReceived Then NoCommandForwardedToBlm
+    /// Given Converter When ClosedConverterMessageReceived Then NoCommandForwardedToBlm
         /// </summary>
         [TestMethod]
-        public void Given_Converter_ClosedConverter_When_MessageReceived_Then_NoCommandForwardedToBlm()
+        public void Given_Converter_When_ClosedConverterMessageReceived_Then_NoCommandForwardedToBlm()
         {
             m_converter.Close();
 
@@ -511,10 +511,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given Converter ClosedThenReopenedConverter When MessageReceived Then CommandForwardedToBlm
+    /// Given Converter When ClosedThenReopenedConverterMessageReceived Then CommandForwardedToBlm
         /// </summary>
         [TestMethod]
-        public void Given_Converter_ClosedThenReopenedConverter_When_MessageReceived_Then_CommandForwardedToBlm()
+        public void Given_Converter_When_ClosedThenReopenedConverterMessageReceived_Then_CommandForwardedToBlm()
         {
             m_converter.Close();
             m_converter.Open();
@@ -528,10 +528,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Inbound: UIAppStarted action ─────────────────────────────────────
 
         /// <summary>
-    /// Given Converter UIAppStartedAction When MessageReceived Then UIAppStartedCommandForwardedToBlm
+    /// Given Converter When UIAppStartedActionMessageReceived Then UIAppStartedCommandForwardedToBlm
         /// </summary>
         [TestMethod]
-        public void Given_Converter_UIAppStartedAction_When_MessageReceived_Then_UIAppStartedCommandForwardedToBlm()
+        public void Given_Converter_When_UIAppStartedActionMessageReceived_Then_UIAppStartedCommandForwardedToBlm()
         {
             SimulateIncoming("UIAppStarted", "{}");
 
@@ -542,10 +542,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Outbound: ShowSystemLanguage reply ────────────────────────────────────
 
         /// <summary>
-    /// Given Converter ShowSystemLanguageEventArgs When ActionReplyFired Then SendMessageIsCalledOnce
+    /// Given Converter When ShowSystemLanguageEventArgsActionReplyFired Then SendMessageIsCalledOnce
         /// </summary>
         [TestMethod]
-        public void Given_Converter_ShowSystemLanguageEventArgs_When_ActionReplyFired_Then_SendMessageIsCalledOnce()
+        public void Given_Converter_When_ShowSystemLanguageEventArgsActionReplyFired_Then_SendMessageIsCalledOnce()
         {
             m_mockActionReply.Raise(
                 x => x.OnCommandHandled += null, this,
@@ -555,10 +555,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given Converter ShowSystemLanguageEventArgs When ActionReplyFired Then ReplyActionIsShowSystemLanguage
+    /// Given Converter When ShowSystemLanguageEventArgsActionReplyFired Then ReplyActionIsShowSystemLanguage
         /// </summary>
         [TestMethod]
-        public void Given_Converter_ShowSystemLanguageEventArgs_When_ActionReplyFired_Then_ReplyActionIsShowSystemLanguage()
+        public void Given_Converter_When_ShowSystemLanguageEventArgsActionReplyFired_Then_ReplyActionIsShowSystemLanguage()
         {
             m_mockActionReply.Raise(
                 x => x.OnCommandHandled += null, this,
@@ -568,10 +568,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given Converter ShowSystemLanguageEventArgs When ActionReplyFired Then ReplyLanguageMatchesEvent
+    /// Given Converter When ShowSystemLanguageEventArgsActionReplyFired Then ReplyLanguageMatchesEvent
         /// </summary>
         [TestMethod]
-        public void Given_Converter_ShowSystemLanguageEventArgs_When_ActionReplyFired_Then_ReplyLanguageMatchesEvent()
+        public void Given_Converter_When_ShowSystemLanguageEventArgsActionReplyFired_Then_ReplyLanguageMatchesEvent()
         {
             m_mockActionReply.Raise(
                 x => x.OnCommandHandled += null, this,
@@ -601,4 +601,5 @@ namespace Pms_GuidanceGUI.Tests.Unit
             => reply.GetType().GetProperty(propertyName)?.GetValue(reply);
     }
 }
+
 

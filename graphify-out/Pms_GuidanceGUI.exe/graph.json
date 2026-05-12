@@ -1,0 +1,1934 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "App.xaml.cs",
+      "file_type": "code",
+      "source_file": "App.xaml.cs",
+      "source_location": "L1",
+      "id": "app_xaml_cs",
+      "community": 9,
+      "norm_label": "app.xaml.cs"
+    },
+    {
+      "label": "WebAppWrapper",
+      "file_type": "code",
+      "source_file": "App.xaml.cs",
+      "source_location": "L18",
+      "id": "pms_guidancegui_exe_app_xaml_webappwrapper",
+      "community": 9,
+      "norm_label": "webappwrapper"
+    },
+    {
+      "label": "App",
+      "file_type": "code",
+      "source_file": "App.xaml.cs",
+      "source_location": "L25",
+      "id": "pms_guidancegui_exe_app_xaml_app",
+      "community": 9,
+      "norm_label": "app"
+    },
+    {
+      "label": "Application",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "application",
+      "community": 9,
+      "norm_label": "application"
+    },
+    {
+      "label": "AssemblyInfo.cs",
+      "file_type": "code",
+      "source_file": "AssemblyInfo.cs",
+      "source_location": "L1",
+      "id": "assemblyinfo_cs",
+      "community": 10,
+      "norm_label": "assemblyinfo.cs"
+    },
+    {
+      "label": "MainWindow.xaml.cs",
+      "file_type": "code",
+      "source_file": "MainWindow.xaml.cs",
+      "source_location": "L1",
+      "id": "mainwindow_xaml_cs",
+      "community": 4,
+      "norm_label": "mainwindow.xaml.cs"
+    },
+    {
+      "label": "WebAppWrapper",
+      "file_type": "code",
+      "source_file": "MainWindow.xaml.cs",
+      "source_location": "L37",
+      "id": "pms_guidancegui_exe_mainwindow_xaml_webappwrapper",
+      "community": 4,
+      "norm_label": "webappwrapper"
+    },
+    {
+      "label": "MainWindow",
+      "file_type": "code",
+      "source_file": "MainWindow.xaml.cs",
+      "source_location": "L69",
+      "id": "pms_guidancegui_exe_mainwindow_xaml_mainwindow",
+      "community": 4,
+      "norm_label": "mainwindow"
+    },
+    {
+      "label": "Window",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "window",
+      "community": 4,
+      "norm_label": "window"
+    },
+    {
+      "label": "ILogger",
+      "file_type": "code",
+      "source_file": "MainWindow.xaml.cs",
+      "source_location": "L137",
+      "id": "ilogger",
+      "community": 4,
+      "norm_label": "ilogger"
+    },
+    {
+      "label": "IWebViewWrapper",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "iwebviewwrapper",
+      "community": 4,
+      "norm_label": "iwebviewwrapper"
+    },
+    {
+      "label": "IApplicationLifecycleManager",
+      "file_type": "code",
+      "source_file": "MainWindow.xaml.cs",
+      "source_location": "L139",
+      "id": "iapplicationlifecyclemanager",
+      "community": 4,
+      "norm_label": "iapplicationlifecyclemanager"
+    },
+    {
+      "label": ".ShutdownApplication()",
+      "file_type": "code",
+      "source_file": "MainWindow.xaml.cs",
+      "source_location": "L141",
+      "id": "pms_guidancegui_exe_mainwindow_xaml_mainwindow_shutdownapplication",
+      "community": 4,
+      "norm_label": ".shutdownapplication()"
+    },
+    {
+      "label": ".MainWindow_Loaded()",
+      "file_type": "code",
+      "source_file": "MainWindow.xaml.cs",
+      "source_location": "L156",
+      "id": "pms_guidancegui_exe_mainwindow_xaml_mainwindow_mainwindow_loaded",
+      "community": 4,
+      "norm_label": ".mainwindow_loaded()"
+    },
+    {
+      "label": ".MainWindow_Closing()",
+      "file_type": "code",
+      "source_file": "MainWindow.xaml.cs",
+      "source_location": "L179",
+      "id": "pms_guidancegui_exe_mainwindow_xaml_mainwindow_mainwindow_closing",
+      "community": 4,
+      "norm_label": ".mainwindow_closing()"
+    },
+    {
+      "label": "WebViewWrapper.cs",
+      "file_type": "code",
+      "source_file": "WebViewWrapper.cs",
+      "source_location": "L1",
+      "id": "webviewwrapper_cs",
+      "community": 3,
+      "norm_label": "webviewwrapper.cs"
+    },
+    {
+      "label": "Pms_GuidanceGUI",
+      "file_type": "code",
+      "source_file": "WebViewWrapper.cs",
+      "source_location": "L27",
+      "id": "pms_guidancegui_exe_webviewwrapper_pms_guidancegui",
+      "community": 3,
+      "norm_label": "pms_guidancegui"
+    },
+    {
+      "label": "WebViewWrapper",
+      "file_type": "code",
+      "source_file": "WebViewWrapper.cs",
+      "source_location": "L36",
+      "id": "pms_guidancegui_exe_webviewwrapper_webviewwrapper",
+      "community": 3,
+      "norm_label": "webviewwrapper"
+    },
+    {
+      "label": ".Open()",
+      "file_type": "code",
+      "source_file": "WebViewWrapper.cs",
+      "source_location": "L69",
+      "id": "pms_guidancegui_exe_webviewwrapper_webviewwrapper_open",
+      "community": 3,
+      "norm_label": ".open()"
+    },
+    {
+      "label": ".Close()",
+      "file_type": "code",
+      "source_file": "WebViewWrapper.cs",
+      "source_location": "L76",
+      "id": "pms_guidancegui_exe_webviewwrapper_webviewwrapper_close",
+      "community": 3,
+      "norm_label": ".close()"
+    },
+    {
+      "label": ".InitializeAsync()",
+      "file_type": "code",
+      "source_file": "WebViewWrapper.cs",
+      "source_location": "L103",
+      "id": "pms_guidancegui_exe_webviewwrapper_webviewwrapper_initializeasync",
+      "community": 3,
+      "norm_label": ".initializeasync()"
+    },
+    {
+      "label": ".SendMessage()",
+      "file_type": "code",
+      "source_file": "WebViewWrapper.cs",
+      "source_location": "L156",
+      "id": "pms_guidancegui_exe_webviewwrapper_webviewwrapper_sendmessage",
+      "community": 3,
+      "norm_label": ".sendmessage()"
+    },
+    {
+      "label": "WebView2",
+      "file_type": "code",
+      "source_file": "WebViewWrapper.cs",
+      "source_location": "L182",
+      "id": "webview2",
+      "community": 3,
+      "norm_label": "webview2"
+    },
+    {
+      "label": "object",
+      "file_type": "code",
+      "source_file": "WebViewWrapper.cs",
+      "source_location": "L183",
+      "id": "object",
+      "community": 3,
+      "norm_label": "object"
+    },
+    {
+      "label": "bool",
+      "file_type": "code",
+      "source_file": "WebViewWrapper.cs",
+      "source_location": "L184",
+      "id": "bool",
+      "community": 3,
+      "norm_label": "bool"
+    },
+    {
+      "label": ".WebMessageReceived()",
+      "file_type": "code",
+      "source_file": "WebViewWrapper.cs",
+      "source_location": "L196",
+      "id": "pms_guidancegui_exe_webviewwrapper_webviewwrapper_webmessagereceived",
+      "community": 3,
+      "norm_label": ".webmessagereceived()"
+    },
+    {
+      "label": "SOLUTION_GUIDE.md",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L1",
+      "id": "solution_guide_md",
+      "community": 0,
+      "norm_label": "solution_guide.md"
+    },
+    {
+      "label": "HybridWebApps \ufffd Complete Solution Guide",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L1",
+      "id": "pms_guidancegui_exe_solution_guide_hybridwebapps_complete_solution_guide",
+      "community": 0,
+      "norm_label": "hybridwebapps \ufffd complete solution guide"
+    },
+    {
+      "label": "What Is This Application?",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L3",
+      "id": "pms_guidancegui_exe_solution_guide_what_is_this_application",
+      "community": 0,
+      "norm_label": "what is this application?"
+    },
+    {
+      "label": "Project Structure Overview",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L11",
+      "id": "pms_guidancegui_exe_solution_guide_project_structure_overview",
+      "community": 0,
+      "norm_label": "project structure overview"
+    },
+    {
+      "label": "code:block1 (Solution)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L13",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_1",
+      "community": 0,
+      "norm_label": "code:block1 (solution)"
+    },
+    {
+      "label": "The Dependency Map",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L28",
+      "id": "pms_guidancegui_exe_solution_guide_the_dependency_map",
+      "community": 0,
+      "norm_label": "the dependency map"
+    },
+    {
+      "label": "code:block2 (Pms_GuidanceGUI)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L30",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_2",
+      "community": 0,
+      "norm_label": "code:block2 (pms_guidancegui)"
+    },
+    {
+      "label": "Project 1 \ufffd Infrastructure (The Shared Language)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L43",
+      "id": "pms_guidancegui_exe_solution_guide_project_1_infrastructure_the_shared_language",
+      "community": 0,
+      "norm_label": "project 1 \ufffd infrastructure (the shared language)"
+    },
+    {
+      "label": "Interfaces",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L47",
+      "id": "pms_guidancegui_exe_solution_guide_interfaces",
+      "community": 0,
+      "norm_label": "interfaces"
+    },
+    {
+      "label": "Data Classes",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L59",
+      "id": "pms_guidancegui_exe_solution_guide_data_classes",
+      "community": 0,
+      "norm_label": "data classes"
+    },
+    {
+      "label": "Project 2 \ufffd Pms_GuidanceGUI (The Shell / Entry Point)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L71",
+      "id": "pms_guidancegui_exe_solution_guide_project_2_pms_guidancegui_the_shell_entry_point",
+      "community": 7,
+      "norm_label": "project 2 \ufffd pms_guidancegui (the shell / entry point)"
+    },
+    {
+      "label": "Files",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L75",
+      "id": "pms_guidancegui_exe_solution_guide_files",
+      "community": 7,
+      "norm_label": "files"
+    },
+    {
+      "label": "MainWindow Startup Sequence",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L83",
+      "id": "pms_guidancegui_exe_solution_guide_mainwindow_startup_sequence",
+      "community": 7,
+      "norm_label": "mainwindow startup sequence"
+    },
+    {
+      "label": "code:block3 (MainWindow constructor)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L85",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_3",
+      "community": 7,
+      "norm_label": "code:block3 (mainwindow constructor)"
+    },
+    {
+      "label": "WebViewWrapper.cs \ufffd The Browser Host",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L105",
+      "id": "pms_guidancegui_exe_solution_guide_webviewwrapper_cs_the_browser_host",
+      "community": 7,
+      "norm_label": "webviewwrapper.cs \ufffd the browser host"
+    },
+    {
+      "label": "code:block4 (WebView2 (Chromium browser inside WPF))",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L107",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_4",
+      "community": 7,
+      "norm_label": "code:block4 (webview2 (chromium browser inside wpf))"
+    },
+    {
+      "label": "code:csharp (myWebView.CoreWebView2.PostWebMessageAsJson(jsonString);)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L122",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_5",
+      "community": 7,
+      "norm_label": "code:csharp (mywebview.corewebview2.postwebmessageasjson(jsonstring);)"
+    },
+    {
+      "label": "code:block6 (https://pmsGuidanceFrontendApp/index.html)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L127",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_6",
+      "community": 7,
+      "norm_label": "code:block6 (https://pmsguidancefrontendapp/index.html)"
+    },
+    {
+      "label": "Project 3 \ufffd ConnectionModule (The Message Bridge)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L138",
+      "id": "pms_guidancegui_exe_solution_guide_project_3_connectionmodule_the_message_bridge",
+      "community": 6,
+      "norm_label": "project 3 \ufffd connectionmodule (the message bridge)"
+    },
+    {
+      "label": "Files",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L142",
+      "id": "pms_guidancegui_exe_solution_guide_files_142",
+      "community": 6,
+      "norm_label": "files"
+    },
+    {
+      "label": "The JSON Message Format",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L151",
+      "id": "pms_guidancegui_exe_solution_guide_the_json_message_format",
+      "community": 6,
+      "norm_label": "the json message format"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L155",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_7",
+      "community": 6,
+      "norm_label": "code:json ({)"
+    },
+    {
+      "label": "code:block8 (RawMessage)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L169",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_8",
+      "community": 6,
+      "norm_label": "code:block8 (rawmessage)"
+    },
+    {
+      "label": "Inbound Flow (Angular ? C#)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L176",
+      "id": "pms_guidancegui_exe_solution_guide_inbound_flow_angular_c",
+      "community": 6,
+      "norm_label": "inbound flow (angular ? c#)"
+    },
+    {
+      "label": "code:block9 (Raw JSON string arrives from browser)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L178",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_9",
+      "community": 6,
+      "norm_label": "code:block9 (raw json string arrives from browser)"
+    },
+    {
+      "label": "Outbound Flow (C# ? Angular)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L193",
+      "id": "pms_guidancegui_exe_solution_guide_outbound_flow_c_angular",
+      "community": 6,
+      "norm_label": "outbound flow (c# ? angular)"
+    },
+    {
+      "label": "code:csharp (connectionManager.SendMessage(\"ShowLogMessage\", payloadObjec)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L195",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_10",
+      "community": 6,
+      "norm_label": "code:csharp (connectionmanager.sendmessage(\"showlogmessage\", payloadobjec)"
+    },
+    {
+      "label": "Project 4 \ufffd ConverterModule (The Translator)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L208",
+      "id": "pms_guidancegui_exe_solution_guide_project_4_convertermodule_the_translator",
+      "community": 2,
+      "norm_label": "project 4 \ufffd convertermodule (the translator)"
+    },
+    {
+      "label": "Files",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L212",
+      "id": "pms_guidancegui_exe_solution_guide_files_212",
+      "community": 2,
+      "norm_label": "files"
+    },
+    {
+      "label": "The Two Interfaces Explained",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L227",
+      "id": "pms_guidancegui_exe_solution_guide_the_two_interfaces_explained",
+      "community": 2,
+      "norm_label": "the two interfaces explained"
+    },
+    {
+      "label": "`IJsonActionHandler` \ufffd Inbound",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L229",
+      "id": "pms_guidancegui_exe_solution_guide_ijsonactionhandler_inbound",
+      "community": 2,
+      "norm_label": "`ijsonactionhandler` \ufffd inbound"
+    },
+    {
+      "label": "code:csharp (internal interface IJsonActionHandler)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L231",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_11",
+      "community": 2,
+      "norm_label": "code:csharp (internal interface ijsonactionhandler)"
+    },
+    {
+      "label": "`IJsonWriter` \ufffd Outbound",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L241",
+      "id": "pms_guidancegui_exe_solution_guide_ijsonwriter_outbound",
+      "community": 2,
+      "norm_label": "`ijsonwriter` \ufffd outbound"
+    },
+    {
+      "label": "code:csharp (internal interface IJsonWriter)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L243",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_12",
+      "community": 2,
+      "norm_label": "code:csharp (internal interface ijsonwriter)"
+    },
+    {
+      "label": "JsonActionHandler.cs \ufffd The Handler Registry",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L253",
+      "id": "pms_guidancegui_exe_solution_guide_jsonactionhandler_cs_the_handler_registry",
+      "community": 2,
+      "norm_label": "jsonactionhandler.cs \ufffd the handler registry"
+    },
+    {
+      "label": "code:block13 (JsonActionHandler)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L255",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_13",
+      "community": 2,
+      "norm_label": "code:block13 (jsonactionhandler)"
+    },
+    {
+      "label": "Converter.cs \ufffd The Orchestrator",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L271",
+      "id": "pms_guidancegui_exe_solution_guide_converter_cs_the_orchestrator",
+      "community": 8,
+      "norm_label": "converter.cs \ufffd the orchestrator"
+    },
+    {
+      "label": "Inbound path through Converter:",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L280",
+      "id": "pms_guidancegui_exe_solution_guide_inbound_path_through_converter",
+      "community": 8,
+      "norm_label": "inbound path through converter:"
+    },
+    {
+      "label": "code:block14 (ConnectionManager raises MessageReceived(\"LogMessage\", paylo)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L282",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_14",
+      "community": 8,
+      "norm_label": "code:block14 (connectionmanager raises messagereceived(\"logmessage\", paylo)"
+    },
+    {
+      "label": "Outbound path through Converter:",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L295",
+      "id": "pms_guidancegui_exe_solution_guide_outbound_path_through_converter",
+      "community": 8,
+      "norm_label": "outbound path through converter:"
+    },
+    {
+      "label": "code:block15 (BusinessLogicModule raises OnCommandHandled(LogStatusEvent))",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L297",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_15",
+      "community": 8,
+      "norm_label": "code:block15 (businesslogicmodule raises oncommandhandled(logstatusevent))"
+    },
+    {
+      "label": "Concrete Handler: LogJsonActionHandler",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L311",
+      "id": "pms_guidancegui_exe_solution_guide_concrete_handler_logjsonactionhandler",
+      "community": 2,
+      "norm_label": "concrete handler: logjsonactionhandler"
+    },
+    {
+      "label": "code:block16 (Inbound payload JSON:)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L313",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_16",
+      "community": 2,
+      "norm_label": "code:block16 (inbound payload json:)"
+    },
+    {
+      "label": "Concrete Writer: ShowLogStatusJsonWriter",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L327",
+      "id": "pms_guidancegui_exe_solution_guide_concrete_writer_showlogstatusjsonwriter",
+      "community": 2,
+      "norm_label": "concrete writer: showlogstatusjsonwriter"
+    },
+    {
+      "label": "code:block17 (LogStatusEvent(IsLogged: true) arrives)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L329",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_17",
+      "community": 2,
+      "norm_label": "code:block17 (logstatusevent(islogged: true) arrives)"
+    },
+    {
+      "label": "Project 5 \ufffd BusinessLogicModule (The Brain)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L343",
+      "id": "pms_guidancegui_exe_solution_guide_project_5_businesslogicmodule_the_brain",
+      "community": 5,
+      "norm_label": "project 5 \ufffd businesslogicmodule (the brain)"
+    },
+    {
+      "label": "Files",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L347",
+      "id": "pms_guidancegui_exe_solution_guide_files_347",
+      "community": 5,
+      "norm_label": "files"
+    },
+    {
+      "label": "BusinessLogicModuleSetup.cs \ufffd The Command Dispatcher",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L358",
+      "id": "pms_guidancegui_exe_solution_guide_businesslogicmodulesetup_cs_the_command_dispatcher",
+      "community": 5,
+      "norm_label": "businesslogicmodulesetup.cs \ufffd the command dispatcher"
+    },
+    {
+      "label": "code:block18 (BusinessLogicModuleSetup)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L360",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_18",
+      "community": 5,
+      "norm_label": "code:block18 (businesslogicmodulesetup)"
+    },
+    {
+      "label": "code:block19 (receives LogCommand)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L370",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_19",
+      "community": 5,
+      "norm_label": "code:block19 (receives logcommand)"
+    },
+    {
+      "label": "LogActionCommandHandler.cs \ufffd The Worker",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L381",
+      "id": "pms_guidancegui_exe_solution_guide_logactioncommandhandler_cs_the_worker",
+      "community": 5,
+      "norm_label": "logactioncommandhandler.cs \ufffd the worker"
+    },
+    {
+      "label": "code:csharp (// What it does when LogCommand arrives:)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L383",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_20",
+      "community": 5,
+      "norm_label": "code:csharp (// what it does when logcommand arrives:)"
+    },
+    {
+      "label": "The IActionReply / IActionReplyPrivate Split",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L393",
+      "id": "pms_guidancegui_exe_solution_guide_the_iactionreply_iactionreplyprivate_split",
+      "community": 5,
+      "norm_label": "the iactionreply / iactionreplyprivate split"
+    },
+    {
+      "label": "code:block21 (ActionReplyHandler)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L397",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_21",
+      "community": 5,
+      "norm_label": "code:block21 (actionreplyhandler)"
+    },
+    {
+      "label": "code:block22 (Outside world (Converter)         Inside world (LogActionCom)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L407",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_22",
+      "community": 5,
+      "norm_label": "code:block22 (outside world (converter)         inside world (logactioncom)"
+    },
+    {
+      "label": "Complete End-to-End Flow",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L420",
+      "id": "pms_guidancegui_exe_solution_guide_complete_end_to_end_flow",
+      "community": 0,
+      "norm_label": "complete end-to-end flow"
+    },
+    {
+      "label": "Scenario: User clicks \"Log\" in the Angular app",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L422",
+      "id": "pms_guidancegui_exe_solution_guide_scenario_user_clicks_log_in_the_angular_app",
+      "community": 0,
+      "norm_label": "scenario: user clicks \"log\" in the angular app"
+    },
+    {
+      "label": "code:block23 (???????????????????????????????????????????????????????????)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L424",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_23",
+      "community": 0,
+      "norm_label": "code:block23 (???????????????????????????????????????????????????????????)"
+    },
+    {
+      "label": "Design Patterns Reference",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L506",
+      "id": "pms_guidancegui_exe_solution_guide_design_patterns_reference",
+      "community": 0,
+      "norm_label": "design patterns reference"
+    },
+    {
+      "label": "How to Add a New Action (Step-by-Step)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L519",
+      "id": "pms_guidancegui_exe_solution_guide_how_to_add_a_new_action_step_by_step",
+      "community": 1,
+      "norm_label": "how to add a new action (step-by-step)"
+    },
+    {
+      "label": "Step 1 \ufffd Create the inbound message shape (ConverterModule)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L523",
+      "id": "pms_guidancegui_exe_solution_guide_step_1_create_the_inbound_message_shape_convertermodule",
+      "community": 1,
+      "norm_label": "step 1 \ufffd create the inbound message shape (convertermodule)"
+    },
+    {
+      "label": "code:csharp (// ConverterModule/JsonMessage/RestartServiceMessage.cs)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L524",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_24",
+      "community": 1,
+      "norm_label": "code:csharp (// convertermodule/jsonmessage/restartservicemessage.cs)"
+    },
+    {
+      "label": "Step 2 \ufffd Create the command (BusinessLogicModule)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L532",
+      "id": "pms_guidancegui_exe_solution_guide_step_2_create_the_command_businesslogicmodule",
+      "community": 1,
+      "norm_label": "step 2 \ufffd create the command (businesslogicmodule)"
+    },
+    {
+      "label": "code:csharp (// BusinessLogicModule/Commands/RestartServiceCommand.cs)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L533",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_25",
+      "community": 1,
+      "norm_label": "code:csharp (// businesslogicmodule/commands/restartservicecommand.cs)"
+    },
+    {
+      "label": "Step 3 \ufffd Create the action handler (ConverterModule)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L542",
+      "id": "pms_guidancegui_exe_solution_guide_step_3_create_the_action_handler_convertermodule",
+      "community": 1,
+      "norm_label": "step 3 \ufffd create the action handler (convertermodule)"
+    },
+    {
+      "label": "code:csharp (// ConverterModule/RestartServiceJsonActionHandler.cs)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L543",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_26",
+      "community": 1,
+      "norm_label": "code:csharp (// convertermodule/restartservicejsonactionhandler.cs)"
+    },
+    {
+      "label": "Step 4 \ufffd Create the command handler (BusinessLogicModule)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L556",
+      "id": "pms_guidancegui_exe_solution_guide_step_4_create_the_command_handler_businesslogicmodule",
+      "community": 1,
+      "norm_label": "step 4 \ufffd create the command handler (businesslogicmodule)"
+    },
+    {
+      "label": "code:csharp (// BusinessLogicModule/RestartServiceCommandHandler.cs)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L557",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_27",
+      "community": 1,
+      "norm_label": "code:csharp (// businesslogicmodule/restartservicecommandhandler.cs)"
+    },
+    {
+      "label": "Step 5 \ufffd Create the result event (BusinessLogicModule)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L570",
+      "id": "pms_guidancegui_exe_solution_guide_step_5_create_the_result_event_businesslogicmodule",
+      "community": 1,
+      "norm_label": "step 5 \ufffd create the result event (businesslogicmodule)"
+    },
+    {
+      "label": "code:csharp (// BusinessLogicModule/EventArgs/RestartServiceStatusEvent.c)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L571",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_28",
+      "community": 1,
+      "norm_label": "code:csharp (// businesslogicmodule/eventargs/restartservicestatusevent.c)"
+    },
+    {
+      "label": "Step 6 \ufffd Create the JSON writer (ConverterModule)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L580",
+      "id": "pms_guidancegui_exe_solution_guide_step_6_create_the_json_writer_convertermodule",
+      "community": 1,
+      "norm_label": "step 6 \ufffd create the json writer (convertermodule)"
+    },
+    {
+      "label": "code:csharp (// ConverterModule/JsonWriter/RestartServiceStatusJsonWriter)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L581",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_29",
+      "community": 1,
+      "norm_label": "code:csharp (// convertermodule/jsonwriter/restartservicestatusjsonwriter)"
+    },
+    {
+      "label": "Step 7 \ufffd Register everything in the setup classes",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L598",
+      "id": "pms_guidancegui_exe_solution_guide_step_7_register_everything_in_the_setup_classes",
+      "community": 1,
+      "norm_label": "step 7 \ufffd register everything in the setup classes"
+    },
+    {
+      "label": "code:csharp (AddCommandHandler(typeof(RestartServiceCommand), new Restart)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L601",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_30",
+      "community": 1,
+      "norm_label": "code:csharp (addcommandhandler(typeof(restartservicecommand), new restart)"
+    },
+    {
+      "label": "code:csharp (AddJsonActionHandler(new RestartServiceJsonActionHandler());)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L606",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_31",
+      "community": 1,
+      "norm_label": "code:csharp (addjsonactionhandler(new restartservicejsonactionhandler());)"
+    },
+    {
+      "label": "Quick Reference Card",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L615",
+      "id": "pms_guidancegui_exe_solution_guide_quick_reference_card",
+      "community": 0,
+      "norm_label": "quick reference card"
+    },
+    {
+      "label": "code:block32 (Angular sends a message)",
+      "file_type": "document",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L617",
+      "id": "pms_guidancegui_exe_solution_guide_codeblock_32",
+      "community": 0,
+      "norm_label": "code:block32 (angular sends a message)"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "App.xaml.cs",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_xaml_cs",
+      "target": "pms_guidancegui_exe_app_xaml_webappwrapper"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "App.xaml.cs",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_xaml_cs",
+      "target": "pms_guidancegui_exe_app_xaml_app"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "App.xaml.cs",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_app_xaml_app",
+      "target": "application"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MainWindow.xaml.cs",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "mainwindow_xaml_cs",
+      "target": "pms_guidancegui_exe_mainwindow_xaml_webappwrapper"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MainWindow.xaml.cs",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "mainwindow_xaml_cs",
+      "target": "pms_guidancegui_exe_mainwindow_xaml_mainwindow"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "MainWindow.xaml.cs",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_mainwindow_xaml_mainwindow",
+      "target": "window"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "MainWindow.xaml.cs",
+      "source_location": "L137",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_mainwindow_xaml_mainwindow",
+      "target": "ilogger"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "MainWindow.xaml.cs",
+      "source_location": "L138",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_mainwindow_xaml_mainwindow",
+      "target": "iwebviewwrapper"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "MainWindow.xaml.cs",
+      "source_location": "L139",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_mainwindow_xaml_mainwindow",
+      "target": "iapplicationlifecyclemanager"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "MainWindow.xaml.cs",
+      "source_location": "L141",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_mainwindow_xaml_mainwindow",
+      "target": "pms_guidancegui_exe_mainwindow_xaml_mainwindow_shutdownapplication"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "MainWindow.xaml.cs",
+      "source_location": "L156",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_mainwindow_xaml_mainwindow",
+      "target": "pms_guidancegui_exe_mainwindow_xaml_mainwindow_mainwindow_loaded"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "MainWindow.xaml.cs",
+      "source_location": "L179",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_mainwindow_xaml_mainwindow",
+      "target": "pms_guidancegui_exe_mainwindow_xaml_mainwindow_mainwindow_closing"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "WebViewWrapper.cs",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_webviewwrapper_webviewwrapper",
+      "target": "iwebviewwrapper"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "WebViewWrapper.cs",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webviewwrapper_cs",
+      "target": "pms_guidancegui_exe_webviewwrapper_pms_guidancegui"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "WebViewWrapper.cs",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webviewwrapper_cs",
+      "target": "pms_guidancegui_exe_webviewwrapper_webviewwrapper"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "WebViewWrapper.cs",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_webviewwrapper_webviewwrapper",
+      "target": "pms_guidancegui_exe_webviewwrapper_webviewwrapper_open"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "WebViewWrapper.cs",
+      "source_location": "L76",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_webviewwrapper_webviewwrapper",
+      "target": "pms_guidancegui_exe_webviewwrapper_webviewwrapper_close"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "WebViewWrapper.cs",
+      "source_location": "L103",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_webviewwrapper_webviewwrapper",
+      "target": "pms_guidancegui_exe_webviewwrapper_webviewwrapper_initializeasync"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "WebViewWrapper.cs",
+      "source_location": "L156",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_webviewwrapper_webviewwrapper",
+      "target": "pms_guidancegui_exe_webviewwrapper_webviewwrapper_sendmessage"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "WebViewWrapper.cs",
+      "source_location": "L182",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_webviewwrapper_webviewwrapper",
+      "target": "webview2"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "WebViewWrapper.cs",
+      "source_location": "L183",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_webviewwrapper_webviewwrapper",
+      "target": "object"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "WebViewWrapper.cs",
+      "source_location": "L185",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_webviewwrapper_webviewwrapper",
+      "target": "bool"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "WebViewWrapper.cs",
+      "source_location": "L196",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_webviewwrapper_webviewwrapper",
+      "target": "pms_guidancegui_exe_webviewwrapper_webviewwrapper_webmessagereceived"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "solution_guide_md",
+      "target": "pms_guidancegui_exe_solution_guide_hybridwebapps_complete_solution_guide"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_hybridwebapps_complete_solution_guide",
+      "target": "pms_guidancegui_exe_solution_guide_what_is_this_application"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_hybridwebapps_complete_solution_guide",
+      "target": "pms_guidancegui_exe_solution_guide_project_structure_overview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_hybridwebapps_complete_solution_guide",
+      "target": "pms_guidancegui_exe_solution_guide_the_dependency_map"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_hybridwebapps_complete_solution_guide",
+      "target": "pms_guidancegui_exe_solution_guide_project_1_infrastructure_the_shared_language"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L71",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_hybridwebapps_complete_solution_guide",
+      "target": "pms_guidancegui_exe_solution_guide_project_2_pms_guidancegui_the_shell_entry_point"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L138",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_hybridwebapps_complete_solution_guide",
+      "target": "pms_guidancegui_exe_solution_guide_project_3_connectionmodule_the_message_bridge"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L208",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_hybridwebapps_complete_solution_guide",
+      "target": "pms_guidancegui_exe_solution_guide_project_4_convertermodule_the_translator"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L343",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_hybridwebapps_complete_solution_guide",
+      "target": "pms_guidancegui_exe_solution_guide_project_5_businesslogicmodule_the_brain"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L420",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_hybridwebapps_complete_solution_guide",
+      "target": "pms_guidancegui_exe_solution_guide_complete_end_to_end_flow"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L506",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_hybridwebapps_complete_solution_guide",
+      "target": "pms_guidancegui_exe_solution_guide_design_patterns_reference"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L519",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_hybridwebapps_complete_solution_guide",
+      "target": "pms_guidancegui_exe_solution_guide_how_to_add_a_new_action_step_by_step"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L615",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_hybridwebapps_complete_solution_guide",
+      "target": "pms_guidancegui_exe_solution_guide_quick_reference_card"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_project_structure_overview",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_1"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_the_dependency_map",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_2"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_project_1_infrastructure_the_shared_language",
+      "target": "pms_guidancegui_exe_solution_guide_interfaces"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_project_1_infrastructure_the_shared_language",
+      "target": "pms_guidancegui_exe_solution_guide_data_classes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L75",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_project_2_pms_guidancegui_the_shell_entry_point",
+      "target": "pms_guidancegui_exe_solution_guide_files"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L83",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_project_2_pms_guidancegui_the_shell_entry_point",
+      "target": "pms_guidancegui_exe_solution_guide_mainwindow_startup_sequence"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L105",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_project_2_pms_guidancegui_the_shell_entry_point",
+      "target": "pms_guidancegui_exe_solution_guide_webviewwrapper_cs_the_browser_host"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L85",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_mainwindow_startup_sequence",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_3"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L107",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_webviewwrapper_cs_the_browser_host",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_4"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L122",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_webviewwrapper_cs_the_browser_host",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_5"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L127",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_webviewwrapper_cs_the_browser_host",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_6"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L142",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_project_3_connectionmodule_the_message_bridge",
+      "target": "pms_guidancegui_exe_solution_guide_files_142"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L151",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_project_3_connectionmodule_the_message_bridge",
+      "target": "pms_guidancegui_exe_solution_guide_the_json_message_format"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L176",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_project_3_connectionmodule_the_message_bridge",
+      "target": "pms_guidancegui_exe_solution_guide_inbound_flow_angular_c"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L193",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_project_3_connectionmodule_the_message_bridge",
+      "target": "pms_guidancegui_exe_solution_guide_outbound_flow_c_angular"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L155",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_the_json_message_format",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_7"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L169",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_the_json_message_format",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_8"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L178",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_inbound_flow_angular_c",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_9"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L195",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_outbound_flow_c_angular",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_10"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L212",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_project_4_convertermodule_the_translator",
+      "target": "pms_guidancegui_exe_solution_guide_files_212"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L227",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_project_4_convertermodule_the_translator",
+      "target": "pms_guidancegui_exe_solution_guide_the_two_interfaces_explained"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L253",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_project_4_convertermodule_the_translator",
+      "target": "pms_guidancegui_exe_solution_guide_jsonactionhandler_cs_the_handler_registry"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L271",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_project_4_convertermodule_the_translator",
+      "target": "pms_guidancegui_exe_solution_guide_converter_cs_the_orchestrator"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L311",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_project_4_convertermodule_the_translator",
+      "target": "pms_guidancegui_exe_solution_guide_concrete_handler_logjsonactionhandler"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L327",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_project_4_convertermodule_the_translator",
+      "target": "pms_guidancegui_exe_solution_guide_concrete_writer_showlogstatusjsonwriter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L229",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_the_two_interfaces_explained",
+      "target": "pms_guidancegui_exe_solution_guide_ijsonactionhandler_inbound"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L241",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_the_two_interfaces_explained",
+      "target": "pms_guidancegui_exe_solution_guide_ijsonwriter_outbound"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L231",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_ijsonactionhandler_inbound",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_11"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L243",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_ijsonwriter_outbound",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_12"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L255",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_jsonactionhandler_cs_the_handler_registry",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_13"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L280",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_converter_cs_the_orchestrator",
+      "target": "pms_guidancegui_exe_solution_guide_inbound_path_through_converter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L295",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_converter_cs_the_orchestrator",
+      "target": "pms_guidancegui_exe_solution_guide_outbound_path_through_converter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L282",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_inbound_path_through_converter",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_14"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L297",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_outbound_path_through_converter",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_15"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L313",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_concrete_handler_logjsonactionhandler",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_16"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L329",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_concrete_writer_showlogstatusjsonwriter",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_17"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L347",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_project_5_businesslogicmodule_the_brain",
+      "target": "pms_guidancegui_exe_solution_guide_files_347"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L358",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_project_5_businesslogicmodule_the_brain",
+      "target": "pms_guidancegui_exe_solution_guide_businesslogicmodulesetup_cs_the_command_dispatcher"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L381",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_project_5_businesslogicmodule_the_brain",
+      "target": "pms_guidancegui_exe_solution_guide_logactioncommandhandler_cs_the_worker"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L393",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_project_5_businesslogicmodule_the_brain",
+      "target": "pms_guidancegui_exe_solution_guide_the_iactionreply_iactionreplyprivate_split"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L360",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_businesslogicmodulesetup_cs_the_command_dispatcher",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_18"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L370",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_businesslogicmodulesetup_cs_the_command_dispatcher",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_19"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L383",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_logactioncommandhandler_cs_the_worker",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_20"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L397",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_the_iactionreply_iactionreplyprivate_split",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_21"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L407",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_the_iactionreply_iactionreplyprivate_split",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_22"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L422",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_complete_end_to_end_flow",
+      "target": "pms_guidancegui_exe_solution_guide_scenario_user_clicks_log_in_the_angular_app"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L424",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_scenario_user_clicks_log_in_the_angular_app",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_23"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L523",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_how_to_add_a_new_action_step_by_step",
+      "target": "pms_guidancegui_exe_solution_guide_step_1_create_the_inbound_message_shape_convertermodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L532",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_how_to_add_a_new_action_step_by_step",
+      "target": "pms_guidancegui_exe_solution_guide_step_2_create_the_command_businesslogicmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L542",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_how_to_add_a_new_action_step_by_step",
+      "target": "pms_guidancegui_exe_solution_guide_step_3_create_the_action_handler_convertermodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L556",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_how_to_add_a_new_action_step_by_step",
+      "target": "pms_guidancegui_exe_solution_guide_step_4_create_the_command_handler_businesslogicmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L570",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_how_to_add_a_new_action_step_by_step",
+      "target": "pms_guidancegui_exe_solution_guide_step_5_create_the_result_event_businesslogicmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L580",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_how_to_add_a_new_action_step_by_step",
+      "target": "pms_guidancegui_exe_solution_guide_step_6_create_the_json_writer_convertermodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L598",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_how_to_add_a_new_action_step_by_step",
+      "target": "pms_guidancegui_exe_solution_guide_step_7_register_everything_in_the_setup_classes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L524",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_step_1_create_the_inbound_message_shape_convertermodule",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_24"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L533",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_step_2_create_the_command_businesslogicmodule",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_25"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L543",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_step_3_create_the_action_handler_convertermodule",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_26"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L557",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_step_4_create_the_command_handler_businesslogicmodule",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_27"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L571",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_step_5_create_the_result_event_businesslogicmodule",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_28"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L581",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_step_6_create_the_json_writer_convertermodule",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_29"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L601",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_step_7_register_everything_in_the_setup_classes",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_30"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L606",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_step_7_register_everything_in_the_setup_classes",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_31"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SOLUTION_GUIDE.md",
+      "source_location": "L617",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pms_guidancegui_exe_solution_guide_quick_reference_card",
+      "target": "pms_guidancegui_exe_solution_guide_codeblock_32"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "9d5b08a54acd5ef99a5b1e419e072620f294ecae"
+}

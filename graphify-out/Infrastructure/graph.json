@@ -1,0 +1,1286 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "ApplicationLifecycleManager.cs",
+      "file_type": "code",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L1",
+      "id": "applicationlifecyclemanager_cs",
+      "community": 0,
+      "norm_label": "applicationlifecyclemanager.cs"
+    },
+    {
+      "label": "Infrastructure",
+      "file_type": "code",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L28",
+      "id": "infrastructure_applicationlifecyclemanager_infrastructure",
+      "community": 0,
+      "norm_label": "infrastructure"
+    },
+    {
+      "label": "ApplicationLifecycleManager",
+      "file_type": "code",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L50",
+      "id": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager",
+      "community": 0,
+      "norm_label": "applicationlifecyclemanager"
+    },
+    {
+      "label": "IApplicationLifecycleManager",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "iapplicationlifecyclemanager",
+      "community": 0,
+      "norm_label": "iapplicationlifecyclemanager"
+    },
+    {
+      "label": ".Register()",
+      "file_type": "code",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L61",
+      "id": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager_register",
+      "community": 0,
+      "norm_label": ".register()"
+    },
+    {
+      "label": ".SubscribeToCloseApplicationRequests()",
+      "file_type": "code",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L83",
+      "id": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager_subscribetocloseapplicationrequests",
+      "community": 0,
+      "norm_label": ".subscribetocloseapplicationrequests()"
+    },
+    {
+      "label": ".Open()",
+      "file_type": "code",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L115",
+      "id": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager_open",
+      "community": 0,
+      "norm_label": ".open()"
+    },
+    {
+      "label": ".Close()",
+      "file_type": "code",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L173",
+      "id": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager_close",
+      "community": 0,
+      "norm_label": ".close()"
+    },
+    {
+      "label": "List",
+      "file_type": "code",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L216",
+      "id": "list",
+      "community": 0,
+      "norm_label": "list"
+    },
+    {
+      "label": "HashSet",
+      "file_type": "code",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L217",
+      "id": "hashset",
+      "community": 0,
+      "norm_label": "hashset"
+    },
+    {
+      "label": "bool",
+      "file_type": "code",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L219",
+      "id": "bool",
+      "community": 0,
+      "norm_label": "bool"
+    },
+    {
+      "label": "ICloseApplicationRequestSource",
+      "file_type": "code",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L220",
+      "id": "icloseapplicationrequestsource",
+      "community": 0,
+      "norm_label": "icloseapplicationrequestsource"
+    },
+    {
+      "label": "Action",
+      "file_type": "code",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L221",
+      "id": "action",
+      "community": 0,
+      "norm_label": "action"
+    },
+    {
+      "label": ".OnCloseApplicationRequested()",
+      "file_type": "code",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L223",
+      "id": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager_oncloseapplicationrequested",
+      "community": 0,
+      "norm_label": ".oncloseapplicationrequested()"
+    },
+    {
+      "label": "IActionReply.cs",
+      "file_type": "code",
+      "source_file": "IActionReply.cs",
+      "source_location": "L1",
+      "id": "iactionreply_cs",
+      "community": 9,
+      "norm_label": "iactionreply.cs"
+    },
+    {
+      "label": "Infrastructure",
+      "file_type": "code",
+      "source_file": "IActionReply.cs",
+      "source_location": "L18",
+      "id": "infrastructure_iactionreply_infrastructure",
+      "community": 9,
+      "norm_label": "infrastructure"
+    },
+    {
+      "label": "IActionReply",
+      "file_type": "code",
+      "source_file": "IActionReply.cs",
+      "source_location": "L26",
+      "id": "infrastructure_iactionreply_iactionreply",
+      "community": 9,
+      "norm_label": "iactionreply"
+    },
+    {
+      "label": "IApplicationLifecycleManager.cs",
+      "file_type": "code",
+      "source_file": "IApplicationLifecycleManager.cs",
+      "source_location": "L1",
+      "id": "iapplicationlifecyclemanager_cs",
+      "community": 1,
+      "norm_label": "iapplicationlifecyclemanager.cs"
+    },
+    {
+      "label": "Infrastructure",
+      "file_type": "code",
+      "source_file": "IApplicationLifecycleManager.cs",
+      "source_location": "L18",
+      "id": "infrastructure_iapplicationlifecyclemanager_infrastructure",
+      "community": 1,
+      "norm_label": "infrastructure"
+    },
+    {
+      "label": "IApplicationLifecycleManager",
+      "file_type": "code",
+      "source_file": "IApplicationLifecycleManager.cs",
+      "source_location": "L28",
+      "id": "infrastructure_iapplicationlifecyclemanager_iapplicationlifecyclemanager",
+      "community": 1,
+      "norm_label": "iapplicationlifecyclemanager"
+    },
+    {
+      "label": "ILifeCycle",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "ilifecycle",
+      "community": 1,
+      "norm_label": "ilifecycle"
+    },
+    {
+      "label": ".Register()",
+      "file_type": "code",
+      "source_file": "IApplicationLifecycleManager.cs",
+      "source_location": "L41",
+      "id": "infrastructure_iapplicationlifecyclemanager_iapplicationlifecyclemanager_register",
+      "community": 1,
+      "norm_label": ".register()"
+    },
+    {
+      "label": ".SubscribeToCloseApplicationRequests()",
+      "file_type": "code",
+      "source_file": "IApplicationLifecycleManager.cs",
+      "source_location": "L59",
+      "id": "infrastructure_iapplicationlifecyclemanager_iapplicationlifecyclemanager_subscribetocloseapplicationrequests",
+      "community": 1,
+      "norm_label": ".subscribetocloseapplicationrequests()"
+    },
+    {
+      "label": "IBusinessLogicModule.cs",
+      "file_type": "code",
+      "source_file": "IBusinessLogicModule.cs",
+      "source_location": "L1",
+      "id": "ibusinesslogicmodule_cs",
+      "community": 1,
+      "norm_label": "ibusinesslogicmodule.cs"
+    },
+    {
+      "label": "Infrastructure",
+      "file_type": "code",
+      "source_file": "IBusinessLogicModule.cs",
+      "source_location": "L16",
+      "id": "infrastructure_ibusinesslogicmodule_infrastructure",
+      "community": 1,
+      "norm_label": "infrastructure"
+    },
+    {
+      "label": "IBusinessLogicModule",
+      "file_type": "code",
+      "source_file": "IBusinessLogicModule.cs",
+      "source_location": "L24",
+      "id": "infrastructure_ibusinesslogicmodule_ibusinesslogicmodule",
+      "community": 1,
+      "norm_label": "ibusinesslogicmodule"
+    },
+    {
+      "label": ".HandleCommand()",
+      "file_type": "code",
+      "source_file": "IBusinessLogicModule.cs",
+      "source_location": "L30",
+      "id": "infrastructure_ibusinesslogicmodule_ibusinesslogicmodule_handlecommand",
+      "community": 1,
+      "norm_label": ".handlecommand()"
+    },
+    {
+      "label": "ICloseApplicationRequestSource.cs",
+      "file_type": "code",
+      "source_file": "ICloseApplicationRequestSource.cs",
+      "source_location": "L1",
+      "id": "icloseapplicationrequestsource_cs",
+      "community": 10,
+      "norm_label": "icloseapplicationrequestsource.cs"
+    },
+    {
+      "label": "Infrastructure",
+      "file_type": "code",
+      "source_file": "ICloseApplicationRequestSource.cs",
+      "source_location": "L19",
+      "id": "infrastructure_icloseapplicationrequestsource_infrastructure",
+      "community": 10,
+      "norm_label": "infrastructure"
+    },
+    {
+      "label": "ICloseApplicationRequestSource",
+      "file_type": "code",
+      "source_file": "ICloseApplicationRequestSource.cs",
+      "source_location": "L27",
+      "id": "infrastructure_icloseapplicationrequestsource_icloseapplicationrequestsource",
+      "community": 10,
+      "norm_label": "icloseapplicationrequestsource"
+    },
+    {
+      "label": "ICommand.cs",
+      "file_type": "code",
+      "source_file": "ICommand.cs",
+      "source_location": "L1",
+      "id": "icommand_cs",
+      "community": 11,
+      "norm_label": "icommand.cs"
+    },
+    {
+      "label": "Infrastructure",
+      "file_type": "code",
+      "source_file": "ICommand.cs",
+      "source_location": "L16",
+      "id": "infrastructure_icommand_infrastructure",
+      "community": 11,
+      "norm_label": "infrastructure"
+    },
+    {
+      "label": "ICommand",
+      "file_type": "code",
+      "source_file": "ICommand.cs",
+      "source_location": "L24",
+      "id": "infrastructure_icommand_icommand",
+      "community": 11,
+      "norm_label": "icommand"
+    },
+    {
+      "label": "ICommandHandler.cs",
+      "file_type": "code",
+      "source_file": "ICommandHandler.cs",
+      "source_location": "L1",
+      "id": "icommandhandler_cs",
+      "community": 6,
+      "norm_label": "icommandhandler.cs"
+    },
+    {
+      "label": "Infrastructure",
+      "file_type": "code",
+      "source_file": "ICommandHandler.cs",
+      "source_location": "L18",
+      "id": "infrastructure_icommandhandler_infrastructure",
+      "community": 6,
+      "norm_label": "infrastructure"
+    },
+    {
+      "label": "ICommandHandler",
+      "file_type": "code",
+      "source_file": "ICommandHandler.cs",
+      "source_location": "L26",
+      "id": "infrastructure_icommandhandler_icommandhandler",
+      "community": 6,
+      "norm_label": "icommandhandler"
+    },
+    {
+      "label": ".HandleCommand()",
+      "file_type": "code",
+      "source_file": "ICommandHandler.cs",
+      "source_location": "L38",
+      "id": "infrastructure_icommandhandler_icommandhandler_handlecommand",
+      "community": 6,
+      "norm_label": ".handlecommand()"
+    },
+    {
+      "label": "IConfigurationProvider.cs",
+      "file_type": "code",
+      "source_file": "IConfigurationProvider.cs",
+      "source_location": "L1",
+      "id": "iconfigurationprovider_cs",
+      "community": 2,
+      "norm_label": "iconfigurationprovider.cs"
+    },
+    {
+      "label": "Infrastructure",
+      "file_type": "code",
+      "source_file": "IConfigurationProvider.cs",
+      "source_location": "L20",
+      "id": "infrastructure_iconfigurationprovider_infrastructure",
+      "community": 2,
+      "norm_label": "infrastructure"
+    },
+    {
+      "label": "IConfigurationProvider",
+      "file_type": "code",
+      "source_file": "IConfigurationProvider.cs",
+      "source_location": "L31",
+      "id": "infrastructure_iconfigurationprovider_iconfigurationprovider",
+      "community": 2,
+      "norm_label": "iconfigurationprovider"
+    },
+    {
+      "label": ".GetVerificationCommand()",
+      "file_type": "code",
+      "source_file": "IConfigurationProvider.cs",
+      "source_location": "L39",
+      "id": "infrastructure_iconfigurationprovider_iconfigurationprovider_getverificationcommand",
+      "community": 2,
+      "norm_label": ".getverificationcommand()"
+    },
+    {
+      "label": ".GetInstallationCommand()",
+      "file_type": "code",
+      "source_file": "IConfigurationProvider.cs",
+      "source_location": "L47",
+      "id": "infrastructure_iconfigurationprovider_iconfigurationprovider_getinstallationcommand",
+      "community": 2,
+      "norm_label": ".getinstallationcommand()"
+    },
+    {
+      "label": ".GetValue()",
+      "file_type": "code",
+      "source_file": "IConfigurationProvider.cs",
+      "source_location": "L58",
+      "id": "infrastructure_iconfigurationprovider_iconfigurationprovider_getvalue",
+      "community": 2,
+      "norm_label": ".getvalue()"
+    },
+    {
+      "label": ".GetAll()",
+      "file_type": "code",
+      "source_file": "IConfigurationProvider.cs",
+      "source_location": "L64",
+      "id": "infrastructure_iconfigurationprovider_iconfigurationprovider_getall",
+      "community": 2,
+      "norm_label": ".getall()"
+    },
+    {
+      "label": "ILifeCycle.cs",
+      "file_type": "code",
+      "source_file": "ILifeCycle.cs",
+      "source_location": "L1",
+      "id": "ilifecycle_cs",
+      "community": 4,
+      "norm_label": "ilifecycle.cs"
+    },
+    {
+      "label": "Infrastructure",
+      "file_type": "code",
+      "source_file": "ILifeCycle.cs",
+      "source_location": "L16",
+      "id": "infrastructure_ilifecycle_infrastructure",
+      "community": 4,
+      "norm_label": "infrastructure"
+    },
+    {
+      "label": "ILifeCycle",
+      "file_type": "code",
+      "source_file": "ILifeCycle.cs",
+      "source_location": "L24",
+      "id": "infrastructure_ilifecycle_ilifecycle",
+      "community": 4,
+      "norm_label": "ilifecycle"
+    },
+    {
+      "label": ".Open()",
+      "file_type": "code",
+      "source_file": "ILifeCycle.cs",
+      "source_location": "L29",
+      "id": "infrastructure_ilifecycle_ilifecycle_open",
+      "community": 4,
+      "norm_label": ".open()"
+    },
+    {
+      "label": ".Close()",
+      "file_type": "code",
+      "source_file": "ILifeCycle.cs",
+      "source_location": "L34",
+      "id": "infrastructure_ilifecycle_ilifecycle_close",
+      "community": 4,
+      "norm_label": ".close()"
+    },
+    {
+      "label": "ILogger.cs",
+      "file_type": "code",
+      "source_file": "ILogger.cs",
+      "source_location": "L1",
+      "id": "ilogger_cs",
+      "community": 3,
+      "norm_label": "ilogger.cs"
+    },
+    {
+      "label": "Infrastructure",
+      "file_type": "code",
+      "source_file": "ILogger.cs",
+      "source_location": "L22",
+      "id": "infrastructure_ilogger_infrastructure",
+      "community": 3,
+      "norm_label": "infrastructure"
+    },
+    {
+      "label": "ILogger",
+      "file_type": "code",
+      "source_file": "ILogger.cs",
+      "source_location": "L31",
+      "id": "infrastructure_ilogger_ilogger",
+      "community": 3,
+      "norm_label": "ilogger"
+    },
+    {
+      "label": ".LogInfo()",
+      "file_type": "code",
+      "source_file": "ILogger.cs",
+      "source_location": "L40",
+      "id": "infrastructure_ilogger_ilogger_loginfo",
+      "community": 3,
+      "norm_label": ".loginfo()"
+    },
+    {
+      "label": ".LogDebug()",
+      "file_type": "code",
+      "source_file": "ILogger.cs",
+      "source_location": "L52",
+      "id": "infrastructure_ilogger_ilogger_logdebug",
+      "community": 3,
+      "norm_label": ".logdebug()"
+    },
+    {
+      "label": ".LogWarn()",
+      "file_type": "code",
+      "source_file": "ILogger.cs",
+      "source_location": "L64",
+      "id": "infrastructure_ilogger_ilogger_logwarn",
+      "community": 3,
+      "norm_label": ".logwarn()"
+    },
+    {
+      "label": ".LogError()",
+      "file_type": "code",
+      "source_file": "ILogger.cs",
+      "source_location": "L77",
+      "id": "infrastructure_ilogger_ilogger_logerror",
+      "community": 3,
+      "norm_label": ".logerror()"
+    },
+    {
+      "label": "ISystemLanguageProvider.cs",
+      "file_type": "code",
+      "source_file": "ISystemLanguageProvider.cs",
+      "source_location": "L1",
+      "id": "isystemlanguageprovider_cs",
+      "community": 7,
+      "norm_label": "isystemlanguageprovider.cs"
+    },
+    {
+      "label": "Infrastructure",
+      "file_type": "code",
+      "source_file": "ISystemLanguageProvider.cs",
+      "source_location": "L16",
+      "id": "infrastructure_isystemlanguageprovider_infrastructure",
+      "community": 7,
+      "norm_label": "infrastructure"
+    },
+    {
+      "label": "ISystemLanguageProvider",
+      "file_type": "code",
+      "source_file": "ISystemLanguageProvider.cs",
+      "source_location": "L24",
+      "id": "infrastructure_isystemlanguageprovider_isystemlanguageprovider",
+      "community": 7,
+      "norm_label": "isystemlanguageprovider"
+    },
+    {
+      "label": ".FetchSystemLanguage()",
+      "file_type": "code",
+      "source_file": "ISystemLanguageProvider.cs",
+      "source_location": "L30",
+      "id": "infrastructure_isystemlanguageprovider_isystemlanguageprovider_fetchsystemlanguage",
+      "community": 7,
+      "norm_label": ".fetchsystemlanguage()"
+    },
+    {
+      "label": "IWebViewWrapper.cs",
+      "file_type": "code",
+      "source_file": "IWebViewWrapper.cs",
+      "source_location": "L1",
+      "id": "iwebviewwrapper_cs",
+      "community": 5,
+      "norm_label": "iwebviewwrapper.cs"
+    },
+    {
+      "label": "Infrastructure",
+      "file_type": "code",
+      "source_file": "IWebViewWrapper.cs",
+      "source_location": "L24",
+      "id": "infrastructure_iwebviewwrapper_infrastructure",
+      "community": 5,
+      "norm_label": "infrastructure"
+    },
+    {
+      "label": "IWebViewWrapper",
+      "file_type": "code",
+      "source_file": "IWebViewWrapper.cs",
+      "source_location": "L34",
+      "id": "infrastructure_iwebviewwrapper_iwebviewwrapper",
+      "community": 5,
+      "norm_label": "iwebviewwrapper"
+    },
+    {
+      "label": ".InitializeAsync()",
+      "file_type": "code",
+      "source_file": "IWebViewWrapper.cs",
+      "source_location": "L40",
+      "id": "infrastructure_iwebviewwrapper_iwebviewwrapper_initializeasync",
+      "community": 5,
+      "norm_label": ".initializeasync()"
+    },
+    {
+      "label": ".SendMessage()",
+      "file_type": "code",
+      "source_file": "IWebViewWrapper.cs",
+      "source_location": "L47",
+      "id": "infrastructure_iwebviewwrapper_iwebviewwrapper_sendmessage",
+      "community": 5,
+      "norm_label": ".sendmessage()"
+    },
+    {
+      "label": "MessageReceivedEventArgs.cs",
+      "file_type": "code",
+      "source_file": "MessageReceivedEventArgs.cs",
+      "source_location": "L1",
+      "id": "messagereceivedeventargs_cs",
+      "community": 8,
+      "norm_label": "messagereceivedeventargs.cs"
+    },
+    {
+      "label": "Infrastructure",
+      "file_type": "code",
+      "source_file": "MessageReceivedEventArgs.cs",
+      "source_location": "L18",
+      "id": "infrastructure_messagereceivedeventargs_infrastructure",
+      "community": 8,
+      "norm_label": "infrastructure"
+    },
+    {
+      "label": "MessageReceivedEventArgs",
+      "file_type": "code",
+      "source_file": "MessageReceivedEventArgs.cs",
+      "source_location": "L26",
+      "id": "infrastructure_messagereceivedeventargs_messagereceivedeventargs",
+      "community": 8,
+      "norm_label": "messagereceivedeventargs"
+    },
+    {
+      "label": "EventArgs",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "eventargs",
+      "community": 8,
+      "norm_label": "eventargs"
+    },
+    {
+      "label": "OutboundMessage.cs",
+      "file_type": "code",
+      "source_file": "OutboundMessage.cs",
+      "source_location": "L1",
+      "id": "outboundmessage_cs",
+      "community": 12,
+      "norm_label": "outboundmessage.cs"
+    },
+    {
+      "label": "Infrastructure",
+      "file_type": "code",
+      "source_file": "OutboundMessage.cs",
+      "source_location": "L18",
+      "id": "infrastructure_outboundmessage_infrastructure",
+      "community": 12,
+      "norm_label": "infrastructure"
+    },
+    {
+      "label": "OutboundMessage",
+      "file_type": "code",
+      "source_file": "OutboundMessage.cs",
+      "source_location": "L34",
+      "id": "infrastructure_outboundmessage_outboundmessage",
+      "community": 12,
+      "norm_label": "outboundmessage"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "applicationlifecyclemanager_cs",
+      "target": "infrastructure_applicationlifecyclemanager_infrastructure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "applicationlifecyclemanager_cs",
+      "target": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager",
+      "target": "iapplicationlifecyclemanager"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L61",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager",
+      "target": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager_register"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L83",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager",
+      "target": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager_subscribetocloseapplicationrequests"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L115",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager",
+      "target": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager_open"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L173",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager",
+      "target": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager_close"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L216",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager",
+      "target": "list"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L217",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager",
+      "target": "hashset"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L219",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager",
+      "target": "bool"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L220",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager",
+      "target": "icloseapplicationrequestsource"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L221",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager",
+      "target": "action"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L223",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager",
+      "target": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager_oncloseapplicationrequested"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L141",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager_open",
+      "target": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager_close"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ApplicationLifecycleManager.cs",
+      "source_location": "L229",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager_oncloseapplicationrequested",
+      "target": "infrastructure_applicationlifecyclemanager_applicationlifecyclemanager_close"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IActionReply.cs",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "iactionreply_cs",
+      "target": "infrastructure_iactionreply_infrastructure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IActionReply.cs",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "iactionreply_cs",
+      "target": "infrastructure_iactionreply_iactionreply"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IApplicationLifecycleManager.cs",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "iapplicationlifecyclemanager_cs",
+      "target": "infrastructure_iapplicationlifecyclemanager_infrastructure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IApplicationLifecycleManager.cs",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "iapplicationlifecyclemanager_cs",
+      "target": "infrastructure_iapplicationlifecyclemanager_iapplicationlifecyclemanager"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "IApplicationLifecycleManager.cs",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_iapplicationlifecyclemanager_iapplicationlifecyclemanager",
+      "target": "ilifecycle"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "IApplicationLifecycleManager.cs",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_iapplicationlifecyclemanager_iapplicationlifecyclemanager",
+      "target": "infrastructure_iapplicationlifecyclemanager_iapplicationlifecyclemanager_register"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "IApplicationLifecycleManager.cs",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_iapplicationlifecyclemanager_iapplicationlifecyclemanager",
+      "target": "infrastructure_iapplicationlifecyclemanager_iapplicationlifecyclemanager_subscribetocloseapplicationrequests"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "IBusinessLogicModule.cs",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_ibusinesslogicmodule_ibusinesslogicmodule",
+      "target": "ilifecycle"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "IWebViewWrapper.cs",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_iwebviewwrapper_iwebviewwrapper",
+      "target": "ilifecycle"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IBusinessLogicModule.cs",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ibusinesslogicmodule_cs",
+      "target": "infrastructure_ibusinesslogicmodule_infrastructure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IBusinessLogicModule.cs",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ibusinesslogicmodule_cs",
+      "target": "infrastructure_ibusinesslogicmodule_ibusinesslogicmodule"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "IBusinessLogicModule.cs",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_ibusinesslogicmodule_ibusinesslogicmodule",
+      "target": "infrastructure_ibusinesslogicmodule_ibusinesslogicmodule_handlecommand"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ICloseApplicationRequestSource.cs",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "icloseapplicationrequestsource_cs",
+      "target": "infrastructure_icloseapplicationrequestsource_infrastructure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ICloseApplicationRequestSource.cs",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "icloseapplicationrequestsource_cs",
+      "target": "infrastructure_icloseapplicationrequestsource_icloseapplicationrequestsource"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ICommand.cs",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "icommand_cs",
+      "target": "infrastructure_icommand_infrastructure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ICommand.cs",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "icommand_cs",
+      "target": "infrastructure_icommand_icommand"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ICommandHandler.cs",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "icommandhandler_cs",
+      "target": "infrastructure_icommandhandler_infrastructure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ICommandHandler.cs",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "icommandhandler_cs",
+      "target": "infrastructure_icommandhandler_icommandhandler"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ICommandHandler.cs",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_icommandhandler_icommandhandler",
+      "target": "infrastructure_icommandhandler_icommandhandler_handlecommand"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IConfigurationProvider.cs",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "iconfigurationprovider_cs",
+      "target": "infrastructure_iconfigurationprovider_infrastructure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IConfigurationProvider.cs",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "iconfigurationprovider_cs",
+      "target": "infrastructure_iconfigurationprovider_iconfigurationprovider"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "IConfigurationProvider.cs",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_iconfigurationprovider_iconfigurationprovider",
+      "target": "infrastructure_iconfigurationprovider_iconfigurationprovider_getverificationcommand"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "IConfigurationProvider.cs",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_iconfigurationprovider_iconfigurationprovider",
+      "target": "infrastructure_iconfigurationprovider_iconfigurationprovider_getinstallationcommand"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "IConfigurationProvider.cs",
+      "source_location": "L58",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_iconfigurationprovider_iconfigurationprovider",
+      "target": "infrastructure_iconfigurationprovider_iconfigurationprovider_getvalue"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "IConfigurationProvider.cs",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_iconfigurationprovider_iconfigurationprovider",
+      "target": "infrastructure_iconfigurationprovider_iconfigurationprovider_getall"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ILifeCycle.cs",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ilifecycle_cs",
+      "target": "infrastructure_ilifecycle_infrastructure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ILifeCycle.cs",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ilifecycle_cs",
+      "target": "infrastructure_ilifecycle_ilifecycle"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ILifeCycle.cs",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_ilifecycle_ilifecycle",
+      "target": "infrastructure_ilifecycle_ilifecycle_open"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ILifeCycle.cs",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_ilifecycle_ilifecycle",
+      "target": "infrastructure_ilifecycle_ilifecycle_close"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ILogger.cs",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ilogger_cs",
+      "target": "infrastructure_ilogger_infrastructure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ILogger.cs",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ilogger_cs",
+      "target": "infrastructure_ilogger_ilogger"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ILogger.cs",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_ilogger_ilogger",
+      "target": "infrastructure_ilogger_ilogger_loginfo"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ILogger.cs",
+      "source_location": "L52",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_ilogger_ilogger",
+      "target": "infrastructure_ilogger_ilogger_logdebug"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ILogger.cs",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_ilogger_ilogger",
+      "target": "infrastructure_ilogger_ilogger_logwarn"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ILogger.cs",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_ilogger_ilogger",
+      "target": "infrastructure_ilogger_ilogger_logerror"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ISystemLanguageProvider.cs",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "isystemlanguageprovider_cs",
+      "target": "infrastructure_isystemlanguageprovider_infrastructure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ISystemLanguageProvider.cs",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "isystemlanguageprovider_cs",
+      "target": "infrastructure_isystemlanguageprovider_isystemlanguageprovider"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ISystemLanguageProvider.cs",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_isystemlanguageprovider_isystemlanguageprovider",
+      "target": "infrastructure_isystemlanguageprovider_isystemlanguageprovider_fetchsystemlanguage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IWebViewWrapper.cs",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "iwebviewwrapper_cs",
+      "target": "infrastructure_iwebviewwrapper_infrastructure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IWebViewWrapper.cs",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "iwebviewwrapper_cs",
+      "target": "infrastructure_iwebviewwrapper_iwebviewwrapper"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "IWebViewWrapper.cs",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_iwebviewwrapper_iwebviewwrapper",
+      "target": "infrastructure_iwebviewwrapper_iwebviewwrapper_initializeasync"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "IWebViewWrapper.cs",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_iwebviewwrapper_iwebviewwrapper",
+      "target": "infrastructure_iwebviewwrapper_iwebviewwrapper_sendmessage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MessageReceivedEventArgs.cs",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messagereceivedeventargs_cs",
+      "target": "infrastructure_messagereceivedeventargs_infrastructure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "MessageReceivedEventArgs.cs",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messagereceivedeventargs_cs",
+      "target": "infrastructure_messagereceivedeventargs_messagereceivedeventargs"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "MessageReceivedEventArgs.cs",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "infrastructure_messagereceivedeventargs_messagereceivedeventargs",
+      "target": "eventargs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "OutboundMessage.cs",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outboundmessage_cs",
+      "target": "infrastructure_outboundmessage_infrastructure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "OutboundMessage.cs",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outboundmessage_cs",
+      "target": "infrastructure_outboundmessage_outboundmessage"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "9d5b08a54acd5ef99a5b1e419e072620f294ecae"
+}

@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "graphify": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["-m", "graphify.serve", "graphify-out/merged.json"],
+      "description": "Whole-repo knowledge graph — query_graph, get_node, get_neighbors, shortest_path"
+    },
+    "graphify-converter": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["-m", "graphify.serve", "graphify-out/ConverterModule/graph.json"],
+      "description": "ConverterModule knowledge graph"
+    },
+    "graphify-business": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["-m", "graphify.serve", "graphify-out/BusinessLogicModule/graph.json"],
+      "description": "BusinessLogicModule knowledge graph"
+    }
+  }
+}

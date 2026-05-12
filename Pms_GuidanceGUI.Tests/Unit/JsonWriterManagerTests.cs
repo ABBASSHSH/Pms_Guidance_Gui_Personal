@@ -52,10 +52,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── AddJsonWriter: null guard ─────────────────────────────────────────────
 
         /// <summary>
-    /// Given JsonWriterManager NullWriter When AddJsonWriterCalled Then LogWarnIsCalled
+    /// Given JsonWriterManager When NullWriterAddJsonWriterCalled Then LogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_JsonWriterManager_NullWriter_When_AddJsonWriterCalled_Then_LogWarnIsCalled()
+        public void Given_JsonWriterManager_When_NullWriterAddJsonWriterCalled_Then_LogWarnIsCalled()
         {
             m_manager.AddJsonWriter(null!);
 
@@ -63,10 +63,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given JsonWriterManager NullWriter When AddJsonWriterCalled Then WriterIsNotAdded
+    /// Given JsonWriterManager When NullWriterAddJsonWriterCalled Then WriterIsNotAdded
         /// </summary>
         [TestMethod]
-        public void Given_JsonWriterManager_NullWriter_When_AddJsonWriterCalled_Then_WriterIsNotAdded()
+        public void Given_JsonWriterManager_When_NullWriterAddJsonWriterCalled_Then_WriterIsNotAdded()
         {
             m_manager.AddJsonWriter(null!);
 
@@ -78,10 +78,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── AddJsonWriter: duplicate guard ────────────────────────────────────────
 
         /// <summary>
-    /// Given JsonWriterManager AlreadyRegisteredWriter When AddJsonWriterCalledAgain Then LogWarnIsCalled
+    /// Given JsonWriterManager When AlreadyRegisteredWriterAddJsonWriterCalledAgain Then LogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_JsonWriterManager_AlreadyRegisteredWriter_When_AddJsonWriterCalledAgain_Then_LogWarnIsCalled()
+        public void Given_JsonWriterManager_When_AlreadyRegisteredWriterAddJsonWriterCalledAgain_Then_LogWarnIsCalled()
         {
             var mockWriter = CreateWriter(canWrite: true);
 
@@ -92,10 +92,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given JsonWriterManager AlreadyRegisteredWriter When AddJsonWriterCalledAgain Then WriterIsNotDuplicated
+    /// Given JsonWriterManager When AlreadyRegisteredWriterAddJsonWriterCalledAgain Then WriterIsNotDuplicated
         /// </summary>
         [TestMethod]
-        public void Given_JsonWriterManager_AlreadyRegisteredWriter_When_AddJsonWriterCalledAgain_Then_WriterIsNotDuplicated()
+        public void Given_JsonWriterManager_When_AlreadyRegisteredWriterAddJsonWriterCalledAgain_Then_WriterIsNotDuplicated()
         {
             var mockWriter = CreateWriter(canWrite: true);
 
@@ -111,10 +111,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── AddJsonWriter: happy path ─────────────────────────────────────────────
 
         /// <summary>
-    /// Given JsonWriterManager ValidNewWriter When AddJsonWriterCalled Then NoLogWarnIsCalled
+    /// Given JsonWriterManager When ValidNewWriterAddJsonWriterCalled Then NoLogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_JsonWriterManager_ValidNewWriter_When_AddJsonWriterCalled_Then_NoLogWarnIsCalled()
+        public void Given_JsonWriterManager_When_ValidNewWriterAddJsonWriterCalled_Then_NoLogWarnIsCalled()
         {
             m_manager.AddJsonWriter(CreateWriter(canWrite: false).Object);
 
@@ -122,10 +122,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given JsonWriterManager ValidNewWriter When AddJsonWriterCalled Then WriterIsDispatched
+    /// Given JsonWriterManager When ValidNewWriterAddJsonWriterCalled Then WriterIsDispatched
         /// </summary>
         [TestMethod]
-        public void Given_JsonWriterManager_ValidNewWriter_When_AddJsonWriterCalled_Then_WriterIsDispatched()
+        public void Given_JsonWriterManager_When_ValidNewWriterAddJsonWriterCalled_Then_WriterIsDispatched()
         {
             var mockWriter = CreateWriter(canWrite: true);
 
@@ -138,10 +138,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── RemoveJsonWriter: null guard ──────────────────────────────────────────
 
         /// <summary>
-    /// Given JsonWriterManager NullWriter When RemoveJsonWriterCalled Then LogWarnIsCalled
+    /// Given JsonWriterManager When NullWriterRemoveJsonWriterCalled Then LogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_JsonWriterManager_NullWriter_When_RemoveJsonWriterCalled_Then_LogWarnIsCalled()
+        public void Given_JsonWriterManager_When_NullWriterRemoveJsonWriterCalled_Then_LogWarnIsCalled()
         {
             m_manager.RemoveJsonWriter(null!);
 
@@ -151,10 +151,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── RemoveJsonWriter: not-registered guard ────────────────────────────────
 
         /// <summary>
-    /// Given JsonWriterManager UnregisteredWriter When RemoveJsonWriterCalled Then LogWarnIsCalled
+    /// Given JsonWriterManager When UnregisteredWriterRemoveJsonWriterCalled Then LogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_JsonWriterManager_UnregisteredWriter_When_RemoveJsonWriterCalled_Then_LogWarnIsCalled()
+        public void Given_JsonWriterManager_When_UnregisteredWriterRemoveJsonWriterCalled_Then_LogWarnIsCalled()
         {
             var mockWriter = CreateWriter(canWrite: true);
 
@@ -166,10 +166,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── RemoveJsonWriter: happy path ──────────────────────────────────────────
 
         /// <summary>
-    /// Given JsonWriterManager RegisteredWriter When RemoveJsonWriterCalled Then NoLogWarnIsCalled
+    /// Given JsonWriterManager When RegisteredWriterRemoveJsonWriterCalled Then NoLogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_JsonWriterManager_RegisteredWriter_When_RemoveJsonWriterCalled_Then_NoLogWarnIsCalled()
+        public void Given_JsonWriterManager_When_RegisteredWriterRemoveJsonWriterCalled_Then_NoLogWarnIsCalled()
         {
             var mockWriter = CreateWriter(canWrite: true);
 
@@ -180,10 +180,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given JsonWriterManager RegisteredWriter When RemovedAndEventReceived Then WriterIsNotDispatched
+    /// Given JsonWriterManager When RegisteredWriterRemovedAndEventReceived Then WriterIsNotDispatched
         /// </summary>
         [TestMethod]
-        public void Given_JsonWriterManager_RegisteredWriter_When_RemovedAndEventReceived_Then_WriterIsNotDispatched()
+        public void Given_JsonWriterManager_When_RegisteredWriterRemovedAndEventReceived_Then_WriterIsNotDispatched()
         {
             var mockWriter = CreateWriter(canWrite: true);
 
@@ -198,10 +198,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── HandleJsonReply: no match ─────────────────────────────────────────────
 
         /// <summary>
-    /// Given JsonWriterManager NoRegisteredWriters When HandleJsonReplyCalled Then ReturnsNull
+    /// Given JsonWriterManager When NoRegisteredWritersHandleJsonReplyCalled Then ReturnsNull
         /// </summary>
         [TestMethod]
-        public void Given_JsonWriterManager_NoRegisteredWriters_When_HandleJsonReplyCalled_Then_ReturnsNull()
+        public void Given_JsonWriterManager_When_NoRegisteredWritersHandleJsonReplyCalled_Then_ReturnsNull()
         {
             var result = m_manager.HandleJsonReply(EventArgs.Empty);
 
@@ -209,10 +209,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given JsonWriterManager WriterThatCannotWrite When HandleJsonReplyCalled Then ReturnsNull
+    /// Given JsonWriterManager When WriterThatCannotWriteHandleJsonReplyCalled Then ReturnsNull
         /// </summary>
         [TestMethod]
-        public void Given_JsonWriterManager_WriterThatCannotWrite_When_HandleJsonReplyCalled_Then_ReturnsNull()
+        public void Given_JsonWriterManager_When_WriterThatCannotWriteHandleJsonReplyCalled_Then_ReturnsNull()
         {
             m_manager.AddJsonWriter(CreateWriter(canWrite: false).Object);
 
@@ -224,10 +224,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── HandleJsonReply: match ────────────────────────────────────────────────
 
         /// <summary>
-    /// Given JsonWriterManager MatchingWriter When HandleJsonReplyCalled Then ReturnsOutboundMessage
+    /// Given JsonWriterManager When MatchingWriterHandleJsonReplyCalled Then ReturnsOutboundMessage
         /// </summary>
         [TestMethod]
-        public void Given_JsonWriterManager_MatchingWriter_When_HandleJsonReplyCalled_Then_ReturnsOutboundMessage()
+        public void Given_JsonWriterManager_When_MatchingWriterHandleJsonReplyCalled_Then_ReturnsOutboundMessage()
         {
             var expected   = new StubOutboundMessage();
             var mockWriter = CreateWriter(canWrite: true, reply: expected);
@@ -240,10 +240,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given JsonWriterManager MultipleWriters When FirstCanWrite Then OnlyFirstWriterIsDispatched
+    /// Given JsonWriterManager When MultipleWritersFirstCanWrite Then OnlyFirstWriterIsDispatched
         /// </summary>
         [TestMethod]
-        public void Given_JsonWriterManager_MultipleWriters_When_FirstCanWrite_Then_OnlyFirstWriterIsDispatched()
+        public void Given_JsonWriterManager_When_MultipleWritersFirstCanWrite_Then_OnlyFirstWriterIsDispatched()
         {
             var first  = CreateWriter(canWrite: true);
             var second = CreateWriter(canWrite: true);
@@ -258,10 +258,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given JsonWriterManager MultipleWriters When OnlySecondCanWrite Then SecondWriterIsDispatched
+    /// Given JsonWriterManager When MultipleWritersOnlySecondCanWrite Then SecondWriterIsDispatched
         /// </summary>
         [TestMethod]
-        public void Given_JsonWriterManager_MultipleWriters_When_OnlySecondCanWrite_Then_SecondWriterIsDispatched()
+        public void Given_JsonWriterManager_When_MultipleWritersOnlySecondCanWrite_Then_SecondWriterIsDispatched()
         {
             var first  = CreateWriter(canWrite: false);
             var second = CreateWriter(canWrite: true);
@@ -308,30 +308,30 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── ShowVerifyInstallationPrerequisitesJsonWriter ──────────────────────────
 
         /// <summary>
-    /// Given ConcreteJsonWriter ShowVerifyPrerequisitesJsonWriter When CanWriteCalledWithCorrectType Then ReturnsTrue
+    /// Given ConcreteJsonWriter When ShowVerifyPrerequisitesJsonWriterCanWriteCalledWithCorrectType Then ReturnsTrue
         /// </summary>
         [TestMethod]
-        public void Given_ConcreteJsonWriter_ShowVerifyPrerequisitesJsonWriter_When_CanWriteCalledWithCorrectType_Then_ReturnsTrue()
+        public void Given_ConcreteJsonWriter_When_ShowVerifyPrerequisitesJsonWriterCanWriteCalledWithCorrectType_Then_ReturnsTrue()
         {
             var writer = new ShowVerifyInstallationPrerequisitesJsonWriter(typeof(VerifyInstallationPrerequisitesStatusEventArgs));
             Assert.IsTrue(writer.CanWrite(new VerifyInstallationPrerequisitesStatusEventArgs(true)));
         }
 
         /// <summary>
-    /// Given ConcreteJsonWriter ShowVerifyPrerequisitesJsonWriter When CanWriteCalledWithWrongType Then ReturnsFalse
+    /// Given ConcreteJsonWriter When ShowVerifyPrerequisitesJsonWriterCanWriteCalledWithWrongType Then ReturnsFalse
         /// </summary>
         [TestMethod]
-        public void Given_ConcreteJsonWriter_ShowVerifyPrerequisitesJsonWriter_When_CanWriteCalledWithWrongType_Then_ReturnsFalse()
+        public void Given_ConcreteJsonWriter_When_ShowVerifyPrerequisitesJsonWriterCanWriteCalledWithWrongType_Then_ReturnsFalse()
         {
             var writer = new ShowVerifyInstallationPrerequisitesJsonWriter(typeof(VerifyInstallationPrerequisitesStatusEventArgs));
             Assert.IsFalse(writer.CanWrite(EventArgs.Empty));
         }
 
         /// <summary>
-    /// Given ConcreteJsonWriter ShowVerifyPrerequisitesJsonWriter When CreateJsonMessageCalledWithCorrectType Then StatusIsSet
+    /// Given ConcreteJsonWriter When ShowVerifyPrerequisitesJsonWriterCreateJsonMessageCalledWithCorrectType Then StatusIsSet
         /// </summary>
         [TestMethod]
-        public void Given_ConcreteJsonWriter_ShowVerifyPrerequisitesJsonWriter_When_CreateJsonMessageCalledWithCorrectType_Then_StatusIsSet()
+        public void Given_ConcreteJsonWriter_When_ShowVerifyPrerequisitesJsonWriterCreateJsonMessageCalledWithCorrectType_Then_StatusIsSet()
         {
             var writer = new ShowVerifyInstallationPrerequisitesJsonWriter(typeof(VerifyInstallationPrerequisitesStatusEventArgs));
             var result = writer.CreateJsonMessage(new VerifyInstallationPrerequisitesStatusEventArgs(false));
@@ -339,10 +339,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConcreteJsonWriter ShowVerifyPrerequisitesJsonWriter When CreateJsonMessageCalledWithWrongType Then ThrowsArgumentException
+    /// Given ConcreteJsonWriter When ShowVerifyPrerequisitesJsonWriterCreateJsonMessageCalledWithWrongType Then ThrowsArgumentException
         /// </summary>
         [TestMethod]
-        public void Given_ConcreteJsonWriter_ShowVerifyPrerequisitesJsonWriter_When_CreateJsonMessageCalledWithWrongType_Then_ThrowsArgumentException()
+        public void Given_ConcreteJsonWriter_When_ShowVerifyPrerequisitesJsonWriterCreateJsonMessageCalledWithWrongType_Then_ThrowsArgumentException()
         {
             var writer = new ShowVerifyInstallationPrerequisitesJsonWriter(typeof(VerifyInstallationPrerequisitesStatusEventArgs));
             Assert.ThrowsException<ArgumentException>(() => writer.CreateJsonMessage(EventArgs.Empty));
@@ -351,30 +351,30 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── ShowSystemLanguageJsonWriter ──────────────────────────────────────────
 
         /// <summary>
-    /// Given ConcreteJsonWriter ShowSystemLanguageJsonWriter When CanWriteCalledWithCorrectType Then ReturnsTrue
+    /// Given ConcreteJsonWriter When ShowSystemLanguageJsonWriterCanWriteCalledWithCorrectType Then ReturnsTrue
         /// </summary>
         [TestMethod]
-        public void Given_ConcreteJsonWriter_ShowSystemLanguageJsonWriter_When_CanWriteCalledWithCorrectType_Then_ReturnsTrue()
+        public void Given_ConcreteJsonWriter_When_ShowSystemLanguageJsonWriterCanWriteCalledWithCorrectType_Then_ReturnsTrue()
         {
             var writer = new ShowSystemLanguageJsonWriter(typeof(ShowSystemLanguageEventArgs));
             Assert.IsTrue(writer.CanWrite(new ShowSystemLanguageEventArgs("en-US")));
         }
 
         /// <summary>
-    /// Given ConcreteJsonWriter ShowSystemLanguageJsonWriter When CanWriteCalledWithWrongType Then ReturnsFalse
+    /// Given ConcreteJsonWriter When ShowSystemLanguageJsonWriterCanWriteCalledWithWrongType Then ReturnsFalse
         /// </summary>
         [TestMethod]
-        public void Given_ConcreteJsonWriter_ShowSystemLanguageJsonWriter_When_CanWriteCalledWithWrongType_Then_ReturnsFalse()
+        public void Given_ConcreteJsonWriter_When_ShowSystemLanguageJsonWriterCanWriteCalledWithWrongType_Then_ReturnsFalse()
         {
             var writer = new ShowSystemLanguageJsonWriter(typeof(ShowSystemLanguageEventArgs));
             Assert.IsFalse(writer.CanWrite(EventArgs.Empty));
         }
 
         /// <summary>
-    /// Given ConcreteJsonWriter ShowSystemLanguageJsonWriter When CreateJsonMessageCalledWithCorrectType Then LanguageIsSet
+    /// Given ConcreteJsonWriter When ShowSystemLanguageJsonWriterCreateJsonMessageCalledWithCorrectType Then LanguageIsSet
         /// </summary>
         [TestMethod]
-        public void Given_ConcreteJsonWriter_ShowSystemLanguageJsonWriter_When_CreateJsonMessageCalledWithCorrectType_Then_LanguageIsSet()
+        public void Given_ConcreteJsonWriter_When_ShowSystemLanguageJsonWriterCreateJsonMessageCalledWithCorrectType_Then_LanguageIsSet()
         {
             var writer = new ShowSystemLanguageJsonWriter(typeof(ShowSystemLanguageEventArgs));
             var result = writer.CreateJsonMessage(new ShowSystemLanguageEventArgs("fr-FR"));
@@ -382,13 +382,14 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConcreteJsonWriter ShowSystemLanguageJsonWriter When CreateJsonMessageCalledWithWrongType Then ThrowsArgumentException
+    /// Given ConcreteJsonWriter When ShowSystemLanguageJsonWriterCreateJsonMessageCalledWithWrongType Then ThrowsArgumentException
         /// </summary>
         [TestMethod]
-        public void Given_ConcreteJsonWriter_ShowSystemLanguageJsonWriter_When_CreateJsonMessageCalledWithWrongType_Then_ThrowsArgumentException()
+        public void Given_ConcreteJsonWriter_When_ShowSystemLanguageJsonWriterCreateJsonMessageCalledWithWrongType_Then_ThrowsArgumentException()
         {
             var writer = new ShowSystemLanguageJsonWriter(typeof(ShowSystemLanguageEventArgs));
             Assert.ThrowsException<ArgumentException>(() => writer.CreateJsonMessage(EventArgs.Empty));
         }
     }
 }
+

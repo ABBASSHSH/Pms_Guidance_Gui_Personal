@@ -1,0 +1,1680 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "ActionReplyHandler.cs",
+      "file_type": "code",
+      "source_file": "ActionReplyHandler.cs",
+      "source_location": "L1",
+      "id": "actionreplyhandler_cs",
+      "community": 3,
+      "norm_label": "actionreplyhandler.cs"
+    },
+    {
+      "label": "BusinessLogicModule",
+      "file_type": "code",
+      "source_file": "ActionReplyHandler.cs",
+      "source_location": "L18",
+      "id": "businesslogicmodule_actionreplyhandler_businesslogicmodule",
+      "community": 3,
+      "norm_label": "businesslogicmodule"
+    },
+    {
+      "label": "ActionReplyHandler",
+      "file_type": "code",
+      "source_file": "ActionReplyHandler.cs",
+      "source_location": "L26",
+      "id": "businesslogicmodule_actionreplyhandler_actionreplyhandler",
+      "community": 3,
+      "norm_label": "actionreplyhandler"
+    },
+    {
+      "label": "IActionReply",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "iactionreply",
+      "community": 3,
+      "norm_label": "iactionreply"
+    },
+    {
+      "label": "IActionReplyPrivate",
+      "file_type": "code",
+      "source_file": "CommandHandlers/AbstractCommandHandler.cs",
+      "source_location": "L51",
+      "id": "iactionreplyprivate",
+      "community": 3,
+      "norm_label": "iactionreplyprivate"
+    },
+    {
+      "label": ".Invoke()",
+      "file_type": "code",
+      "source_file": "ActionReplyHandler.cs",
+      "source_location": "L37",
+      "id": "businesslogicmodule_actionreplyhandler_actionreplyhandler_invoke",
+      "community": 3,
+      "norm_label": ".invoke()"
+    },
+    {
+      "label": ".InvokeEvent()",
+      "file_type": "code",
+      "source_file": "ActionReplyHandler.cs",
+      "source_location": "L42",
+      "id": "businesslogicmodule_actionreplyhandler_actionreplyhandler_invokeevent",
+      "community": 3,
+      "norm_label": ".invokeevent()"
+    },
+    {
+      "label": "BusinessLogicModuleSetup.cs",
+      "file_type": "code",
+      "source_file": "BusinessLogicModuleSetup.cs",
+      "source_location": "L1",
+      "id": "businesslogicmodulesetup_cs",
+      "community": 1,
+      "norm_label": "businesslogicmodulesetup.cs"
+    },
+    {
+      "label": "BusinessLogicModule",
+      "file_type": "code",
+      "source_file": "BusinessLogicModuleSetup.cs",
+      "source_location": "L21",
+      "id": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodule",
+      "community": 1,
+      "norm_label": "businesslogicmodule"
+    },
+    {
+      "label": "BusinessLogicModuleSetup",
+      "file_type": "code",
+      "source_file": "BusinessLogicModuleSetup.cs",
+      "source_location": "L29",
+      "id": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodulesetup",
+      "community": 1,
+      "norm_label": "businesslogicmodulesetup"
+    },
+    {
+      "label": "IBusinessLogicModule",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "ibusinesslogicmodule",
+      "community": 1,
+      "norm_label": "ibusinesslogicmodule"
+    },
+    {
+      "label": "ICloseApplicationRequestSource",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "icloseapplicationrequestsource",
+      "community": 1,
+      "norm_label": "icloseapplicationrequestsource"
+    },
+    {
+      "label": ".HandleCommand()",
+      "file_type": "code",
+      "source_file": "BusinessLogicModuleSetup.cs",
+      "source_location": "L84",
+      "id": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodulesetup_handlecommand",
+      "community": 1,
+      "norm_label": ".handlecommand()"
+    },
+    {
+      "label": ".Open()",
+      "file_type": "code",
+      "source_file": "BusinessLogicModuleSetup.cs",
+      "source_location": "L102",
+      "id": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodulesetup_open",
+      "community": 1,
+      "norm_label": ".open()"
+    },
+    {
+      "label": ".Close()",
+      "file_type": "code",
+      "source_file": "BusinessLogicModuleSetup.cs",
+      "source_location": "L113",
+      "id": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodulesetup_close",
+      "community": 1,
+      "norm_label": ".close()"
+    },
+    {
+      "label": "ILogger",
+      "file_type": "code",
+      "source_file": "CommandHandlers/AbstractCommandHandler.cs",
+      "source_location": "L54",
+      "id": "ilogger",
+      "community": 4,
+      "norm_label": "ilogger"
+    },
+    {
+      "label": "Dictionary",
+      "file_type": "code",
+      "source_file": "BusinessLogicModuleSetup.cs",
+      "source_location": "L128",
+      "id": "dictionary",
+      "community": 1,
+      "norm_label": "dictionary"
+    },
+    {
+      "label": "bool",
+      "file_type": "code",
+      "source_file": "BusinessLogicModuleSetup.cs",
+      "source_location": "L129",
+      "id": "bool",
+      "community": 1,
+      "norm_label": "bool"
+    },
+    {
+      "label": ".RaiseCloseApplicationRequested()",
+      "file_type": "code",
+      "source_file": "BusinessLogicModuleSetup.cs",
+      "source_location": "L131",
+      "id": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodulesetup_raisecloseapplicationrequested",
+      "community": 1,
+      "norm_label": ".raisecloseapplicationrequested()"
+    },
+    {
+      "label": ".AddCommandHandler()",
+      "file_type": "code",
+      "source_file": "BusinessLogicModuleSetup.cs",
+      "source_location": "L136",
+      "id": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodulesetup_addcommandhandler",
+      "community": 1,
+      "norm_label": ".addcommandhandler()"
+    },
+    {
+      "label": "IActionReplyPrivate.cs",
+      "file_type": "code",
+      "source_file": "IActionReplyPrivate.cs",
+      "source_location": "L1",
+      "id": "iactionreplyprivate_cs",
+      "community": 8,
+      "norm_label": "iactionreplyprivate.cs"
+    },
+    {
+      "label": "BusinessLogicModule",
+      "file_type": "code",
+      "source_file": "IActionReplyPrivate.cs",
+      "source_location": "L16",
+      "id": "businesslogicmodule_iactionreplyprivate_businesslogicmodule",
+      "community": 8,
+      "norm_label": "businesslogicmodule"
+    },
+    {
+      "label": "IActionReplyPrivate",
+      "file_type": "code",
+      "source_file": "IActionReplyPrivate.cs",
+      "source_location": "L23",
+      "id": "businesslogicmodule_iactionreplyprivate_iactionreplyprivate",
+      "community": 8,
+      "norm_label": "iactionreplyprivate"
+    },
+    {
+      "label": ".InvokeEvent()",
+      "file_type": "code",
+      "source_file": "IActionReplyPrivate.cs",
+      "source_location": "L29",
+      "id": "businesslogicmodule_iactionreplyprivate_iactionreplyprivate_invokeevent",
+      "community": 8,
+      "norm_label": ".invokeevent()"
+    },
+    {
+      "label": "AbstractCommandHandler.cs",
+      "file_type": "code",
+      "source_file": "CommandHandlers/AbstractCommandHandler.cs",
+      "source_location": "L1",
+      "id": "commandhandlers_abstractcommandhandler_cs",
+      "community": 4,
+      "norm_label": "abstractcommandhandler.cs"
+    },
+    {
+      "label": "BusinessLogicModule",
+      "file_type": "code",
+      "source_file": "CommandHandlers/AbstractCommandHandler.cs",
+      "source_location": "L19",
+      "id": "commandhandlers_abstractcommandhandler_businesslogicmodule",
+      "community": 4,
+      "norm_label": "businesslogicmodule"
+    },
+    {
+      "label": "AbstractCommandHandler",
+      "file_type": "code",
+      "source_file": "CommandHandlers/AbstractCommandHandler.cs",
+      "source_location": "L28",
+      "id": "commandhandlers_abstractcommandhandler_abstractcommandhandler",
+      "community": 4,
+      "norm_label": "abstractcommandhandler"
+    },
+    {
+      "label": "ICommandHandler",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "icommandhandler",
+      "community": 4,
+      "norm_label": "icommandhandler"
+    },
+    {
+      "label": ".HandleCommand()",
+      "file_type": "code",
+      "source_file": "CommandHandlers/AbstractCommandHandler.cs",
+      "source_location": "L36",
+      "id": "commandhandlers_abstractcommandhandler_abstractcommandhandler_handlecommand",
+      "community": 4,
+      "norm_label": ".handlecommand()"
+    },
+    {
+      "label": ".ExecuteCommand()",
+      "file_type": "code",
+      "source_file": "CommandHandlers/AbstractCommandHandler.cs",
+      "source_location": "L75",
+      "id": "commandhandlers_abstractcommandhandler_abstractcommandhandler_executecommand",
+      "community": 4,
+      "norm_label": ".executecommand()"
+    },
+    {
+      "label": "CloseAppCommandHandler.cs",
+      "file_type": "code",
+      "source_file": "CommandHandlers/CloseAppCommandHandler.cs",
+      "source_location": "L1",
+      "id": "commandhandlers_closeappcommandhandler_cs",
+      "community": 2,
+      "norm_label": "closeappcommandhandler.cs"
+    },
+    {
+      "label": "BusinessLogicModule",
+      "file_type": "code",
+      "source_file": "CommandHandlers/CloseAppCommandHandler.cs",
+      "source_location": "L21",
+      "id": "commandhandlers_closeappcommandhandler_businesslogicmodule",
+      "community": 2,
+      "norm_label": "businesslogicmodule"
+    },
+    {
+      "label": "CloseAppCommandHandler",
+      "file_type": "code",
+      "source_file": "CommandHandlers/CloseAppCommandHandler.cs",
+      "source_location": "L30",
+      "id": "commandhandlers_closeappcommandhandler_closeappcommandhandler",
+      "community": 2,
+      "norm_label": "closeappcommandhandler"
+    },
+    {
+      "label": "AbstractCommandHandler",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "abstractcommandhandler",
+      "community": 2,
+      "norm_label": "abstractcommandhandler"
+    },
+    {
+      "label": ".ExecuteCommand()",
+      "file_type": "code",
+      "source_file": "CommandHandlers/CloseAppCommandHandler.cs",
+      "source_location": "L42",
+      "id": "commandhandlers_closeappcommandhandler_closeappcommandhandler_executecommand",
+      "community": 2,
+      "norm_label": ".executecommand()"
+    },
+    {
+      "label": "Action",
+      "file_type": "code",
+      "source_file": "CommandHandlers/CloseAppCommandHandler.cs",
+      "source_location": "L67",
+      "id": "action",
+      "community": 2,
+      "norm_label": "action"
+    },
+    {
+      "label": "InstallSoftwareCommandHandler.cs",
+      "file_type": "code",
+      "source_file": "CommandHandlers/InstallSoftwareCommandHandler.cs",
+      "source_location": "L1",
+      "id": "commandhandlers_installsoftwarecommandhandler_cs",
+      "community": 5,
+      "norm_label": "installsoftwarecommandhandler.cs"
+    },
+    {
+      "label": "BusinessLogicModule",
+      "file_type": "code",
+      "source_file": "CommandHandlers/InstallSoftwareCommandHandler.cs",
+      "source_location": "L24",
+      "id": "commandhandlers_installsoftwarecommandhandler_businesslogicmodule",
+      "community": 5,
+      "norm_label": "businesslogicmodule"
+    },
+    {
+      "label": "InstallSoftwareCommandHandler",
+      "file_type": "code",
+      "source_file": "CommandHandlers/InstallSoftwareCommandHandler.cs",
+      "source_location": "L33",
+      "id": "commandhandlers_installsoftwarecommandhandler_installsoftwarecommandhandler",
+      "community": 5,
+      "norm_label": "installsoftwarecommandhandler"
+    },
+    {
+      "label": ".ExecuteCommand()",
+      "file_type": "code",
+      "source_file": "CommandHandlers/InstallSoftwareCommandHandler.cs",
+      "source_location": "L45",
+      "id": "commandhandlers_installsoftwarecommandhandler_installsoftwarecommandhandler_executecommand",
+      "community": 5,
+      "norm_label": ".executecommand()"
+    },
+    {
+      "label": "IConfigurationProvider",
+      "file_type": "code",
+      "source_file": "CommandHandlers/VerifyInstallationPrerequisitesCommandHandler.cs",
+      "source_location": "L72",
+      "id": "iconfigurationprovider",
+      "community": 5,
+      "norm_label": "iconfigurationprovider"
+    },
+    {
+      "label": ".ExecuteConfiguredCommand()",
+      "file_type": "code",
+      "source_file": "CommandHandlers/InstallSoftwareCommandHandler.cs",
+      "source_location": "L83",
+      "id": "commandhandlers_installsoftwarecommandhandler_installsoftwarecommandhandler_executeconfiguredcommand",
+      "community": 5,
+      "norm_label": ".executeconfiguredcommand()"
+    },
+    {
+      "label": "LogActionCommandHandler.cs",
+      "file_type": "code",
+      "source_file": "CommandHandlers/LogActionCommandHandler.cs",
+      "source_location": "L1",
+      "id": "commandhandlers_logactioncommandhandler_cs",
+      "community": 2,
+      "norm_label": "logactioncommandhandler.cs"
+    },
+    {
+      "label": "BusinessLogicModule",
+      "file_type": "code",
+      "source_file": "CommandHandlers/LogActionCommandHandler.cs",
+      "source_location": "L24",
+      "id": "commandhandlers_logactioncommandhandler_businesslogicmodule",
+      "community": 2,
+      "norm_label": "businesslogicmodule"
+    },
+    {
+      "label": "LogActionCommandHandler",
+      "file_type": "code",
+      "source_file": "CommandHandlers/LogActionCommandHandler.cs",
+      "source_location": "L35",
+      "id": "commandhandlers_logactioncommandhandler_logactioncommandhandler",
+      "community": 2,
+      "norm_label": "logactioncommandhandler"
+    },
+    {
+      "label": ".ExecuteCommand()",
+      "file_type": "code",
+      "source_file": "CommandHandlers/LogActionCommandHandler.cs",
+      "source_location": "L47",
+      "id": "commandhandlers_logactioncommandhandler_logactioncommandhandler_executecommand",
+      "community": 2,
+      "norm_label": ".executecommand()"
+    },
+    {
+      "label": "UIAppStartedCommandHandler.cs",
+      "file_type": "code",
+      "source_file": "CommandHandlers/UIAppStartedCommandHandler.cs",
+      "source_location": "L1",
+      "id": "commandhandlers_uiappstartedcommandhandler_cs",
+      "community": 6,
+      "norm_label": "uiappstartedcommandhandler.cs"
+    },
+    {
+      "label": "BusinessLogicModule",
+      "file_type": "code",
+      "source_file": "CommandHandlers/UIAppStartedCommandHandler.cs",
+      "source_location": "L23",
+      "id": "commandhandlers_uiappstartedcommandhandler_businesslogicmodule",
+      "community": 6,
+      "norm_label": "businesslogicmodule"
+    },
+    {
+      "label": "UIAppStartedCommandHandler",
+      "file_type": "code",
+      "source_file": "CommandHandlers/UIAppStartedCommandHandler.cs",
+      "source_location": "L33",
+      "id": "commandhandlers_uiappstartedcommandhandler_uiappstartedcommandhandler",
+      "community": 6,
+      "norm_label": "uiappstartedcommandhandler"
+    },
+    {
+      "label": ".ExecuteCommand()",
+      "file_type": "code",
+      "source_file": "CommandHandlers/UIAppStartedCommandHandler.cs",
+      "source_location": "L45",
+      "id": "commandhandlers_uiappstartedcommandhandler_uiappstartedcommandhandler_executecommand",
+      "community": 6,
+      "norm_label": ".executecommand()"
+    },
+    {
+      "label": "ISystemLanguageProvider",
+      "file_type": "code",
+      "source_file": "CommandHandlers/UIAppStartedCommandHandler.cs",
+      "source_location": "L58",
+      "id": "isystemlanguageprovider",
+      "community": 6,
+      "norm_label": "isystemlanguageprovider"
+    },
+    {
+      "label": "VerifyInstallationPrerequisitesCommandHandler.cs",
+      "file_type": "code",
+      "source_file": "CommandHandlers/VerifyInstallationPrerequisitesCommandHandler.cs",
+      "source_location": "L1",
+      "id": "commandhandlers_verifyinstallationprerequisitescommandhandler_cs",
+      "community": 7,
+      "norm_label": "verifyinstallationprerequisitescommandhandler.cs"
+    },
+    {
+      "label": "BusinessLogicModule",
+      "file_type": "code",
+      "source_file": "CommandHandlers/VerifyInstallationPrerequisitesCommandHandler.cs",
+      "source_location": "L24",
+      "id": "commandhandlers_verifyinstallationprerequisitescommandhandler_businesslogicmodule",
+      "community": 7,
+      "norm_label": "businesslogicmodule"
+    },
+    {
+      "label": "VerifyInstallationPrerequisitesCommandHandler",
+      "file_type": "code",
+      "source_file": "CommandHandlers/VerifyInstallationPrerequisitesCommandHandler.cs",
+      "source_location": "L33",
+      "id": "commandhandlers_verifyinstallationprerequisitescommandhandler_verifyinstallationprerequisitescommandhandler",
+      "community": 7,
+      "norm_label": "verifyinstallationprerequisitescommandhandler"
+    },
+    {
+      "label": ".ExecuteCommand()",
+      "file_type": "code",
+      "source_file": "CommandHandlers/VerifyInstallationPrerequisitesCommandHandler.cs",
+      "source_location": "L45",
+      "id": "commandhandlers_verifyinstallationprerequisitescommandhandler_verifyinstallationprerequisitescommandhandler_executecommand",
+      "community": 7,
+      "norm_label": ".executecommand()"
+    },
+    {
+      "label": ".ExecuteConfiguredCommand()",
+      "file_type": "code",
+      "source_file": "CommandHandlers/VerifyInstallationPrerequisitesCommandHandler.cs",
+      "source_location": "L83",
+      "id": "commandhandlers_verifyinstallationprerequisitescommandhandler_verifyinstallationprerequisitescommandhandler_executeconfiguredcommand",
+      "community": 7,
+      "norm_label": ".executeconfiguredcommand()"
+    },
+    {
+      "label": "CloseAppCommand.cs",
+      "file_type": "code",
+      "source_file": "Commands/CloseAppCommand.cs",
+      "source_location": "L1",
+      "id": "commands_closeappcommand_cs",
+      "community": 0,
+      "norm_label": "closeappcommand.cs"
+    },
+    {
+      "label": "BusinessLogicModule.Commands",
+      "file_type": "code",
+      "source_file": "Commands/CloseAppCommand.cs",
+      "source_location": "L18",
+      "id": "commands_closeappcommand_businesslogicmodule_commands",
+      "community": 0,
+      "norm_label": "businesslogicmodule.commands"
+    },
+    {
+      "label": "CloseAppCommand",
+      "file_type": "code",
+      "source_file": "Commands/CloseAppCommand.cs",
+      "source_location": "L26",
+      "id": "commands_closeappcommand_closeappcommand",
+      "community": 0,
+      "norm_label": "closeappcommand"
+    },
+    {
+      "label": "ICommand",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "icommand",
+      "community": 0,
+      "norm_label": "icommand"
+    },
+    {
+      "label": "InstallSoftwareCommand.cs",
+      "file_type": "code",
+      "source_file": "Commands/InstallSoftwareCommand.cs",
+      "source_location": "L1",
+      "id": "commands_installsoftwarecommand_cs",
+      "community": 0,
+      "norm_label": "installsoftwarecommand.cs"
+    },
+    {
+      "label": "BusinessLogicModule.Commands",
+      "file_type": "code",
+      "source_file": "Commands/InstallSoftwareCommand.cs",
+      "source_location": "L18",
+      "id": "commands_installsoftwarecommand_businesslogicmodule_commands",
+      "community": 0,
+      "norm_label": "businesslogicmodule.commands"
+    },
+    {
+      "label": "InstallSoftwareCommand",
+      "file_type": "code",
+      "source_file": "Commands/InstallSoftwareCommand.cs",
+      "source_location": "L26",
+      "id": "commands_installsoftwarecommand_installsoftwarecommand",
+      "community": 0,
+      "norm_label": "installsoftwarecommand"
+    },
+    {
+      "label": "LogCommand.cs",
+      "file_type": "code",
+      "source_file": "Commands/LogCommand.cs",
+      "source_location": "L1",
+      "id": "commands_logcommand_cs",
+      "community": 0,
+      "norm_label": "logcommand.cs"
+    },
+    {
+      "label": "BusinessLogicModule.Commands",
+      "file_type": "code",
+      "source_file": "Commands/LogCommand.cs",
+      "source_location": "L19",
+      "id": "commands_logcommand_businesslogicmodule_commands",
+      "community": 0,
+      "norm_label": "businesslogicmodule.commands"
+    },
+    {
+      "label": "LogCommand",
+      "file_type": "code",
+      "source_file": "Commands/LogCommand.cs",
+      "source_location": "L27",
+      "id": "commands_logcommand_logcommand",
+      "community": 0,
+      "norm_label": "logcommand"
+    },
+    {
+      "label": "UIAppStartedCommand.cs",
+      "file_type": "code",
+      "source_file": "Commands/UIAppStartedCommand.cs",
+      "source_location": "L1",
+      "id": "commands_uiappstartedcommand_cs",
+      "community": 0,
+      "norm_label": "uiappstartedcommand.cs"
+    },
+    {
+      "label": "BusinessLogicModule.Commands",
+      "file_type": "code",
+      "source_file": "Commands/UIAppStartedCommand.cs",
+      "source_location": "L17",
+      "id": "commands_uiappstartedcommand_businesslogicmodule_commands",
+      "community": 0,
+      "norm_label": "businesslogicmodule.commands"
+    },
+    {
+      "label": "UIAppStartedCommand",
+      "file_type": "code",
+      "source_file": "Commands/UIAppStartedCommand.cs",
+      "source_location": "L26",
+      "id": "commands_uiappstartedcommand_uiappstartedcommand",
+      "community": 0,
+      "norm_label": "uiappstartedcommand"
+    },
+    {
+      "label": "VerifyInstallationPrerequisitesCommand.cs",
+      "file_type": "code",
+      "source_file": "Commands/VerifyInstallationPrerequisitesCommand.cs",
+      "source_location": "L1",
+      "id": "commands_verifyinstallationprerequisitescommand_cs",
+      "community": 0,
+      "norm_label": "verifyinstallationprerequisitescommand.cs"
+    },
+    {
+      "label": "BusinessLogicModule.Commands",
+      "file_type": "code",
+      "source_file": "Commands/VerifyInstallationPrerequisitesCommand.cs",
+      "source_location": "L18",
+      "id": "commands_verifyinstallationprerequisitescommand_businesslogicmodule_commands",
+      "community": 0,
+      "norm_label": "businesslogicmodule.commands"
+    },
+    {
+      "label": "VerifyInstallationPrerequisitesCommand",
+      "file_type": "code",
+      "source_file": "Commands/VerifyInstallationPrerequisitesCommand.cs",
+      "source_location": "L26",
+      "id": "commands_verifyinstallationprerequisitescommand_verifyinstallationprerequisitescommand",
+      "community": 0,
+      "norm_label": "verifyinstallationprerequisitescommand"
+    },
+    {
+      "label": "CloseAppStatusEventArgs.cs",
+      "file_type": "code",
+      "source_file": "EventArgs/CloseAppStatusEventArgs.cs",
+      "source_location": "L1",
+      "id": "eventargs_closeappstatuseventargs_cs",
+      "community": 9,
+      "norm_label": "closeappstatuseventargs.cs"
+    },
+    {
+      "label": "BusinessLogicModule.EventArgs",
+      "file_type": "code",
+      "source_file": "EventArgs/CloseAppStatusEventArgs.cs",
+      "source_location": "L16",
+      "id": "eventargs_closeappstatuseventargs_businesslogicmodule_eventargs",
+      "community": 9,
+      "norm_label": "businesslogicmodule.eventargs"
+    },
+    {
+      "label": "CloseAppStatusEventArgs",
+      "file_type": "code",
+      "source_file": "EventArgs/CloseAppStatusEventArgs.cs",
+      "source_location": "L24",
+      "id": "eventargs_closeappstatuseventargs_closeappstatuseventargs",
+      "community": 9,
+      "norm_label": "closeappstatuseventargs"
+    },
+    {
+      "label": "InstallSoftwareStatusEventArgs.cs",
+      "file_type": "code",
+      "source_file": "EventArgs/InstallSoftwareStatusEventArgs.cs",
+      "source_location": "L1",
+      "id": "eventargs_installsoftwarestatuseventargs_cs",
+      "community": 10,
+      "norm_label": "installsoftwarestatuseventargs.cs"
+    },
+    {
+      "label": "BusinessLogicModule.EventArgs",
+      "file_type": "code",
+      "source_file": "EventArgs/InstallSoftwareStatusEventArgs.cs",
+      "source_location": "L16",
+      "id": "eventargs_installsoftwarestatuseventargs_businesslogicmodule_eventargs",
+      "community": 10,
+      "norm_label": "businesslogicmodule.eventargs"
+    },
+    {
+      "label": "InstallSoftwareStatusEventArgs",
+      "file_type": "code",
+      "source_file": "EventArgs/InstallSoftwareStatusEventArgs.cs",
+      "source_location": "L24",
+      "id": "eventargs_installsoftwarestatuseventargs_installsoftwarestatuseventargs",
+      "community": 10,
+      "norm_label": "installsoftwarestatuseventargs"
+    },
+    {
+      "label": "ShowSystemLanguageEventArgs.cs",
+      "file_type": "code",
+      "source_file": "EventArgs/ShowSystemLanguageEventArgs.cs",
+      "source_location": "L1",
+      "id": "eventargs_showsystemlanguageeventargs_cs",
+      "community": 11,
+      "norm_label": "showsystemlanguageeventargs.cs"
+    },
+    {
+      "label": "BusinessLogicModule.EventArgs",
+      "file_type": "code",
+      "source_file": "EventArgs/ShowSystemLanguageEventArgs.cs",
+      "source_location": "L18",
+      "id": "eventargs_showsystemlanguageeventargs_businesslogicmodule_eventargs",
+      "community": 11,
+      "norm_label": "businesslogicmodule.eventargs"
+    },
+    {
+      "label": "ShowSystemLanguageEventArgs",
+      "file_type": "code",
+      "source_file": "EventArgs/ShowSystemLanguageEventArgs.cs",
+      "source_location": "L26",
+      "id": "eventargs_showsystemlanguageeventargs_showsystemlanguageeventargs",
+      "community": 11,
+      "norm_label": "showsystemlanguageeventargs"
+    },
+    {
+      "label": "VerifyInstallationPrerequisitesStatusEventArgs.cs",
+      "file_type": "code",
+      "source_file": "EventArgs/VerifyInstallationPrerequisitesStatusEventArgs.cs",
+      "source_location": "L1",
+      "id": "eventargs_verifyinstallationprerequisitesstatuseventargs_cs",
+      "community": 12,
+      "norm_label": "verifyinstallationprerequisitesstatuseventargs.cs"
+    },
+    {
+      "label": "BusinessLogicModule.EventArgs",
+      "file_type": "code",
+      "source_file": "EventArgs/VerifyInstallationPrerequisitesStatusEventArgs.cs",
+      "source_location": "L16",
+      "id": "eventargs_verifyinstallationprerequisitesstatuseventargs_businesslogicmodule_eventargs",
+      "community": 12,
+      "norm_label": "businesslogicmodule.eventargs"
+    },
+    {
+      "label": "VerifyInstallationPrerequisitesStatusEventArgs",
+      "file_type": "code",
+      "source_file": "EventArgs/VerifyInstallationPrerequisitesStatusEventArgs.cs",
+      "source_location": "L24",
+      "id": "eventargs_verifyinstallationprerequisitesstatuseventargs_verifyinstallationprerequisitesstatuseventargs",
+      "community": 12,
+      "norm_label": "verifyinstallationprerequisitesstatuseventargs"
+    },
+    {
+      "label": "BusinessLogicModule.AssemblyInfo.cs",
+      "file_type": "code",
+      "source_file": "obj/Debug/BusinessLogicModule.AssemblyInfo.cs",
+      "source_location": "L1",
+      "community": 13,
+      "norm_label": "businesslogicmodule.assemblyinfo.cs",
+      "id": "obj_debug_businesslogicmodule_assemblyinfo_cs"
+    },
+    {
+      "label": "BusinessLogicModule.GlobalUsings.g.cs",
+      "file_type": "code",
+      "source_file": "obj/Debug/BusinessLogicModule.GlobalUsings.g.cs",
+      "source_location": "L1",
+      "community": 14,
+      "norm_label": "businesslogicmodule.globalusings.g.cs",
+      "id": "obj_debug_businesslogicmodule_globalusings_g_cs"
+    },
+    {
+      "label": "BusinessLogicModule.AssemblyInfo.cs",
+      "file_type": "code",
+      "source_file": "obj/Debug/net8.0/BusinessLogicModule.AssemblyInfo.cs",
+      "source_location": "L1",
+      "community": 15,
+      "norm_label": "businesslogicmodule.assemblyinfo.cs",
+      "id": "obj_debug_net8_0_businesslogicmodule_assemblyinfo_cs"
+    },
+    {
+      "label": "BusinessLogicModule.GlobalUsings.g.cs",
+      "file_type": "code",
+      "source_file": "obj/Debug/net8.0/BusinessLogicModule.GlobalUsings.g.cs",
+      "source_location": "L1",
+      "community": 16,
+      "norm_label": "businesslogicmodule.globalusings.g.cs",
+      "id": "obj_debug_net8_0_businesslogicmodule_globalusings_g_cs"
+    },
+    {
+      "label": "BusinessLogicModule.AssemblyInfo.cs",
+      "file_type": "code",
+      "source_file": "obj/Release/BusinessLogicModule.AssemblyInfo.cs",
+      "source_location": "L1",
+      "community": 17,
+      "norm_label": "businesslogicmodule.assemblyinfo.cs",
+      "id": "obj_release_businesslogicmodule_assemblyinfo_cs"
+    },
+    {
+      "label": "BusinessLogicModule.GlobalUsings.g.cs",
+      "file_type": "code",
+      "source_file": "obj/Release/BusinessLogicModule.GlobalUsings.g.cs",
+      "source_location": "L1",
+      "community": 18,
+      "norm_label": "businesslogicmodule.globalusings.g.cs",
+      "id": "obj_release_businesslogicmodule_globalusings_g_cs"
+    },
+    {
+      "label": "BusinessLogicModule.AssemblyInfo.cs",
+      "file_type": "code",
+      "source_file": "obj/Release/net8.0/BusinessLogicModule.AssemblyInfo.cs",
+      "source_location": "L1",
+      "community": 19,
+      "norm_label": "businesslogicmodule.assemblyinfo.cs",
+      "id": "obj_release_net8_0_businesslogicmodule_assemblyinfo_cs"
+    },
+    {
+      "label": "BusinessLogicModule.GlobalUsings.g.cs",
+      "file_type": "code",
+      "source_file": "obj/Release/net8.0/BusinessLogicModule.GlobalUsings.g.cs",
+      "source_location": "L1",
+      "community": 20,
+      "norm_label": "businesslogicmodule.globalusings.g.cs",
+      "id": "obj_release_net8_0_businesslogicmodule_globalusings_g_cs"
+    },
+    {
+      "label": "BusinessLogicModule.AssemblyInfo.cs",
+      "file_type": "code",
+      "source_file": "obj/x64/Debug/net8.0/BusinessLogicModule.AssemblyInfo.cs",
+      "source_location": "L1",
+      "community": 21,
+      "norm_label": "businesslogicmodule.assemblyinfo.cs",
+      "id": "obj_x64_debug_net8_0_businesslogicmodule_assemblyinfo_cs"
+    },
+    {
+      "label": "BusinessLogicModule.GlobalUsings.g.cs",
+      "file_type": "code",
+      "source_file": "obj/x64/Debug/net8.0/BusinessLogicModule.GlobalUsings.g.cs",
+      "source_location": "L1",
+      "community": 22,
+      "norm_label": "businesslogicmodule.globalusings.g.cs",
+      "id": "obj_x64_debug_net8_0_businesslogicmodule_globalusings_g_cs"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ActionReplyHandler.cs",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actionreplyhandler_cs",
+      "target": "businesslogicmodule_actionreplyhandler_businesslogicmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ActionReplyHandler.cs",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "actionreplyhandler_cs",
+      "target": "businesslogicmodule_actionreplyhandler_actionreplyhandler"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "ActionReplyHandler.cs",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "businesslogicmodule_actionreplyhandler_actionreplyhandler",
+      "target": "iactionreply"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "ActionReplyHandler.cs",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "businesslogicmodule_actionreplyhandler_actionreplyhandler",
+      "target": "iactionreplyprivate"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ActionReplyHandler.cs",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "businesslogicmodule_actionreplyhandler_actionreplyhandler",
+      "target": "businesslogicmodule_actionreplyhandler_actionreplyhandler_invoke"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ActionReplyHandler.cs",
+      "source_location": "L42",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "businesslogicmodule_actionreplyhandler_actionreplyhandler",
+      "target": "businesslogicmodule_actionreplyhandler_actionreplyhandler_invokeevent"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/AbstractCommandHandler.cs",
+      "source_location": "L51",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "commandhandlers_abstractcommandhandler_abstractcommandhandler",
+      "target": "iactionreplyprivate"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ActionReplyHandler.cs",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "businesslogicmodule_actionreplyhandler_actionreplyhandler_invokeevent",
+      "target": "businesslogicmodule_actionreplyhandler_actionreplyhandler_invoke"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "BusinessLogicModuleSetup.cs",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "businesslogicmodulesetup_cs",
+      "target": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "BusinessLogicModuleSetup.cs",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "businesslogicmodulesetup_cs",
+      "target": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodulesetup"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "BusinessLogicModuleSetup.cs",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodulesetup",
+      "target": "ibusinesslogicmodule"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "BusinessLogicModuleSetup.cs",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodulesetup",
+      "target": "icloseapplicationrequestsource"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BusinessLogicModuleSetup.cs",
+      "source_location": "L84",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodulesetup",
+      "target": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodulesetup_handlecommand"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BusinessLogicModuleSetup.cs",
+      "source_location": "L102",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodulesetup",
+      "target": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodulesetup_open"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BusinessLogicModuleSetup.cs",
+      "source_location": "L113",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodulesetup",
+      "target": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodulesetup_close"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BusinessLogicModuleSetup.cs",
+      "source_location": "L127",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodulesetup",
+      "target": "ilogger"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BusinessLogicModuleSetup.cs",
+      "source_location": "L128",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodulesetup",
+      "target": "dictionary"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "BusinessLogicModuleSetup.cs",
+      "source_location": "L129",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodulesetup",
+      "target": "bool"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BusinessLogicModuleSetup.cs",
+      "source_location": "L131",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodulesetup",
+      "target": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodulesetup_raisecloseapplicationrequested"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "BusinessLogicModuleSetup.cs",
+      "source_location": "L136",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodulesetup",
+      "target": "businesslogicmodule_businesslogicmodulesetup_businesslogicmodulesetup_addcommandhandler"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/AbstractCommandHandler.cs",
+      "source_location": "L54",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "commandhandlers_abstractcommandhandler_abstractcommandhandler",
+      "target": "ilogger"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IActionReplyPrivate.cs",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "iactionreplyprivate_cs",
+      "target": "businesslogicmodule_iactionreplyprivate_businesslogicmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "IActionReplyPrivate.cs",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "iactionreplyprivate_cs",
+      "target": "businesslogicmodule_iactionreplyprivate_iactionreplyprivate"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "IActionReplyPrivate.cs",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "businesslogicmodule_iactionreplyprivate_iactionreplyprivate",
+      "target": "businesslogicmodule_iactionreplyprivate_iactionreplyprivate_invokeevent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/AbstractCommandHandler.cs",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_abstractcommandhandler_cs",
+      "target": "commandhandlers_abstractcommandhandler_businesslogicmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/AbstractCommandHandler.cs",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_abstractcommandhandler_cs",
+      "target": "commandhandlers_abstractcommandhandler_abstractcommandhandler"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/AbstractCommandHandler.cs",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_abstractcommandhandler_abstractcommandhandler",
+      "target": "icommandhandler"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/AbstractCommandHandler.cs",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_abstractcommandhandler_abstractcommandhandler",
+      "target": "commandhandlers_abstractcommandhandler_abstractcommandhandler_handlecommand"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/AbstractCommandHandler.cs",
+      "source_location": "L75",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_abstractcommandhandler_abstractcommandhandler",
+      "target": "commandhandlers_abstractcommandhandler_abstractcommandhandler_executecommand"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/AbstractCommandHandler.cs",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_abstractcommandhandler_abstractcommandhandler_handlecommand",
+      "target": "commandhandlers_abstractcommandhandler_abstractcommandhandler_executecommand"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/CloseAppCommandHandler.cs",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_closeappcommandhandler_cs",
+      "target": "commandhandlers_closeappcommandhandler_businesslogicmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/CloseAppCommandHandler.cs",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_closeappcommandhandler_cs",
+      "target": "commandhandlers_closeappcommandhandler_closeappcommandhandler"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/CloseAppCommandHandler.cs",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_closeappcommandhandler_closeappcommandhandler",
+      "target": "abstractcommandhandler"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/CloseAppCommandHandler.cs",
+      "source_location": "L42",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_closeappcommandhandler_closeappcommandhandler",
+      "target": "commandhandlers_closeappcommandhandler_closeappcommandhandler_executecommand"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/CloseAppCommandHandler.cs",
+      "source_location": "L67",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "commandhandlers_closeappcommandhandler_closeappcommandhandler",
+      "target": "action"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/InstallSoftwareCommandHandler.cs",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_installsoftwarecommandhandler_installsoftwarecommandhandler",
+      "target": "abstractcommandhandler"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/LogActionCommandHandler.cs",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_logactioncommandhandler_logactioncommandhandler",
+      "target": "abstractcommandhandler"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/UIAppStartedCommandHandler.cs",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_uiappstartedcommandhandler_uiappstartedcommandhandler",
+      "target": "abstractcommandhandler"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/VerifyInstallationPrerequisitesCommandHandler.cs",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_verifyinstallationprerequisitescommandhandler_verifyinstallationprerequisitescommandhandler",
+      "target": "abstractcommandhandler"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/InstallSoftwareCommandHandler.cs",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_installsoftwarecommandhandler_cs",
+      "target": "commandhandlers_installsoftwarecommandhandler_businesslogicmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/InstallSoftwareCommandHandler.cs",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_installsoftwarecommandhandler_cs",
+      "target": "commandhandlers_installsoftwarecommandhandler_installsoftwarecommandhandler"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/InstallSoftwareCommandHandler.cs",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_installsoftwarecommandhandler_installsoftwarecommandhandler",
+      "target": "commandhandlers_installsoftwarecommandhandler_installsoftwarecommandhandler_executecommand"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/InstallSoftwareCommandHandler.cs",
+      "source_location": "L72",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "commandhandlers_installsoftwarecommandhandler_installsoftwarecommandhandler",
+      "target": "iconfigurationprovider"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/InstallSoftwareCommandHandler.cs",
+      "source_location": "L83",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_installsoftwarecommandhandler_installsoftwarecommandhandler",
+      "target": "commandhandlers_installsoftwarecommandhandler_installsoftwarecommandhandler_executeconfiguredcommand"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/InstallSoftwareCommandHandler.cs",
+      "source_location": "L53",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_installsoftwarecommandhandler_installsoftwarecommandhandler_executecommand",
+      "target": "commandhandlers_installsoftwarecommandhandler_installsoftwarecommandhandler_executeconfiguredcommand"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/VerifyInstallationPrerequisitesCommandHandler.cs",
+      "source_location": "L72",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "commandhandlers_verifyinstallationprerequisitescommandhandler_verifyinstallationprerequisitescommandhandler",
+      "target": "iconfigurationprovider"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/LogActionCommandHandler.cs",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_logactioncommandhandler_cs",
+      "target": "commandhandlers_logactioncommandhandler_businesslogicmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/LogActionCommandHandler.cs",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_logactioncommandhandler_cs",
+      "target": "commandhandlers_logactioncommandhandler_logactioncommandhandler"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/LogActionCommandHandler.cs",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_logactioncommandhandler_logactioncommandhandler",
+      "target": "commandhandlers_logactioncommandhandler_logactioncommandhandler_executecommand"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/UIAppStartedCommandHandler.cs",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_uiappstartedcommandhandler_cs",
+      "target": "commandhandlers_uiappstartedcommandhandler_businesslogicmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/UIAppStartedCommandHandler.cs",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_uiappstartedcommandhandler_cs",
+      "target": "commandhandlers_uiappstartedcommandhandler_uiappstartedcommandhandler"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/UIAppStartedCommandHandler.cs",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_uiappstartedcommandhandler_uiappstartedcommandhandler",
+      "target": "commandhandlers_uiappstartedcommandhandler_uiappstartedcommandhandler_executecommand"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/UIAppStartedCommandHandler.cs",
+      "source_location": "L58",
+      "weight": 1.0,
+      "context": "field",
+      "confidence_score": 1.0,
+      "source": "commandhandlers_uiappstartedcommandhandler_uiappstartedcommandhandler",
+      "target": "isystemlanguageprovider"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/VerifyInstallationPrerequisitesCommandHandler.cs",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_verifyinstallationprerequisitescommandhandler_cs",
+      "target": "commandhandlers_verifyinstallationprerequisitescommandhandler_businesslogicmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/VerifyInstallationPrerequisitesCommandHandler.cs",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_verifyinstallationprerequisitescommandhandler_cs",
+      "target": "commandhandlers_verifyinstallationprerequisitescommandhandler_verifyinstallationprerequisitescommandhandler"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/VerifyInstallationPrerequisitesCommandHandler.cs",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_verifyinstallationprerequisitescommandhandler_verifyinstallationprerequisitescommandhandler",
+      "target": "commandhandlers_verifyinstallationprerequisitescommandhandler_verifyinstallationprerequisitescommandhandler_executecommand"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/VerifyInstallationPrerequisitesCommandHandler.cs",
+      "source_location": "L83",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_verifyinstallationprerequisitescommandhandler_verifyinstallationprerequisitescommandhandler",
+      "target": "commandhandlers_verifyinstallationprerequisitescommandhandler_verifyinstallationprerequisitescommandhandler_executeconfiguredcommand"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "CommandHandlers/VerifyInstallationPrerequisitesCommandHandler.cs",
+      "source_location": "L53",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commandhandlers_verifyinstallationprerequisitescommandhandler_verifyinstallationprerequisitescommandhandler_executecommand",
+      "target": "commandhandlers_verifyinstallationprerequisitescommandhandler_verifyinstallationprerequisitescommandhandler_executeconfiguredcommand"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Commands/CloseAppCommand.cs",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commands_closeappcommand_cs",
+      "target": "commands_closeappcommand_businesslogicmodule_commands"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Commands/CloseAppCommand.cs",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commands_closeappcommand_cs",
+      "target": "commands_closeappcommand_closeappcommand"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Commands/CloseAppCommand.cs",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commands_closeappcommand_closeappcommand",
+      "target": "icommand"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Commands/InstallSoftwareCommand.cs",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commands_installsoftwarecommand_installsoftwarecommand",
+      "target": "icommand"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Commands/LogCommand.cs",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commands_logcommand_logcommand",
+      "target": "icommand"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Commands/UIAppStartedCommand.cs",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commands_uiappstartedcommand_uiappstartedcommand",
+      "target": "icommand"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Commands/VerifyInstallationPrerequisitesCommand.cs",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commands_verifyinstallationprerequisitescommand_verifyinstallationprerequisitescommand",
+      "target": "icommand"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Commands/InstallSoftwareCommand.cs",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commands_installsoftwarecommand_cs",
+      "target": "commands_installsoftwarecommand_businesslogicmodule_commands"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Commands/InstallSoftwareCommand.cs",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commands_installsoftwarecommand_cs",
+      "target": "commands_installsoftwarecommand_installsoftwarecommand"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Commands/LogCommand.cs",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commands_logcommand_cs",
+      "target": "commands_logcommand_businesslogicmodule_commands"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Commands/LogCommand.cs",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commands_logcommand_cs",
+      "target": "commands_logcommand_logcommand"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Commands/UIAppStartedCommand.cs",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commands_uiappstartedcommand_cs",
+      "target": "commands_uiappstartedcommand_businesslogicmodule_commands"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Commands/UIAppStartedCommand.cs",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commands_uiappstartedcommand_cs",
+      "target": "commands_uiappstartedcommand_uiappstartedcommand"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Commands/VerifyInstallationPrerequisitesCommand.cs",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commands_verifyinstallationprerequisitescommand_cs",
+      "target": "commands_verifyinstallationprerequisitescommand_businesslogicmodule_commands"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Commands/VerifyInstallationPrerequisitesCommand.cs",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commands_verifyinstallationprerequisitescommand_cs",
+      "target": "commands_verifyinstallationprerequisitescommand_verifyinstallationprerequisitescommand"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "EventArgs/CloseAppStatusEventArgs.cs",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "eventargs_closeappstatuseventargs_cs",
+      "target": "eventargs_closeappstatuseventargs_businesslogicmodule_eventargs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "EventArgs/CloseAppStatusEventArgs.cs",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "eventargs_closeappstatuseventargs_cs",
+      "target": "eventargs_closeappstatuseventargs_closeappstatuseventargs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "EventArgs/InstallSoftwareStatusEventArgs.cs",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "eventargs_installsoftwarestatuseventargs_cs",
+      "target": "eventargs_installsoftwarestatuseventargs_businesslogicmodule_eventargs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "EventArgs/InstallSoftwareStatusEventArgs.cs",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "eventargs_installsoftwarestatuseventargs_cs",
+      "target": "eventargs_installsoftwarestatuseventargs_installsoftwarestatuseventargs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "EventArgs/ShowSystemLanguageEventArgs.cs",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "eventargs_showsystemlanguageeventargs_cs",
+      "target": "eventargs_showsystemlanguageeventargs_businesslogicmodule_eventargs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "EventArgs/ShowSystemLanguageEventArgs.cs",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "eventargs_showsystemlanguageeventargs_cs",
+      "target": "eventargs_showsystemlanguageeventargs_showsystemlanguageeventargs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "EventArgs/VerifyInstallationPrerequisitesStatusEventArgs.cs",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "eventargs_verifyinstallationprerequisitesstatuseventargs_cs",
+      "target": "eventargs_verifyinstallationprerequisitesstatuseventargs_businesslogicmodule_eventargs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "EventArgs/VerifyInstallationPrerequisitesStatusEventArgs.cs",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "eventargs_verifyinstallationprerequisitesstatuseventargs_cs",
+      "target": "eventargs_verifyinstallationprerequisitesstatuseventargs_verifyinstallationprerequisitesstatuseventargs"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "9d5b08a54acd5ef99a5b1e419e072620f294ecae"
+}

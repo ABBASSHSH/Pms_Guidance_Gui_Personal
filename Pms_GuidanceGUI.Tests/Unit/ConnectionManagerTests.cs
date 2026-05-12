@@ -63,20 +63,20 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Constructor guards ────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given ConnectionManager NullWebView When Constructed Then ThrowsArgumentNullException
+    /// Given ConnectionManager When NullWebViewConstructed Then ThrowsArgumentNullException
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_NullWebView_When_Constructed_Then_ThrowsArgumentNullException()
+        public void Given_ConnectionManager_When_NullWebViewConstructed_Then_ThrowsArgumentNullException()
         {
             Assert.ThrowsException<ArgumentNullException>(
                 () => new ConnectionManager(null!, new Mock<ILogger>().Object));
         }
 
         /// <summary>
-    /// Given ConnectionManager NullLogger When Constructed Then ThrowsArgumentNullException
+    /// Given ConnectionManager When NullLoggerConstructed Then ThrowsArgumentNullException
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_NullLogger_When_Constructed_Then_ThrowsArgumentNullException()
+        public void Given_ConnectionManager_When_NullLoggerConstructed_Then_ThrowsArgumentNullException()
         {
             Assert.ThrowsException<ArgumentNullException>(
                 () => new ConnectionManager(new Mock<IWebViewWrapper>().Object, null!));
@@ -85,10 +85,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Inbound: valid message routing ────────────────────────────────────────
 
         /// <summary>
-    /// Given ConnectionManager ValidJson When MessageReceived Then MessageReceivedEventIsRaised
+    /// Given ConnectionManager When ValidJsonMessageReceived Then MessageReceivedEventIsRaised
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_ValidJson_When_MessageReceived_Then_MessageReceivedEventIsRaised()
+        public void Given_ConnectionManager_When_ValidJsonMessageReceived_Then_MessageReceivedEventIsRaised()
         {
             MessageReceivedEventArgs? capturedArgs = null;
             m_connectionManager.MessageReceived += (s, e) => capturedArgs = e;
@@ -99,10 +99,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager ValidJson When MessageReceived Then EventArgsHasCorrectAction
+    /// Given ConnectionManager When ValidJsonMessageReceived Then EventArgsHasCorrectAction
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_ValidJson_When_MessageReceived_Then_EventArgsHasCorrectAction()
+        public void Given_ConnectionManager_When_ValidJsonMessageReceived_Then_EventArgsHasCorrectAction()
         {
             string? capturedAction = null;
             m_connectionManager.MessageReceived += (s, e) => capturedAction = e.Action;
@@ -113,10 +113,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager ValidJsonWithPayload When MessageReceived Then EventArgsPayloadContainsExpectedData
+    /// Given ConnectionManager When ValidJsonWithPayloadMessageReceived Then EventArgsPayloadContainsExpectedData
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_ValidJsonWithPayload_When_MessageReceived_Then_EventArgsPayloadContainsExpectedData()
+        public void Given_ConnectionManager_When_ValidJsonWithPayloadMessageReceived_Then_EventArgsPayloadContainsExpectedData()
         {
             string? capturedPayload = null;
             m_connectionManager.MessageReceived += (s, e) => capturedPayload = e.Payload;
@@ -129,10 +129,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager ValidJson When MessageReceived Then LogDebugIsCalled
+    /// Given ConnectionManager When ValidJsonMessageReceived Then LogDebugIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_ValidJson_When_MessageReceived_Then_LogDebugIsCalled()
+        public void Given_ConnectionManager_When_ValidJsonMessageReceived_Then_LogDebugIsCalled()
         {
             RaiseIncoming(BuildValidJson("CloseApp"));
 
@@ -140,10 +140,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager TwoSuccessiveValidMessages When MessagesReceived Then BothEventsAreRaised
+    /// Given ConnectionManager When TwoSuccessiveValidMessagesMessagesReceived Then BothEventsAreRaised
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_TwoSuccessiveValidMessages_When_MessagesReceived_Then_BothEventsAreRaised()
+        public void Given_ConnectionManager_When_TwoSuccessiveValidMessagesMessagesReceived_Then_BothEventsAreRaised()
         {
             int count = 0;
             m_connectionManager.MessageReceived += (s, e) => count++;
@@ -155,10 +155,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager NoSubscribers When ValidJsonReceived Then NoExceptionThrown
+    /// Given ConnectionManager When NoSubscribersValidJsonReceived Then NoExceptionThrown
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_NoSubscribers_When_ValidJsonReceived_Then_NoExceptionThrown()
+        public void Given_ConnectionManager_When_NoSubscribersValidJsonReceived_Then_NoExceptionThrown()
         {
             // MessageReceived has no subscribers — the null-conditional invoke must not throw.
             bool threw = false;
@@ -177,10 +177,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Inbound: malformed / edge-case input ──────────────────────────────────
 
         /// <summary>
-    /// Given ConnectionManager MalformedJson When MessageReceived Then LogErrorIsCalled
+    /// Given ConnectionManager When MalformedJsonMessageReceived Then LogErrorIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_MalformedJson_When_MessageReceived_Then_LogErrorIsCalled()
+        public void Given_ConnectionManager_When_MalformedJsonMessageReceived_Then_LogErrorIsCalled()
         {
             RaiseIncoming("NOT_VALID_JSON");
 
@@ -188,10 +188,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager MalformedJson When MessageReceived Then MessageReceivedEventIsNotRaised
+    /// Given ConnectionManager When MalformedJsonMessageReceived Then MessageReceivedEventIsNotRaised
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_MalformedJson_When_MessageReceived_Then_MessageReceivedEventIsNotRaised()
+        public void Given_ConnectionManager_When_MalformedJsonMessageReceived_Then_MessageReceivedEventIsNotRaised()
         {
             bool eventFired = false;
             m_connectionManager.MessageReceived += (s, e) => eventFired = true;
@@ -202,10 +202,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager EmptyString When MessageReceived Then LogWarnIsCalled
+    /// Given ConnectionManager When EmptyStringMessageReceived Then LogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_EmptyString_When_MessageReceived_Then_LogWarnIsCalled()
+        public void Given_ConnectionManager_When_EmptyStringMessageReceived_Then_LogWarnIsCalled()
         {
             RaiseIncoming(string.Empty);
 
@@ -213,10 +213,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager WhitespaceString When MessageReceived Then LogWarnIsCalled
+    /// Given ConnectionManager When WhitespaceStringMessageReceived Then LogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_WhitespaceString_When_MessageReceived_Then_LogWarnIsCalled()
+        public void Given_ConnectionManager_When_WhitespaceStringMessageReceived_Then_LogWarnIsCalled()
         {
             RaiseIncoming("   ");
 
@@ -224,10 +224,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager EmptyString When MessageReceived Then MessageReceivedEventIsNotRaised
+    /// Given ConnectionManager When EmptyStringMessageReceived Then MessageReceivedEventIsNotRaised
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_EmptyString_When_MessageReceived_Then_MessageReceivedEventIsNotRaised()
+        public void Given_ConnectionManager_When_EmptyStringMessageReceived_Then_MessageReceivedEventIsNotRaised()
         {
             bool eventFired = false;
             m_connectionManager.MessageReceived += (s, e) => eventFired = true;
@@ -238,10 +238,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager JsonMissingCallContext When MessageReceived Then LogWarnIsCalled
+    /// Given ConnectionManager When JsonMissingCallContextMessageReceived Then LogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_JsonMissingCallContext_When_MessageReceived_Then_LogWarnIsCalled()
+        public void Given_ConnectionManager_When_JsonMissingCallContextMessageReceived_Then_LogWarnIsCalled()
         {
             RaiseIncoming("{\"Payload\":{}}");
 
@@ -249,10 +249,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager JsonMissingCallContext When MessageReceived Then MessageReceivedEventIsNotRaised
+    /// Given ConnectionManager When JsonMissingCallContextMessageReceived Then MessageReceivedEventIsNotRaised
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_JsonMissingCallContext_When_MessageReceived_Then_MessageReceivedEventIsNotRaised()
+        public void Given_ConnectionManager_When_JsonMissingCallContextMessageReceived_Then_MessageReceivedEventIsNotRaised()
         {
             bool eventFired = false;
             m_connectionManager.MessageReceived += (s, e) => eventFired = true;
@@ -263,10 +263,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager JsonWithNullAction When MessageReceived Then LogWarnIsCalled
+    /// Given ConnectionManager When JsonWithNullActionMessageReceived Then LogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_JsonWithNullAction_When_MessageReceived_Then_LogWarnIsCalled()
+        public void Given_ConnectionManager_When_JsonWithNullActionMessageReceived_Then_LogWarnIsCalled()
         {
             RaiseIncoming("{\"CallContext\":{\"Action\":null},\"Payload\":{}}");
 
@@ -274,10 +274,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager JsonWithNullAction When MessageReceived Then MessageReceivedEventIsNotRaised
+    /// Given ConnectionManager When JsonWithNullActionMessageReceived Then MessageReceivedEventIsNotRaised
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_JsonWithNullAction_When_MessageReceived_Then_MessageReceivedEventIsNotRaised()
+        public void Given_ConnectionManager_When_JsonWithNullActionMessageReceived_Then_MessageReceivedEventIsNotRaised()
         {
             bool eventFired = false;
             m_connectionManager.MessageReceived += (s, e) => eventFired = true;
@@ -288,10 +288,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager JsonWithEmptyStringAction When MessageReceived Then MessageReceivedEventIsNotRaised
+    /// Given ConnectionManager When JsonWithEmptyStringActionMessageReceived Then MessageReceivedEventIsNotRaised
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_JsonWithEmptyStringAction_When_MessageReceived_Then_MessageReceivedEventIsNotRaised()
+        public void Given_ConnectionManager_When_JsonWithEmptyStringActionMessageReceived_Then_MessageReceivedEventIsNotRaised()
         {
             bool eventFired = false;
             m_connectionManager.MessageReceived += (s, e) => eventFired = true;
@@ -302,10 +302,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager JsonWithEmptyStringAction When MessageReceived Then LogWarnIsCalled
+    /// Given ConnectionManager When JsonWithEmptyStringActionMessageReceived Then LogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_JsonWithEmptyStringAction_When_MessageReceived_Then_LogWarnIsCalled()
+        public void Given_ConnectionManager_When_JsonWithEmptyStringActionMessageReceived_Then_LogWarnIsCalled()
         {
             RaiseIncoming("{\"CallContext\":{\"Action\":\"\"},\"Payload\":{}}");
 
@@ -313,10 +313,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager SubscriberThrows When MessageReceived Then LogErrorIsCalled
+    /// Given ConnectionManager When SubscriberThrowsMessageReceived Then LogErrorIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_SubscriberThrows_When_MessageReceived_Then_LogErrorIsCalled()
+        public void Given_ConnectionManager_When_SubscriberThrowsMessageReceived_Then_LogErrorIsCalled()
         {
             m_connectionManager.MessageReceived += (s, e) => throw new InvalidOperationException("subscriber error");
 
@@ -326,10 +326,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager SubscriberThrows When MessageReceived Then ExceptionDoesNotPropagate
+    /// Given ConnectionManager When SubscriberThrowsMessageReceived Then ExceptionDoesNotPropagate
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_SubscriberThrows_When_MessageReceived_Then_ExceptionDoesNotPropagate()
+        public void Given_ConnectionManager_When_SubscriberThrowsMessageReceived_Then_ExceptionDoesNotPropagate()
         {
             m_connectionManager.MessageReceived += (s, e) => throw new InvalidOperationException("subscriber error");
 
@@ -343,10 +343,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Lifecycle ─────────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given ConnectionManager ClosedManager When WebViewFiresEvent Then MessageReceivedIsNotRaised
+    /// Given ConnectionManager When ClosedManagerWebViewFiresEvent Then MessageReceivedIsNotRaised
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_ClosedManager_When_WebViewFiresEvent_Then_MessageReceivedIsNotRaised()
+        public void Given_ConnectionManager_When_ClosedManagerWebViewFiresEvent_Then_MessageReceivedIsNotRaised()
         {
             m_connectionManager.Close();
 
@@ -359,10 +359,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager ClosedThenReopenedManager When WebViewFiresEvent Then MessageReceivedIsRaised
+    /// Given ConnectionManager When ClosedThenReopenedManagerWebViewFiresEvent Then MessageReceivedIsRaised
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_ClosedThenReopenedManager_When_WebViewFiresEvent_Then_MessageReceivedIsRaised()
+        public void Given_ConnectionManager_When_ClosedThenReopenedManagerWebViewFiresEvent_Then_MessageReceivedIsRaised()
         {
             m_connectionManager.Close();
             m_connectionManager.Open();
@@ -378,10 +378,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Outbound: SendMessage(OutboundMessage) ───────────────────────────────
 
         /// <summary>
-    /// Given ConnectionManager ValidOutboundMessage When SendMessageCalled Then WebViewSendMessageIsCalledOnce
+    /// Given ConnectionManager When ValidOutboundMessageSendMessageCalled Then WebViewSendMessageIsCalledOnce
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_ValidOutboundMessage_When_SendMessageCalled_Then_WebViewSendMessageIsCalledOnce()
+        public void Given_ConnectionManager_When_ValidOutboundMessageSendMessageCalled_Then_WebViewSendMessageIsCalledOnce()
         {
             m_connectionManager.SendMessage(new TestOutboundMessage { Status = "Success" });
 
@@ -389,10 +389,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager ValidOutboundMessage When SendMessageCalled Then SerializedJsonContainsAction
+    /// Given ConnectionManager When ValidOutboundMessageSendMessageCalled Then SerializedJsonContainsAction
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_ValidOutboundMessage_When_SendMessageCalled_Then_SerializedJsonContainsAction()
+        public void Given_ConnectionManager_When_ValidOutboundMessageSendMessageCalled_Then_SerializedJsonContainsAction()
         {
             m_connectionManager.SendMessage(new TestOutboundMessage { Status = "Success" });
 
@@ -402,10 +402,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager ValidOutboundMessage When SendMessageCalled Then SerializedJsonContainsPayloadField
+    /// Given ConnectionManager When ValidOutboundMessageSendMessageCalled Then SerializedJsonContainsPayloadField
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_ValidOutboundMessage_When_SendMessageCalled_Then_SerializedJsonContainsPayloadField()
+        public void Given_ConnectionManager_When_ValidOutboundMessageSendMessageCalled_Then_SerializedJsonContainsPayloadField()
         {
             m_connectionManager.SendMessage(new TestOutboundMessage { Status = "Success" });
 
@@ -415,10 +415,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager NullMessage When SendMessageCalled Then WebViewSendMessageIsNotCalled
+    /// Given ConnectionManager When NullMessageSendMessageCalled Then WebViewSendMessageIsNotCalled
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_NullMessage_When_SendMessageCalled_Then_WebViewSendMessageIsNotCalled()
+        public void Given_ConnectionManager_When_NullMessageSendMessageCalled_Then_WebViewSendMessageIsNotCalled()
         {
             m_connectionManager.SendMessage(null!);
 
@@ -426,10 +426,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager NullMessage When SendMessageCalled Then LogWarnIsCalled
+    /// Given ConnectionManager When NullMessageSendMessageCalled Then LogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_NullMessage_When_SendMessageCalled_Then_LogWarnIsCalled()
+        public void Given_ConnectionManager_When_NullMessageSendMessageCalled_Then_LogWarnIsCalled()
         {
             m_connectionManager.SendMessage(null!);
 
@@ -439,10 +439,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Outbound: serialization failure in SendMessage ─────────────────────────
 
         /// <summary>
-    /// Given ConnectionManager UnserializableMessage When SendMessageCalled Then LogErrorIsCalled
+    /// Given ConnectionManager When UnserializableMessageSendMessageCalled Then LogErrorIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_UnserializableMessage_When_SendMessageCalled_Then_LogErrorIsCalled()
+        public void Given_ConnectionManager_When_UnserializableMessageSendMessageCalled_Then_LogErrorIsCalled()
         {
             m_connectionManager.SendMessage(new BadSerializationMessage());
 
@@ -452,10 +452,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager UnserializableMessage When SendMessageCalled Then WebViewSendMessageIsNotCalled
+    /// Given ConnectionManager When UnserializableMessageSendMessageCalled Then WebViewSendMessageIsNotCalled
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_UnserializableMessage_When_SendMessageCalled_Then_WebViewSendMessageIsNotCalled()
+        public void Given_ConnectionManager_When_UnserializableMessageSendMessageCalled_Then_WebViewSendMessageIsNotCalled()
         {
             m_connectionManager.SendMessage(new BadSerializationMessage());
 
@@ -497,4 +497,5 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
     }
 }
+
 

@@ -71,30 +71,30 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── AppLoggerSetup: constructor guards ──────────────────────────────────
 
         /// <summary>
-    /// Given LoggingModule NullFolder When CreateCalled Then ThrowsArgumentNullException
+    /// Given LoggingModule When NullFolderCreateCalled Then ThrowsArgumentNullException
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_NullFolder_When_CreateCalled_Then_ThrowsArgumentNullException()
+        public void Given_LoggingModule_When_NullFolderCreateCalled_Then_ThrowsArgumentNullException()
         {
             Assert.ThrowsException<ArgumentNullException>(
                 () => AppLoggerSetup.Create(null!));
         }
 
         /// <summary>
-    /// Given LoggingModule EmptyFolder When CreateCalled Then ThrowsArgumentNullException
+    /// Given LoggingModule When EmptyFolderCreateCalled Then ThrowsArgumentNullException
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_EmptyFolder_When_CreateCalled_Then_ThrowsArgumentNullException()
+        public void Given_LoggingModule_When_EmptyFolderCreateCalled_Then_ThrowsArgumentNullException()
         {
             Assert.ThrowsException<ArgumentNullException>(
                 () => AppLoggerSetup.Create(string.Empty));
         }
 
         /// <summary>
-    /// Given LoggingModule WhitespaceFolder When CreateCalled Then ThrowsArgumentNullException
+    /// Given LoggingModule When WhitespaceFolderCreateCalled Then ThrowsArgumentNullException
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_WhitespaceFolder_When_CreateCalled_Then_ThrowsArgumentNullException()
+        public void Given_LoggingModule_When_WhitespaceFolderCreateCalled_Then_ThrowsArgumentNullException()
         {
             Assert.ThrowsException<ArgumentNullException>(
                 () => AppLoggerSetup.Create("   "));
@@ -103,10 +103,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── AppLoggerSetup: valid creation ──────────────────────────────────────
 
         /// <summary>
-    /// Given LoggingModule ValidFolder When CreateCalled Then BackendLoggerIsNotNull
+    /// Given LoggingModule When ValidFolderCreateCalled Then BackendLoggerIsNotNull
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_ValidFolder_When_CreateCalled_Then_BackendLoggerIsNotNull()
+        public void Given_LoggingModule_When_ValidFolderCreateCalled_Then_BackendLoggerIsNotNull()
         {
             var logger = AppLoggerSetup.Create(m_tempFolder);
 
@@ -114,10 +114,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given LoggingModule ValidFolder When CreateCalled Then FrontendLoggerIsNotNull
+    /// Given LoggingModule When ValidFolderCreateCalled Then FrontendLoggerIsNotNull
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_ValidFolder_When_CreateCalled_Then_FrontendLoggerIsNotNull()
+        public void Given_LoggingModule_When_ValidFolderCreateCalled_Then_FrontendLoggerIsNotNull()
         {
             var logger = AppLoggerSetup.Create(m_tempFolder);
 
@@ -125,10 +125,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given LoggingModule ValidFolder When CreateCalled Then LogsSubdirectoryIsCreated
+    /// Given LoggingModule When ValidFolderCreateCalled Then LogsSubdirectoryIsCreated
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_ValidFolder_When_CreateCalled_Then_LogsSubdirectoryIsCreated()
+        public void Given_LoggingModule_When_ValidFolderCreateCalled_Then_LogsSubdirectoryIsCreated()
         {
             AppLoggerSetup.Create(m_tempFolder);
 
@@ -138,10 +138,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── SourceLogger (Backend): each log level writes to file ─────────────────
 
         /// <summary>
-    /// Given LoggingModule BackendLogger When LogInfoCalled Then EntryIsWrittenToFile
+    /// Given LoggingModule When BackendLoggerLogInfoCalled Then EntryIsWrittenToFile
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_BackendLogger_When_LogInfoCalled_Then_EntryIsWrittenToFile()
+        public void Given_LoggingModule_When_BackendLoggerLogInfoCalled_Then_EntryIsWrittenToFile()
         {
             var logger = AppLoggerSetup.Create(m_tempFolder);
 
@@ -152,10 +152,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given LoggingModule BackendLogger When LogDebugCalled Then EntryIsWrittenToFile
+    /// Given LoggingModule When BackendLoggerLogDebugCalled Then EntryIsWrittenToFile
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_BackendLogger_When_LogDebugCalled_Then_EntryIsWrittenToFile()
+        public void Given_LoggingModule_When_BackendLoggerLogDebugCalled_Then_EntryIsWrittenToFile()
         {
             var logger = AppLoggerSetup.Create(m_tempFolder);
 
@@ -165,10 +165,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given LoggingModule BackendLogger When LogWarnCalled Then EntryIsWrittenToFile
+    /// Given LoggingModule When BackendLoggerLogWarnCalled Then EntryIsWrittenToFile
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_BackendLogger_When_LogWarnCalled_Then_EntryIsWrittenToFile()
+        public void Given_LoggingModule_When_BackendLoggerLogWarnCalled_Then_EntryIsWrittenToFile()
         {
             var logger = AppLoggerSetup.Create(m_tempFolder);
 
@@ -178,10 +178,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given LoggingModule BackendLogger When LogErrorCalled Then EntryIsWrittenToFile
+    /// Given LoggingModule When BackendLoggerLogErrorCalled Then EntryIsWrittenToFile
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_BackendLogger_When_LogErrorCalled_Then_EntryIsWrittenToFile()
+        public void Given_LoggingModule_When_BackendLoggerLogErrorCalled_Then_EntryIsWrittenToFile()
         {
             var logger = AppLoggerSetup.Create(m_tempFolder);
 
@@ -193,10 +193,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── SourceLogger: entry format content ───────────────────────────────────
 
         /// <summary>
-    /// Given LoggingModule BackendLogger When LogInfoCalled Then EntryContainsBackendTag
+    /// Given LoggingModule When BackendLoggerLogInfoCalled Then EntryContainsBackendTag
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_BackendLogger_When_LogInfoCalled_Then_EntryContainsBackendTag()
+        public void Given_LoggingModule_When_BackendLoggerLogInfoCalled_Then_EntryContainsBackendTag()
         {
             var logger = AppLoggerSetup.Create(m_tempFolder);
 
@@ -210,10 +210,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given LoggingModule BackendLogger When LogInfoCalled Then EntryContainsTimestampPattern
+    /// Given LoggingModule When BackendLoggerLogInfoCalled Then EntryContainsTimestampPattern
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_BackendLogger_When_LogInfoCalled_Then_EntryContainsTimestampPattern()
+        public void Given_LoggingModule_When_BackendLoggerLogInfoCalled_Then_EntryContainsTimestampPattern()
         {
             var logger = AppLoggerSetup.Create(m_tempFolder);
 
@@ -229,10 +229,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given LoggingModule BackendLogger When LogInfoCalled Then EntryContainsMessageText
+    /// Given LoggingModule When BackendLoggerLogInfoCalled Then EntryContainsMessageText
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_BackendLogger_When_LogInfoCalled_Then_EntryContainsMessageText()
+        public void Given_LoggingModule_When_BackendLoggerLogInfoCalled_Then_EntryContainsMessageText()
         {
             var logger = AppLoggerSetup.Create(m_tempFolder);
 
@@ -244,10 +244,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── LogEntryFormatter: exception detail lines ─────────────────────────────
 
         /// <summary>
-    /// Given LoggingModule BackendLogger When LogErrorWithExceptionCalled Then ExceptionTypeIsWritten
+    /// Given LoggingModule When BackendLoggerLogErrorWithExceptionCalled Then ExceptionTypeIsWritten
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_BackendLogger_When_LogErrorWithExceptionCalled_Then_ExceptionTypeIsWritten()
+        public void Given_LoggingModule_When_BackendLoggerLogErrorWithExceptionCalled_Then_ExceptionTypeIsWritten()
         {
             var logger = AppLoggerSetup.Create(m_tempFolder);
 
@@ -257,10 +257,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given LoggingModule BackendLogger When LogErrorWithExceptionCalled Then ExceptionMessageIsWritten
+    /// Given LoggingModule When BackendLoggerLogErrorWithExceptionCalled Then ExceptionMessageIsWritten
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_BackendLogger_When_LogErrorWithExceptionCalled_Then_ExceptionMessageIsWritten()
+        public void Given_LoggingModule_When_BackendLoggerLogErrorWithExceptionCalled_Then_ExceptionMessageIsWritten()
         {
             var logger = AppLoggerSetup.Create(m_tempFolder);
 
@@ -270,10 +270,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given LoggingModule BackendLogger When LogErrorWithExceptionCalled Then ErrorMessageIsAlsoWritten
+    /// Given LoggingModule When BackendLoggerLogErrorWithExceptionCalled Then ErrorMessageIsAlsoWritten
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_BackendLogger_When_LogErrorWithExceptionCalled_Then_ErrorMessageIsAlsoWritten()
+        public void Given_LoggingModule_When_BackendLoggerLogErrorWithExceptionCalled_Then_ErrorMessageIsAlsoWritten()
         {
             var logger = AppLoggerSetup.Create(m_tempFolder);
 
@@ -283,10 +283,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given LoggingModule BackendLogger When LogErrorWithInnerExceptionCalled Then InnerExceptionTypeIsWritten
+    /// Given LoggingModule When BackendLoggerLogErrorWithInnerExceptionCalled Then InnerExceptionTypeIsWritten
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_BackendLogger_When_LogErrorWithInnerExceptionCalled_Then_InnerExceptionTypeIsWritten()
+        public void Given_LoggingModule_When_BackendLoggerLogErrorWithInnerExceptionCalled_Then_InnerExceptionTypeIsWritten()
         {
             var logger = AppLoggerSetup.Create(m_tempFolder);
             var inner = new ArgumentNullException("param");
@@ -298,10 +298,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given LoggingModule BackendLogger When LogErrorWithInnerExceptionCalled Then InnerExceptionMessageIsWritten
+    /// Given LoggingModule When BackendLoggerLogErrorWithInnerExceptionCalled Then InnerExceptionMessageIsWritten
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_BackendLogger_When_LogErrorWithInnerExceptionCalled_Then_InnerExceptionMessageIsWritten()
+        public void Given_LoggingModule_When_BackendLoggerLogErrorWithInnerExceptionCalled_Then_InnerExceptionMessageIsWritten()
         {
             var logger = AppLoggerSetup.Create(m_tempFolder);
             var inner = new InvalidOperationException("inner detail");
@@ -313,10 +313,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given LoggingModule BackendLogger When LogErrorWithNullException Then NoExceptionSectionWritten
+    /// Given LoggingModule When BackendLoggerLogErrorWithNullException Then NoExceptionSectionWritten
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_BackendLogger_When_LogErrorWithNullException_Then_NoExceptionSectionWritten()
+        public void Given_LoggingModule_When_BackendLoggerLogErrorWithNullException_Then_NoExceptionSectionWritten()
         {
             var logger = AppLoggerSetup.Create(m_tempFolder);
 
@@ -330,10 +330,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── FileLogWriter: append behaviour ──────────────────────────────────────
 
         /// <summary>
-    /// Given LoggingModule BackendLogger When MultipleLogInfoCalled Then AllEntriesAppendedToFile
+    /// Given LoggingModule When BackendLoggerMultipleLogInfoCalled Then AllEntriesAppendedToFile
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_BackendLogger_When_MultipleLogInfoCalled_Then_AllEntriesAppendedToFile()
+        public void Given_LoggingModule_When_BackendLoggerMultipleLogInfoCalled_Then_AllEntriesAppendedToFile()
         {
             var logger = AppLoggerSetup.Create(m_tempFolder);
 
@@ -369,10 +369,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Shared writer: multiple entries written to the same file ─────────────
 
         /// <summary>
-    /// Given LoggingModule MultipleLogCalls When BothWrite Then BothEntriesAreInSameFile
+    /// Given LoggingModule When MultipleLogCallsBothWrite Then BothEntriesAreInSameFile
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_MultipleLogCalls_When_BothWrite_Then_BothEntriesAreInSameFile()
+        public void Given_LoggingModule_When_MultipleLogCallsBothWrite_Then_BothEntriesAreInSameFile()
         {
             var logger = AppLoggerSetup.Create(m_tempFolder);
 
@@ -385,10 +385,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given LoggingModule MultipleLogCalls When BothWrite Then OnlyOneLogFileExists
+    /// Given LoggingModule When MultipleLogCallsBothWrite Then OnlyOneLogFileExists
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_MultipleLogCalls_When_BothWrite_Then_OnlyOneLogFileExists()
+        public void Given_LoggingModule_When_MultipleLogCallsBothWrite_Then_OnlyOneLogFileExists()
         {
             var logger = AppLoggerSetup.Create(m_tempFolder);
 
@@ -404,10 +404,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Thread safety ─────────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given LoggingModule BackendLogger When ConcurrentLogInfoCalled Then NoExceptionThrownAndAllEntriesPresent
+    /// Given LoggingModule When BackendLoggerConcurrentLogInfoCalled Then NoExceptionThrownAndAllEntriesPresent
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_BackendLogger_When_ConcurrentLogInfoCalled_Then_NoExceptionThrownAndAllEntriesPresent()
+        public void Given_LoggingModule_When_BackendLoggerConcurrentLogInfoCalled_Then_NoExceptionThrownAndAllEntriesPresent()
         {
             var logger = AppLoggerSetup.Create(m_tempFolder);
             const int threadCount = 20;
@@ -437,10 +437,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── LogEntryFormatter: StackTrace branch ──────────────────────────────────
 
         /// <summary>
-    /// Given LoggingModule BackendLogger When LogErrorWithThrownExceptionCalled Then StackTraceIsWritten
+    /// Given LoggingModule When BackendLoggerLogErrorWithThrownExceptionCalled Then StackTraceIsWritten
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_BackendLogger_When_LogErrorWithThrownExceptionCalled_Then_StackTraceIsWritten()
+        public void Given_LoggingModule_When_BackendLoggerLogErrorWithThrownExceptionCalled_Then_StackTraceIsWritten()
         {
             var logger = AppLoggerSetup.Create(m_tempFolder);
 
@@ -456,10 +456,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── SourceLogger: null writer guard ──────────────────────────────────────
 
         /// <summary>
-    /// Given LoggingModule NullWriter When SourceLoggerConstructed Then ThrowsArgumentNullException
+    /// Given LoggingModule When NullWriterSourceLoggerConstructed Then ThrowsArgumentNullException
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_NullWriter_When_SourceLoggerConstructed_Then_ThrowsArgumentNullException()
+        public void Given_LoggingModule_When_NullWriterSourceLoggerConstructed_Then_ThrowsArgumentNullException()
         {
             Assert.ThrowsException<ArgumentNullException>(
                 () => new SourceLogger(null!));
@@ -468,10 +468,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── SourceLogger: ILogWriter integration via mock ─────────────────────────
 
         /// <summary>
-    /// Given LoggingModule MockWriter When SourceLoggerLogInfoCalled Then WriteIsInvokedOnce
+    /// Given LoggingModule When MockWriterSourceLoggerLogInfoCalled Then WriteIsInvokedOnce
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_MockWriter_When_SourceLoggerLogInfoCalled_Then_WriteIsInvokedOnce()
+        public void Given_LoggingModule_When_MockWriterSourceLoggerLogInfoCalled_Then_WriteIsInvokedOnce()
         {
             var mockWriter = new Mock<ILogWriter>();
             var logger     = new SourceLogger(mockWriter.Object);
@@ -482,10 +482,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given LoggingModule MockWriter When SourceLoggerLogErrorWithExceptionCalled Then WrittenTextContainsExceptionType
+    /// Given LoggingModule When MockWriterSourceLoggerLogErrorWithExceptionCalled Then WrittenTextContainsExceptionType
         /// </summary>
         [TestMethod]
-        public void Given_LoggingModule_MockWriter_When_SourceLoggerLogErrorWithExceptionCalled_Then_WrittenTextContainsExceptionType()
+        public void Given_LoggingModule_When_MockWriterSourceLoggerLogErrorWithExceptionCalled_Then_WrittenTextContainsExceptionType()
         {
             string? captured = null;
             var mockWriter   = new Mock<ILogWriter>();
@@ -505,3 +505,4 @@ namespace Pms_GuidanceGUI.Tests.Unit
             => File.ReadAllText(Path.Combine(m_tempFolder, "logs", "app.log"));
     }
 }
+
