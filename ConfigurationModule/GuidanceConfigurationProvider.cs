@@ -92,7 +92,7 @@ namespace ConfigurationModule
             if (!File.Exists(m_configFilePath))
             {
                 throw new FileNotFoundException(
-                    $"Configuration file not found: {m_configFilePath}", m_configFilePath);
+                    "Configuration file not found.");
             }
 
             string json = File.ReadAllText(m_configFilePath);

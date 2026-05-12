@@ -162,6 +162,24 @@ namespace Pms_GuidanceGUI.Tests.Unit
             m_sut.Close();
         }
 
+        /// <summary>
+    /// Given BusinessLogicModule When ClosedHandleCommandCalled Then CommandIsIgnoredAndLogWarnIsCalled
+        /// </summary>
+        [TestMethod]
+        public void Given_BusinessLogicModule_When_ClosedHandleCommandCalled_Then_CommandIsIgnoredAndLogWarnIsCalled()
+        {
+            bool eventFired = false;
+            m_sut.ActionReplyEvent.OnCommandHandled += (_, _) => eventFired = true;
+            m_sut.Close();
+
+            m_sut.HandleCommand(new CloseAppCommand());
+
+            Assert.IsFalse(eventFired);
+            m_mockLogger.Verify(
+                x => x.LogWarn(It.Is<string>(msg => msg.Contains("closed")), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<int>()),
+                Times.Once());
+        }
+
         // ─────────────────────────────────────────────────────────────────────────
         // HandleCommand — unregistered command type
         // ─────────────────────────────────────────────────────────────────────────

@@ -52,6 +52,7 @@ namespace ConfigurationModule
         public string FetchSystemLanguage()
         {
             return CultureInfo.CurrentUICulture.Name;
+          
         }
 
         /// <summary>

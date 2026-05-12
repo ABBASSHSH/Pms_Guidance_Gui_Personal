@@ -88,6 +88,12 @@ namespace BusinessLogicModule
                 throw new ArgumentNullException(nameof(theCommand));
             }
 
+            if (!m_isOpen)
+            {
+                m_logger.LogWarn($"Ignoring command '{theCommand.GetType().Name}' because business logic module is closed.");
+                return;
+            }
+
             if (m_commandHandlersList.ContainsKey(theCommand.GetType()))
             {
                 m_commandHandlersList[theCommand.GetType()].HandleCommand(theCommand);
@@ -126,7 +132,7 @@ namespace BusinessLogicModule
 
         private readonly ILogger m_logger;
         private readonly Dictionary<Type, ICommandHandler> m_commandHandlersList = new Dictionary<Type, ICommandHandler>();
-        private bool m_isOpen;
+        private bool m_isOpen = true;
 
         private void RaiseCloseApplicationRequested()
         {

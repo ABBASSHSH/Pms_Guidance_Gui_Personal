@@ -278,15 +278,20 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-        /// Given UIAppStartedHandler When HandleActionCalledWithNullJson Then ThrowsInvalidOperationException
+        /// Given UIAppStartedHandler When HandleActionCalledWithNullJson Then ReturnsNull
         /// Exercises AbstractJsonActionHandler.DeserializeMessage null-guard (lines 83-85):
         /// deserializing the JSON literal "null" returns null, which the guard rejects.
         /// </summary>
         [TestMethod]
-        public void Given_ConcreteJsonActionHandler_When_UIAppStartedHandlerHandleActionCalledWithNullJson_Then_ThrowsInvalidOperationException()
+        public void Given_ConcreteJsonActionHandler_When_UIAppStartedHandlerHandleActionCalledWithNullJson_Then_ReturnsNull()
         {
             var handler = new UIAppStartedJsonActionHandler(m_mockLogger.Object);
-            Assert.ThrowsException<InvalidOperationException>(() => handler.HandleAction("null"));
+            var result = handler.HandleAction("null");
+
+            Assert.IsNull(result);
+            m_mockLogger.Verify(
+                x => x.LogError(It.IsAny<string>(), It.IsAny<System.Exception>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<int>()),
+                Times.Once());
         }
     }
 }

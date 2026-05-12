@@ -84,28 +84,23 @@ namespace Pms_GuidanceGUI.Tests.Unit
         // ── Constructor guards ────────────────────────────────────────────────────
 
         /// <summary>
-    /// Given Converter When NullBlmOpenCalled Then ThrowsNullReferenceException
+    /// Given Converter When NullBlmConstructed Then ThrowsArgumentNullException
         /// </summary>
         [TestMethod]
-        public void Given_Converter_When_NullBlmOpenCalled_Then_ThrowsNullReferenceException()
+        public void Given_Converter_When_NullBlmConstructed_Then_ThrowsArgumentNullException()
         {
-            // The constructor no longer accesses ActionReplyEvent; Open() dereferences it, which throws NRE.
-            var converter = new Converter(null!, m_mockConnectionManager.Object, m_mockLogger.Object);
-
-            Assert.ThrowsException<NullReferenceException>(() => converter.Open());
+            Assert.ThrowsException<ArgumentNullException>(
+                () => new Converter(null!, m_mockConnectionManager.Object, m_mockLogger.Object));
         }
 
         /// <summary>
-    /// Given Converter When NullConnectionManagerOpenCalled Then ThrowsNullReferenceException
+    /// Given Converter When NullConnectionManagerConstructed Then ThrowsArgumentNullException
         /// </summary>
         [TestMethod]
-        public void Given_Converter_When_NullConnectionManagerOpenCalled_Then_ThrowsNullReferenceException()
+        public void Given_Converter_When_NullConnectionManagerConstructed_Then_ThrowsArgumentNullException()
         {
-            // The constructor succeeds (no dereference of ConnectionManager there),
-            // but Open() dereferences it to subscribe to MessageReceived.
-            var converter = new Converter(m_mockBlm.Object, null!, m_mockLogger.Object);
-
-            Assert.ThrowsException<NullReferenceException>(() => converter.Open());
+            Assert.ThrowsException<ArgumentNullException>(
+                () => new Converter(m_mockBlm.Object, null!, m_mockLogger.Object));
         }
 
         /// <summary>

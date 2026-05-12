@@ -12,6 +12,7 @@
 #endregion
 
 using System;
+using System.IO;
 using BusinessLogicModule;
 using BusinessLogicModule.Commands;
 using BusinessLogicModule.EventArgs;
@@ -119,6 +120,44 @@ namespace Pms_GuidanceGUI.Tests.Unit
 
             Assert.IsNotNull(args);
             Assert.IsFalse(args.IsInstalled);
+        }
+
+        [TestMethod]
+        public void Given_BusinessLogicModule_When_InstallationCommandIsExistingScriptPathHandleCommandCalled_Then_IsInstalledIsTrue()
+        {
+            string tempRoot = Path.Combine(Path.GetTempPath(), "Install Script " + Guid.NewGuid().ToString("N"));
+            Directory.CreateDirectory(tempRoot);
+            string scriptPath = Path.Combine(tempRoot, "install-success.cmd");
+            File.WriteAllText(scriptPath, "@echo off\r\nexit /b 1\r\n");
+
+            try
+            {
+                var mockConfigurationProvider = new Mock<IConfigurationProvider>();
+                mockConfigurationProvider
+                    .Setup(x => x.GetInstallationCommand())
+                    .Returns(scriptPath);
+
+                var replyHandler = new ActionReplyHandler();
+                var handler = new InstallSoftwareCommandHandler(
+                    (IActionReplyPrivate)replyHandler,
+                    m_mockLogger.Object,
+                    mockConfigurationProvider.Object);
+
+                InstallSoftwareStatusEventArgs? args = null;
+                replyHandler.OnCommandHandled += (_, e) => args = e as InstallSoftwareStatusEventArgs;
+
+                handler.HandleCommand(new InstallSoftwareCommand());
+
+                Assert.IsNotNull(args);
+                Assert.IsTrue(args.IsInstalled);
+            }
+            finally
+            {
+                if (Directory.Exists(tempRoot))
+                {
+                    Directory.Delete(tempRoot, true);
+                }
+            }
         }
 
         [TestMethod]
@@ -237,6 +276,44 @@ namespace Pms_GuidanceGUI.Tests.Unit
 
             Assert.IsNotNull(args);
             Assert.IsFalse(args.PrerequisitesMet);
+        }
+
+        [TestMethod]
+        public void Given_BusinessLogicModule_When_VerificationCommandIsExistingScriptPathHandleCommandCalled_Then_PrerequisitesMetIsTrue()
+        {
+            string tempRoot = Path.Combine(Path.GetTempPath(), "Verify Script " + Guid.NewGuid().ToString("N"));
+            Directory.CreateDirectory(tempRoot);
+            string scriptPath = Path.Combine(tempRoot, "verify-success.cmd");
+            File.WriteAllText(scriptPath, "@echo off\r\nexit /b 1\r\n");
+
+            try
+            {
+                var mockConfigurationProvider = new Mock<IConfigurationProvider>();
+                mockConfigurationProvider
+                    .Setup(x => x.GetVerificationCommand())
+                    .Returns(scriptPath);
+
+                var replyHandler = new ActionReplyHandler();
+                var handler = new VerifyInstallationPrerequisitesCommandHandler(
+                    (IActionReplyPrivate)replyHandler,
+                    m_mockLogger.Object,
+                    mockConfigurationProvider.Object);
+
+                VerifyInstallationPrerequisitesStatusEventArgs? args = null;
+                replyHandler.OnCommandHandled += (_, e) => args = e as VerifyInstallationPrerequisitesStatusEventArgs;
+
+                handler.HandleCommand(new VerifyInstallationPrerequisitesCommand());
+
+                Assert.IsNotNull(args);
+                Assert.IsTrue(args.PrerequisitesMet);
+            }
+            finally
+            {
+                if (Directory.Exists(tempRoot))
+                {
+                    Directory.Delete(tempRoot, true);
+                }
+            }
         }
 
         [TestMethod]

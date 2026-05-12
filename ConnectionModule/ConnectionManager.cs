@@ -72,8 +72,7 @@ namespace ConnectionModule
         {
             if (message == null)
             {
-                m_logger.LogWarn("SendMessage called with a null message. Message not sent.");
-                return;
+                throw new ArgumentNullException(nameof(message));
             }
 
             try

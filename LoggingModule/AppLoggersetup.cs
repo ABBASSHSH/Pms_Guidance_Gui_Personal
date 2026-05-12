@@ -10,8 +10,8 @@
 // Description: Creates a single ILogger that writes all log entries — both backend
 //              and frontend — to the same app.log file through a shared FileLogWriter.
 // Notes:
-// Modification History : Abbas Bahrainwala, 29-Apr-2026, Code review – compliance with C# Coding Guidelines V2.1
-//                        Abbas Bahrainwala, 08-May-2026, Unified logger pair into single ILogger
+// Modification History : Abbas Bahrainwala, 08-May-2026, Unified logger pair into single ILogger
+//                       
 //--------------------------------------------------------------------
 #endregion
 
@@ -23,6 +23,9 @@ namespace LoggingModule
     /// <summary>
     /// Factory that creates a single <see cref="ILogger"/> backed by a <see cref="FileLogWriter"/>.
     /// </summary>
+    /// <reqkeys>
+    /// <reqkey> REQUIREMENT_KEY </reqkey>
+    /// </reqkeys>
     /// <remarks>
     /// All writes — backend log entries and frontend log entries — are serialised
     /// through one <see cref="FileLogWriter"/> lock so no interleaving occurs.

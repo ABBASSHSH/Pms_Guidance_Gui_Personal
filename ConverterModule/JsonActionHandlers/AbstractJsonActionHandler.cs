@@ -44,6 +44,11 @@ namespace ConverterModule
                 m_logger.LogError(string.Format("[{0}] JSON deserialization failed: {1}", ActionName, jex.Message), jex);
                 return null;
             }
+            catch (InvalidOperationException ioex)
+            {
+                m_logger.LogError(string.Format("[{0}] JSON payload validation failed: {1}", ActionName, ioex.Message), ioex);
+                return null;
+            }
         }
 
         #endregion

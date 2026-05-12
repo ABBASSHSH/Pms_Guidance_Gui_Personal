@@ -107,10 +107,26 @@ namespace BusinessLogicModule
                 return false;
             }
 
-            process.WaitForExit();
+            if (!process.WaitForExit(ProcessWaitTimeoutMilliseconds))
+            {
+                m_logger.LogError($"The {operationName} command did not finish within the timeout.");
+                try
+                {
+                    process.Kill(entireProcessTree: true);
+                }
+                catch (Exception ex)
+                {
+                    m_logger.LogError($"Failed to terminate timed-out {operationName} process.", ex);
+                }
+
+                return false;
+            }
+
             m_logger.LogInfo($"The {operationName} command exited with code {process.ExitCode}.");
             return process.ExitCode == 1;
         }
+
+        private const int ProcessWaitTimeoutMilliseconds = 30000;
 
         #endregion
     }

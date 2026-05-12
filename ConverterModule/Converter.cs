@@ -40,7 +40,11 @@ namespace ConverterModule
         /// <param name="logger">Logger for converter routing events.</param>
         public Converter(IBusinessLogicModule theBusinessLogicModule, IConnectionManager theConnectionManager, ILogger logger)
         {
-            m_jsonActionHandler   = new JsonActionHandlerManager(logger ?? throw new ArgumentNullException(nameof(logger)));
+            if (theBusinessLogicModule == null) { throw new ArgumentNullException(nameof(theBusinessLogicModule)); }
+            if (theConnectionManager == null) { throw new ArgumentNullException(nameof(theConnectionManager)); }
+            if (logger == null) { throw new ArgumentNullException(nameof(logger)); }
+
+            m_jsonActionHandler   = new JsonActionHandlerManager(logger);
             m_jsonWriterManager   = new JsonWriterManager(logger);
             m_businessLogicModule = theBusinessLogicModule;
             m_connectionManager   = theConnectionManager;

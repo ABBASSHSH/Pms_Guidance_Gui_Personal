@@ -415,25 +415,30 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
+    /// Given ConnectionManager When NullMessageSendMessageCalled Then ThrowsArgumentNullException
+        /// </summary>
+        [TestMethod]
+        public void Given_ConnectionManager_When_NullMessageSendMessageCalled_Then_ThrowsArgumentNullException()
+        {
+            Assert.ThrowsException<ArgumentNullException>(() => m_connectionManager.SendMessage(null!));
+        }
+
+        /// <summary>
     /// Given ConnectionManager When NullMessageSendMessageCalled Then WebViewSendMessageIsNotCalled
         /// </summary>
         [TestMethod]
         public void Given_ConnectionManager_When_NullMessageSendMessageCalled_Then_WebViewSendMessageIsNotCalled()
         {
-            m_connectionManager.SendMessage(null!);
+            try
+            {
+                m_connectionManager.SendMessage(null!);
+            }
+            catch (ArgumentNullException)
+            {
+                // Expected contract.
+            }
 
             m_mockWebView.Verify(x => x.SendMessage(It.IsAny<string>()), Times.Never());
-        }
-
-        /// <summary>
-    /// Given ConnectionManager When NullMessageSendMessageCalled Then LogWarnIsCalled
-        /// </summary>
-        [TestMethod]
-        public void Given_ConnectionManager_When_NullMessageSendMessageCalled_Then_LogWarnIsCalled()
-        {
-            m_connectionManager.SendMessage(null!);
-
-            m_mockLogger.Verify(x => x.LogWarn(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<int>()), Times.Once());
         }
 
         // ── Outbound: serialization failure in SendMessage ─────────────────────────
