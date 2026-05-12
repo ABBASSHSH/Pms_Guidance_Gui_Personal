@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="pms_guidance_configuration.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="pms_guidance_configuration.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3405.78" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicModule\BusinessLogicModule.csproj" />
+    <ProjectReference Include="..\ConfigurationModule\ConfigurationModule.csproj" />
+    <ProjectReference Include="..\ConnectionModule\ConnectionModule.csproj" />
+    <ProjectReference Include="..\ConverterModule\ConverterModule.csproj" />
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\LoggingModule\LoggingModule.csproj" />
+    <ProjectReference Include="..\ConfigurationModule\ConfigurationModule.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,60 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e4]:
+  - banner "app.accessBarLabel" [ref=e5]:
+    - generic [ref=e7]: app.accessBarLabel
+  - generic [ref=e11]:
+    - generic [ref=e14]:
+      - generic:
+        - generic [ref=e16] [cursor=pointer]:
+          - generic [ref=e18]: "1"
+          - generic [ref=e20]:
+            - generic: steps.introduction
+        - generic:
+          - generic:
+            - generic: "2"
+            - generic:
+              - generic:
+                - generic: steps.verifyPrereq
+        - generic:
+          - generic:
+            - generic: "3"
+            - generic:
+              - generic:
+                - generic: steps.verificationResult
+        - generic:
+          - generic:
+            - generic: "4"
+            - generic:
+              - generic:
+                - generic: steps.saveImages
+        - generic:
+          - generic:
+            - generic: "5"
+            - generic:
+              - generic:
+                - generic: steps.driveToPark
+        - generic:
+          - generic:
+            - generic: "6"
+            - generic:
+              - generic:
+                - generic: steps.installation
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e25]: introduction.title
+        - generic [ref=e26]: introduction.description
+      - menuitem "label" [ref=e28]:
+        - generic [ref=e31] [cursor=pointer]:
+          - generic [ref=e33]:  
+          - generic [ref=e36]: introduction.info
+      - generic [ref=e37]:
+        - generic [ref=e38]:
+          - generic: common.copyright
+        - generic [ref=e39]:
+          - button "common.cancel" [ref=e40] [cursor=pointer]:
+            - generic [ref=e41]: common.cancel
+          - button "common.proceed" [ref=e42] [cursor=pointer]:
+            - generic [ref=e43]: common.proceed
+```

@@ -1,0 +1,7 @@
+/* Shared layout rules are in src/app/shared/ui/content-panel.css */
+
+:host {
+  display: block;
+  height: 100%;
+}
+

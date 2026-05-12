@@ -1,0 +1,49 @@
+/* Shared layout rules are in src/app/shared/ui/content-panel.css */
+/* This component uses a stepper-pane layout, not the content-panel layout. */
+
+:host {
+  display: block;
+  height: 100%;
+  min-height: 0;
+}
+
+/* Left panel container */
+.stepper-pane {
+  height: 100%;
+  min-height: 0;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 280px;
+  padding: 16px;
+  border-radius: var(--pane-border-radius, 4px);
+
+  background: var(--base-2, #1C1C1C);
+  box-shadow: var(--elevation-shadow-1-x, 0) var(--elevation-shadow-1-y, 0)
+      var(--elevation-shadow-1-blur, 0) var(--elevation-shadow-1-spread, 0)
+      var(--elevation-shadow-1-color, rgba(255, 255, 255, 0)),
+    var(--elevation-shadow-2-x, 0) var(--elevation-shadow-2-y, 0)
+      var(--elevation-shadow-2-blur, 0) var(--elevation-shadow-2-spread, 0)
+      var(--elevation-shadow-2-color, rgba(255, 255, 255, 0));
+}
+
+/* Stepper must stretch */
+.stepper-pane sh-stepper {
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 100%;
+  display: block;
+}
+
+/* Item sizing */
+.stepper-pane :where(sh-stepper-item) {
+  display: flex;
+  height: 110px;
+  min-height: var(--stepper-vertical-item-min-height, 62px);
+  align-items: center;
+  gap: var(--stepper-vertical-item-spacing, 4px);
+  align-self: stretch;
+}

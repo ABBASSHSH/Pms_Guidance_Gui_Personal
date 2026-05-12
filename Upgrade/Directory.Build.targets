@@ -1,0 +1,3 @@
+<!-- Stop inheriting from parent Directory.Build.targets -->
+<!-- The Upgrade project is a JavaScript/Angular esproj and does not use MSBuild targets inheritance from the repo root. -->
+<Project />

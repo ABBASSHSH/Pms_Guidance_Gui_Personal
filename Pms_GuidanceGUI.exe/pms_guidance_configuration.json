@@ -1,0 +1,6 @@
+{
+  "ConfigurationVersion": "1.0.0",
+  "InstallationPrerequisitesVerify": "C:\\Users\\z0052tre\\Downloads\\HybridWebApps 2\\HybridWebApps\\MockTools\\MockVerification.cmd",
+  "Installationtrigger": "C:\\Users\\z0052tre\\Downloads\\HybridWebApps 2\\HybridWebApps\\MockTools\\MockInstallation.cmd",
+  "Exetrigger": "C:\\Users\\z0052tre\\Downloads\\HybridWebApps 2\\HybridWebApps\\MockTools\\MockProcessExe\\bin\\Debug\\net8.0\\MockProcessExe.exe"
+}

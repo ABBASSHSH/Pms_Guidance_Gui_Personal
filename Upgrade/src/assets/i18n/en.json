@@ -1,0 +1,60 @@
+{
+  "app.title": "Software Upgrade",
+  "app.accessBarLabel": "Software Upgrade",
+
+  "common.proceed": "Proceed",
+  "common.cancel": "Cancel",
+  "common.abort": "Abort",
+  "common.ok": "OK",
+  "common.loading": "Loading...",
+  "common.copyright": "© Copyright 2025 Siemens Healthineers AG. All rights reserved.",
+
+  "steps.introduction": "Introduction",
+  "steps.verifyPrereq": "Verifying Installation Prerequisites",
+  "steps.verificationResult": "Verification Result",
+  "steps.saveImages": "Save Patient Images",
+  "steps.driveToPark": "Driving to Park Position",
+  "steps.installation": "Installation",
+
+  "introduction.title": "Software Installation Process",
+  "introduction.description": "A software package is available for installation. Would you like to proceed?",
+  "introduction.info": "Please click on \"Proceed\", to continue with further installation checks and instructions.",
+
+  "verification.title": "Final Verification before Installation Process",
+  "verification.info": "Once done, the process automatically switches to the next step.",
+  "verification.status.inProgress": "Verifying the software prerequisites needed to proceed with the installation.\nThis process takes approximately 10 minutes. Please be patient.",
+  "verification.status.success": "Verification completed successfully. Continuing to the next step...",
+  "verification.status.error": "Verification failed. One or more prerequisites are not satisfied.\nPlease resolve the issue and try again.",
+
+  "verification.abort.modal.label": "Abort Verification",
+  "verification.abort.modal.description": "Do you want to abort the verification of installation prerequisites? The verification will be marked as failed.",
+  "verification.abort.modal.confirm": "Abort",
+  "verification.abort.modal.cancel": "Cancel",
+
+  "verificationResult.title": "Verification Result",
+  "verificationResult.success.title": "Success",
+  "verificationResult.success.subtitle": "Verification of the software prerequisites completed.",
+  "verificationResult.success.body": "The system is now ready for software installation. The installation process takes 10 minutes. During this time the system is not available for clinical use. Aborting or abruptly interrupting the installation process would leave the system in an undefined state.",
+  "verificationResult.success.info": "To continue with the installation, please click on \"Proceed with Installation\".",
+  "verificationResult.success.proceedInstall": "Proceed with Installation",
+  "verificationResult.error.title": "Error",
+  "verificationResult.error.subtitle": "Prerequisites for the software update failed.",
+  "verificationResult.error.body": "The software prerequisites or checks are not fulfilled. Proceeding with the software installation is not possible. Please inform the Siemens customer service or try again later.",
+  "verificationResult.error.info": "The system stays with the previous software and can be used for clinical purpose.",
+  "verificationResult.error.showReport": "Show Report",
+
+  "savePatientImages.title": "Save Patient Images",
+  "savePatientImages.description": "Images that are not saved will be lost with the software installation. Send patient images in the system to the archive, burn them to a CD/DVD, or send them to an external storage medium.",
+  "savePatientImages.info": "Once done, please click on \"Proceed\".",
+
+  "driveToPark.title": "Drive To Park Position",
+  "driveToPark.step1": "1. Select the Park Position and move the system to this position",
+  "driveToPark.step2": "2. Then select another system position to move the system approximately 20 cm out of the current park position. This will facilitate the required \"Stand Test\" (Brake Test) at the end of the software installation.",
+  "driveToPark.step3": "3. It is important to move the system slightly out of the park position, otherwise the \"Stand Test\" may not be completed successfully.",
+  "driveToPark.step4": "4. Press the \"Emergency Stop\" button.",
+  "driveToPark.info": "Please click on \"Proceed\", to continue with further installation checks and instructions.",
+
+  "installation.title": "Software Installation In Progress",
+  "installation.status.inProgress": "Installing software. Please wait...",
+  "installation.info": "Do not turn off the system or interrupt the installation process. This may take several minutes."
+}

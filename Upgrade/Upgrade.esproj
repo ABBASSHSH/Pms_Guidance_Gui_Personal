@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/0.5.62-alpha">
+  <PropertyGroup>
+    <StartupCommand>npm start</StartupCommand>
+    <JavaScriptTestFramework>Jasmine</JavaScriptTestFramework>
+
+    <!--
+      Angular build output — must match angular.json outputPath.base + browser subfolder.
+      Consumed by Pms_GuidanceGUI.csproj to copy into the exe output directory.
+    -->
+    <AngularBuildOutput>$(MSBuildThisFileDirectory)dist\upgrade\browser</AngularBuildOutput>
+  </PropertyGroup>
+
+  <!--
+    Run "ng build" every time the solution is built so the Angular artefacts are
+    always up-to-date before the C# post-build copy step runs.
+  -->
+  <Target Name="BuildAngular" BeforeTargets="Build">
+    <Message Text="[Upgrade] Running ng build..." Importance="high" />
+    <Exec Command="node &quot;$(MSBuildThisFileDirectory)node_modules\@angular\cli\bin\ng.js&quot; build"
+          WorkingDirectory="$(MSBuildThisFileDirectory)" />
+  </Target>
+</Project>

@@ -1,0 +1,45 @@
+/* Shared layout rules are in src/app/shared/ui/content-panel.css */
+
+:host {
+  display: block;
+  height: 100%;
+}
+
+/* Override shared .title: larger margin for this step */
+.title {
+  margin-bottom: 18px;
+}
+
+/* ── Progress bar ─────────────────────────────────────────────────────────── */
+.progress-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.progress-label {
+  font-weight: 600;
+  color: var(--sh-color-on-surface-1, #fff);
+  align-self: center;
+}
+
+/* Make SHUI bar stretch */
+.progress {
+  width: 100%;
+}
+
+/* Override shared .text: preserve whitespace for pre-formatted content */
+.text {
+  white-space: pre-line;
+}
+
+.text--error {
+  color: var(--sh-color-feedback-negative, #ffb4b4);
+  opacity: 1;
+}
+
+/* Override shared .info-bar: centered alignment for this step */
+.info-bar {
+  align-items: center;
+}

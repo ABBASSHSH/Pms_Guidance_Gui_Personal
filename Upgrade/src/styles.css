@@ -1,0 +1,99 @@
+@import '@shui/core/styles/fonts.css';
+/* @import './app/shared/ui/content-panel.css'; */
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #0f0f0f;
+}
+
+app-root {
+  display: block;
+  height: 100%;
+}
+
+/**
+ * Shared layout styles for content-panel feature components.
+ * Imported globally in styles.css so Angular view encapsulation does not scope them.
+ */
+
+/* ── Host ─────────────────────────────────────────────────────────────────── */
+.content-panel-host {
+  display: block;
+  height: 100%;
+}
+
+/* ── Panel container ──────────────────────────────────────────────────────── */
+.content-panel {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: var(--box-padding, 24px);
+  gap: 16px;
+
+  background: var(--box-background, #262626);
+  border-radius: 4px;
+  color: #fff;
+}
+
+/* Header occupies remaining space so footer is pushed to the bottom */
+.content-panel__header {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* ── Typography ───────────────────────────────────────────────────────────── */
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.text {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* ── Info bar ─────────────────────────────────────────────────────────────── */
+.info-bar {
+  display: flex;
+  padding: var(--box-padding, 24px);
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 4px;
+}
+
+/* ── Footer ───────────────────────────────────────────────────────────────── */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: var(--box-padding, 24px);
+  gap: 8px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer__actions {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.footer__copyright {
+  font-size: 12px;
+  opacity: 0.75;
+  color: #fff;
+}

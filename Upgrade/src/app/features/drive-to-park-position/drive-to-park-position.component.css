@@ -1,0 +1,17 @@
+/* Shared layout rules are in src/app/shared/ui/content-panel.css */
+
+:host {
+  display: block;
+  height: 100%;
+}
+
+/* Override shared .text with additional spacing for this step */
+.text {
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.text:last-child {
+  margin-bottom: 0;
+}
+

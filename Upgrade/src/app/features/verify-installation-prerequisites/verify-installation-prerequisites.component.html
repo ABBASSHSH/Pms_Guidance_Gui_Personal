@@ -1,0 +1,57 @@
+<div class="content-panel">
+  <div class="content-panel__header">
+    <div class="title">{{ 'verification.title' | t }}</div>
+
+    <div class="progress-row">
+      <div class="progress-label">{{ progress }}%</div>
+      <sh-progress class="progress" [attr.value]="progress" [attr.max]="100"></sh-progress>
+    </div>
+
+    <div class="text" [class.text--error]="isError">
+      {{ statusTextKey | t }}
+    </div>
+  </div>
+
+  <div class="info-bar">
+    <sh-menu-item icon="information" icon-size="m" [attr.label]="'verification.info' | t" active>
+    </sh-menu-item>
+  </div>
+
+  <div class="footer">
+    <div class="footer__copyright">
+      {{ 'common.copyright' | t }}
+    </div>
+
+    <div class="footer__actions">
+      <sh-button [attr.label]="'common.abort' | t" ta-id="abort-btn" color="secondary" size='max-content' (click)="onAbort()"></sh-button>
+    </div>
+  </div>
+</div>
+
+<!-- Abort confirmation modal -->
+<sh-modal
+  sticky
+  id="abort-confirm-modal"
+  [attr.label]="'verification.abort.modal.label' | t"
+  [attr.visible]="showAbortModal || null"
+  modal-height="200px"
+  modal-width="360px"
+>
+  {{ 'verification.abort.modal.description' | t }}
+  <sh-button
+    ta-id="abort-modal-cancel-btn"
+    color="secondary"
+    size='max-content'
+    slot="footer"
+    [attr.label]="'verification.abort.modal.cancel' | t"
+    (click)="onAbortCancelled()"
+  ></sh-button>
+  <sh-button
+    ta-id="abort-modal-confirm-btn"
+    slot="footer"
+    size='max-content'
+    [attr.label]="'verification.abort.modal.confirm' | t"
+    (click)="onAbortConfirmed()"
+  ></sh-button>
+</sh-modal>
+

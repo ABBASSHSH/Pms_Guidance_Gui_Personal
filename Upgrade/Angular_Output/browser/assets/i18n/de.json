@@ -1,0 +1,60 @@
+{
+  "app.title": "Software-Upgrade",
+  "app.accessBarLabel": "Software-Upgrade",
+
+  "common.proceed": "Weiter",
+  "common.cancel": "Abbrechen",
+  "common.abort": "Abbruch",
+  "common.ok": "OK",
+  "common.loading": "Wird geladen...",
+  "common.copyright": "© Copyright 2025 Siemens Healthineers AG. Alle Rechte vorbehalten.",
+
+  "steps.introduction": "Einführung",
+  "steps.verifyPrereq": "Voraussetzungen prüfen",
+  "steps.verificationResult": "Prüfergebnis",
+  "steps.saveImages": "Patientenbilder sichern",
+  "steps.driveToPark": "In Parkposition fahren",
+  "steps.installation": "Installation",
+
+  "introduction.title": "Software-Installationsprozess",
+  "introduction.description": "Ein Software-Paket steht zur Installation bereit. Möchten Sie fortfahren?",
+  "introduction.info": "Klicken Sie auf \"Weiter\", um mit den weiteren Installationsprüfungen und Anweisungen fortzufahren.",
+
+  "verification.title": "Abschließende Prüfung vor dem Installationsprozess",
+  "verification.info": "Nach Abschluss wechselt der Prozess automatisch zum nächsten Schritt.",
+  "verification.status.inProgress": "Die für die Installation erforderlichen Software-Voraussetzungen werden geprüft.\nDieser Vorgang dauert ca. 10 Minuten. Bitte haben Sie Geduld.",
+  "verification.status.success": "Prüfung erfolgreich abgeschlossen. Weiter zum nächsten Schritt...",
+  "verification.status.error": "Prüfung fehlgeschlagen. Eine oder mehrere Voraussetzungen sind nicht erfüllt.\nBitte beheben Sie das Problem und versuchen Sie es erneut.",
+
+  "verification.abort.modal.label": "Prüfung abbrechen",
+  "verification.abort.modal.description": "Möchten Sie die Prüfung der Installationsvoraussetzungen abbrechen? Die Prüfung wird als fehlgeschlagen markiert.",
+  "verification.abort.modal.confirm": "Abbruch",
+  "verification.abort.modal.cancel": "Abbrechen",
+
+  "verificationResult.title": "Prüfergebnis",
+  "verificationResult.success.title": "Erfolgreich",
+  "verificationResult.success.subtitle": "Prüfung der Software-Voraussetzungen abgeschlossen.",
+  "verificationResult.success.body": "Das System ist nun bereit für die Software-Installation. Der Installationsvorgang dauert XX Minuten. Während dieser Zeit steht das System nicht für den klinischen Betrieb zur Verfügung. Ein Abbruch oder eine unbeabsichtigte Unterbrechung des Installationsprozesses würde das System in einem undefinierten Zustand hinterlassen.",
+  "verificationResult.success.info": "Um mit der Installation fortzufahren, klicken Sie auf \"Weiter zur Installation\".",
+  "verificationResult.success.proceedInstall": "Weiter zur Installation",
+  "verificationResult.error.title": "Fehler",
+  "verificationResult.error.subtitle": "Voraussetzungen für das Software-Update nicht erfüllt.",
+  "verificationResult.error.body": "Die Software-Voraussetzungen oder Prüfungen sind nicht erfüllt. Eine Fortsetzung der Software-Installation ist nicht möglich. Bitte informieren Sie den Siemens-Kundendienst oder versuchen Sie es später erneut.",
+  "verificationResult.error.info": "Das System verbleibt bei der bisherigen Software und kann weiterhin für klinische Zwecke genutzt werden.",
+  "verificationResult.error.showReport": "Bericht anzeigen",
+
+  "savePatientImages.title": "Patientenbilder sichern",
+  "savePatientImages.description": "Bilder, die nicht gespeichert wurden, gehen bei der Software-Installation verloren. Senden Sie Patientenbilder aus dem System an das Archiv, brennen Sie sie auf eine CD/DVD oder übertragen Sie sie auf ein externes Speichermedium.",
+  "savePatientImages.info": "Klicken Sie anschließend auf \"Weiter\".",
+
+  "driveToPark.title": "In Parkposition fahren",
+  "driveToPark.step1": "1. Wählen Sie die Parkposition aus und fahren Sie das System in diese Position.",
+  "driveToPark.step2": "2. Wählen Sie anschließend eine andere Systemposition, um das System ca. 20 cm aus der aktuellen Parkposition herauszufahren. Dies erleichtert den erforderlichen \"Stand-Test\" (Bremstest) am Ende der Software-Installation.",
+  "driveToPark.step3": "3. Es ist wichtig, das System leicht aus der Parkposition herauszufahren, da andernfalls der \"Stand-Test\" möglicherweise nicht erfolgreich abgeschlossen werden kann.",
+  "driveToPark.step4": "4. Drücken Sie den \"Not-Aus\"-Schalter.",
+  "driveToPark.info": "Klicken Sie auf \"Weiter\", um mit den weiteren Installationsprüfungen und Anweisungen fortzufahren.",
+
+  "installation.title": "Software-Installation läuft",
+  "installation.status.inProgress": "Software wird installiert. Bitte warten...",
+  "installation.info": "Schalten Sie das System nicht aus und unterbrechen Sie den Installationsprozess nicht. Dieser Vorgang kann mehrere Minuten dauern."
+}

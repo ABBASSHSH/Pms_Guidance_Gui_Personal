@@ -1,0 +1,9 @@
+const w = require('ws');
+const c = new w('ws://localhost:9222/devtools/page/9AF3DFC93CEE0404CEBB71FB824ECF2C');
+const payload = { CallContext: { Action: 'LogMessage' }, Payload: { Message: 'CDP manual test from DevTools', Timestamp: new Date().toISOString() } };
+const inner = JSON.stringify(payload);
+const expr = 'window.chrome.webview.postMessage(' + JSON.stringify(inner) + '); "sent"';
+c.on('open', () => c.send(JSON.stringify({ id: 1, method: 'Runtime.evaluate', params: { expression: expr, returnByValue: true } })));
+c.on('message', d => { console.log('CDP response:', d.toString()); c.close(); });
+c.on('error', e => console.error('WS error:', e.message));
+setTimeout(() => process.exit(0), 4000);

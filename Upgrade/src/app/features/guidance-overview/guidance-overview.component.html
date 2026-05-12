@@ -1,0 +1,12 @@
+<div class="stepper-pane">
+  <sh-stepper ta-id="GuidanceAppStepper" vertical color="primary">
+    @for (step of steps; track step.id) {
+      <sh-stepper-item
+        [attr.ta-id]="'GuidanceAppStepperStep' + (step.id + 1)"
+        [attr.label]="step.label | t"
+        [active]="step.active"
+        [type]="step.status">
+      </sh-stepper-item>
+    }
+  </sh-stepper>
+</div>

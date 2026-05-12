@@ -1,0 +1,6 @@
+TypeScript  (.ts)      : 3981 lines  / 51 files
+C#          (.cs)      : 948 lines  / 13 files
+Gherkin     (.feature) : 491 lines  / 7 files
+HTML        (.html)    : 219 lines  / 9 files
+CSS         (.css)     : 244 lines  / 9 files
+TOTAL                  : 5883 lines  / 89 files

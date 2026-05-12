@@ -1,0 +1,23 @@
+<sh-page ta-id="sh-page-shell" theme="dark">
+  <sh-access-bar ta-id="sh-access-bar-shell" slot="access" embedded [attr.label]="'app.accessBarLabel' | t"></sh-access-bar>
+
+ 
+  <div class="app-frame">
+    <app-guidance-overview
+      class="left"
+    ></app-guidance-overview>
+
+    <div class="right">
+      @switch (activeStepId$ | async) {
+        @case (0) { <app-introduction ta-id="introduction-screen"></app-introduction> }
+        @case (1) { <app-verify-installation-prerequisites ta-id="verify-prerequisites-screen"></app-verify-installation-prerequisites> }
+        @case (2) { <app-verification-result ta-id="verification-result-screen"></app-verification-result> }
+        @case (3) { <app-save-patient-images ta-id="save-patient-images-screen"></app-save-patient-images> }
+        @case (4) { <app-drive-to-park-position ta-id="drive-to-park-position-screen"></app-drive-to-park-position> }
+        @case (5) { <app-installation-in-progress ta-id="installation-in-progress-screen"></app-installation-in-progress> }
+        @default { <app-introduction ta-id="introduction-screen"></app-introduction> }
+      }
+    </div>
+  </div>
+
+</sh-page>

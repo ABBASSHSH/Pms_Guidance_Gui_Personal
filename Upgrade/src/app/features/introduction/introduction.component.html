@@ -1,0 +1,22 @@
+<div class="content-panel">
+  <div class="content-panel__header">
+    <div class="title">{{ 'introduction.title' | t }}</div>
+    <div class="text">
+      {{ 'introduction.description' | t }}
+    </div>
+  </div>
+
+  <div class="info-bar">
+    <sh-menu-item ta-id="introduction-info-bar-hint" icon="information" icon-size="m" [label]="'introduction.info' | t" active>
+    </sh-menu-item>
+  </div>
+
+  <div class="footer">
+    <sh-text>{{ 'common.copyright' | t }}</sh-text>
+
+    <div class="footer__actions">
+      <sh-button ta-id="cancel-btn" [label]="'common.cancel' | t" color="secondary" size='max-content' (click)="onCancel()"></sh-button>
+      <sh-button ta-id="proceed-btn" [label]="'common.proceed' | t" color="primary" size='max-content' (click)="onProceed()"></sh-button>
+    </div>
+  </div>
+</div>

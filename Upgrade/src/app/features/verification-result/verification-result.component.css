@@ -1,0 +1,17 @@
+/* Shared layout rules are in src/app/shared/ui/content-panel.css */
+
+:host {
+  display: block;
+  height: 100%;
+}
+
+.notification-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.notification-banner sh-notification-item {
+  width: 100%;
+}

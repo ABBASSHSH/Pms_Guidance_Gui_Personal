@@ -1,0 +1,5 @@
+{
+  "dotnet.defaultSolution": "GuidanceHost/GuidanceHost.csproj",
+  "omnisharp.projectFilesExcludePattern": [],
+  "csharp.solution": "GuidanceHost/GuidanceHost.csproj"
+}

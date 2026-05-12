@@ -1,0 +1,57 @@
+<div class="content-panel">
+  <div class="content-panel__header">
+    <div class="title">{{ 'verificationResult.title' | t }}</div>
+
+    <div class="notification-banner">
+      @if (prereqOk) {
+        <sh-notification-item
+          ta-id="result-status"
+          visible
+          inline
+          sticky
+          type="success"
+          [attr.label]="'verificationResult.success.title' | t">
+          {{ 'verificationResult.success.subtitle' | t }}
+        </sh-notification-item>
+        <p class="body">
+          {{ 'verificationResult.success.body' | t }}
+        </p>
+      } @else {
+        <sh-notification-item
+          ta-id="result-status"
+          visible
+          inline
+          sticky
+          type="error"
+          [attr.label]="'verificationResult.error.title' | t">
+          {{ 'verificationResult.error.subtitle' | t }}
+        </sh-notification-item>
+        <p class="body">
+          {{ 'verificationResult.error.body' | t }}
+        </p>
+      }
+    </div>
+  </div>
+
+  <div class="info-bar">
+    @if (prereqOk) {
+      <sh-menu-item ta-id="verification-result-info-bar-hint" icon="information" icon-size="m" [attr.label]="'verificationResult.success.info' | t" active></sh-menu-item>
+    } @else {
+      <sh-menu-item ta-id="verification-result-info-bar-hint" icon="information" icon-size="m" [attr.label]="'verificationResult.error.info' | t" active></sh-menu-item>
+    }
+  </div>
+
+  <div class="footer">
+    <sh-text>{{ 'common.copyright' | t }}</sh-text>
+
+    <div class="footer__actions">
+      @if (prereqOk) {
+        <sh-button ta-id="cancel-btn" [attr.label]="'common.cancel' | t" color="secondary" size='max-content' (click)="onCancel()"></sh-button>
+        <sh-button ta-id="proceed-install-btn" [attr.label]="'verificationResult.success.proceedInstall' | t" color="primary" size='max-content' (click)="onProceedInstall()"></sh-button>
+      } @else {
+        <sh-button ta-id="show-report-btn" [attr.label]="'verificationResult.error.showReport' | t" color="secondary" size='max-content' (click)="onShowReport()"></sh-button>
+        <sh-button ta-id="ok-btn" [attr.label]="'common.ok' | t" color="primary" size='max-content' (click)="onOk()"></sh-button>
+      }
+    </div>
+  </div>
+</div>
