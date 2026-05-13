@@ -1,5 +1,6 @@
 ﻿import { TestBed } from '@angular/core/testing';
 import { LogManager } from './log.manager';
+import { LogBus } from './log.bus';
 import { CommunicationService } from '../communication/communication.service';
 
 /** Fixed ISO timestamp returned by the timestamp() spy in every test. */
@@ -275,6 +276,50 @@ describe('LogManager', () => {
       spyOn(console, 'info');
       mockComm.send.and.throwError('Network error');
       expect(() => service.info('Src', 'msg')).toThrowError('Network error');
+    });
+  });
+
+  // -- ngOnDestroy --
+
+  describe('ngOnDestroy', () => {
+    it('unsubscribes from LogBus entries$ on destroy', () => {
+      spyOn(console, 'info');
+      const logBus = TestBed.inject(LogBus);
+
+      logBus.push({ level: 'info', source: 'Test', message: 'before destroy' });
+      expect(console.info).toHaveBeenCalledTimes(1);
+      (console.info as jasmine.Spy).calls.reset();
+
+      service.ngOnDestroy();
+
+      logBus.push({ level: 'info', source: 'Test', message: 'after destroy' });
+      expect(console.info).not.toHaveBeenCalled();
+    });
+
+    it('does not forward any log level from LogBus after destruction', () => {
+      spyOn(console, 'debug');
+      spyOn(console, 'info');
+      spyOn(console, 'warn');
+      spyOn(console, 'error');
+      const logBus = TestBed.inject(LogBus);
+
+      service.ngOnDestroy();
+
+      logBus.push({ level: 'debug', source: 'T', message: 'd' });
+      logBus.push({ level: 'info',  source: 'T', message: 'i' });
+      logBus.push({ level: 'warn',  source: 'T', message: 'w' });
+      logBus.push({ level: 'error', source: 'T', message: 'e' });
+
+      expect(console.debug).not.toHaveBeenCalled();
+      expect(console.info).not.toHaveBeenCalled();
+      expect(console.warn).not.toHaveBeenCalled();
+      expect(console.error).not.toHaveBeenCalled();
+    });
+
+    it('does not affect the ability to call write() methods directly after destroy', () => {
+      service.ngOnDestroy();
+      expect(() => service.info('Src', 'msg')).not.toThrow();
+      expect(mockComm.send).toHaveBeenCalledTimes(1);
     });
   });
 });

@@ -189,4 +189,46 @@ describe('UiStateManagementService', () => {
       expect((service as any).log).toBe(mockLog);
     });
   });
+
+  // ── ngOnDestroy ─────────────────────────────────────────────────────────────
+
+  describe('ngOnDestroy', () => {
+    it('completes activeStepId$ when destroyed', () => {
+      let completed = false;
+      service.activeStepId$.subscribe({ complete: () => { completed = true; } });
+      service.ngOnDestroy();
+      expect(completed).toBeTrue();
+    });
+
+    it('completes stepStatuses$ when destroyed', () => {
+      let completed = false;
+      service.stepStatuses$.subscribe({ complete: () => { completed = true; } });
+      service.ngOnDestroy();
+      expect(completed).toBeTrue();
+    });
+
+    it('does not emit new activeStepId values after destruction', fakeAsync(() => {
+      const emitted: StepId[] = [];
+      service.activeStepId$.subscribe(s => emitted.push(s));
+      emitted.length = 0; // discard the initial BehaviorSubject replay
+
+      service.ngOnDestroy();
+      service.setActive(StepId.SaveImages);
+      tick();
+
+      expect(emitted).toEqual([]);
+    }));
+
+    it('does not emit new stepStatuses values after destruction', fakeAsync(() => {
+      const emitted: Array<Record<StepId, StepStatus>> = [];
+      service.stepStatuses$.subscribe(s => emitted.push(s));
+      emitted.length = 0;
+
+      service.ngOnDestroy();
+      service.setStepStatus(StepId.DriveToPark, StepStatus.Success);
+      tick();
+
+      expect(emitted).toEqual([]);
+    }));
+  });
 });

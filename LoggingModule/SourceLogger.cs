@@ -53,19 +53,19 @@ namespace LoggingModule
 
         /// <inheritdoc/>
         public void LogInfo(string message, string callerMember = "", string callerFile = "", int callerLine = 0)
-            => m_writer.Write(LogEntryFormatter.FormatLogMessage(message, null, callerMember, callerFile, callerLine));
+            => m_writer.Write(LogEntryFormatter.FormatLogMessage("INFO",  message, null, callerMember, callerFile, callerLine));
 
         /// <inheritdoc/>
         public void LogDebug(string message, string callerMember = "", string callerFile = "", int callerLine = 0)
-            => m_writer.Write(LogEntryFormatter.FormatLogMessage(message, null, callerMember, callerFile, callerLine));
+            => m_writer.Write(LogEntryFormatter.FormatLogMessage("DEBUG", message, null, callerMember, callerFile, callerLine));
 
         /// <inheritdoc/>
         public void LogWarn(string message, string callerMember = "", string callerFile = "", int callerLine = 0)
-            => m_writer.Write(LogEntryFormatter.FormatLogMessage(message, null, callerMember, callerFile, callerLine));
+            => m_writer.Write(LogEntryFormatter.FormatLogMessage("WARN",  message, null, callerMember, callerFile, callerLine));
 
         /// <inheritdoc/>
         public void LogError(string message, Exception? ex = null, string callerMember = "", string callerFile = "", int callerLine = 0)
-            => m_writer.Write(LogEntryFormatter.FormatLogMessage(message, ex, callerMember, callerFile, callerLine));
+            => m_writer.Write(LogEntryFormatter.FormatLogMessage("ERROR", message, ex,   callerMember, callerFile, callerLine));
 
         #endregion
 

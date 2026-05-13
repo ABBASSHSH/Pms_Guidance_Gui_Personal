@@ -241,6 +241,81 @@ namespace Pms_GuidanceGUI.Tests.Unit
             StringAssert.Contains(ReadLogFile(), "unique_message_xyz");
         }
 
+        // ── SourceLogger: log level tag in entry ───────────────────────────────────
+
+        [TestMethod]
+        public void Given_LoggingModule_When_BackendLoggerLogInfoCalled_Then_EntryContainsInfoLevelTag()
+        {
+            var logger = AppLoggerSetup.Create(m_tempFolder);
+
+            logger.LogInfo("level check");
+
+            StringAssert.Contains(ReadLogFile(), "[INFO]");
+        }
+
+        [TestMethod]
+        public void Given_LoggingModule_When_BackendLoggerLogDebugCalled_Then_EntryContainsDebugLevelTag()
+        {
+            var logger = AppLoggerSetup.Create(m_tempFolder);
+
+            logger.LogDebug("level check");
+
+            StringAssert.Contains(ReadLogFile(), "[DEBUG]");
+        }
+
+        [TestMethod]
+        public void Given_LoggingModule_When_BackendLoggerLogWarnCalled_Then_EntryContainsWarnLevelTag()
+        {
+            var logger = AppLoggerSetup.Create(m_tempFolder);
+
+            logger.LogWarn("level check");
+
+            StringAssert.Contains(ReadLogFile(), "[WARN]");
+        }
+
+        [TestMethod]
+        public void Given_LoggingModule_When_BackendLoggerLogErrorCalled_Then_EntryContainsErrorLevelTag()
+        {
+            var logger = AppLoggerSetup.Create(m_tempFolder);
+
+            logger.LogError("level check");
+
+            StringAssert.Contains(ReadLogFile(), "[ERROR]");
+        }
+
+        [TestMethod]
+        public void Given_LoggingModule_When_EachLogLevelCalled_Then_OnlyMatchingLevelTagIsPresent()
+        {
+            // Each logger call writes to a fresh file so we can check isolation.
+            var infoLogger = AppLoggerSetup.Create(Path.Combine(m_tempFolder, "info"));
+            infoLogger.LogInfo("msg");
+            string infoContent = File.ReadAllText(Path.Combine(m_tempFolder, "info", "logs", "app.log"));
+            StringAssert.Contains(infoContent, "[INFO]");
+            Assert.IsFalse(infoContent.Contains("[DEBUG]") || infoContent.Contains("[WARN]") || infoContent.Contains("[ERROR]"),
+                "LogInfo must not write any other level tag.");
+
+            var debugLogger = AppLoggerSetup.Create(Path.Combine(m_tempFolder, "debug"));
+            debugLogger.LogDebug("msg");
+            string debugContent = File.ReadAllText(Path.Combine(m_tempFolder, "debug", "logs", "app.log"));
+            StringAssert.Contains(debugContent, "[DEBUG]");
+            Assert.IsFalse(debugContent.Contains("[INFO]") || debugContent.Contains("[WARN]") || debugContent.Contains("[ERROR]"),
+                "LogDebug must not write any other level tag.");
+
+            var warnLogger = AppLoggerSetup.Create(Path.Combine(m_tempFolder, "warn"));
+            warnLogger.LogWarn("msg");
+            string warnContent = File.ReadAllText(Path.Combine(m_tempFolder, "warn", "logs", "app.log"));
+            StringAssert.Contains(warnContent, "[WARN]");
+            Assert.IsFalse(warnContent.Contains("[INFO]") || warnContent.Contains("[DEBUG]") || warnContent.Contains("[ERROR]"),
+                "LogWarn must not write any other level tag.");
+
+            var errorLogger = AppLoggerSetup.Create(Path.Combine(m_tempFolder, "error"));
+            errorLogger.LogError("msg");
+            string errorContent = File.ReadAllText(Path.Combine(m_tempFolder, "error", "logs", "app.log"));
+            StringAssert.Contains(errorContent, "[ERROR]");
+            Assert.IsFalse(errorContent.Contains("[INFO]") || errorContent.Contains("[DEBUG]") || errorContent.Contains("[WARN]"),
+                "LogError must not write any other level tag.");
+        }
+
         // ── LogEntryFormatter: exception detail lines ─────────────────────────────
 
         /// <summary>
@@ -478,7 +553,9 @@ namespace Pms_GuidanceGUI.Tests.Unit
 
             logger.LogInfo("test message");
 
-            mockWriter.Verify(w => w.Write(It.Is<string>(s => s.Contains("test message"))), Times.Once());
+            mockWriter.Verify(
+                w => w.Write(It.Is<string>(s => s.Contains("[INFO]") && s.Contains("test message"))),
+                Times.Once());
         }
 
         /// <summary>
@@ -495,6 +572,7 @@ namespace Pms_GuidanceGUI.Tests.Unit
 
             var logger = new SourceLogger(mockWriter.Object);
             logger.LogError("oops", new InvalidOperationException("bad state"));
+            StringAssert.Contains(captured, "[ERROR]");
             StringAssert.Contains(captured, "InvalidOperationException");
             StringAssert.Contains(captured, "bad state");
         }

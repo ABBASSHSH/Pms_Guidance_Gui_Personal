@@ -8,14 +8,15 @@
 // Module : BusinessLogicModule
 // File   : UIAppStartedCommandHandler.cs
 // Description: Handles UIAppStartedCommand by fetching the system UI language
-//              via ISystemLanguageProvider and raising a ShowSystemLanguageEventArgs
-//              reply so the front end receives the detected language.
+//              and raising a ShowSystemLanguageEventArgs reply so the front end
+//              receives the detected language.
 // Notes:
 // Modification History : Abbas Bahrainwala, 05-May-2026, Added system language fetch and reply event
 //--------------------------------------------------------------------
 #endregion
 
 using System;
+using System.Globalization;
 using BusinessLogicModule.Commands;
 using BusinessLogicModule.EventArgs;
 using Infrastructure;
@@ -24,8 +25,7 @@ namespace BusinessLogicModule
 {
     /// <summary>
     /// Handles <see cref="UIAppStartedCommand"/> by fetching the system UI language
-    /// via <see cref="ISystemLanguageProvider"/> and raising a
-    /// <see cref="ShowSystemLanguageEventArgs"/> reply.
+    /// and raising a <see cref="ShowSystemLanguageEventArgs"/> reply.
     /// </summary>
     /// <reqkeys>
     /// <reqkey> REQUIREMENT_KEY </reqkey>
@@ -44,8 +44,7 @@ namespace BusinessLogicModule
         /// <inheritdoc/>
         protected override void ExecuteCommand(ICommand theCommand)
         {
-
-            string language = m_systemLanguageProvider.FetchSystemLanguage();
+            string language = CultureInfo.CurrentUICulture.Name;
             m_logger.LogInfo($"System UI language detected: {language}");
 
             m_actionReplyPrivate.InvokeEvent(new ShowSystemLanguageEventArgs(language));
@@ -55,16 +54,11 @@ namespace BusinessLogicModule
 
         #region Private Members
 
-        private readonly ISystemLanguageProvider m_systemLanguageProvider;
-
         internal UIAppStartedCommandHandler(
-            IActionReplyPrivate      replyPrivate,
-            ILogger                  logger,
-            ISystemLanguageProvider  systemLanguageProvider)
+            IActionReplyPrivate replyPrivate,
+            ILogger             logger)
             : base(replyPrivate, logger)
         {
-            m_systemLanguageProvider = systemLanguageProvider
-                ?? throw new ArgumentNullException(nameof(systemLanguageProvider));
         }
 
         #endregion

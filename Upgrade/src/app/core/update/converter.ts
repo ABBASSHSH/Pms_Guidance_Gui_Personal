@@ -1,5 +1,6 @@
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, DestroyRef } from '@angular/core';
 import { filter, map } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MESSAGE_RECEIVER } from '../communication/i-message-receiver.token';
 import { UiStateManagementService } from './ui-state-management-service';
 import { BackendMessage } from './message.interfaces';
@@ -22,6 +23,7 @@ export class Converter {
   private readonly state    = inject(UiStateManagementService);
   private readonly log      = inject(LogService);
   private readonly i18n     = inject(I18nService);
+  private readonly destroyRef = inject(DestroyRef);
 
   private readonly context: HandlerContext = {
     state: this.state,
@@ -33,6 +35,7 @@ export class Converter {
   start(): void {
     this.receiver.messages$
       .pipe(
+        takeUntilDestroyed(this.destroyRef),
         map(m => m as unknown as BackendMessage),
         filter(m => !!m?.Action)
       )

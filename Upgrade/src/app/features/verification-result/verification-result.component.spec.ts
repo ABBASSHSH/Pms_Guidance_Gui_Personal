@@ -243,4 +243,28 @@ describe('VerificationResultComponent', () => {
       expect((component as any).log).toBe(mockLog);
     });
   });
+
+  // ── ngOnDestroy ─────────────────────────────────────────────────────────────
+
+  describe('ngOnDestroy', () => {
+    it('stops updating prereqOk after component is destroyed', () => {
+      stepStatusSubject.next({ ...defaultStatuses(), [StepId.VerifyPrereq]: 'success' as unknown as StepStatus });
+      fixture.detectChanges();
+      expect(component.prereqOk).toBeTrue();
+
+      fixture.destroy();
+
+      stepStatusSubject.next({ ...defaultStatuses(), [StepId.VerifyPrereq]: 'error' as unknown as StepStatus });
+      expect(component.prereqOk).toBeTrue(); // subscription gone — value unchanged
+    });
+
+    it('does not react to new stepStatuses$ emissions after destruction', () => {
+      fixture.detectChanges();
+      fixture.destroy();
+
+      const valueBefore = component.prereqOk;
+      stepStatusSubject.next({ ...defaultStatuses(), [StepId.VerifyPrereq]: 'success' as unknown as StepStatus });
+      expect(component.prereqOk).toBe(valueBefore);
+    });
+  });
 });

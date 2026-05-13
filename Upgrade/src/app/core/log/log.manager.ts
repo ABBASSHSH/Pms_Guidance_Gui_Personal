@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { LogLevel, ILog } from './log.models';
 import { LogBus } from './log.bus';
 import { CommunicationService } from '../communication/communication.service';
@@ -6,8 +7,9 @@ import { CommunicationService } from '../communication/communication.service';
 const LOG_LEVEL_ORDER: readonly LogLevel[] = ['debug', 'info', 'warn', 'error'];
 
 @Injectable({ providedIn: 'root' })
-export class LogManager implements ILog {
+export class LogManager implements ILog, OnDestroy {
   private readonly minLevel: LogLevel = 'debug';
+  private readonly busSubscription: Subscription;
 
   constructor(
     private readonly comm: CommunicationService,
@@ -16,7 +18,7 @@ export class LogManager implements ILog {
     // Forward infrastructure log entries (CommunicationService, ConnectionManager)
     // to the console only — NOT to the backend transport — to avoid a feedback
     // loop where every comm.send() internally logs, which would trigger another send.
-    this.bus.entries$.subscribe(entry => {
+    this.busSubscription = this.bus.entries$.subscribe(entry => {
       if (!this.allowed(entry.level)) return;
       const ts  = this.timestamp();
       const msg = entry.message ?? '';
@@ -41,6 +43,10 @@ export class LogManager implements ILog {
   }
 
   // ---- private ----
+
+  ngOnDestroy(): void {
+    this.busSubscription.unsubscribe();
+  }
 
   private write(level: LogLevel, source: string, message?: string): void {
     if (!this.allowed(level)) return;

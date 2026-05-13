@@ -1,5 +1,6 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, DestroyRef, inject } from '@angular/core';
 import { map } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommunicationService } from '../../core/communication/communication.service';
 import { UiStateManagementService } from '../../core/update/ui-state-management-service';
 import { LogService } from '../../core/log/log.service';
@@ -18,6 +19,8 @@ export class VerificationResultComponent implements OnInit {
 
   prereqOk = false;
 
+  private readonly destroyRef = inject(DestroyRef);
+
   constructor(
     private readonly uiStateUpdate: UiStateManagementService,
     private readonly comm: CommunicationService,
@@ -26,7 +29,10 @@ export class VerificationResultComponent implements OnInit {
 
   ngOnInit(): void {
     this.uiStateUpdate.stepStatuses$
-      .pipe(map(s => s[StepId.VerifyPrereq]))
+      .pipe(
+        takeUntilDestroyed(this.destroyRef),
+        map(s => s[StepId.VerifyPrereq])
+      )
       .subscribe(status => {
         this.prereqOk = status === 'success';
       });

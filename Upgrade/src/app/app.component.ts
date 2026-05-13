@@ -1,6 +1,6 @@
 
 import { AsyncPipe } from '@angular/common';
-import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit, DestroyRef, inject } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit, OnDestroy, DestroyRef, HostListener, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { UiStateManagementService } from './core/update/ui-state-management-service';
 import { GuidanceOverviewComponent } from './features/guidance-overview/guidance-overview.component';
@@ -33,7 +33,7 @@ import { Converter } from './core/update/converter';
     styleUrls: ['./app.component.css'],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
 
   private readonly destroyRef = inject(DestroyRef);
 
@@ -55,5 +55,16 @@ export class AppComponent implements OnInit {
     this.converter.start();
     this.log.debug('AppComponent', 'init', 'Converter started');
     this.comm.send('UIAppStarted');
+    const browserLanguage = navigator.language || 'en-US';
+    this.log.info('AppComponent', 'init', `Browser language: ${browserLanguage}`);
+  }
+
+  // @HostListener('document:contextmenu', ['$event'])
+  // onContextMenu(event: MouseEvent): void {
+  //   event.preventDefault();
+  // }
+
+  ngOnDestroy(): void {
+    this.comm.shutdown();
   }
 }

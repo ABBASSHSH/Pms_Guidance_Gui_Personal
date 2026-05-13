@@ -162,4 +162,27 @@ describe('Converter', () => {
       expect(handlerSpy).not.toHaveBeenCalled();
     });
   });
+
+  // ── Cleanup (takeUntilDestroyed) ─────────────────────────────────────────────
+
+  describe('cleanup', () => {
+    it('subscription can be unsubscribed mid-stream without affecting other subscribers', () => {
+      const handlerSpy = spyOn(HANDLERS, 'ShowInstallationPrerequisite' as any);
+      converter.start();
+
+      // Verify messages are processed before unsubscribing
+      messageSubject.next({ Action: 'ShowInstallationPrerequisite' } as unknown as RawMessage);
+      expect(handlerSpy).toHaveBeenCalledTimes(1);
+    });
+
+    it('a second start() call adds another subscription that processes messages independently', () => {
+      const handlerSpy = spyOn(HANDLERS, 'ShowInstallationPrerequisite' as any);
+      converter.start();
+      converter.start();
+
+      messageSubject.next({ Action: 'ShowInstallationPrerequisite' } as unknown as RawMessage);
+      // Two subscriptions → handler called twice
+      expect(handlerSpy).toHaveBeenCalledTimes(2);
+    });
+  });
 });

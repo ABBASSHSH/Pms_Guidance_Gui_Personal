@@ -1,11 +1,11 @@
-﻿import { Injectable } from '@angular/core';
+﻿import { Injectable, OnDestroy } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { StepId, StepStatus } from './update.models';
 import { LogService } from '../log/log.service';
 
 
 @Injectable({ providedIn: 'root' })
-export class UiStateManagementService {
+export class UiStateManagementService implements OnDestroy {
 
   private readonly activeStepSubject = new BehaviorSubject<StepId>(StepId.Introduction);
   private readonly stepStatusSubject = new BehaviorSubject<Record<number, StepStatus>>({[StepId.Introduction]: StepStatus.Active});
@@ -40,5 +40,10 @@ export class UiStateManagementService {
     const current = this.stepStatusSubject.getValue();
     this.stepStatusSubject.next({ ...current, [stepId]: status });
     this.log.info('UiStateManagementService', 'setStepStatus', `${StepId[stepId]} -> ${status}`);
+  }
+
+  ngOnDestroy(): void {
+    this.activeStepSubject.complete();
+    this.stepStatusSubject.complete();
   }
 }

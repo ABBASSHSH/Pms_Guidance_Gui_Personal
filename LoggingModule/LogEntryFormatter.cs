@@ -27,7 +27,7 @@ namespace LoggingModule
     /// is defined in exactly one place.
     /// </summary>
     /// <remarks>
-    /// Output format: <c>[yyyy-MM-dd HH:mm:ss.fff] [SOURCE] message</c>
+    /// Output format: <c>[yyyy-MM-dd HH:mm:ss.fff] [LEVEL] [FileName.Method:line] message</c>
     /// <para>
     /// When an exception is supplied, additional lines are appended:
     /// <code>
@@ -42,10 +42,11 @@ namespace LoggingModule
         /// <summary>
         /// Formats a log entry string ready for writing to the log file.
         /// </summary>
+        /// <param name="level">The severity label written between the timestamp and the caller tag (e.g. <c>INFO</c>).</param>
         /// <param name="message">The log message text.</param>
         /// <param name="ex">Optional exception to append after the message.</param>
         /// <returns>A formatted, newline-terminated log entry string.</returns>
-        internal static string FormatLogMessage(string message, Exception? ex,
+        internal static string FormatLogMessage(string level, string message, Exception? ex,
             string callerMember = "", string callerFile = "", int callerLine = 0)
         {
             string timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss.fff");
@@ -55,7 +56,7 @@ namespace LoggingModule
                 ? string.Empty
                 : $" [{Path.GetFileNameWithoutExtension(callerFile)}.{callerMember}:{callerLine}]";
 
-            sb.AppendLine($"[{timestamp}]{callerTag} {message}");
+            sb.AppendLine($"[{timestamp}] [{level}]{callerTag} {message}");
 
             if (ex != null)
             {

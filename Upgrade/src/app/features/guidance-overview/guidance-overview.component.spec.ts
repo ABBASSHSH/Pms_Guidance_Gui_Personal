@@ -145,4 +145,29 @@ describe('GuidanceOverviewComponent', () => {
       expect((component as any).uiState).toBe(mockState);
     });
   });
+
+  // ── ngOnDestroy ─────────────────────────────────────────────────────────────
+
+  describe('ngOnDestroy', () => {
+    it('stops updating steps after component is destroyed', fakeAsync(() => {
+      fixture.detectChanges();
+      fixture.destroy();
+
+      const statusBefore = component.steps.find(s => s.id === StepId.VerifyPrereq)!.status;
+      statusSubject.next({ ...allPending(), [StepId.VerifyPrereq]: StepStatus.Active } as Record<StepId, StepStatus>);
+      tick();
+
+      expect(component.steps.find(s => s.id === StepId.VerifyPrereq)!.status).toBe(statusBefore);
+    }));
+
+    it('does not set active=true for new emissions after destruction', fakeAsync(() => {
+      fixture.detectChanges();
+      fixture.destroy();
+
+      statusSubject.next({ ...allPending(), [StepId.Installation]: StepStatus.Active } as Record<StepId, StepStatus>);
+      tick();
+
+      expect(component.steps.find(s => s.id === StepId.Installation)!.active).toBeFalse();
+    }));
+  });
 });

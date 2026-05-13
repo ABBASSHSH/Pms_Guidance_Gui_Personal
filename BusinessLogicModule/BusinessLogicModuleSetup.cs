@@ -41,9 +41,6 @@ namespace BusinessLogicModule
         /// and registers all known command handlers.
         /// </summary>
         /// <param name="logger">Logger used by all command handlers.</param>
-        /// <param name="systemLanguageProvider">
-        /// Used by <see cref="UIAppStartedCommandHandler"/> to fetch the system UI language.
-        /// </param>
         /// <param name="configurationProvider">
         /// Used by handlers that execute configured commands from
         /// <c>pms_guidance_configuration.json</c>.
@@ -52,13 +49,11 @@ namespace BusinessLogicModule
         /// Thrown when any constructor dependency is null.
         /// </exception>
         public BusinessLogicModuleSetup(
-            ILogger                 logger,
-            ISystemLanguageProvider systemLanguageProvider,
-            IConfigurationProvider  configurationProvider)
+            ILogger                logger,
+            IConfigurationProvider configurationProvider)
         {
-            if (logger                 == null) { throw new ArgumentNullException(nameof(logger)); }
-            if (systemLanguageProvider == null) { throw new ArgumentNullException(nameof(systemLanguageProvider)); }
-            if (configurationProvider  == null) { throw new ArgumentNullException(nameof(configurationProvider)); }
+            if (logger                == null) { throw new ArgumentNullException(nameof(logger)); }
+            if (configurationProvider == null) { throw new ArgumentNullException(nameof(configurationProvider)); }
 
             m_logger  = logger;
             ActionReplyEvent = new ActionReplyHandler();
@@ -68,7 +63,7 @@ namespace BusinessLogicModule
                 new LogActionCommandHandler(actionReply, logger));
 
             AddCommandHandler(typeof(UIAppStartedCommand),
-                new UIAppStartedCommandHandler(actionReply, logger, systemLanguageProvider));
+                new UIAppStartedCommandHandler(actionReply, logger));
 
             AddCommandHandler(typeof(VerifyInstallationPrerequisitesCommand),
                 new VerifyInstallationPrerequisitesCommandHandler(actionReply, logger, configurationProvider));
@@ -107,22 +102,12 @@ namespace BusinessLogicModule
         /// <inheritdoc/>
         public void Open()
         {
-            if (m_isOpen)
-            {
-                return;
-            }
-
             m_isOpen = true;
         }
 
         /// <inheritdoc/>
         public void Close()
         {
-            if (!m_isOpen)
-            {
-                return;
-            }
-
             m_isOpen = false;
         }
 

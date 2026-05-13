@@ -47,24 +47,18 @@ namespace ConnectionModule
 
         /// <summary>
         /// Opens the connection and subscribes to web view messages.
-        /// Subsequent calls are ignored when already open.
         /// </summary>
         public void Open()
         {
-            if (m_isOpen) { return; }
             m_webView.OnMessageReceived += OnMessageReceived;
-            m_isOpen = true;
         }
 
         /// <summary>
         /// Closes the connection and unsubscribes from web view messages.
-        /// Subsequent calls are ignored when already closed.
         /// </summary>
         public void Close()
         {
-            if (!m_isOpen) { return; }
             m_webView.OnMessageReceived -= OnMessageReceived;
-            m_isOpen = false;
         }
 
         /// <inheritdoc/>
@@ -72,7 +66,9 @@ namespace ConnectionModule
         {
             if (message == null)
             {
-                throw new ArgumentNullException(nameof(message));
+                // throw new ArgumentNullException(nameof(message));
+                m_logger.LogWarn("SendMessage called with a null message. Message not sent.");
+                return;
             }
 
             try
@@ -86,6 +82,10 @@ namespace ConnectionModule
             {
                 m_logger.LogError($"Failed to serialize message for action '{message.Action}'.", ex);
             }
+            catch (Exception ex)
+            {
+                m_logger.LogError($"Unexpected error while sending message for action '{message.Action}'.", ex);
+            }
         }
 
         #endregion
@@ -94,7 +94,6 @@ namespace ConnectionModule
 
         private readonly IWebViewWrapper m_webView;
         private readonly ILogger m_logger;
-        private bool m_isOpen;
 
         private void OnMessageReceived(object? sender, string e)
         {

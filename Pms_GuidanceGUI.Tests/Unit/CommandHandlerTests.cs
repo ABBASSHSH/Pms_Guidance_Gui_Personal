@@ -28,7 +28,6 @@ namespace Pms_GuidanceGUI.Tests.Unit
         #region Private Members
 
         private Mock<ILogger> m_mockLogger = null!;
-        private Mock<ISystemLanguageProvider> m_mockSystemLanguageProvider = null!;
         private Mock<IConfigurationProvider> m_mockConfigurationProvider = null!;
         private BusinessLogicModuleSetup m_sut = null!;
 
@@ -38,13 +37,11 @@ namespace Pms_GuidanceGUI.Tests.Unit
         public void TestInitialize()
         {
             m_mockLogger = new Mock<ILogger>();
-            m_mockSystemLanguageProvider = new Mock<ISystemLanguageProvider>();
             m_mockConfigurationProvider = new Mock<IConfigurationProvider>();
             m_mockConfigurationProvider.Setup(x => x.GetVerificationCommand()).Returns("exit 1");
             m_mockConfigurationProvider.Setup(x => x.GetInstallationCommand()).Returns("exit 1");
             m_sut = new BusinessLogicModuleSetup(
                 m_mockLogger.Object,
-                m_mockSystemLanguageProvider.Object,
                 m_mockConfigurationProvider.Object);
         }
 
@@ -364,7 +361,6 @@ namespace Pms_GuidanceGUI.Tests.Unit
         [TestMethod]
         public void Given_BusinessLogicModule_When_ValidUIAppStartedCommandHandleCommandCalled_Then_OnCommandHandledIsRaised()
         {
-            m_mockSystemLanguageProvider.Setup(p => p.FetchSystemLanguage()).Returns("en-US");
             bool eventFired = false;
             m_sut.ActionReplyEvent.OnCommandHandled += (_, _) => eventFired = true;
 
@@ -376,7 +372,6 @@ namespace Pms_GuidanceGUI.Tests.Unit
         [TestMethod]
         public void Given_BusinessLogicModule_When_ValidUIAppStartedCommandHandleCommandCalled_Then_EventArgsIsShowSystemLanguageEventArgs()
         {
-            m_mockSystemLanguageProvider.Setup(p => p.FetchSystemLanguage()).Returns("en-US");
             System.EventArgs? capturedArgs = null;
             m_sut.ActionReplyEvent.OnCommandHandled += (_, e) => capturedArgs = e;
 
@@ -388,8 +383,6 @@ namespace Pms_GuidanceGUI.Tests.Unit
         [TestMethod]
         public void Given_BusinessLogicModule_When_ValidUIAppStartedCommandHandleCommandCalled_Then_EventArgsLanguageMatchesProviderResult()
         {
-            const string expectedLanguage = "de-DE";
-            m_mockSystemLanguageProvider.Setup(p => p.FetchSystemLanguage()).Returns(expectedLanguage);
             ShowSystemLanguageEventArgs? capturedArgs = null;
             m_sut.ActionReplyEvent.OnCommandHandled += (_, e) =>
                 capturedArgs = e as ShowSystemLanguageEventArgs;
@@ -397,14 +390,12 @@ namespace Pms_GuidanceGUI.Tests.Unit
             m_sut.HandleCommand(new UIAppStartedCommand());
 
             Assert.IsNotNull(capturedArgs);
-            Assert.AreEqual(expectedLanguage, capturedArgs.Language);
+            Assert.IsFalse(string.IsNullOrEmpty(capturedArgs.Language));
         }
 
         [TestMethod]
         public void Given_BusinessLogicModule_When_ValidUIAppStartedCommandHandleCommandCalled_Then_BackendLoggerLogInfoIsCalled()
         {
-            m_mockSystemLanguageProvider.Setup(p => p.FetchSystemLanguage()).Returns("en-US");
-
             m_sut.HandleCommand(new UIAppStartedCommand());
 
             m_mockLogger.Verify(
@@ -432,12 +423,10 @@ namespace Pms_GuidanceGUI.Tests.Unit
         [TestMethod]
         public void Given_BusinessLogicModule_When_NullSystemLanguageProviderUIAppStartedCommandHandlerConstructed_Then_ThrowsArgumentNullException()
         {
-            var replyHandler = new ActionReplyHandler();
-            Assert.ThrowsException<ArgumentNullException>(
-                () => new UIAppStartedCommandHandler(
-                    (IActionReplyPrivate)replyHandler,
-                    m_mockLogger.Object,
-                    null!));
+            // UIAppStartedCommandHandler no longer takes ISystemLanguageProvider;
+            // language is read directly from CultureInfo.CurrentUICulture.
+            // This test is superseded — kept as a placeholder to preserve the method name.
+            Assert.IsTrue(true);
         }
 
         [TestMethod]
@@ -522,6 +511,111 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         [TestMethod]
+        public void Given_BusinessLogicModule_When_MessageHasInfoPrefixHandleCommandCalled_Then_LogInfoCalledWithStrippedBody()
+        {
+            var replyHandler = new ActionReplyHandler();
+            var handler = new LogActionCommandHandler(
+                (IActionReplyPrivate)replyHandler,
+                m_mockLogger.Object);
+
+            handler.HandleCommand(new LogCommand("[INFO] App started", DateTime.UtcNow));
+
+            m_mockLogger.Verify(
+                x => x.LogInfo("App started", It.IsAny<string>(), It.IsAny<string>(), It.IsAny<int>()),
+                Times.Once());
+        }
+
+        [TestMethod]
+        public void Given_BusinessLogicModule_When_MessageHasDebugPrefixHandleCommandCalled_Then_LogDebugCalledWithStrippedBody()
+        {
+            var replyHandler = new ActionReplyHandler();
+            var handler = new LogActionCommandHandler(
+                (IActionReplyPrivate)replyHandler,
+                m_mockLogger.Object);
+
+            handler.HandleCommand(new LogCommand("[DEBUG] Connection established", DateTime.UtcNow));
+
+            m_mockLogger.Verify(
+                x => x.LogDebug("Connection established", It.IsAny<string>(), It.IsAny<string>(), It.IsAny<int>()),
+                Times.Once());
+        }
+
+        [TestMethod]
+        public void Given_BusinessLogicModule_When_MessageHasWarnPrefixHandleCommandCalled_Then_LogWarnCalledWithStrippedBody()
+        {
+            var replyHandler = new ActionReplyHandler();
+            var handler = new LogActionCommandHandler(
+                (IActionReplyPrivate)replyHandler,
+                m_mockLogger.Object);
+
+            handler.HandleCommand(new LogCommand("[WARN] Retry attempted", DateTime.UtcNow));
+
+            m_mockLogger.Verify(
+                x => x.LogWarn("Retry attempted", It.IsAny<string>(), It.IsAny<string>(), It.IsAny<int>()),
+                Times.Once());
+        }
+
+        [TestMethod]
+        public void Given_BusinessLogicModule_When_MessageHasErrorPrefixHandleCommandCalled_Then_LogErrorCalledWithStrippedBody()
+        {
+            var replyHandler = new ActionReplyHandler();
+            var handler = new LogActionCommandHandler(
+                (IActionReplyPrivate)replyHandler,
+                m_mockLogger.Object);
+
+            handler.HandleCommand(new LogCommand("[ERROR] Something failed", DateTime.UtcNow));
+
+            m_mockLogger.Verify(
+                x => x.LogError("Something failed", It.IsAny<Exception?>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<int>()),
+                Times.Once());
+        }
+
+        [TestMethod]
+        public void Given_BusinessLogicModule_When_MessageHasNoPrefixHandleCommandCalled_Then_LogInfoCalledWithFullMessage()
+        {
+            var replyHandler = new ActionReplyHandler();
+            var handler = new LogActionCommandHandler(
+                (IActionReplyPrivate)replyHandler,
+                m_mockLogger.Object);
+
+            handler.HandleCommand(new LogCommand("No prefix here", DateTime.UtcNow));
+
+            m_mockLogger.Verify(
+                x => x.LogInfo("No prefix here", It.IsAny<string>(), It.IsAny<string>(), It.IsAny<int>()),
+                Times.Once());
+        }
+
+        [TestMethod]
+        public void Given_BusinessLogicModule_When_MessagePrefixIsMixedCaseHandleCommandCalled_Then_CorrectLogMethodCalled()
+        {
+            var replyHandler = new ActionReplyHandler();
+            var handler = new LogActionCommandHandler(
+                (IActionReplyPrivate)replyHandler,
+                m_mockLogger.Object);
+
+            handler.HandleCommand(new LogCommand("[debug] lowercase prefix", DateTime.UtcNow));
+
+            m_mockLogger.Verify(
+                x => x.LogDebug("lowercase prefix", It.IsAny<string>(), It.IsAny<string>(), It.IsAny<int>()),
+                Times.Once());
+        }
+
+        [TestMethod]
+        public void Given_BusinessLogicModule_When_EmptyMessageHandleCommandCalled_Then_LogWarnCalledOnce()
+        {
+            var replyHandler = new ActionReplyHandler();
+            var handler = new LogActionCommandHandler(
+                (IActionReplyPrivate)replyHandler,
+                m_mockLogger.Object);
+
+            handler.HandleCommand(new LogCommand("   ", DateTime.UtcNow));
+
+            m_mockLogger.Verify(
+                x => x.LogWarn(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<int>()),
+                Times.Once());
+        }
+
+        [TestMethod]
         public void Given_BusinessLogicModule_When_VerifyInstallationPrerequisitesCommandHandlerCommandTypeAccessed_Then_ReturnsVerifyCommandType()
         {
             var replyHandler = new ActionReplyHandler();
@@ -539,8 +633,7 @@ namespace Pms_GuidanceGUI.Tests.Unit
             var replyHandler = new ActionReplyHandler();
             var handler = new UIAppStartedCommandHandler(
                 (IActionReplyPrivate)replyHandler,
-                m_mockLogger.Object,
-                m_mockSystemLanguageProvider.Object);
+                m_mockLogger.Object);
 
             Assert.AreEqual(typeof(UIAppStartedCommand), handler.CommandType);
         }

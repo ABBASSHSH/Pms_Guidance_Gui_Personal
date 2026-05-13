@@ -1,7 +1,8 @@
-<div class="stepper-pane">
-  <sh-stepper ta-id="GuidanceAppStepper" vertical color="primary">
+<div class="stepper-div">
+  <sh-stepper ta-id="GuidanceAppStepper" vertical color='primary'class="stepper-pane">
     @for (step of steps; track step.id) {
       <sh-stepper-item
+        class="text"
         [attr.ta-id]="'GuidanceAppStepperStep' + (step.id + 1)"
         [attr.label]="step.label | t"
         [active]="step.active"

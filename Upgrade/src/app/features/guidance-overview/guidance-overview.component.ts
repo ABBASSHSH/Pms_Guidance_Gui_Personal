@@ -1,4 +1,5 @@
-﻿import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
+﻿import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, DestroyRef, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { StepId, StepStatus } from '../../core/update/update.models';
 import { UiStateManagementService } from '../../core/update/ui-state-management-service';
 import { TranslatePipe } from '../../core/i18n';
@@ -23,8 +24,12 @@ export class GuidanceOverviewComponent implements OnInit {
 
   constructor(private readonly uiState: UiStateManagementService) {}
 
+  private readonly destroyRef = inject(DestroyRef);
+
   ngOnInit(): void {
-    this.uiState.stepStatuses$.subscribe(statuses => {
+    this.uiState.stepStatuses$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(statuses => {
       this.steps.forEach(step => {
         step.status = statuses[step.id];
         step.active = step.status === StepStatus.Active;

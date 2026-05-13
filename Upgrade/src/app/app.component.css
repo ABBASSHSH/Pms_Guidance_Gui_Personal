@@ -3,6 +3,10 @@
   height: 100%;
 }
 
+sh-page {
+  background-color: #080808;
+}
+
 /* Main two-panel layout */
 .app-frame {
   height: 100%;
@@ -11,7 +15,7 @@
   display: flex;
   align-items: stretch;
 
-  gap: 6px;
+  gap: 0.375rem;
   box-sizing: border-box;
 
   /* Prevent overflow pushes from child content */
@@ -20,9 +24,12 @@
 
 /* Left pane stays fixed and fills height */
 .left {
-  flex: 0 0 280px;
+  flex: 0 0 19rem;
   height: 100%;
+  border-radius: 0.25rem;
+  background-color: #1c1c1c;
   min-height: 0;
+  padding: 0 1rem;
 }
 
 /* Right pane fills remaining width + height */

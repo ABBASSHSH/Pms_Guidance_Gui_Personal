@@ -92,7 +92,6 @@ namespace WebAppWrapper
 
             IBusinessLogicModule businessLogicModule = new BusinessLogicModuleSetup(
                 logger,
-                new SystemLanguageProvider(logger),
                 configurationProvider);
             ICloseApplicationRequestSource closeApplicationRequestSource =
                 (ICloseApplicationRequestSource)businessLogicModule;

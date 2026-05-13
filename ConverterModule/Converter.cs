@@ -66,19 +66,15 @@ namespace ConverterModule
         /// <inheritdoc/>
         public void Open()
         {
-            if (m_isOpen) { return; }
             m_connectionManager.MessageReceived += OnMessageReceived;
             m_businessLogicModule.ActionReplyEvent.OnCommandHandled += ActionReplyEvent_OnCommandHandled;
-            m_isOpen = true;
         }
 
         /// <inheritdoc/>
         public void Close()
         {
-            if (!m_isOpen) { return; }
             m_connectionManager.MessageReceived -= OnMessageReceived;
             m_businessLogicModule.ActionReplyEvent.OnCommandHandled -= ActionReplyEvent_OnCommandHandled;
-            m_isOpen = false;
         }
 
         #endregion
@@ -90,7 +86,6 @@ namespace ConverterModule
         private readonly IConnectionManager m_connectionManager;
         private readonly JsonActionHandlerManager m_jsonActionHandler;
         private readonly ILogger m_logger;
-        private bool m_isOpen;
 
         private void ActionReplyEvent_OnCommandHandled(object? sender, EventArgs e)
         {

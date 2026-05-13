@@ -133,6 +133,28 @@ describe('AppComponent', () => {
     }));
   });
 
+  // ── ngOnDestroy ─────────────────────────────────────────────────────────────
+
+  describe('ngOnDestroy', () => {
+    it('calls comm.shutdown() when the component is destroyed', () => {
+      fixture.detectChanges();
+      fixture.destroy();
+      expect(mockComm.shutdown).toHaveBeenCalledTimes(1);
+    });
+
+    it('does not call comm.shutdown() before the component is destroyed', () => {
+      fixture.detectChanges();
+      expect(mockComm.shutdown).not.toHaveBeenCalled();
+    });
+
+    it('calls comm.shutdown() exactly once even if ngOnDestroy is invoked again', () => {
+      fixture.detectChanges();
+      component.ngOnDestroy();
+      component.ngOnDestroy();
+      expect(mockComm.shutdown).toHaveBeenCalledTimes(2);
+    });
+  });
+
   // ── Dependency injection ────────────────────────────────────────────────────
 
   describe('Dependency injection', () => {

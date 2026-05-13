@@ -415,12 +415,14 @@ namespace Pms_GuidanceGUI.Tests.Unit
         }
 
         /// <summary>
-    /// Given ConnectionManager When NullMessageSendMessageCalled Then ThrowsArgumentNullException
+    /// Given ConnectionManager When NullMessageSendMessageCalled Then LogWarnIsCalled
         /// </summary>
         [TestMethod]
-        public void Given_ConnectionManager_When_NullMessageSendMessageCalled_Then_ThrowsArgumentNullException()
+        public void Given_ConnectionManager_When_NullMessageSendMessageCalled_Then_LogWarnIsCalled()
         {
-            Assert.ThrowsException<ArgumentNullException>(() => m_connectionManager.SendMessage(null!));
+            m_connectionManager.SendMessage(null!);
+
+            m_mockLogger.Verify(x => x.LogWarn(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<int>()), Times.Once());
         }
 
         /// <summary>
@@ -429,14 +431,7 @@ namespace Pms_GuidanceGUI.Tests.Unit
         [TestMethod]
         public void Given_ConnectionManager_When_NullMessageSendMessageCalled_Then_WebViewSendMessageIsNotCalled()
         {
-            try
-            {
-                m_connectionManager.SendMessage(null!);
-            }
-            catch (ArgumentNullException)
-            {
-                // Expected contract.
-            }
+            m_connectionManager.SendMessage(null!);
 
             m_mockWebView.Verify(x => x.SendMessage(It.IsAny<string>()), Times.Never());
         }
@@ -465,6 +460,42 @@ namespace Pms_GuidanceGUI.Tests.Unit
             m_connectionManager.SendMessage(new BadSerializationMessage());
 
             m_mockWebView.Verify(x => x.SendMessage(It.IsAny<string>()), Times.Never());
+        }
+
+        // ── Outbound: general exception in SendMessage ────────────────────────────
+
+        /// <summary>
+    /// Given ConnectionManager When UnexpectedExceptionThrownInSendMessage Then LogErrorIsCalled
+        /// </summary>
+        [TestMethod]
+        public void Given_ConnectionManager_When_UnexpectedExceptionThrownInSendMessage_Then_LogErrorIsCalled()
+        {
+            m_mockWebView
+                .Setup(x => x.SendMessage(It.IsAny<string>()))
+                .Throws(new InvalidOperationException("unexpected"));
+
+            m_connectionManager.SendMessage(new TestOutboundMessage { Status = "Test" });
+
+            m_mockLogger.Verify(
+                x => x.LogError(It.IsAny<string>(), It.IsAny<Exception>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<int>()),
+                Times.Once());
+        }
+
+        /// <summary>
+    /// Given ConnectionManager When UnexpectedExceptionThrownInSendMessage Then ExceptionDoesNotPropagate
+        /// </summary>
+        [TestMethod]
+        public void Given_ConnectionManager_When_UnexpectedExceptionThrownInSendMessage_Then_ExceptionDoesNotPropagate()
+        {
+            m_mockWebView
+                .Setup(x => x.SendMessage(It.IsAny<string>()))
+                .Throws(new InvalidOperationException("unexpected"));
+
+            bool threw = false;
+            try { m_connectionManager.SendMessage(new TestOutboundMessage { Status = "Test" }); }
+            catch { threw = true; }
+
+            Assert.IsFalse(threw);
         }
 
         // ── Helpers ───────────────────────────────────────────────────────────────

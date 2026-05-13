@@ -64,7 +64,6 @@ namespace Pms_GuidanceGUI.Tests.Component
         private ConnectionManager        m_connectionManager = null!;
         private BusinessLogicModuleSetup m_blm               = null!;
         private Converter                m_converter         = null!;
-        private Mock<ISystemLanguageProvider> m_mockSystemLanguageProvider = null!;
         private Mock<IConfigurationProvider> m_mockConfigurationProvider = null!;
 
         #endregion
@@ -77,7 +76,6 @@ namespace Pms_GuidanceGUI.Tests.Component
         {
             m_mockWebView        = new Mock<IWebViewWrapper>();
             m_mockLogger         = new Mock<ILogger>();
-            m_mockSystemLanguageProvider = new Mock<ISystemLanguageProvider>();
             m_mockConfigurationProvider  = new Mock<IConfigurationProvider>();
             m_mockConfigurationProvider.Setup(x => x.GetVerificationCommand()).Returns("exit 1");
             m_mockConfigurationProvider.Setup(x => x.GetInstallationCommand()).Returns("exit 1");
@@ -90,7 +88,6 @@ namespace Pms_GuidanceGUI.Tests.Component
             m_connectionManager = new ConnectionManager(m_mockWebView.Object, m_mockLogger.Object);
             m_blm               = new BusinessLogicModuleSetup(
                 m_mockLogger.Object,
-                m_mockSystemLanguageProvider.Object,
                 m_mockConfigurationProvider.Object);
             m_converter         = new Converter(m_blm, m_connectionManager, m_mockLogger.Object);
 
@@ -189,7 +186,6 @@ namespace Pms_GuidanceGUI.Tests.Component
 
             m_blm = new BusinessLogicModuleSetup(
                 m_mockLogger.Object,
-                m_mockSystemLanguageProvider.Object,
                 m_mockConfigurationProvider.Object);
             m_connectionManager = new ConnectionManager(m_mockWebView.Object, m_mockLogger.Object);
             m_converter = new Converter(m_blm, m_connectionManager, m_mockLogger.Object);
@@ -294,7 +290,6 @@ namespace Pms_GuidanceGUI.Tests.Component
 
             m_blm = new BusinessLogicModuleSetup(
                 m_mockLogger.Object,
-                m_mockSystemLanguageProvider.Object,
                 m_mockConfigurationProvider.Object);
             m_connectionManager = new ConnectionManager(m_mockWebView.Object, m_mockLogger.Object);
             m_converter = new Converter(m_blm, m_connectionManager, m_mockLogger.Object);
@@ -462,7 +457,6 @@ namespace Pms_GuidanceGUI.Tests.Component
                 mockConfigurationProvider.Setup(x => x.GetInstallationCommand()).Returns("exit 1");
                 var blm       = new BusinessLogicModuleSetup(
                     logger,
-                    new SystemLanguageProvider(logger),
                     mockConfigurationProvider.Object);
                 var converter = new Converter(blm, m_connectionManager, m_mockLogger.Object);
                 converter.Open();
@@ -500,7 +494,6 @@ namespace Pms_GuidanceGUI.Tests.Component
                 mockConfigurationProvider.Setup(x => x.GetInstallationCommand()).Returns("exit 1");
                 var blm       = new BusinessLogicModuleSetup(
                     logger,
-                    new SystemLanguageProvider(logger),
                     mockConfigurationProvider.Object);
                 var converter = new Converter(blm, m_connectionManager, m_mockLogger.Object);
                 converter.Open();
@@ -686,7 +679,6 @@ namespace Pms_GuidanceGUI.Tests.Component
                 mockConfigurationProvider.Setup(x => x.GetInstallationCommand()).Returns("exit 1");
                 var blm             = new BusinessLogicModuleSetup(
                     logger,
-                    new SystemLanguageProvider(logger),
                     mockConfigurationProvider.Object);
                 var converter       = new Converter(blm, m_connectionManager, m_mockLogger.Object);
                 converter.Open();
@@ -723,7 +715,6 @@ namespace Pms_GuidanceGUI.Tests.Component
                 mockConfigurationProvider.Setup(x => x.GetInstallationCommand()).Returns("exit 1");
                 var blm             = new BusinessLogicModuleSetup(
                     logger,
-                    new SystemLanguageProvider(logger),
                     mockConfigurationProvider.Object);
                 var converter       = new Converter(blm, m_connectionManager, m_mockLogger.Object);
                 converter.Open();

@@ -38,10 +38,9 @@ namespace Pms_GuidanceGUI.Tests.Unit
     {
         #region Private Members
 
-        private Mock<ILogger>                  m_mockLogger                 = null!;
-        private Mock<ISystemLanguageProvider>   m_mockSystemLanguageProvider = null!;
-        private Mock<IConfigurationProvider>    m_mockConfigurationProvider  = null!;
-        private BusinessLogicModuleSetup m_sut                = null!;
+        private Mock<ILogger>               m_mockLogger                = null!;
+        private Mock<IConfigurationProvider> m_mockConfigurationProvider = null!;
+        private BusinessLogicModuleSetup m_sut               = null!;
 
         #endregion
 
@@ -55,14 +54,12 @@ namespace Pms_GuidanceGUI.Tests.Unit
         [TestInitialize]
         public void TestInitialize()
         {
-            m_mockLogger                 = new Mock<ILogger>();
-            m_mockSystemLanguageProvider = new Mock<ISystemLanguageProvider>();
-            m_mockConfigurationProvider  = new Mock<IConfigurationProvider>();
+            m_mockLogger                = new Mock<ILogger>();
+            m_mockConfigurationProvider = new Mock<IConfigurationProvider>();
             m_mockConfigurationProvider.Setup(x => x.GetVerificationCommand()).Returns("exit 1");
             m_mockConfigurationProvider.Setup(x => x.GetInstallationCommand()).Returns("exit 1");
             m_sut = new BusinessLogicModuleSetup(
                 m_mockLogger.Object,
-                m_mockSystemLanguageProvider.Object,
                 m_mockConfigurationProvider.Object);
         }
 
@@ -79,21 +76,7 @@ namespace Pms_GuidanceGUI.Tests.Unit
             Assert.ThrowsException<ArgumentNullException>(
                 () => new BusinessLogicModuleSetup(
                     null!,
-                    new Mock<ISystemLanguageProvider>().Object,
                     new Mock<IConfigurationProvider>().Object));
-        }
-
-        /// <summary>
-    /// Given BusinessLogicModule When NullSystemLanguageProviderConstructorCalled Then ThrowsArgumentNullException
-        /// </summary>
-        [TestMethod]
-        public void Given_BusinessLogicModule_When_NullSystemLanguageProviderConstructorCalled_Then_ThrowsArgumentNullException()
-        {
-            Assert.ThrowsException<ArgumentNullException>(
-                () => new BusinessLogicModuleSetup(
-                    m_mockLogger.Object,
-                    null!,
-                    m_mockConfigurationProvider.Object));
         }
 
         /// <summary>
@@ -105,7 +88,6 @@ namespace Pms_GuidanceGUI.Tests.Unit
             Assert.ThrowsException<ArgumentNullException>(
                 () => new BusinessLogicModuleSetup(
                     m_mockLogger.Object,
-                    m_mockSystemLanguageProvider.Object,
                     null!));
         }
 
@@ -138,28 +120,6 @@ namespace Pms_GuidanceGUI.Tests.Unit
         public void Given_BusinessLogicModule_When_NullCommandHandleCommandCalled_Then_ThrowsArgumentNullException()
         {
             Assert.ThrowsException<ArgumentNullException>(() => m_sut.HandleCommand(null!));
-        }
-
-        /// <summary>
-    /// Given BusinessLogicModule When OpenCalledTwice Then NoExceptionThrown
-        /// </summary>
-        [TestMethod]
-        public void Given_BusinessLogicModule_When_OpenCalledTwice_Then_NoExceptionThrown()
-        {
-            m_sut.Open();
-            m_sut.Open();
-        }
-
-        /// <summary>
-    /// Given BusinessLogicModule When CloseCalledBeforeOpenThenAfterOpenThenAgain Then NoExceptionThrown
-        /// </summary>
-        [TestMethod]
-        public void Given_BusinessLogicModule_When_CloseCalledBeforeOpenThenAfterOpenThenAgain_Then_NoExceptionThrown()
-        {
-            m_sut.Close();
-            m_sut.Open();
-            m_sut.Close();
-            m_sut.Close();
         }
 
         /// <summary>

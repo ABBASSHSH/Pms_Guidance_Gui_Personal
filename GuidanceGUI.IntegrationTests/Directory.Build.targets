@@ -1,0 +1,2 @@
+<!-- Stop inheriting from parent Directory.Build.targets -->
+<Project />

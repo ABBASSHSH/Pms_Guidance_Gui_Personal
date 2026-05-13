@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 import { LogEntry } from './log.models';
 
@@ -20,7 +20,7 @@ import { LogEntry } from './log.models';
  *   CommunicationService
  */
 @Injectable({ providedIn: 'root' })
-export class LogBus {
+export class LogBus implements OnDestroy {
   private readonly subject = new Subject<LogEntry>();
 
   /** Stream of all log entries pushed by infrastructure services. */
@@ -29,5 +29,9 @@ export class LogBus {
   /** Push a log entry onto the bus. */
   push(entry: LogEntry): void {
     this.subject.next(entry);
+  }
+
+  ngOnDestroy(): void {
+    this.subject.complete();
   }
 }
